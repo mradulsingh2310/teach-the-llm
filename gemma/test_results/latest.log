@@ -1,0 +1,1038 @@
+[02:36:19] INFO: Test logging initialized for FunctionGemma 270M Instruct
+[02:36:19] INFO: Testing 6 tools
+[02:36:19] INFO: Verified tool: get_available_listings
+[02:36:19] INFO: Verified tool: get_availability
+[02:36:19] INFO: Verified tool: create_appointment
+[02:36:19] INFO: Verified tool: escalate_conversation
+[02:36:19] INFO: Verified tool: search_property_knowledge
+[02:36:19] INFO: Verified tool: create_lead
+[02:36:19] INFO: Validated schema for: get_available_listings
+  Properties: ['bedrooms', 'max_rent']
+[02:36:19] INFO: Validated schema for: get_availability
+  Properties: ['date_str']
+[02:36:19] INFO: Validated schema for: create_appointment
+  Properties: ['appointment_date', 'appointment_start_time', 'first_name', 'email', 'phone', 'last_name']
+[02:36:19] INFO: Validated schema for: escalate_conversation
+  Properties: ['reason_for_escalation']
+[02:36:19] INFO: Validated schema for: search_property_knowledge
+  Properties: ['search_text', 'category']
+[02:36:19] INFO: Validated schema for: create_lead
+  Properties: ['email', 'phone', 'first_name', 'last_name']
+[02:36:19] INFO: Initializing GemmaAgent with model: google/functiongemma-270m-it
+[02:36:24] INFO: GemmaAgent initialized successfully
+[02:36:24] INFO: ======================================================================
+[02:36:24] INFO: SCENARIO: [golden_path] GP001 - Formal Email Inquiry to Tour Booking
+[02:36:24] INFO: ======================================================================
+[02:36:24] INFO: Session started: 50b2bac6-d7af-478a-acb4-76a22e5bc332
+[02:36:24] INFO: Processing message: Subject: Inquiry About Leasing Options
+
+Dear Leasing Agent,
+
+My name is Michelle...
+[02:36:33] INFO: Response: Here are a few options for you:
+
+**Available 2-bedroom units in budget:**
+1.  **2025-04-01:** Afford...
+[02:36:33] INFO: Processing message: Hi,
+
+Thank you for the details on the available units. I would like to schedule ...
+[02:36:41] INFO: Response: Here are a few options for you:
+
+**Available 2-bedroom units in budget:**
+1.  **2025-04-01:** Afford...
+[02:36:41] INFO: Processing message: Hi,
+
+I would like to schedule the tour for **Unit 303** at **10:00 AM** on Febru...
+[02:36:51] INFO: Response: Here are a few options for you:
+
+**Available 2-bedroom units in budget:**
+1.  **2025-04-01:** Afford...
+[02:36:51] INFO: Result: PASSED
+[02:36:51] INFO: Duration: 26639ms
+[02:36:51] INFO: Tool calls made: 7
+[02:36:51] INFO:   - get_available_listings: {'bedrooms': [2], 'max_rent': 2500}
+[02:36:51] INFO:   - get_available_listings: {'bedrooms': [2], 'max_rent': 2500}
+[02:36:51] INFO:   - get_available_listings: {'bedrooms': [2], 'max_rent': 2500}
+[02:36:51] INFO:   - get_available_listings: {'bedrooms': [2], 'max_rent': 2500}
+[02:36:51] INFO:   - get_available_listings: {'bedrooms': [2], 'max_rent': 2500}
+[02:36:51] INFO:   - get_available_listings: {'bedrooms': [2], 'max_rent': 2500}
+[02:36:51] INFO:   - get_available_listings: {'bedrooms': [2], 'max_rent': 2500}
+[02:36:51] INFO: Final response: Here are a few options for you:
+
+**Available 2-bedroom units in budget:**
+1.  **2025-04-01:** Affordable 2BR/1BA with classic features and great natural light. Includes parking. Rent: 1800.00, Square ...
+[02:36:51] INFO: ======================================================================
+[02:36:51] INFO: SCENARIO: [golden_path] GP002 - Pet Owner Studio Search
+[02:36:51] INFO: ======================================================================
+[02:36:51] INFO: Session started: 41a7328e-e8c6-4432-a8c6-4984c3d3d836
+[02:36:51] INFO: Processing message: Hello,
+
+I have a small dog (a 15-pound Beagle) and am interested in renting at y...
+[02:36:53] INFO: Response: I apologize, but I cannot assist with providing pet policy information or details about pet deposits...
+[02:36:53] INFO: Processing message: That sounds reasonable! Do you have any pet-friendly studio apartments available...
+[02:36:55] INFO: Response: I apologize, but I encountered an error while trying to fetch available apartment listings. The vali...
+[02:36:55] INFO: Processing message: **Unit 102** looks perfect since it's pet-friendly and has in-unit laundry. What...
+[02:36:59] INFO: Response: The available time slots for Thursday, February 20, 2025, are:
+
+*   **09:00**: 09:00
+*   **10:00**: ...
+[02:36:59] INFO: Processing message: Please book me for 2:00 PM on February 20, 2025.
+
+Thanks,
+Thomas Rodriguez
+thoma...
+[02:37:04] INFO: Response: I apologize, but I was unable to complete the booking request. The attempt to create the appointment...
+[02:37:04] INFO: Result: PASSED
+[02:37:04] INFO: Duration: 12912ms
+[02:37:04] INFO: Tool calls made: 3
+[02:37:04] INFO:   - get_available_listings: {'bedrooms': '[1', 'max_rent': 1400}
+[02:37:04] INFO:   - get_availability: {'date_str': '2025-02-20'}
+[02:37:04] INFO:   - create_appointment: {'appointment_date': '2025-02-20', 'appointment_start_time': '14:00', 'first_name': 'Thomas', 'last_name': 'Rodriguez', 'phone': '+5559876543@email.com'}
+[02:37:04] INFO: Final response: I apologize, but I was unable to complete the booking request. The attempt to create the appointment failed due to a missing required positional argument: 'email'....
+[02:37:04] INFO: ======================================================================
+[02:37:04] INFO: SCENARIO: [golden_path] GP003 - Large Family 4BR Search with Amenities
+[02:37:04] INFO: ======================================================================
+[02:37:04] INFO: Session started: 8e8ede65-9e85-41a2-8b47-49017be44123
+[02:37:04] INFO: Processing message: Subject: Family Apartment Inquiry
+
+Dear Leasing Team,
+
+My family and I are looki...
+[02:37:05] INFO: Response: I've found no listings matching your criteria. It looks like the search yielded only one result: 0 l...
+[02:37:05] INFO: Processing message: That's great to hear! Please show me what 4-bedroom apartments you have availabl...
+[02:37:14] INFO: Response: Here are a few options for your family:
+
+I found 7 available listing(s):
+
+1.  **Rare 4BR/2BA with pl...
+[02:37:14] INFO: Processing message: **Unit 505** looks amazing for our family - the 4BR/3BA with city views would be...
+[02:37:20] INFO: Response: I apologize, but I was unable to retrieve the details for any of the available listings. The tool I ...
+[02:37:20] INFO: Processing message: 11:00 AM works perfectly. Please book the tour for that time.
+
+Thank you,
+David ...
+[02:37:26] INFO: Response: I apologize, but I was unable to retrieve the details for any of the available listings. The tool I ...
+[02:37:26] INFO: Result: PASSED
+[02:37:26] INFO: Duration: 22430ms
+[02:37:26] INFO: Tool calls made: 5
+[02:37:26] INFO:   - get_available_listings: {'bedrooms': [4], 'max_rent': 4}
+[02:37:26] INFO:   - get_available_listings: {'bedrooms': [4], 'max_rent': 4500}
+[02:37:26] INFO:   - get_available_listings: {'bedrooms': [4], 'max_rent': 4500}
+[02:37:26] INFO:   - create_appointment: {'appointment_date': '2025-03-01', 'appointment_start_time': '10:00', 'first_name': 'David Chen', 'last_name': 'Chen', 'phone': '13-111-0987', 'email': 'david.chen.family@email.com', 'property_date': '2025-02-01'}
+[02:37:26] INFO:   - create_appointment: {'appointment_date': '2025-03-11', 'appointment_start_time': '11:00', 'first_name': 'David Chen', 'last_name': 'Chen', 'email': 'david.chen.family@email.com', 'phone': '13-111-0987', 'property_date': '2025-03-11'}
+[02:37:26] INFO: Final response: I apologize, but I was unable to retrieve the details for any of the available listings. The tool I use to search for property information returned an unexpected keyword argument ("property_date")....
+[02:37:26] INFO: ======================================================================
+[02:37:26] INFO: SCENARIO: [golden_path] GP004 - Lead Creation Then Listing Search
+[02:37:26] INFO: ======================================================================
+[02:37:26] INFO: Session started: 17f741a7-d564-4ded-af7c-61dc378a3a72
+[02:37:26] INFO: Processing message: Hi there,
+
+I'm just starting my apartment search and would like to receive updat...
+[02:37:28] INFO: Response: I apologize, but I cannot assist with managing contact information or updating contacts. My current ...
+[02:37:28] INFO: Processing message: Thank you! While I have you, what 3-bedroom apartments do you have available und...
+[02:37:35] INFO: Response: Here are a few options for your apartment search:
+
+I found 8 available listing(s):
+
+1.  **410:** Val...
+[02:37:35] INFO: Result: PASSED
+[02:37:35] INFO: Duration: 9049ms
+[02:37:35] INFO: Tool calls made: 1
+[02:37:35] INFO:   - get_available_listings: {'bedrooms': [3], 'max_rent': 3000}
+[02:37:35] INFO: Final response: Here are a few options for your apartment search:
+
+I found 8 available listing(s):
+
+1.  **410:** Value-priced 3BR/2BA with updated kitchen and great closet space. Available from 2025-04-01.
+2.  **405:...
+[02:37:35] INFO: ======================================================================
+[02:37:35] INFO: SCENARIO: [golden_path] GP005 - Quick 1BR Search and Same-Day Booking
+[02:37:35] INFO: ======================================================================
+[02:37:35] INFO: Session started: 9ba689e4-e1a1-42e8-8724-9878f048f287
+[02:37:35] INFO: Processing message: Hi,
+
+I need a 1-bedroom apartment ASAP. Budget is $1,700/month max. What do you ...
+[02:37:44] INFO: Response: Here are a few options for your stay:
+
+Sarah Kim
+sarah.kim.urgent@email.com
+(555) 444-1212
+
+I found ...
+[02:37:44] INFO: Processing message: Perfect! **Unit 205** with the balcony looks great. What times are available tom...
+[02:37:49] INFO: Response: I apologize, but I was unable to complete your request.
+
+The attempt to search for available apartme...
+[02:37:49] INFO: Processing message: 3:00 PM works for me. Please book that time slot.
+
+Sarah Kim
+sarah.kim.urgent@em...
+[02:37:53] INFO: Response: I apologize, but I was unable to complete your request. The attempt to book a property tour appointm...
+[02:37:53] INFO: Result: PASSED
+[02:37:53] INFO: Duration: 18415ms
+[02:37:53] INFO: Tool calls made: 4
+[02:37:53] INFO:   - get_available_listings: {'bedrooms': [1], 'max_rent': 1700}
+[02:37:53] INFO:   - get_available_listings: {'bedrooms': [205], 'max_rent': 1700}
+[02:37:53] INFO:   - create_appointment: {'appointment_date': '2025-02-21', 'appointment_start_time': '10:00', 'first_name': 'Sarah', 'last_name': 'Kim', 'phone': '555-444-1212'}
+[02:37:53] INFO:   - create_appointment: {'appointment_date': '2025-02-16', 'appointment_start_time': '14:00', 'first_name': 'Sarah', 'last_name': 'Kim', 'phone': '555-444-1212'}
+[02:37:53] INFO: Final response: I apologize, but I was unable to complete your request. The attempt to book a property tour appointment failed.
+
+Could you please try your search again?...
+[02:37:53] INFO: ======================================================================
+[02:37:53] INFO: SCENARIO: [golden_path] GP006 - Luxury 5BR Penthouse Inquiry
+[02:37:53] INFO: ======================================================================
+[02:37:53] INFO: Session started: 6e6b2c64-81ea-4684-8b85-3e274c56f4e3
+[02:37:53] INFO: Processing message: Subject: Luxury Penthouse Availability
+
+Dear Leasing Office,
+
+I am relocating fo...
+[02:38:02] INFO: Response: Here are a few options for your luxury penthouse request:
+
+**Available Listings:**
+1.  **506:** A ra...
+[02:38:02] INFO: Processing message: **Unit 507** with the private roof deck is exactly what I'm looking for. The $5,...
+[02:38:06] INFO: Response: I apologize, but I was unable to complete the booking request. The attempt to create the appointment...
+[02:38:06] INFO: Result: PASSED
+[02:38:06] INFO: Duration: 13069ms
+[02:38:06] INFO: Tool calls made: 2
+[02:38:06] INFO:   - get_available_listings: {'bedrooms': [5], 'max_rent': 50000}
+[02:38:06] INFO:   - create_appointment: {'appointment_date': '2025-02-20', 'appointment_start_time': '10:00', 'first_name': 'Alexander', 'last_name': 'Morrison', 'phone': '+1-555-9999'}
+[02:38:06] INFO: Final response: I apologize, but I was unable to complete the booking request. The attempt to create the appointment failed due to a missing positional argument: 'email'. Please try again....
+[02:38:06] INFO: ======================================================================
+[02:38:06] INFO: SCENARIO: [frustrated_path] FP001 - Budget Too Low - User Adjusts
+[02:38:06] INFO: ======================================================================
+[02:38:06] INFO: Session started: b6670dc9-8979-464e-9460-6b2df537badc
+[02:38:06] INFO: Processing message: Hello,
+
+I'm looking for a 2-bedroom apartment but my budget is tight - no more t...
+[02:38:09] INFO: Response: I've found no listings matching your criteria for a 2-bedroom apartment under $1,500 per month. It's...
+[02:38:09] INFO: Processing message: That's disappointing. What about a 1-bedroom then? Is there anything under $1,50...
+[02:38:18] INFO: Response: I have processed your requests. Here are the results:
+
+**1. Available Listings:**
+No listings were f...
+[02:38:18] INFO: Processing message: **Unit 201** at $1,450 works for me. What times are available on February 10th?
+...
+[02:38:29] INFO: Response: Here are the available listings for Unit 201 on February 10, 2025:
+
+1.  **208:** Cozy 1BR with class...
+[02:38:29] INFO: Processing message: 2:00 PM works perfectly. Please book the tour.
+
+Maria Santos
+maria.santos.1234@e...
+[02:38:33] INFO: Response: I apologize, but I was unable to book the tour. The attempt to create the appointment failed due to ...
+[02:38:33] INFO: Result: PASSED
+[02:38:33] INFO: Duration: 26846ms
+[02:38:33] INFO: Tool calls made: 6
+[02:38:33] INFO:   - get_available_listings: {'bedrooms': [2], 'max_rent': 1500}
+[02:38:33] INFO:   - get_available_listings: {'bedrooms': [1], 'max_rent': 1500}
+[02:38:33] INFO:   - get_available_listings: {'bedrooms': [2], 'max_rent': 1500}
+[02:38:33] INFO:   - get_available_listings: {'bedrooms': [1], 'max_rent': 1500, 'available_date': '2025-02-10', 'bathrooms': 1, 'unit_number': 201}
+[02:38:33] INFO:   - get_availability: {'date_str': '2025-02-10'}
+[02:38:33] INFO:   - create_appointment: {'appointment_date': '2025-02-15', 'appointment_start_time': '14:00', 'email': 'maria.santos.1234@email.com', 'first_name': 'Maria Santos', 'last_name': 'Santos', 'phone': 5552345600}
+[02:38:33] INFO: Final response: I apologize, but I was unable to book the tour. The attempt to create the appointment failed due to a validation error in the provided phone number. Please try again....
+[02:38:33] INFO: ======================================================================
+[02:38:33] INFO: SCENARIO: [frustrated_path] FP002 - No 6BR Available - Adjusts to 5BR
+[02:38:33] INFO: ======================================================================
+[02:38:33] INFO: Session started: 1fba5a83-20c5-42ea-8a1f-e470a795d7b9
+[02:38:33] INFO: Processing message: Subject: Large Apartment Needed
+
+Dear Leasing Team,
+
+We are a multi-generational...
+[02:38:35] INFO: Response: The attempt to fetch available apartment listings failed. The validation error for the `get_availabl...
+[02:38:35] INFO: Processing message: I see. What is the largest apartment you have available then?
+
+Robert Garcia
+rob...
+[02:38:38] INFO: Response: The attempt to fetch available apartment listings for Robert Garcia failed. The validation error for...
+[02:38:38] INFO: Processing message: **Unit 507** with the private roof deck sounds incredible! We would make it work...
+[02:38:46] INFO: Response: The following actions have been completed:
+
+**1. Available Listings:**
+The attempt to fetch availabl...
+[02:38:46] INFO: Result: PASSED
+[02:38:46] INFO: Duration: 13154ms
+[02:38:46] INFO: Tool calls made: 3
+[02:38:46] INFO:   - get_available_listings: {'bedrooms': '[6', 'max_rent': 120000}
+[02:38:46] INFO:   - get_available_listings: {'bedrooms': [6, 7]}
+[02:38:46] INFO:   - create_appointment: {'appointment_date': '2025-03-05', 'appointment_start_time': '10:00', 'first_name': 'Robert', 'last_name': 'Garcia', 'email': 'robert.garcia.family@email.com', 'phone': '134-655-0123'}
+[02:38:46] INFO: Final response: The following actions have been completed:
+
+**1. Available Listings:**
+The attempt to fetch available apartment listings for Robert Garcia failed. The validation error for the `get_available_listings`...
+[02:38:46] INFO: ======================================================================
+[02:38:46] INFO: SCENARIO: [frustrated_path] FP003 - Frustrated User Demands Human Agent
+[02:38:46] INFO: ======================================================================
+[02:38:46] INFO: Session started: 28ea0f6b-4dd6-4fdf-bac4-25c625123c91
+[02:38:46] INFO: Processing message: Hi,
+
+I need a 2-bedroom under $1,200. This is all I can afford. What do you have...
+[02:38:48] INFO: Response: I apologize, but I cannot assist with finding or recommending budget accommodations. My current tool...
+[02:38:48] INFO: Processing message: This is ridiculous. Your prices are way too high for what you're offering. I've ...
+[02:38:49] INFO: Response: I apologize, but I cannot assist with recommending or recommending prices for accommodation. My curr...
+[02:38:49] INFO: Processing message: I don't want to talk to a bot anymore. Get me a real person NOW. This is very fr...
+[02:38:51] INFO: Response: I apologize, but no listings matching your criteria were found. The tool returned no results....
+[02:38:51] INFO: Result: PASSED
+[02:38:51] INFO: Duration: 4430ms
+[02:38:51] INFO: Tool calls made: 1
+[02:38:51] INFO:   - get_available_listings: {'bedrooms': [2], 'max_rent': 1200}
+[02:38:51] INFO: Final response: I apologize, but no listings matching your criteria were found. The tool returned no results....
+[02:38:51] INFO: ======================================================================
+[02:38:51] INFO: SCENARIO: [frustrated_path] FP004 - User Abandons Mid-Conversation
+[02:38:51] INFO: ======================================================================
+[02:38:51] INFO: Session started: 029f4953-b57c-40b4-b009-e16ca3cc7e19
+[02:38:51] INFO: Processing message: Hi,
+
+Looking for 3-bedroom apartments. What's available?
+
+Patricia Taylor
+patric...
+[02:38:58] INFO: Response: Here are a few options for you:
+
+**Available Listings:**
+1.  **Patricia Taylor** (555) 666-4444: Val...
+[02:38:58] INFO: Processing message: Unit 403 looks okay. What times can I tour tomorrow?
+
+Patricia Taylor
+patricia.t...
+[02:39:04] INFO: Response: The search for property information related to pet policies was successful.
+
+Here are the 1 relevant...
+[02:39:04] INFO: Processing message: Actually, I've decided to look at another property instead. Thank you for your t...
+[02:39:10] INFO: Response: The search for property information related to pet policies was successful.
+
+Here are the 1 relevant...
+[02:39:10] INFO: Result: PASSED
+[02:39:10] INFO: Duration: 18701ms
+[02:39:10] INFO: Tool calls made: 3
+[02:39:10] INFO:   - get_available_listings: {'bedrooms': [3], 'max_rent': 30000}
+[02:39:10] INFO:   - search_property_knowledge: {'category': 'amenities', 'search_text': 'pet policy'}
+[02:39:10] INFO:   - search_property_knowledge: {'category': 'amenities', 'search_text': 'pet policy'}
+[02:39:10] INFO: Final response: The search for property information related to pet policies was successful.
+
+Here are the 1 relevant knowledge base entries:
+
+*   **Category:** Amenities
+*   **ID:** 7
+*   **Question:** Is there a dog...
+[02:39:10] INFO: ======================================================================
+[02:39:10] INFO: SCENARIO: [frustrated_path] FP005 - Date Unavailable - Reschedules
+[02:39:10] INFO: ======================================================================
+[02:39:10] INFO: Session started: 81296db4-0576-45c3-b5aa-d850cf2aa957
+[02:39:10] INFO: Processing message: Hi,
+
+I'd like to tour a 2-bedroom unit on January 1st at noon. What do you have ...
+[02:39:11] INFO: Response: I couldn't find any listings for apartments in the specified category. It seems like the search was ...
+[02:39:11] INFO: Processing message: **Unit 304** looks good. Is January 1st at 12pm available for a tour?
+
+Kevin Par...
+[02:39:13] INFO: Response: I couldn't find any listings for apartments in the specified category. It seems the search was unsuc...
+[02:39:13] INFO: Processing message: Oh right, it's New Year's Day. How about January 3rd at 2pm instead?
+
+Kevin Park...
+[02:39:19] INFO: Response: I encountered errors while trying to complete your requests:
+
+1.  **Available Listings:** I couldn't...
+[02:39:19] INFO: Result: PASSED
+[02:39:19] INFO: Duration: 8946ms
+[02:39:19] INFO: Tool calls made: 4
+[02:39:19] INFO:   - get_available_listings: {'bedrooms': []}
+[02:39:19] INFO:   - get_available_listings: {'bedrooms': []}
+[02:39:19] INFO:   - get_available_listings: {'bedrooms': []}
+[02:39:19] INFO:   - create_appointment: {'appointment_date': '2025-01-03', 'appointment_start_time': '14:00', 'first_name': 'Kevin', 'last_name': 'Park', 'email': 'kevin.park.2025@email.com'}
+[02:39:19] INFO: Final response: I encountered errors while trying to complete your requests:
+
+1.  **Available Listings:** I couldn't find any listings for apartments in the specified category.
+2.  **Unit 304:** I couldn't find any l...
+[02:39:19] INFO: ======================================================================
+[02:39:19] INFO: SCENARIO: [repeated_query] RQ001 - Multiple Policy Questions
+[02:39:19] INFO: ======================================================================
+[02:39:19] INFO: Session started: dbb34b39-01f2-4d25-98bc-662cd87920fc
+[02:39:19] INFO: Processing message: Hi,
+
+Before I start looking at apartments, I have some questions. First, what is...
+[02:39:20] INFO: Response: I apologize, but I cannot assist with finding pet policy information. My current tools are designed ...
+[02:39:20] INFO: Processing message: Good to know. What about parking? Is it included in the rent or is there an addi...
+[02:39:22] INFO: Response: I apologize, but I cannot assist with finding parking information. My current tools are designed for...
+[02:39:22] INFO: Processing message: One more question - is this a smoke-free building?
+
+Nancy Brown
+nancy.brown.inqu...
+[02:39:23] INFO: Response: I apologize, but I cannot assist with finding smoke-free building information. My current tools are ...
+[02:39:23] INFO: Processing message: And what about utilities? What's included in the rent?
+
+Nancy Brown
+nancy.brown....
+[02:39:25] INFO: Response: I apologize, but I cannot assist with finding utilities or rent information. My current tools are de...
+[02:39:25] INFO: Result: PASSED
+[02:39:25] INFO: Duration: 5985ms
+[02:39:25] INFO: Final response: I apologize, but I cannot assist with finding utilities or rent information. My current tools are designed for property management and searching for apartment listings and tours, and I cannot access o...
+[02:39:25] INFO: ======================================================================
+[02:39:25] INFO: SCENARIO: [repeated_query] RQ002 - Multiple Availability Checks
+[02:39:25] INFO: ======================================================================
+[02:39:25] INFO: Session started: 0fd05b22-09a8-45a1-9929-17bcae4fb342
+[02:39:25] INFO: Processing message: Hi,
+
+I'm interested in touring a 1-bedroom unit. What times are available on Feb...
+[02:39:32] INFO: Response: Here are a few options for your upcoming tour:
+
+Eric Johnson has found 10 available listing(s):
+1.  ...
+[02:39:32] INFO: Processing message: Hmm, those times don't work for me. What about February 18th?
+
+Eric Johnson
+eric...
+[02:39:41] INFO: Response: Here are a few things to know:
+
+**Eric Johnson's Available Listings:**
+1.  **Cozy 1BR with classic c...
+[02:39:41] INFO: Processing message: Actually, let me check February 20th too. What do you have?
+
+Eric Johnson
+eric.j...
+[02:39:51] INFO: Response: Here are a couple of things to note:
+
+**Eric Johnson's Available Listings:**
+1.  **Cozy 1BR with cla...
+[02:39:51] INFO: Result: PASSED
+[02:39:51] INFO: Duration: 26421ms
+[02:39:51] INFO: Tool calls made: 5
+[02:39:51] INFO:   - get_available_listings: {'bedrooms': [1], 'max_rent': 4500}
+[02:39:51] INFO:   - get_available_listings: {'bedrooms': [1], 'max_rent': 4500}
+[02:39:51] INFO:   - get_availability: {'date_str': '2025-02-18'}
+[02:39:51] INFO:   - get_available_listings: {'bedrooms': [1], 'max_rent': 4500}
+[02:39:51] INFO:   - get_availability: {'date_str': '2025-02-18'}
+[02:39:51] INFO: Final response: Here are a couple of things to note:
+
+**Eric Johnson's Available Listings:**
+1.  **Cozy 1BR with classic charm and excellent closet space.** Available from February 15th to 20th, with 1 bathroom and 1...
+[02:39:51] INFO: ======================================================================
+[02:39:51] INFO: SCENARIO: [repeated_query] RQ003 - Reschedule After Booking
+[02:39:51] INFO: ======================================================================
+[02:39:51] INFO: Session started: 0414cc1e-b526-4920-ad51-60de6271820b
+[02:39:51] INFO: Processing message: Hi,
+
+I'd like to book a tour for February 10th at 10:00 AM to see a 2-bedroom ap...
+[02:39:56] INFO: Response: Here are the available time slots for Saturday, February 10, 2024:
+
+*   **09:00:** 09:00
+*   **10:00...
+[02:39:56] INFO: Processing message: I'm so sorry, but something came up. What times are available on February 12th i...
+[02:40:01] INFO: Response: Here are the available time slots for Monday, February 12, 2024:
+
+*   **09:00:** 09:00
+*   **10:00:*...
+[02:40:01] INFO: Processing message: 2:00 PM works. Please reschedule my appointment to that time.
+
+Lisa Park
+lisa.pa...
+[02:40:05] INFO: Response: The attempt to reschedule your appointment for 2:00 PM has been successfully escalated.
+
+Here are th...
+[02:40:05] INFO: Result: PASSED
+[02:40:05] INFO: Duration: 13999ms
+[02:40:05] INFO: Tool calls made: 4
+[02:40:05] INFO:   - get_availability: {'date_str': '2024-02-10'}
+[02:40:05] INFO:   - get_availability: {'date_str': '2024-02-12'}
+[02:40:05] INFO:   - get_availability: {'date_str': '2024-02-12'}
+[02:40:05] INFO:   - escalate_conversation: {'reason_for_escalation': 'rescheduling due to unforeseen circumstances'}
+[02:40:05] INFO: Final response: The attempt to reschedule your appointment for 2:00 PM has been successfully escalated.
+
+Here are the details:
+
+*   **Ticket ID:** `ESC-CBAF81`
+*   **Reason:** Rescheduling due to unforeseen circumsta...
+[02:40:05] INFO: ======================================================================
+[02:40:05] INFO: SCENARIO: [repeated_query] RQ004 - Compare Multiple Bedroom Sizes
+[02:40:05] INFO: ======================================================================
+[02:40:05] INFO: Session started: b1c55e71-27cb-4906-a9e5-ff817b3bdc00
+[02:40:05] INFO: Processing message: Hello,
+
+I'm not sure what size apartment I need. Can you show me your 1-bedroom ...
+[02:40:08] INFO: Response: I've found 0 available listings matching your criteria.
+
+However, I regret to inform you that no lis...
+[02:40:08] INFO: Processing message: Those are nice, but let me also see the 2-bedroom options for comparison.
+
+Amand...
+[02:40:10] INFO: Response: I apologize, but I was unable to retrieve the 2-bedroom options. The request failed due to a validat...
+[02:40:10] INFO: Processing message: Actually, what about studios? I might be able to save money that way.
+
+Amanda Le...
+[02:40:13] INFO: Response: I apologize, but I was unable to retrieve the 2-bedroom options. The request failed due to a validat...
+[02:40:13] INFO: Result: PASSED
+[02:40:13] INFO: Duration: 7882ms
+[02:40:13] INFO: Tool calls made: 5
+[02:40:13] INFO:   - get_available_listings: {'bedrooms': [], 'max_rent': 10000}
+[02:40:13] INFO:   - get_available_listings: {'bedrooms': [], 'max_rent': 10000}
+[02:40:13] INFO:   - get_available_listings: {'bedrooms': 2}
+[02:40:13] INFO:   - get_available_listings: {'bedrooms': [], 'max_rent': 10000}
+[02:40:13] INFO:   - get_available_listings: {'bedrooms': 2}
+[02:40:13] INFO: Final response: I apologize, but I was unable to retrieve the 2-bedroom options. The request failed due to a validation error in the provided input data....
+[02:40:13] INFO: ======================================================================
+[02:40:13] INFO: SCENARIO: [edge_case] EC001 - Partial Contact Info - Progressive Collection
+[02:40:13] INFO: ======================================================================
+[02:40:13] INFO: Session started: 82904015-5385-4353-a201-20d192c6ab9e
+[02:40:13] INFO: Processing message: I want to book a tour for tomorrow at 3pm to see a 1-bedroom.
+...
+[02:40:20] INFO: Response: Here are the available time slots for your tour:
+
+Tuesday, May 14, 2024:
+*   09:00 - 10:00
+*   10:00...
+[02:40:20] INFO: Processing message: My name is Alex Thompson.
+...
+[02:40:27] INFO: Response: Here are the available time slots for your tour:
+
+Tuesday, May 14, 2024:
+*   09:00 - 10:00
+*   10:00...
+[02:40:27] INFO: Processing message: alex.thompson@email.com and my phone is (555) 222-3333
+...
+[02:40:34] INFO: Response: The lead creation has been successfully initiated.
+
+Here are the details:
+
+**Lead Created:**
+*   **I...
+[02:40:34] INFO: Result: PASSED
+[02:40:34] INFO: Duration: 20887ms
+[02:40:34] INFO: Tool calls made: 3
+[02:40:34] INFO:   - get_availability: {'date_str': '2024-05-14'}
+[02:40:34] INFO:   - get_availability: {'date_str': '2024-05-14'}
+[02:40:34] INFO:   - create_lead: {'email': 'alex.thompson@email.com', 'first_name': 'Alex', 'last_name': 'Thompson', 'phone': '555 222-3333'}
+[02:40:34] INFO: Final response: The lead creation has been successfully initiated.
+
+Here are the details:
+
+**Lead Created:**
+*   **ID:** LEAD-E5187CB0
+*   **Message:** "Lead successfully created for Alex Thompson."
+*   **Next Steps:...
+[02:40:34] INFO: ======================================================================
+[02:40:34] INFO: SCENARIO: [edge_case] EC002 - Unusual Date Formats
+[02:40:34] INFO: ======================================================================
+[02:40:34] INFO: Session started: bf11e0d8-d83e-4b71-8ed4-455a424114e7
+[02:40:34] INFO: Processing message: Hi,
+
+Can I schedule a tour for the fifteenth of February, twenty twenty-five at ...
+[02:40:37] INFO: Response: The available time slots for Saturday, February 15, 2025, are:
+
+*   **09:00**
+*   **10:00**
+*   **13...
+[02:40:37] INFO: Result: PASSED
+[02:40:37] INFO: Duration: 3516ms
+[02:40:37] INFO: Tool calls made: 1
+[02:40:37] INFO:   - get_availability: {'date_str': '2025-02-15'}
+[02:40:37] INFO: Final response: The available time slots for Saturday, February 15, 2025, are:
+
+*   **09:00**
+*   **10:00**
+*   **13:00**
+*   **14:00**
+*   **15:00**
+*   **17:00**...
+[02:40:37] INFO: ======================================================================
+[02:40:37] INFO: SCENARIO: [edge_case] EC003 - Phone Number Spoken Format
+[02:40:37] INFO: ======================================================================
+[02:40:37] INFO: Session started: 0514b6b5-e7c8-40c4-af6b-d7cdd791c8ad
+[02:40:37] INFO: Processing message: I want to tour Unit 301 on February 20th at 11am. My name is Chris Taylor.
+...
+[02:40:45] INFO: Response: The appointment for Chris Taylor on February 20, 2024, at 11:00 AM has been successfully confirmed.
+...
+[02:40:45] INFO: Processing message: Email is chris.taylor@domain.org and my cell is five five five, four four four, ...
+[02:40:52] INFO: Response: Here are the outcomes:
+
+**1. Appointment Confirmation:**
+The appointment for Chris Taylor on Februar...
+[02:40:52] INFO: Result: PASSED
+[02:40:52] INFO: Duration: 15137ms
+[02:40:52] INFO: Tool calls made: 3
+[02:40:52] INFO:   - create_appointment: {'appointment_date': '2024-02-20', 'appointment_start_time': '11:00', 'first_name': 'Chris', 'last_name': 'Taylor', 'email': 'chris.taylor@example.com', 'phone': '112-555-1234'}
+[02:40:52] INFO:   - create_lead: {'email': 'chris.taylor@domain.org', 'first_name': 'Chris', 'last_name': 'Taylor', 'phone': '555-555-1234'}
+[02:40:52] INFO:   - escalate_conversation: {'reason_for_escalation': 'Urgent: Property maintenance update due to unexpected high volume of requests requiring specialized services.'}
+[02:40:52] INFO: Final response: Here are the outcomes:
+
+**1. Appointment Confirmation:**
+The appointment for Chris Taylor on February 20, 2024, at 11:00 AM has been successfully confirmed. The confirmation ID is **7237455B**.
+
+**2. ...
+[02:40:52] INFO: ======================================================================
+[02:40:52] INFO: SCENARIO: [edge_case] EC004 - Multi-Intent Single Message
+[02:40:52] INFO: ======================================================================
+[02:40:52] INFO: Session started: af7f89fd-32a6-47e3-9ff3-0a4605445b5f
+[02:40:52] INFO: Processing message: Subject: Multiple Questions
+
+Dear Leasing Team,
+
+I need a 2-bedroom apartment an...
+[02:41:05] INFO: Response: Here are the outcomes for the requested actions:
+
+**1. Multiple Questions:**
+A 2-bedroom apartment a...
+[02:41:05] INFO: Result: FAILED
+[02:41:05] INFO: Duration: 12119ms
+[02:41:05] INFO: Tool calls made: 3
+[02:41:05] INFO:   - create_appointment: {'appointment_date': '2024-03-15', 'first_name': 'Michael', 'last_name': 'Brown', 'email': 'michael.brown.multi@email.com', 'appointment_start_time': '10:00', 'phone': '13-11'}
+[02:41:05] INFO:   - get_availability: {'date_str': '2024-03-15'}
+[02:41:05] INFO:   - search_property_knowledge: {'category': 'pet policy', 'search_text': 'parking'}
+[02:41:05] INFO: Final response: Here are the outcomes for the requested actions:
+
+**1. Multiple Questions:**
+A 2-bedroom apartment and pet policy consultation has been successfully scheduled.
+*   **Date:** March 15, 2024
+*   **Time:...
+[02:41:05] WARNING: Failures:
+[02:41:05] WARNING:   - Expected tool 'get_available_listings' was not called
+[02:41:05] INFO: ======================================================================
+[02:41:05] INFO: SCENARIO: [edge_case] EC005 - Budget Below Minimum
+[02:41:05] INFO: ======================================================================
+[02:41:05] INFO: Session started: 607c463c-16d4-4903-a8ba-007f79491a76
+[02:41:05] INFO: Processing message: Hi,
+
+I'm on a very tight budget. Looking for any apartment under $800 per month....
+[02:41:06] INFO: Response: I apologize, but I cannot assist with finding or recommending apartment rental options. My current t...
+[02:41:06] INFO: Result: FAILED
+[02:41:06] INFO: Duration: 1558ms
+[02:41:06] INFO: Final response: I apologize, but I cannot assist with finding or recommending apartment rental options. My current tools are designed for managing property listings and appointments, and I cannot browse or search for...
+[02:41:06] WARNING: Failures:
+[02:41:06] WARNING:   - Expected tool 'get_available_listings' was not called
+[02:41:06] INFO: ======================================================================
+[02:41:06] INFO: SCENARIO: [edge_case] EC006 - Flexible Bedroom Range
+[02:41:06] INFO: ======================================================================
+[02:41:06] INFO: Session started: ad6601f1-1aae-4e50-89e1-ad1736ce8727
+[02:41:06] INFO: Processing message: Hello,
+
+I'm flexible on size - anywhere from 1 to 3 bedrooms would work for me. ...
+[02:41:07] INFO: Response: I apologize, but I cannot assist with finding or booking rental properties. My current tools are des...
+[02:41:07] INFO: Result: FAILED
+[02:41:07] INFO: Duration: 1367ms
+[02:41:07] INFO: Final response: I apologize, but I cannot assist with finding or booking rental properties. My current tools are designed for managing property listings and appointments, and I cannot access or connect with financial...
+[02:41:07] WARNING: Failures:
+[02:41:07] WARNING:   - Expected tool 'get_available_listings' was not called
+[02:41:07] INFO: ======================================================================
+[02:41:07] INFO: SCENARIO: [edge_case] EC007 - Very Long Formal Email
+[02:41:07] INFO: ======================================================================
+[02:41:07] INFO: Session started: 990677d4-349a-48db-933d-c6c67808f803
+[02:41:07] INFO: Processing message: Subject: Detailed Apartment Inquiry - Moving from Out of State
+
+Dear Leasing Off...
+[02:41:12] INFO: Response: Here are a few options for your apartment request:
+
+The listing available is for a 3-bedroom apartme...
+[02:41:12] INFO: Result: PASSED
+[02:41:12] INFO: Duration: 4262ms
+[02:41:12] INFO: Tool calls made: 1
+[02:41:12] INFO:   - get_available_listings: {'bedrooms': [3], 'max_rent': 3500}
+[02:41:12] INFO: Final response: Here are a few options for your apartment request:
+
+The listing available is for a 3-bedroom apartment with 2 bathrooms and updated kitchen. It costs $2650 per month and includes parking. There are 3 ...
+[02:41:12] INFO: ======================================================================
+[02:41:12] INFO: SCENARIO: [edge_case] EC008 - Callback Request Only
+[02:41:12] INFO: ======================================================================
+[02:41:12] INFO: Session started: 4eda08a2-bec0-4cd7-ad26-3f0eb6a277d3
+[02:41:12] INFO: Processing message: Hi,
+
+I'm busy right now but interested in apartments. Can someone call me back t...
+[02:41:13] INFO: Response: I apologize, but I cannot assist with contacting or managing personal or professional contacts. My c...
+[02:41:13] INFO: Result: FAILED
+[02:41:13] INFO: Duration: 1522ms
+[02:41:13] INFO: Final response: I apologize, but I cannot assist with contacting or managing personal or professional contacts. My current tools are designed for managing property listings and appointments, and I cannot connect with...
+[02:41:13] WARNING: Failures:
+[02:41:13] WARNING:   - Expected tool 'create_lead' was not called
+[02:41:13] INFO: ======================================================================
+[02:41:13] INFO: SCENARIO: [negative] NEG001 - No Tools on Simple Greeting
+[02:41:13] INFO: ======================================================================
+[02:41:13] INFO: Session started: 2526deb0-3ac2-4ad4-85fc-a8295dcfccbc
+[02:41:13] INFO: Processing message: Hello!
+
+Just saying hi.
+
+John Smith
+john.smith@email.com
+(555) 111-2222
+...
+[02:41:15] INFO: Response: I apologize, but I cannot assist with greeting or connecting with John Smith. My current tools are d...
+[02:41:15] INFO: Result: PASSED
+[02:41:15] INFO: Duration: 1645ms
+[02:41:15] INFO: Final response: I apologize, but I cannot assist with greeting or connecting with John Smith. My current tools are designed for managing property listings, appointments, and customer support, and do not have the capa...
+[02:41:15] INFO: ======================================================================
+[02:41:15] INFO: SCENARIO: [negative] NEG002 - No Tools on Farewell
+[02:41:15] INFO: ======================================================================
+[02:41:15] INFO: Session started: a46a53ef-840a-4c52-9fef-185ad13f355e
+[02:41:15] INFO: Processing message: Thanks for your help today, goodbye!
+
+Jane Doe
+jane.doe@email.com
+(555) 333-4444...
+[02:41:17] INFO: Response: I apologize, but I cannot assist with assisting with virtual goodbye or planning. My current tools a...
+[02:41:17] INFO: Result: PASSED
+[02:41:17] INFO: Duration: 1971ms
+[02:41:17] INFO: Final response: I apologize, but I cannot assist with assisting with virtual goodbye or planning. My current tools are designed for managing property listings, appointments, and customer support, and do not have the ...
+[02:41:17] INFO: ======================================================================
+[02:41:17] INFO: SCENARIO: [negative] NEG003 - No Tools on Off-Topic Question
+[02:41:17] INFO: ======================================================================
+[02:41:17] INFO: Session started: 4573fc6d-ee2a-4872-8d0c-b9bf917edb7c
+[02:41:17] INFO: Processing message: What's the weather like in the city?
+
+Weather Curious
+weather@email.com
+(555) 99...
+[02:41:18] INFO: Response: I apologize, but I cannot assist with checking weather conditions. My current tools are designed for...
+[02:41:18] INFO: Result: PASSED
+[02:41:18] INFO: Duration: 1401ms
+[02:41:18] INFO: Final response: I apologize, but I cannot assist with checking weather conditions. My current tools are designed for managing property listings and appointments, and I cannot access real-time or forecasted weather da...
+[02:41:18] INFO: ======================================================================
+[02:41:18] INFO: SCENARIO: [negative] NEG004 - No Booking Tools on Simple Question
+[02:41:18] INFO: ======================================================================
+[02:41:18] INFO: Session started: 9f58f782-0458-4788-9d32-32fe46b55677
+[02:41:18] INFO: Processing message: How much do 2-bedroom apartments cost here?
+
+Price Checker
+price.check@email.com...
+[02:41:20] INFO: Response: I apologize, but I cannot assist with pricing or checking property costs. My current tools are desig...
+[02:41:20] INFO: Result: FAILED
+[02:41:20] INFO: Duration: 1283ms
+[02:41:20] INFO: Final response: I apologize, but I cannot assist with pricing or checking property costs. My current tools are designed for managing property listings and appointments, and I cannot provide financial or property-rela...
+[02:41:20] WARNING: Failures:
+[02:41:20] WARNING:   - Expected tool 'get_available_listings' was not called
+[02:41:20] INFO: [GOLDEN PATH] GP001: Formal Email Inquiry to Tour Booking
+[02:41:20] INFO: Session started: 5b1b4fad-9844-44f2-a2f8-e0305443e7ab
+[02:41:20] INFO: Processing message: Subject: Inquiry About Leasing Options
+
+Dear Leasing Agent,
+
+My name is Michelle...
+[02:41:28] INFO: Response: Here are a few options for you:
+
+**Available 2-bedroom units in budget:**
+1.  **2025-04-01:** Afford...
+[02:41:28] INFO: Processing message: Hi,
+
+Thank you for the details on the available units. I would like to schedule ...
+[02:41:33] INFO: Response: I apologize, but I was unable to retrieve the available listings. The request to search for apartmen...
+[02:41:33] INFO: Processing message: Hi,
+
+I would like to schedule the tour for **Unit 303** at **10:00 AM** on Febru...
+[02:41:38] INFO: Response: I apologize, but I was unable to retrieve the available listings. The request to search for apartmen...
+[02:41:38] INFO:   Passed: True
+[02:41:38] INFO:   Duration: 18229ms
+[02:41:38] INFO:   Tools called: ['get_available_listings', 'get_available_listings', 'get_available_listings', 'get_available_listings', 'get_available_listings']
+[02:41:38] INFO: [GOLDEN PATH] GP002: Pet Owner Studio Search
+[02:41:38] INFO: Session started: c74b66bd-e221-4864-8cdb-917d8d6031c2
+[02:41:38] INFO: Processing message: Hello,
+
+I have a small dog (a 15-pound Beagle) and am interested in renting at y...
+[02:41:39] INFO: Response: I apologize, but I cannot assist with providing pet policy information or details about pet deposits...
+[02:41:39] INFO: Processing message: That sounds reasonable! Do you have any pet-friendly studio apartments available...
+[02:41:42] INFO: Response: I apologize, but I encountered an error while trying to fetch available apartment listings. The vali...
+[02:41:42] INFO: Processing message: **Unit 102** looks perfect since it's pet-friendly and has in-unit laundry. What...
+[02:41:46] INFO: Response: The available times on February 20, 2025, are:
+
+*   **09:00:** 09:00
+*   **10:00:** 10:00
+*   **13:0...
+[02:41:46] INFO: Processing message: Please book me for 2:00 PM on February 20, 2025.
+
+Thanks,
+Thomas Rodriguez
+thoma...
+[02:41:51] INFO: Response: I apologize, but I was unable to complete the booking request. The attempt to create the appointment...
+[02:41:51] INFO:   Passed: True
+[02:41:51] INFO:   Duration: 12776ms
+[02:41:51] INFO:   Tools called: ['get_available_listings', 'get_availability', 'create_appointment']
+[02:41:51] INFO: [GOLDEN PATH] GP003: Large Family 4BR Search with Amenities
+[02:41:51] INFO: Session started: 521de8b0-64f4-40c2-9419-1a36ef4446e7
+[02:41:51] INFO: Processing message: Subject: Family Apartment Inquiry
+
+Dear Leasing Team,
+
+My family and I are looki...
+[02:41:52] INFO: Response: I've found no listings matching your criteria. It looks like the search yielded only one result: "No...
+[02:41:52] INFO: Processing message: That's great to hear! Please show me what 4-bedroom apartments you have availabl...
+[02:42:01] INFO: Response: I have found 7 available listing(s) for your request:
+
+1.  **503:** A rare 4BR/2BA with plenty of sp...
+[02:42:01] INFO: Processing message: **Unit 505** looks amazing for our family - the 4BR/3BA with city views would be...
+[02:42:11] INFO: Response: Here are a few things to know about the property:
+
+**Apartment 503:**
+*   **Description:** A rare 4B...
+[02:42:11] INFO: Processing message: 11:00 AM works perfectly. Please book the tour for that time.
+
+Thank you,
+David ...
+[02:42:20] INFO: Response: The booking for David Chen Chen on Saturday, March 15, 2025, at 11:00 AM has been successfully confi...
+[02:42:20] INFO:   Passed: True
+[02:42:20] INFO:   Duration: 29145ms
+[02:42:20] INFO:   Tools called: ['get_available_listings', 'get_available_listings', 'search_property_knowledge', 'create_appointment']
+[02:42:20] INFO: [GOLDEN PATH] GP004: Lead Creation Then Listing Search
+[02:42:20] INFO: Session started: 872b7851-95ec-4ca8-8147-e45699729b9d
+[02:42:20] INFO: Processing message: Hi there,
+
+I'm just starting my apartment search and would like to receive updat...
+[02:42:21] INFO: Response: I apologize, but I cannot assist with managing contact information or saving contacts. My current to...
+[02:42:21] INFO: Processing message: Thank you! While I have you, what 3-bedroom apartments do you have available und...
+[02:42:29] INFO: Response: Here are a few options for your apartment search:
+
+I found 8 available listing(s):
+
+1.  **410:** Val...
+[02:42:29] INFO:   Passed: True
+[02:42:29] INFO:   Duration: 9064ms
+[02:42:29] INFO:   Tools called: ['get_available_listings']
+[02:42:29] INFO: [GOLDEN PATH] GP005: Quick 1BR Search and Same-Day Booking
+[02:42:29] INFO: Session started: 4422e5fa-0970-481f-a910-9b6c0c514636
+[02:42:29] INFO: Processing message: Hi,
+
+I need a 1-bedroom apartment ASAP. Budget is $1,700/month max. What do you ...
+[02:42:37] INFO: Response: Here are a few options for your stay:
+
+Sarah Kim
+sarah.kim.urgent@email.com
+(555) 444-1212
+
+I found ...
+[02:42:37] INFO: Processing message: Perfect! **Unit 205** with the balcony looks great. What times are available tom...
+[02:42:41] INFO: Response: I apologize, but I was unable to retrieve the available listings for Unit 205. The request failed du...
+[02:42:41] INFO: Processing message: 3:00 PM works for me. Please book that time slot.
+
+Sarah Kim
+sarah.kim.urgent@em...
+[02:42:45] INFO: Response: I apologize, but I was unable to book the appointment for Sarah Kim. The attempt to create the appoi...
+[02:42:45] INFO:   Passed: True
+[02:42:45] INFO:   Duration: 16390ms
+[02:42:45] INFO:   Tools called: ['get_available_listings', 'get_available_listings', 'create_appointment']
+[02:42:45] INFO: [GOLDEN PATH] GP006: Luxury 5BR Penthouse Inquiry
+[02:42:45] INFO: Session started: b7ff1412-1e01-42bc-a459-dcad1f5fed21
+[02:42:45] INFO: Processing message: Subject: Luxury Penthouse Availability
+
+Dear Leasing Office,
+
+I am relocating fo...
+[02:42:54] INFO: Response: Here are a few options for your luxury penthouse request:
+
+**Available Listings:**
+1.  **506:** A ra...
+[02:42:54] INFO: Processing message: **Unit 507** with the private roof deck is exactly what I'm looking for. The $5,...
+[02:42:58] INFO: Response: I apologize, but I was unable to complete the booking request. The attempt to create the appointment...
+[02:42:58] INFO:   Passed: True
+[02:42:58] INFO:   Duration: 12824ms
+[02:42:58] INFO:   Tools called: ['get_available_listings', 'create_appointment']
+[02:42:58] INFO: [FRUSTRATED PATH] FP001: Budget Too Low - User Adjusts
+[02:42:58] INFO: Session started: 0d7a7e81-f95d-4237-b38f-6bfe8157a1c4
+[02:42:58] INFO: Processing message: Hello,
+
+I'm looking for a 2-bedroom apartment but my budget is tight - no more t...
+[02:43:00] INFO: Response: I've found no listings matching your criteria for a 2-bedroom apartment under $1,500 per month. It's...
+[02:43:00] INFO: Processing message: That's disappointing. What about a 1-bedroom then? Is there anything under $1,50...
+[02:43:10] INFO: Response: I have processed your requests. Here are the results:
+
+**1. Available Listings:**
+No listings were f...
+[02:43:10] INFO: Processing message: **Unit 201** at $1,450 works for me. What times are available on February 10th?
+...
+[02:43:15] INFO: Response: Here are the available times on February 10, 2025:
+
+*   **09:00:** Available
+*   **10:00:** Availabl...
+[02:43:15] INFO: Processing message: 2:00 PM works perfectly. Please book the tour.
+
+Maria Santos
+maria.santos.1234@e...
+[02:43:20] INFO: Response: I apologize, but I was unable to book the tour. The attempt to create the appointment failed due to ...
+[02:43:20] INFO:   Passed: True, Duration: 22424ms
+[02:43:20] INFO: [FRUSTRATED PATH] FP002: No 6BR Available - Adjusts to 5BR
+[02:43:20] INFO: Session started: a3700f65-1412-45ff-af6f-d6112ea4b1f1
+[02:43:20] INFO: Processing message: Subject: Large Apartment Needed
+
+Dear Leasing Team,
+
+We are a multi-generational...
+[02:43:23] INFO: Response: The attempt to fetch available apartment listings failed. The validation error for the `get_availabl...
+[02:43:23] INFO: Processing message: I see. What is the largest apartment you have available then?
+
+Robert Garcia
+rob...
+[02:43:26] INFO: Response: The attempt to fetch available apartment listings failed. The validation errors for both requests we...
+[02:43:26] INFO: Processing message: **Unit 507** with the private roof deck sounds incredible! We would make it work...
+[02:43:34] INFO: Response: The following actions have been completed:
+
+1.  **Available Listings:** The attempt to fetch availab...
+[02:43:34] INFO:   Passed: True, Duration: 13877ms
+[02:43:34] INFO: [FRUSTRATED PATH] FP003: Frustrated User Demands Human Agent
+[02:43:34] INFO: Session started: e56d7645-eefa-41bd-9c35-c497f3494f10
+[02:43:34] INFO: Processing message: Hi,
+
+I need a 2-bedroom under $1,200. This is all I can afford. What do you have...
+[02:43:36] INFO: Response: I apologize, but I cannot assist with finding or recommending specific properties. My current tools ...
+[02:43:36] INFO: Processing message: This is ridiculous. Your prices are way too high for what you're offering. I've ...
+[02:43:37] INFO: Response: I apologize, but I cannot assist with recommending or recommending prices for properties. My current...
+[02:43:37] INFO: Processing message: I don't want to talk to a bot anymore. Get me a real person NOW. This is very fr...
+[02:43:39] INFO: Response: I apologize, but no listings matching your criteria were found. The tool returned no results....
+[02:43:39] INFO:   Passed: True, Duration: 4553ms
+[02:43:39] INFO: [FRUSTRATED PATH] FP004: User Abandons Mid-Conversation
+[02:43:39] INFO: Session started: b1d8c86b-80ea-4b05-b295-b4f8d8548c41
+[02:43:39] INFO: Processing message: Hi,
+
+Looking for 3-bedroom apartments. What's available?
+
+Patricia Taylor
+patric...
+[02:43:48] INFO: Response: I found 12 available listing(s) for your request:
+
+1.  **Patricia Taylor** (patricia.taylor@work.com...
+[02:43:48] INFO: Processing message: Unit 403 looks okay. What times can I tour tomorrow?
+
+Patricia Taylor
+patricia.t...
+[02:43:52] INFO: Response: The following 1 relevant knowledge base entries were found for your request:
+
+*   **Pet policy:** Ye...
+[02:43:52] INFO: Processing message: Actually, I've decided to look at another property instead. Thank you for your t...
+[02:43:57] INFO: Response: I have retrieved the 1 relevant knowledge base entries for you:
+
+**Pet policy:** Yes! Our fenced dog...
+[02:43:57] INFO:   Passed: True, Duration: 18478ms
+[02:43:57] INFO: [FRUSTRATED PATH] FP005: Date Unavailable - Reschedules
+[02:43:57] INFO: Session started: 29664281-9c10-4e63-b1a3-13a42b69fa1f
+[02:43:57] INFO: Processing message: Hi,
+
+I'd like to tour a 2-bedroom unit on January 1st at noon. What do you have ...
+[02:43:59] INFO: Response: I couldn't find any listings for apartments at the specified addresses. It seems like the search was...
+[02:43:59] INFO: Processing message: **Unit 304** looks good. Is January 1st at 12pm available for a tour?
+
+Kevin Par...
+[02:44:01] INFO: Response: I couldn't find any listings for apartments at the specified addresses. It seems the search was unsu...
+[02:44:01] INFO: Processing message: Oh right, it's New Year's Day. How about January 3rd at 2pm instead?
+
+Kevin Park...
+[02:44:06] INFO: Response: I encountered errors while trying to complete your requests:
+
+1.  **No listings for apartments:** Th...
+[02:44:06] INFO:   Passed: True, Duration: 8265ms
+[02:44:06] INFO: [EDGE CASE] EC001: Partial Contact Info - Progressive Collection
+[02:44:06] INFO: Session started: 5398438e-6596-44e9-9c33-6ff94a11a197
+[02:44:06] INFO: Processing message: I want to book a tour for tomorrow at 3pm to see a 1-bedroom.
+...
+[02:44:13] INFO: Response: The appointment for Alice Smith on Thursday, March 14, 2024, at 3:00 PM has been successfully confir...
+[02:44:13] INFO: Processing message: My name is Alex Thompson.
+...
+[02:44:17] INFO: Response: The lead created for Alex Thompson is:
+**Lead ID:** LEAD-3EAD2C7B
+**Message:** Lead successfully cre...
+[02:44:17] INFO: Processing message: alex.thompson@email.com and my phone is (555) 222-3333
+...
+[02:44:24] INFO: Response: Here are the outcomes for your requests:
+
+1.  **Alex Thompson's Lead:** The lead for Alex Thompson h...
+[02:44:24] INFO:   Passed: True, Duration: 18251ms
+[02:44:24] INFO: [EDGE CASE] EC002: Unusual Date Formats
+[02:44:24] INFO: Session started: d1746ccf-1b66-4526-951b-071d8f8990a5
+[02:44:24] INFO: Processing message: Hi,
+
+Can I schedule a tour for the fifteenth of February, twenty twenty-five at ...
+[02:44:28] INFO: Response: The available time slots for Saturday, February 15, 2025, are:
+
+*   09:00: Available
+*   10:00: Avai...
+[02:44:28] INFO:   Passed: True, Duration: 3826ms
+[02:44:28] INFO: [EDGE CASE] EC003: Phone Number Spoken Format
+[02:44:28] INFO: Session started: 92dff360-5691-4404-a2d7-ea81e5e140bd
+[02:44:28] INFO: Processing message: I want to tour Unit 301 on February 20th at 11am. My name is Chris Taylor.
+...
+[02:44:35] INFO: Response: The appointment for Chris Taylor on February 20, 2024, at 11:00 AM has been successfully confirmed.
+...
+[02:44:35] INFO: Processing message: Email is chris.taylor@domain.org and my cell is five five five, four four four, ...
+[02:44:43] INFO: Response: Here are the outcomes:
+
+**1. Appointment Confirmation:**
+The appointment for Chris Taylor on Februar...
+[02:44:43] INFO:   Passed: True, Duration: 15622ms
+[02:44:43] INFO: [EDGE CASE] EC004: Multi-Intent Single Message
+[02:44:43] INFO: Session started: 9199f1cb-0c12-421a-a008-a814438e5ecf
+[02:44:43] INFO: Processing message: Subject: Multiple Questions
+
+Dear Leasing Team,
+
+I need a 2-bedroom apartment an...
+[02:44:56] INFO: Response: Here are the results for your requests:
+
+**1. Multiple Questions:**
+The appointment has been success...
+[02:44:56] INFO:   Passed: False, Duration: 12320ms
+[02:44:56] INFO: [EDGE CASE] EC005: Budget Below Minimum
+[02:44:56] INFO: Session started: f33e1439-50d7-46ae-b236-6b7985c5042b
+[02:44:56] INFO: Processing message: Hi,
+
+I'm on a very tight budget. Looking for any apartment under $800 per month....
+[02:44:57] INFO: Response: I apologize, but I cannot assist with finding or recommending apartment rental options. My current t...
+[02:44:57] INFO:   Passed: False, Duration: 1664ms
+[02:44:57] INFO: [EDGE CASE] EC006: Flexible Bedroom Range
+[02:44:57] INFO: Session started: 62536538-c07b-4454-8199-b468cd340392
+[02:44:57] INFO: Processing message: Hello,
+
+I'm flexible on size - anywhere from 1 to 3 bedrooms would work for me. ...
+[02:44:59] INFO: Response: I apologize, but I cannot assist with finding or booking property rentals. My current tools are desi...
+[02:44:59] INFO:   Passed: False, Duration: 1906ms
+[02:44:59] INFO: [EDGE CASE] EC007: Very Long Formal Email
+[02:44:59] INFO: Session started: 5318eb7c-dbb0-4e00-abef-8e3c476acc6e
+[02:44:59] INFO: Processing message: Subject: Detailed Apartment Inquiry - Moving from Out of State
+
+Dear Leasing Off...
+[02:45:03] INFO: Response: Here are a few options for your apartment request:
+
+The apartment is available for rent from Februar...
+[02:45:03] INFO:   Passed: True, Duration: 3920ms
+[02:45:03] INFO: [EDGE CASE] EC008: Callback Request Only
+[02:45:03] INFO: Session started: 5f545dc6-3566-4844-95df-7ee5e1deb0f7
+[02:45:03] INFO: Processing message: Hi,
+
+I'm busy right now but interested in apartments. Can someone call me back t...
+[02:45:05] INFO: Response: I apologize, but I cannot assist with contacting or managing personal accounts like Quick Contact. M...
+[02:45:05] INFO:   Passed: False, Duration: 1784ms
+[02:45:05] INFO: [NEGATIVE] NEG001: No Tools on Simple Greeting
+[02:45:05] INFO: Session started: df355467-0171-4c85-91ea-98970c44f5ff
+[02:45:05] INFO: Processing message: Hello!
+
+Just saying hi.
+
+John Smith
+john.smith@email.com
+(555) 111-2222
+...
+[02:45:07] INFO: Response: I apologize, but I cannot assist with greeting or connecting with John Smith. My current tools are d...
+[02:45:07] INFO:   Passed: True, Duration: 1674ms
+[02:45:07] INFO: [NEGATIVE] NEG002: No Tools on Farewell
+[02:45:07] INFO: Session started: cef7e6e7-2e09-42fa-9473-497bcdbd275b
+[02:45:07] INFO: Processing message: Thanks for your help today, goodbye!
+
+Jane Doe
+jane.doe@email.com
+(555) 333-4444...
+[02:45:08] INFO: Response: I apologize, but I cannot assist with connecting Jane Doe with available listings or booking appoint...
+[02:45:08] INFO:   Passed: True, Duration: 1708ms
+[02:45:08] INFO: [NEGATIVE] NEG003: No Tools on Off-Topic Question
+[02:45:08] INFO: Session started: 4192a718-7fce-4911-84b1-21931e17ab27
+[02:45:08] INFO: Processing message: What's the weather like in the city?
+
+Weather Curious
+weather@email.com
+(555) 99...
+[02:45:10] INFO: Response: I apologize, but I cannot assist with checking weather conditions. My current tools are designed for...
+[02:45:10] INFO:   Passed: True, Duration: 1438ms
+[02:45:10] INFO: [NEGATIVE] NEG004: No Booking Tools on Simple Question
+[02:45:10] INFO: Session started: ac677fd2-c595-4996-9495-97961f594a7c
+[02:45:10] INFO: Processing message: How much do 2-bedroom apartments cost here?
+
+Price Checker
+price.check@email.com...
+[02:45:11] INFO: Response: I apologize, but I cannot assist with pricing or checking property costs. My current tools are desig...
+[02:45:11] INFO:   Passed: False, Duration: 1332ms
+[02:45:16] INFO: Testing session start with model: google/functiongemma-270m-it
+[02:45:16] INFO: Session started: 68d4348e-7e05-487b-9b28-b0f25bd0ca7f
+[02:45:16] INFO: Testing empty input handling
+[02:45:17] INFO: Response to empty input: I can assist with property tours and property consultation. To help you with specific requests, could you please specify the date, date, and time you would like to schedule the tour?

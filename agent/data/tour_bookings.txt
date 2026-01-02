@@ -21,3 +21,10 @@
 [2026-01-02T05:50:09.413859] Tour booked for 2026-02-10 at 10:00 by Lisa Park (email: lisa.park.schedule@email.com, phone: (555) 111-3333) - Confirmation: C879555E
 [2026-01-02T05:51:12.044552] Tour booked for 2026-01-03 at 15:00 by Alex Thompson (email: alex.thompson@email.com, phone: (555) 222-3333) - Confirmation: 60278BCC
 [2026-01-02T05:51:49.526945] Tour booked for 2026-02-20 at 11:00 by Chris Taylor (email: chris.taylor@domain.org, phone: 555-444-6666) - Confirmation: 21C410A2
+[2026-01-03T02:38:41.325304] Tour booked for 2025-03-05 at 10:00 by Robert Garcia (email: robert.garcia.family@email.com, phone: 134-655-0123) - Confirmation: AADABD32
+[2026-01-03T02:40:40.442225] Tour booked for 2024-02-20 at 11:00 by Chris Taylor (email: chris.taylor@example.com, phone: 112-555-1234) - Confirmation: 7237455B
+[2026-01-03T02:40:57.386545] Tour booked for 2024-03-15 at 10:00 by Michael Brown (email: michael.brown.multi@email.com, phone: 13-11) - Confirmation: 7033A550
+[2026-01-03T02:42:15.509082] Tour booked for 2025-03-15 at 11:00 by David Chen Chen (email: david.chen.family@email.com, phone: <escape>555) - Confirmation: 92A8C5A2
+[2026-01-03T02:44:08.814742] Tour booked for 2024-03-14 at 14:00 by Alice Smith (email: alice@example.com, phone: 112-255-654-321) - Confirmation: 97986112
+[2026-01-03T02:44:30.883481] Tour booked for 2024-02-20 at 11:00 by Chris Taylor (email: chris.taylor@example.com, phone: 112-555-1234) - Confirmation: 19F983DC
+[2026-01-03T02:44:48.389976] Tour booked for 2024-03-15 at 10:00 by Michael Brown (email: michael.brown.multi@email.com, phone: 13-11) - Confirmation: FAFD8495

@@ -1,0 +1,4 @@
+[2026-01-03T03:06:07.110004] Lead created: LEAD-F15A7EA6 - Alex Thompson (email: alex@example.com, phone: 112-555-1122) - Created: 2026-01-03 03:06:07
+[2026-01-03T03:06:12.060545] Lead already_exists: LEAD-F15A7EA6 - Alex Thompson (email: alex@example.com, phone: 112-555-1122) - Created: 2026-01-03 03:06:07
+[2026-01-03T03:06:31.548686] Lead created: LEAD-F8C5B0BC - Chris Taylor (email: chris.taylor@domain.org, phone: 112-555-1234) - Created: 2026-01-03 03:06:31
+[2026-01-03T03:10:04.535379] Lead created: LEAD-228AF251 - Alex Thompson (email: alex.thompson@email.com, phone: (555) 222-3333) - Created: 2026-01-03 03:10:04

@@ -100,6 +100,55 @@ from .real_agent_executor import (
     ConversationCapture,
 )
 
+# New metrics system imports
+from .test_metrics import (
+    # Enums
+    MetricType,
+    VerificationStatus,
+    # Expected Result Models
+    ExpectedKeywords,
+    ExpectedToolParameters,
+    TurnExpectation,
+    # Turn Result Models
+    KeywordMatchResult,
+    ToolCallEvaluation,
+    FileVerificationResult,
+    TurnMetrics,
+    # Scenario Result Models
+    ScenarioMetrics,
+    # Test Run Models
+    TestRunMetrics,
+    TestRun,
+    # Aggregated Results
+    AggregatedMetrics,
+    TestResultsStore,
+    # Utility Functions
+    check_keywords_in_response,
+    evaluate_tool_call,
+    verify_file_write,
+    save_results_store,
+    load_results_store,
+    get_or_create_store,
+)
+
+from .expected_results import (
+    load_listings,
+    load_knowledge_base,
+    get_listings_by_criteria,
+    generate_listing_search_keywords,
+    generate_availability_keywords,
+    generate_appointment_keywords,
+    generate_lead_keywords,
+    generate_knowledge_search_keywords,
+    generate_turn_expectation_from_yaml,
+    enrich_scenario_with_expectations,
+)
+
+from .test_evaluator import (
+    TestEvaluator,
+    SimpleTestEvaluator,
+)
+
 __all__ = [
     # Enums
     "MatchStrategy",
@@ -173,4 +222,45 @@ __all__ = [
     "ToolCallInterceptor",
     "CapturedToolCall",
     "ConversationCapture",
+    # New Metrics System - Enums
+    "MetricType",
+    "VerificationStatus",
+    # New Metrics System - Expected Results
+    "ExpectedKeywords",
+    "ExpectedToolParameters",
+    "TurnExpectation",
+    # New Metrics System - Turn Results
+    "KeywordMatchResult",
+    "ToolCallEvaluation",
+    "FileVerificationResult",
+    "TurnMetrics",
+    # New Metrics System - Scenario Results
+    "ScenarioMetrics",
+    # New Metrics System - Test Run
+    "TestRunMetrics",
+    "TestRun",
+    # New Metrics System - Aggregated Results
+    "AggregatedMetrics",
+    "TestResultsStore",
+    # New Metrics System - Utility Functions
+    "check_keywords_in_response",
+    "evaluate_tool_call",
+    "verify_file_write",
+    "save_results_store",
+    "load_results_store",
+    "get_or_create_store",
+    # Expected Results Generation
+    "load_listings",
+    "load_knowledge_base",
+    "get_listings_by_criteria",
+    "generate_listing_search_keywords",
+    "generate_availability_keywords",
+    "generate_appointment_keywords",
+    "generate_lead_keywords",
+    "generate_knowledge_search_keywords",
+    "generate_turn_expectation_from_yaml",
+    "enrich_scenario_with_expectations",
+    # Evaluator
+    "TestEvaluator",
+    "SimpleTestEvaluator",
 ]

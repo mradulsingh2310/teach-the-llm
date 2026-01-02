@@ -37,6 +37,27 @@ from agent.tests.framework.models import (
     TestCase,
 )
 
+# Import new metrics system
+from agent.tests.framework.test_metrics import (
+    ExpectedKeywords,
+    ExpectedToolParameters,
+    ScenarioMetrics,
+    TestResultsStore,
+    TestRun,
+    TurnExpectation,
+    TurnMetrics,
+    check_keywords_in_response,
+    evaluate_tool_call,
+    get_or_create_store,
+    save_results_store,
+    verify_file_write,
+)
+from agent.tests.framework.expected_results import (
+    enrich_scenario_with_expectations,
+    generate_turn_expectation_from_yaml,
+)
+from agent.tests.framework.test_evaluator import TestEvaluator
+
 # Path to test scenarios
 SCENARIOS_FILE = AGENT_DIR / "tests" / "fixtures" / "test_scenarios.yaml"
 
@@ -178,8 +199,11 @@ class GemmaAgentTestExecutor:
     """
     Test executor for the HuggingFace Transformers-based GemmaAgent.
 
-    This replaces RealAgentTestExecutor for FunctionGemma tests, using the
-    proper transformers pipeline instead of llama.cpp.
+    This executor:
+    1. Runs test scenarios against the GemmaAgent
+    2. Computes detailed metrics (tool calling %, response %, parameter %)
+    3. Verifies file writes for create_appointment and create_lead
+    4. Stores results in immutable test run storage for UI visualization
     """
 
     def __init__(
@@ -192,6 +216,7 @@ class GemmaAgentTestExecutor:
         max_new_tokens: int = 256,
         device: str = None,
         torch_dtype: str = "auto",
+        persist_results: bool = True,
     ):
         self.model_id = model_id
         self.agent_name = agent_name
@@ -201,6 +226,7 @@ class GemmaAgentTestExecutor:
         self.max_new_tokens = max_new_tokens
         self.device = device
         self.torch_dtype = torch_dtype
+        self.persist_results = persist_results
 
         # Create the agent once (model loading is expensive)
         self.logger.info(f"Initializing GemmaAgent with model: {model_id}")
@@ -215,8 +241,25 @@ class GemmaAgentTestExecutor:
         )
         self.logger.info("GemmaAgent initialized successfully")
 
+        # Initialize test run for metrics tracking
+        self.current_run = TestRun(
+            model_id=model_id,
+            agent_type="gemma_agent",
+            test_suite_name="Property Agent Tests",
+        )
+
+        # Load or create results store
+        if persist_results:
+            self.results_store = get_or_create_store(
+                model_id=model_id.replace("/", "_"),
+                agent_type="gemma_agent",
+                test_suite_name="property_agent_tests",
+            )
+        else:
+            self.results_store = None
+
     def run_test_case(self, test_case: TestCase):
-        """Run a single test case against the GemmaAgent."""
+        """Run a single test case against the GemmaAgent with full metrics."""
         import time
         from dataclasses import dataclass, field
 
@@ -230,6 +273,8 @@ class GemmaAgentTestExecutor:
             final_response: str = ""
             duration_ms: int = 0
             error_message: str = None
+            # New metrics fields
+            scenario_metrics: ScenarioMetrics = None
 
         result = TestResult(
             test_case_id=test_case.id,
@@ -245,43 +290,246 @@ class GemmaAgentTestExecutor:
 
         start_time = time.time()
 
+        # Initialize scenario metrics
+        scenario_metrics = ScenarioMetrics(
+            scenario_id=test_case.id,
+            scenario_name=test_case.name,
+            category=str(test_case.category) if test_case.category else "unknown",
+        )
+
         try:
             # Start session
             session_id = self._agent.start_session()
             self.logger.info(f"Session started: {session_id}")
 
+            # Get expected tools from test case for comparison
+            expected_tools_by_turn = self._get_expected_tools_by_turn(test_case)
+
             # Process each message in the conversation
+            turn_num = 0
             for msg in test_case.conversation:
                 if msg.role == "user":
-                    self.logger.info(f"Processing message: {msg.content[:80]}...")
+                    turn_num += 1
+                    turn_start = time.time()
+
+                    self.logger.info(f"Processing turn {turn_num}: {msg.content[:80]}...")
                     response = self._agent.process_message(msg.content, session_id)
                     result.final_response = response
-                    self.logger.info(f"Response: {response[:100]}...")
 
-            # Get conversation history to extract tool calls
-            history = self._agent.get_conversation_history()
-            for entry in history:
-                if entry.get("role") == "assistant" and "tool_calls" in entry:
-                    for tc in entry["tool_calls"]:
-                        func = tc.get("function", {})
-                        result.actual_tool_calls.append({
-                            "tool_name": func.get("name"),
-                            "input": func.get("arguments", {}),
-                        })
+                    turn_latency = int((time.time() - turn_start) * 1000)
+                    self.logger.info(f"Response ({turn_latency}ms): {response[:100]}...")
+
+                    # Extract tool calls for this turn
+                    turn_tool_calls = self._extract_turn_tool_calls()
+
+                    # Get expected tools for this turn
+                    expected_tools = expected_tools_by_turn.get(turn_num, [])
+                    expected_keywords = self._get_expected_keywords_for_turn(
+                        test_case, turn_num, expected_tools
+                    )
+
+                    # Create turn metrics
+                    turn_metrics = self._evaluate_turn(
+                        turn_number=turn_num,
+                        user_message=msg.content,
+                        response=response,
+                        tool_calls=turn_tool_calls,
+                        expected_tools=expected_tools,
+                        expected_keywords=expected_keywords,
+                        latency_ms=turn_latency,
+                    )
+
+                    scenario_metrics.turn_metrics.append(turn_metrics)
+                    result.actual_tool_calls.extend(turn_tool_calls)
 
             # End session
             self._agent.end_session(session_id)
 
-            # Validate results against expected tools
+            # Calculate scenario aggregates
+            scenario_metrics.calculate_aggregates()
+            result.scenario_metrics = scenario_metrics
+
+            # Validate results against expected tools (original validation)
             result.passed = self._validate_results(test_case, result)
+
+            # Also check metrics-based pass
+            if not scenario_metrics.passed:
+                result.failures.append(
+                    f"Metrics threshold not met: "
+                    f"tool_rate={scenario_metrics.tool_calling_rate:.2f}, "
+                    f"response_rate={scenario_metrics.correct_response_rate:.2f}, "
+                    f"param_rate={scenario_metrics.correct_tool_call_rate:.2f}"
+                )
 
         except Exception as e:
             self.logger.exception("Exception during test execution")
             result.error_message = str(e)
             result.failures.append(f"Exception: {e}")
+            scenario_metrics.errors.append(str(e))
 
         result.duration_ms = int((time.time() - start_time) * 1000)
+        scenario_metrics.total_duration_ms = result.duration_ms
+
+        # Add to current run
+        self.current_run.scenario_results.append(scenario_metrics)
+
+        # Log metrics
+        self.logger.info(
+            f"Turn Metrics - tool_call: {scenario_metrics.tool_calling_rate:.1%}, "
+            f"response: {scenario_metrics.correct_response_rate:.1%}, "
+            f"params: {scenario_metrics.correct_tool_call_rate:.1%}, "
+            f"files: {scenario_metrics.file_verification_rate:.1%}"
+        )
+
         return result
+
+    def _get_expected_tools_by_turn(self, test_case: TestCase) -> dict:
+        """Extract expected tools organized by turn number."""
+        tools_by_turn = {}
+
+        # For simple test case format, expected_tools apply to all turns
+        if test_case.expected_tools:
+            for i, msg in enumerate(test_case.conversation):
+                if msg.role == "assistant" or i == 0:
+                    continue
+                turn_num = sum(1 for m in test_case.conversation[:i+1] if m.role == "user")
+                tools_by_turn[turn_num] = [
+                    ExpectedToolParameters(
+                        tool_name=et.tool_name,
+                        parameters={p.name: p.expected_value for p in et.parameters},
+                        required_params=[p.name for p in et.parameters if p.required],
+                    )
+                    for et in test_case.expected_tools
+                ]
+
+        return tools_by_turn
+
+    def _get_expected_keywords_for_turn(
+        self,
+        test_case: TestCase,
+        turn_num: int,
+        expected_tools: list,
+    ) -> ExpectedKeywords:
+        """Generate expected keywords for a turn based on expected tools."""
+        keywords = ExpectedKeywords()
+
+        for tool in expected_tools:
+            tool_name = tool.tool_name
+            params = tool.parameters
+
+            if tool_name == "get_available_listings":
+                bedrooms = params.get("bedrooms")
+                keywords.required.extend(["unit", "available", "bedroom"])
+                if bedrooms:
+                    for b in (bedrooms if isinstance(bedrooms, list) else [bedrooms]):
+                        if b == 0:
+                            keywords.optional.append("studio")
+
+            elif tool_name == "get_availability":
+                keywords.required.extend(["available", "time", "slot"])
+                keywords.optional.extend(["AM", "PM", "morning", "afternoon"])
+
+            elif tool_name == "create_appointment":
+                keywords.required.extend(["confirmed", "booked", "scheduled"])
+                if "first_name" in params:
+                    keywords.optional.append(params["first_name"])
+
+            elif tool_name == "create_lead":
+                keywords.required.extend(["contact", "information", "saved"])
+
+            elif tool_name == "search_property_knowledge":
+                keywords.required.append("information")
+
+        # Deduplicate
+        keywords.required = list(set(keywords.required))
+        keywords.optional = list(set(keywords.optional))
+
+        return keywords
+
+    def _evaluate_turn(
+        self,
+        turn_number: int,
+        user_message: str,
+        response: str,
+        tool_calls: list,
+        expected_tools: list,
+        expected_keywords: ExpectedKeywords,
+        latency_ms: int,
+    ) -> TurnMetrics:
+        """Evaluate a single turn with detailed metrics."""
+        turn_metrics = TurnMetrics(
+            turn_number=turn_number,
+            user_message=user_message,
+            assistant_response=response,
+            tools_expected=[t.tool_name for t in expected_tools],
+            tools_called=[tc.get("tool_name", "") for tc in tool_calls],
+            latency_ms=latency_ms,
+            raw_tool_calls=tool_calls,
+            expected_tools_detail=expected_tools,
+            expected_keywords_detail=expected_keywords,
+        )
+
+        # Check if expected tools were called
+        expected_set = set(turn_metrics.tools_expected)
+        actual_set = set(turn_metrics.tools_called)
+        turn_metrics.tool_calling_success = expected_set.issubset(actual_set) if expected_set else True
+
+        # Evaluate each expected tool
+        for exp_tool in expected_tools:
+            evaluation = evaluate_tool_call(exp_tool, tool_calls)
+            turn_metrics.tool_evaluations.append(evaluation)
+
+        # Calculate parameter score
+        if turn_metrics.tool_evaluations:
+            called_evals = [e for e in turn_metrics.tool_evaluations if e.was_called]
+            if called_evals:
+                turn_metrics.parameter_score = sum(e.score for e in called_evals) / len(called_evals)
+                turn_metrics.parameters_correct = all(e.parameters_correct for e in called_evals)
+
+        # Evaluate response keywords
+        if expected_keywords.required or expected_keywords.optional:
+            keyword_result = check_keywords_in_response(response, expected_keywords)
+            turn_metrics.keyword_results = keyword_result
+            turn_metrics.response_correct = keyword_result.passed
+        else:
+            turn_metrics.response_correct = True
+
+        # Check file writes for create_appointment and create_lead
+        for tc in tool_calls:
+            tool_name = tc.get("tool_name", "")
+            tool_input = tc.get("input", {})
+
+            if tool_name == "create_appointment" and "email" in tool_input:
+                turn_metrics.file_verification = verify_file_write(
+                    "tour_bookings",
+                    tool_input["email"]
+                )
+            elif tool_name == "create_lead" and "email" in tool_input:
+                turn_metrics.file_verification = verify_file_write(
+                    "leads",
+                    tool_input["email"]
+                )
+
+        return turn_metrics
+
+    def _extract_turn_tool_calls(self) -> list:
+        """Extract tool calls from the agent's last turn."""
+        tool_calls = []
+        history = self._agent.get_conversation_history()
+
+        if history:
+            # Get last assistant message with tool calls
+            for entry in reversed(history):
+                if entry.get("role") == "assistant" and "tool_calls" in entry:
+                    for tc in entry["tool_calls"]:
+                        func = tc.get("function", {})
+                        tool_calls.append({
+                            "tool_name": func.get("name"),
+                            "input": func.get("arguments", {}),
+                        })
+                    break
+
+        return tool_calls
 
     def _validate_results(self, test_case: TestCase, result) -> bool:
         """Validate test results against expected outcomes."""
@@ -307,6 +555,76 @@ class GemmaAgentTestExecutor:
                 passed = False
 
         return passed
+
+    def finalize_run(self) -> TestRun:
+        """Finalize the test run and save results."""
+        self.current_run.finalize()
+
+        self.logger.info("=" * 60)
+        self.logger.info("TEST RUN SUMMARY")
+        self.logger.info("=" * 60)
+        self.logger.info(f"Run ID: {self.current_run.run_id}")
+        self.logger.info(f"Total Scenarios: {self.current_run.metrics.total_scenarios}")
+        self.logger.info(f"Passed: {self.current_run.metrics.passed_scenarios}")
+        self.logger.info(f"Failed: {self.current_run.metrics.failed_scenarios}")
+        self.logger.info(f"Pass Rate: {self.current_run.metrics.overall_pass_rate:.1%}")
+        self.logger.info("-" * 60)
+        self.logger.info("METRICS:")
+        self.logger.info(f"  Tool Calling Rate: {self.current_run.metrics.avg_tool_calling_rate:.1%}")
+        self.logger.info(f"  Correct Response Rate: {self.current_run.metrics.avg_correct_response_rate:.1%}")
+        self.logger.info(f"  Correct Tool Call Rate: {self.current_run.metrics.avg_correct_tool_call_rate:.1%}")
+        self.logger.info(f"  File Verification Rate: {self.current_run.metrics.avg_file_verification_rate:.1%}")
+        self.logger.info("-" * 60)
+
+        # Category breakdown
+        self.logger.info("BY CATEGORY:")
+        for cat, metrics in self.current_run.metrics.category_metrics.items():
+            self.logger.info(
+                f"  {cat}: {metrics.get('passed', 0)}/{metrics.get('total', 0)} "
+                f"({metrics.get('pass_rate', 0):.1%})"
+            )
+
+        self.logger.info("-" * 60)
+
+        # Tool breakdown
+        self.logger.info("BY TOOL:")
+        for tool_name, metrics in self.current_run.metrics.tool_metrics.items():
+            self.logger.info(
+                f"  {tool_name}: called {metrics.get('total_called', 0)}/{metrics.get('total_expected', 0)} "
+                f"(rate: {metrics.get('call_rate', 0):.1%}, param_acc: {metrics.get('param_accuracy', 0):.1%})"
+            )
+
+        self.logger.info("=" * 60)
+
+        # Save to store
+        if self.persist_results and self.results_store:
+            self.results_store.add_run(self.current_run)
+            filepath = save_results_store(self.results_store)
+            self.logger.info(f"Results saved to: {filepath}")
+
+            # Also save UI-ready JSON
+            ui_filepath = filepath.replace(".json", "_ui.json")
+            with open(ui_filepath, "w") as f:
+                json.dump(self.results_store.to_ui_json(), f, indent=2)
+            self.logger.info(f"UI data saved to: {ui_filepath}")
+
+        return self.current_run
+
+    def get_summary(self) -> dict:
+        """Get a summary of the current test run."""
+        return {
+            "run_id": self.current_run.run_id,
+            "total_scenarios": self.current_run.metrics.total_scenarios,
+            "passed": self.current_run.metrics.passed_scenarios,
+            "failed": self.current_run.metrics.failed_scenarios,
+            "pass_rate": f"{self.current_run.metrics.overall_pass_rate:.1%}",
+            "metrics": {
+                "tool_calling_rate": f"{self.current_run.metrics.avg_tool_calling_rate:.1%}",
+                "correct_response_rate": f"{self.current_run.metrics.avg_correct_response_rate:.1%}",
+                "correct_tool_call_rate": f"{self.current_run.metrics.avg_correct_tool_call_rate:.1%}",
+                "file_verification_rate": f"{self.current_run.metrics.avg_file_verification_rate:.1%}",
+            },
+        }
 
 
 # =============================================================================
@@ -529,7 +847,7 @@ def pytest_configure(config):
 def pytest_generate_tests(metafunc):
     """
     Generate parametrized tests from YAML scenarios.
-    
+
     This hook is called for each test function that uses parametrize markers.
     We use it to dynamically load scenarios from YAML.
     """
@@ -537,10 +855,10 @@ def pytest_generate_tests(metafunc):
     if "yaml_scenario" in metafunc.fixturenames:
         try:
             scenarios = load_all_scenarios_from_yaml(SCENARIOS_FILE)
-            
+
             # Filter by category if marker is present
             markers = [m.name for m in metafunc.definition.iter_markers()]
-            
+
             if "golden_path" in markers:
                 scenarios = [s for s in scenarios if s.get("category") == "golden_path"]
             elif "frustrated_path" in markers:
@@ -549,11 +867,34 @@ def pytest_generate_tests(metafunc):
                 scenarios = [s for s in scenarios if s.get("category") == "edge_case"]
             elif "negative" in markers:
                 scenarios = [s for s in scenarios if s.get("category") == "negative"]
-            
+
             # Generate test IDs
             ids = [get_scenario_test_id(s) for s in scenarios]
-            
+
             metafunc.parametrize("yaml_scenario", scenarios, ids=ids)
         except FileNotFoundError:
             # If file not found, skip parametrization
             pass
+
+
+def pytest_sessionfinish(session, exitstatus):
+    """
+    Finalize test run and save metrics at end of test session.
+
+    This hook is called after all tests have completed.
+    """
+    # Try to get the real_agent_executor fixture to finalize results
+    # Note: This is a workaround since fixtures aren't directly accessible here
+    try:
+        # Check if we have test results to finalize
+        for item in session.items:
+            if hasattr(item, 'funcargs'):
+                executor = item.funcargs.get('real_agent_executor')
+                if executor and hasattr(executor, 'finalize_run'):
+                    # Only finalize if there are results
+                    if executor.current_run.scenario_results:
+                        executor.finalize_run()
+                    break
+    except Exception as e:
+        # Don't fail the session if finalization fails
+        print(f"Warning: Could not finalize test results: {e}")

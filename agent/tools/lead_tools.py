@@ -3,16 +3,65 @@ Lead Tools for Property Agent
 
 This module contains tools for creating and managing leads.
 Supports session-level lead tracking to prevent duplicate lead creation.
+Logs all lead creation to leads.txt for tracking and verification.
 """
 
 from typing import Annotated, Dict, Optional
 from langchain_core.tools import tool
 import uuid
+import os
+import warnings
 from datetime import datetime
 
 
 # Session-level lead storage (injected by PropertyAgent)
 _session_leads: Dict[str, Dict] = {}
+
+# Path for leads log file (relative to agent/data/)
+LEADS_LOG_PATH = os.path.join(
+    os.path.dirname(os.path.dirname(__file__)),
+    "data",
+    "leads.txt"
+)
+
+
+def _log_lead_creation(
+    lead_id: str,
+    first_name: str,
+    last_name: str,
+    email: str,
+    phone: str,
+    status: str,
+    timestamp: str
+) -> None:
+    """
+    Log a lead creation to the leads.txt file.
+
+    Creates the data/ directory and file if they don't exist.
+    If logging fails, a warning is issued but no exception is raised.
+    """
+    try:
+        # Get the directory path
+        dir_path = os.path.dirname(LEADS_LOG_PATH)
+
+        # Create directory if it doesn't exist
+        if not os.path.exists(dir_path):
+            os.makedirs(dir_path, exist_ok=True)
+
+        # Generate log timestamp
+        log_timestamp = datetime.now().isoformat()
+
+        # Format the log entry
+        full_name = f"{first_name} {last_name}"
+        log_entry = f"[{log_timestamp}] Lead {status}: {lead_id} - {full_name} (email: {email}, phone: {phone}) - Created: {timestamp}\n"
+
+        # Append to file (creates file if it doesn't exist)
+        with open(LEADS_LOG_PATH, "a") as f:
+            f.write(log_entry)
+
+    except Exception as e:
+        # Log warning but don't raise - lead should still be created
+        warnings.warn(f"Failed to log lead creation to file: {e}")
 
 
 def set_session_leads(leads: Dict[str, Dict]) -> None:
@@ -78,6 +127,18 @@ def create_lead(
     if existing_lead:
         lead_id = existing_lead["lead_id"]
         full_name = f"{existing_lead.get('first_name', '')} {existing_lead.get('last_name', '')}"
+
+        # Log the duplicate attempt
+        _log_lead_creation(
+            lead_id=lead_id,
+            first_name=existing_lead.get('first_name', ''),
+            last_name=existing_lead.get('last_name', ''),
+            email=existing_lead.get('email', ''),
+            phone=existing_lead.get('phone', ''),
+            status="already_exists",
+            timestamp=existing_lead.get("created_at", "")
+        )
+
         return {
             "success": "true",
             "lead_id": lead_id,
@@ -102,6 +163,17 @@ def create_lead(
         "phone": phone,
         "created_at": timestamp,
     }
+
+    # Log the new lead creation to file
+    _log_lead_creation(
+        lead_id=lead_id,
+        first_name=first_name,
+        last_name=last_name,
+        email=email,
+        phone=phone,
+        status="created",
+        timestamp=timestamp
+    )
 
     return {
         "success": "true",

@@ -1,5 +1,5 @@
 """
-GemmaAgent Tests - YAML-Driven Test Suite.
+GemmaAgent Tests - YAML-Driven Test Suite with Comprehensive Metrics.
 
 Run with: pytest tests/ -v
 Run specific categories:
@@ -7,9 +7,15 @@ Run specific categories:
   pytest tests/ -v -m edge_case
   pytest tests/ -v -m negative
 
-Requires: llama-server running with FunctionGemma model
-  Start server: llama-server -hf unsloth/functiongemma-270m-it-GGUF:BF16
-  Default URL: http://localhost:8080/v1
+Metrics tracked:
+  - Tool Calling Rate: % of scenarios where expected tools were called
+  - Correct Response Rate: % of responses containing expected keywords
+  - Correct Tool Call Rate: % of tool calls with correct parameters
+  - File Verification Rate: % of tool calls that correctly wrote to log files
+
+Results are saved to:
+  - gemma/test_results/store_*.json (full results)
+  - gemma/test_results/store_*_ui.json (UI-ready format)
 
 Test scenarios are loaded from: agent/tests/fixtures/test_scenarios.yaml
 """
@@ -26,6 +32,10 @@ from agent.tests.framework.models import (
     MatchStrategy,
     ParameterMatcher,
     TestCase,
+)
+from agent.tests.framework.test_metrics import (
+    ScenarioMetrics,
+    TurnMetrics,
 )
 
 
@@ -159,45 +169,85 @@ class TestYAMLScenarios:
         test_logger: logging.Logger,
     ):
         """
-        Run a single test scenario from YAML.
-        
+        Run a single test scenario from YAML with comprehensive metrics.
+
         This test is parametrized - it runs once per scenario in the YAML file.
+        Metrics tracked per scenario:
+        - Tool calling rate
+        - Correct response rate
+        - Correct tool call rate (parameter accuracy)
+        - File verification rate
         """
         scenario_id = yaml_scenario.get("id", "unknown")
         scenario_name = yaml_scenario.get("name", "Unnamed Scenario")
         category = yaml_scenario.get("category", "unknown")
-        
+
         test_logger.info("=" * 70)
         test_logger.info(f"SCENARIO: [{category}] {scenario_id} - {scenario_name}")
         test_logger.info("=" * 70)
-        
+
         # Parse YAML scenario to TestCase
         test_case = parse_scenario_to_test_case(yaml_scenario)
-        
+
         # Run the test case through the executor
         result = real_agent_executor.run_test_case(test_case)
-        
+
         # Log results
         test_logger.info(f"Result: {'PASSED' if result.passed else 'FAILED'}")
         test_logger.info(f"Duration: {result.duration_ms}ms")
-        
+
         if result.actual_tool_calls:
             test_logger.info(f"Tool calls made: {len(result.actual_tool_calls)}")
             for tc in result.actual_tool_calls:
                 test_logger.info(f"  - {tc.get('tool_name', 'unknown')}: {tc.get('input', {})}")
-        
+
         if result.final_response:
             response_preview = result.final_response[:200]
             test_logger.info(f"Final response: {response_preview}...")
-        
+
+        # Log detailed metrics if available
+        if result.scenario_metrics:
+            metrics = result.scenario_metrics
+            test_logger.info("-" * 50)
+            test_logger.info("METRICS:")
+            test_logger.info(f"  Tool Calling Rate: {metrics.tool_calling_rate:.1%}")
+            test_logger.info(f"  Correct Response Rate: {metrics.correct_response_rate:.1%}")
+            test_logger.info(f"  Correct Tool Call Rate: {metrics.correct_tool_call_rate:.1%}")
+            test_logger.info(f"  File Verification Rate: {metrics.file_verification_rate:.1%}")
+
+            # Log per-turn details
+            for turn in metrics.turn_metrics:
+                test_logger.debug(
+                    f"  Turn {turn.turn_number}: "
+                    f"tools_ok={turn.tool_calling_success}, "
+                    f"response_ok={turn.response_correct}, "
+                    f"params_ok={turn.parameters_correct}, "
+                    f"latency={turn.latency_ms}ms"
+                )
+
+                # Log keyword match details
+                if turn.keyword_results:
+                    kr = turn.keyword_results
+                    if kr.required_missing:
+                        test_logger.debug(f"    Missing keywords: {kr.required_missing}")
+                    if kr.forbidden_found:
+                        test_logger.debug(f"    Forbidden keywords found: {kr.forbidden_found}")
+
+                # Log parameter errors
+                for eval in turn.tool_evaluations:
+                    if eval.parameter_errors:
+                        test_logger.debug(f"    Parameter errors ({eval.tool_name}): {eval.parameter_errors}")
+
         if result.failures:
             test_logger.warning("Failures:")
             for failure in result.failures:
                 test_logger.warning(f"  - {failure}")
-        
+
         if result.error_message:
             test_logger.error(f"Error: {result.error_message}")
-        
+
+        test_logger.info("-" * 50)
+
         # Assert the test passed
         assert result.passed, f"Scenario {scenario_id} failed: {result.failures or result.error_message}"
 
@@ -345,6 +395,56 @@ class TestBasicAgentFunctionality:
         assert helper.session_id is not None
         test_logger.info(f"Session started: {helper.session_id}")
         helper.end()
+
+
+@pytest.mark.integration
+class TestMetricsReport:
+    """Test class to finalize and report metrics at the end of test run."""
+
+    @pytest.fixture(autouse=True)
+    def _run_last(self, request):
+        """Ensure this runs after all other tests."""
+        yield
+
+    def test_finalize_metrics_report(
+        self,
+        real_agent_executor,
+        test_logger: logging.Logger,
+    ):
+        """
+        Finalize the test run and generate metrics report.
+
+        This test should run last to aggregate all scenario results.
+        """
+        # Only finalize if we have results
+        if not real_agent_executor.current_run.scenario_results:
+            test_logger.info("No scenario results to finalize")
+            return
+
+        # Finalize the run
+        test_run = real_agent_executor.finalize_run()
+
+        # Log summary to test output
+        test_logger.info("\n" + "=" * 60)
+        test_logger.info("FINAL TEST RUN METRICS REPORT")
+        test_logger.info("=" * 60)
+
+        summary = real_agent_executor.get_summary()
+
+        test_logger.info(f"Run ID: {summary['run_id']}")
+        test_logger.info(f"Total Scenarios: {summary['total_scenarios']}")
+        test_logger.info(f"Passed: {summary['passed']}")
+        test_logger.info(f"Failed: {summary['failed']}")
+        test_logger.info(f"Pass Rate: {summary['pass_rate']}")
+        test_logger.info("")
+        test_logger.info("Detailed Metrics:")
+        for metric_name, metric_value in summary['metrics'].items():
+            test_logger.info(f"  {metric_name}: {metric_value}")
+
+        test_logger.info("=" * 60)
+
+        # Assert minimum pass rate (optional - can be adjusted)
+        # assert test_run.metrics.overall_pass_rate >= 0.5, "Overall pass rate below 50%"
 
 
 @pytest.mark.integration

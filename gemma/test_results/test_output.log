@@ -1,547 +1,722 @@
-2026-01-03 02:36:19 [    INFO] gemma_agent_test: Test logging initialized for FunctionGemma 270M Instruct
-2026-01-03 02:36:19 [    INFO] gemma_agent_test: Testing 6 tools
-2026-01-03 02:36:19 [    INFO] gemma_agent_test: Verified tool: get_available_listings
-2026-01-03 02:36:19 [    INFO] gemma_agent_test: Verified tool: get_availability
-2026-01-03 02:36:19 [    INFO] gemma_agent_test: Verified tool: create_appointment
-2026-01-03 02:36:19 [    INFO] gemma_agent_test: Verified tool: escalate_conversation
-2026-01-03 02:36:19 [    INFO] gemma_agent_test: Verified tool: search_property_knowledge
-2026-01-03 02:36:19 [    INFO] gemma_agent_test: Verified tool: create_lead
-2026-01-03 02:36:19 [    INFO] gemma_agent_test: Validated schema for: get_available_listings
+2026-01-03 03:01:54 [    INFO] gemma_agent_test: Test logging initialized for FunctionGemma 270M Instruct
+2026-01-03 03:01:54 [    INFO] gemma_agent_test: Testing 6 tools
+2026-01-03 03:01:54 [    INFO] gemma_agent_test: Verified tool: get_available_listings
+2026-01-03 03:01:54 [    INFO] gemma_agent_test: Verified tool: get_availability
+2026-01-03 03:01:54 [    INFO] gemma_agent_test: Verified tool: create_appointment
+2026-01-03 03:01:54 [    INFO] gemma_agent_test: Verified tool: escalate_conversation
+2026-01-03 03:01:54 [    INFO] gemma_agent_test: Verified tool: search_property_knowledge
+2026-01-03 03:01:54 [    INFO] gemma_agent_test: Verified tool: create_lead
+2026-01-03 03:01:54 [    INFO] gemma_agent_test: Validated schema for: get_available_listings
   Properties: ['bedrooms', 'max_rent']
-2026-01-03 02:36:19 [    INFO] gemma_agent_test: Validated schema for: get_availability
+2026-01-03 03:01:54 [    INFO] gemma_agent_test: Validated schema for: get_availability
   Properties: ['date_str']
-2026-01-03 02:36:19 [    INFO] gemma_agent_test: Validated schema for: create_appointment
+2026-01-03 03:01:54 [    INFO] gemma_agent_test: Validated schema for: create_appointment
   Properties: ['appointment_date', 'appointment_start_time', 'first_name', 'email', 'phone', 'last_name']
-2026-01-03 02:36:19 [    INFO] gemma_agent_test: Validated schema for: escalate_conversation
+2026-01-03 03:01:54 [    INFO] gemma_agent_test: Validated schema for: escalate_conversation
   Properties: ['reason_for_escalation']
-2026-01-03 02:36:19 [    INFO] gemma_agent_test: Validated schema for: search_property_knowledge
+2026-01-03 03:01:54 [    INFO] gemma_agent_test: Validated schema for: search_property_knowledge
   Properties: ['search_text', 'category']
-2026-01-03 02:36:19 [    INFO] gemma_agent_test: Validated schema for: create_lead
+2026-01-03 03:01:54 [    INFO] gemma_agent_test: Validated schema for: create_lead
   Properties: ['email', 'phone', 'first_name', 'last_name']
-2026-01-03 02:36:19 [    INFO] gemma_agent_test: Initializing GemmaAgent with model: google/functiongemma-270m-it
-2026-01-03 02:36:19 [   DEBUG] urllib3.connectionpool: Starting new HTTPS connection (1): huggingface.co:443
-2026-01-03 02:36:20 [   DEBUG] urllib3.connectionpool: https://huggingface.co:443 "HEAD /google/functiongemma-270m-it/resolve/main/processor_config.json HTTP/1.1" 404 0
-2026-01-03 02:36:20 [   DEBUG] urllib3.connectionpool: https://huggingface.co:443 "HEAD /google/functiongemma-270m-it/resolve/main/preprocessor_config.json HTTP/1.1" 404 0
-2026-01-03 02:36:20 [   DEBUG] urllib3.connectionpool: https://huggingface.co:443 "HEAD /google/functiongemma-270m-it/resolve/main/video_preprocessor_config.json HTTP/1.1" 404 0
-2026-01-03 02:36:21 [   DEBUG] urllib3.connectionpool: https://huggingface.co:443 "HEAD /google/functiongemma-270m-it/resolve/main/preprocessor_config.json HTTP/1.1" 404 0
-2026-01-03 02:36:21 [   DEBUG] urllib3.connectionpool: https://huggingface.co:443 "HEAD /google/functiongemma-270m-it/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
-2026-01-03 02:36:21 [   DEBUG] urllib3.connectionpool: https://huggingface.co:443 "HEAD /google/functiongemma-270m-it/resolve/main/config.json HTTP/1.1" 200 0
-2026-01-03 02:36:21 [   DEBUG] urllib3.connectionpool: https://huggingface.co:443 "HEAD /google/functiongemma-270m-it/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
-2026-01-03 02:36:21 [   DEBUG] urllib3.connectionpool: https://huggingface.co:443 "GET /api/models/google/functiongemma-270m-it/tree/main/additional_chat_templates?recursive=False&expand=False HTTP/1.1" 404 64
-2026-01-03 02:36:22 [   DEBUG] urllib3.connectionpool: https://huggingface.co:443 "GET /api/models/google/functiongemma-270m-it/tree/main?recursive=True&expand=False HTTP/1.1" 200 2034
-2026-01-03 02:36:23 [   DEBUG] urllib3.connectionpool: https://huggingface.co:443 "GET /api/models/google/functiongemma-270m-it HTTP/1.1" 200 16904
-2026-01-03 02:36:23 [   DEBUG] urllib3.connectionpool: https://huggingface.co:443 "HEAD /google/functiongemma-270m-it/resolve/main/config.json HTTP/1.1" 200 0
-2026-01-03 02:36:24 [   DEBUG] urllib3.connectionpool: https://huggingface.co:443 "HEAD /google/functiongemma-270m-it/resolve/main/generation_config.json HTTP/1.1" 200 0
-2026-01-03 02:36:24 [   DEBUG] urllib3.connectionpool: https://huggingface.co:443 "HEAD /google/functiongemma-270m-it/resolve/main/custom_generate/generate.py HTTP/1.1" 404 0
-2026-01-03 02:36:24 [    INFO] gemma_agent_test: GemmaAgent initialized successfully
-2026-01-03 02:36:24 [    INFO] gemma_agent_test: ======================================================================
-2026-01-03 02:36:24 [    INFO] gemma_agent_test: SCENARIO: [golden_path] GP001 - Formal Email Inquiry to Tour Booking
-2026-01-03 02:36:24 [    INFO] gemma_agent_test: ======================================================================
-2026-01-03 02:36:24 [    INFO] gemma_agent_test: Session started: 50b2bac6-d7af-478a-acb4-76a22e5bc332
-2026-01-03 02:36:24 [    INFO] gemma_agent_test: Processing message: Subject: Inquiry About Leasing Options
+2026-01-03 03:01:54 [    INFO] gemma_agent_test: Initializing GemmaAgent with model: google/functiongemma-270m-it
+2026-01-03 03:01:55 [   DEBUG] urllib3.connectionpool: Starting new HTTPS connection (1): huggingface.co:443
+2026-01-03 03:01:55 [   DEBUG] urllib3.connectionpool: https://huggingface.co:443 "HEAD /google/functiongemma-270m-it/resolve/main/processor_config.json HTTP/1.1" 404 0
+2026-01-03 03:01:55 [   DEBUG] urllib3.connectionpool: https://huggingface.co:443 "HEAD /google/functiongemma-270m-it/resolve/main/preprocessor_config.json HTTP/1.1" 404 0
+2026-01-03 03:01:56 [   DEBUG] urllib3.connectionpool: https://huggingface.co:443 "HEAD /google/functiongemma-270m-it/resolve/main/video_preprocessor_config.json HTTP/1.1" 404 0
+2026-01-03 03:01:56 [   DEBUG] urllib3.connectionpool: https://huggingface.co:443 "HEAD /google/functiongemma-270m-it/resolve/main/preprocessor_config.json HTTP/1.1" 404 0
+2026-01-03 03:01:56 [   DEBUG] urllib3.connectionpool: https://huggingface.co:443 "HEAD /google/functiongemma-270m-it/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2026-01-03 03:01:56 [   DEBUG] urllib3.connectionpool: https://huggingface.co:443 "HEAD /google/functiongemma-270m-it/resolve/main/config.json HTTP/1.1" 200 0
+2026-01-03 03:01:57 [   DEBUG] urllib3.connectionpool: https://huggingface.co:443 "HEAD /google/functiongemma-270m-it/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2026-01-03 03:01:57 [   DEBUG] urllib3.connectionpool: https://huggingface.co:443 "GET /api/models/google/functiongemma-270m-it/tree/main/additional_chat_templates?recursive=False&expand=False HTTP/1.1" 404 64
+2026-01-03 03:01:57 [   DEBUG] urllib3.connectionpool: https://huggingface.co:443 "GET /api/models/google/functiongemma-270m-it/tree/main?recursive=True&expand=False HTTP/1.1" 200 2034
+2026-01-03 03:01:58 [   DEBUG] urllib3.connectionpool: https://huggingface.co:443 "GET /api/models/google/functiongemma-270m-it HTTP/1.1" 200 16904
+2026-01-03 03:01:58 [   DEBUG] urllib3.connectionpool: https://huggingface.co:443 "HEAD /google/functiongemma-270m-it/resolve/main/config.json HTTP/1.1" 200 0
+2026-01-03 03:01:58 [   DEBUG] urllib3.connectionpool: https://huggingface.co:443 "HEAD /google/functiongemma-270m-it/resolve/main/generation_config.json HTTP/1.1" 200 0
+2026-01-03 03:01:59 [   DEBUG] urllib3.connectionpool: https://huggingface.co:443 "HEAD /google/functiongemma-270m-it/resolve/main/custom_generate/generate.py HTTP/1.1" 404 0
+2026-01-03 03:01:59 [    INFO] gemma_agent_test: GemmaAgent initialized successfully
+2026-01-03 03:01:59 [    INFO] gemma_agent_test: ======================================================================
+2026-01-03 03:01:59 [    INFO] gemma_agent_test: SCENARIO: [golden_path] GP001 - Formal Email Inquiry to Tour Booking
+2026-01-03 03:01:59 [    INFO] gemma_agent_test: ======================================================================
+2026-01-03 03:01:59 [    INFO] gemma_agent_test: Session started: ccba7fbd-52de-42f0-8a17-62f16c538661
+2026-01-03 03:01:59 [    INFO] gemma_agent_test: Processing turn 1: Subject: Inquiry About Leasing Options
 
 Dear Leasing Agent,
 
 My name is Michelle...
-2026-01-03 02:36:33 [    INFO] gemma_agent_test: Response: Here are a few options for you:
+2026-01-03 03:02:07 [    INFO] gemma_agent_test: Response (7920ms): Here are a few options for your inquiry:
 
-**Available 2-bedroom units in budget:**
-1.  **2025-04-01:** Afford...
-2026-01-03 02:36:33 [    INFO] gemma_agent_test: Processing message: Hi,
+The apartment I found is a **2-bedroom unit with a budget ...
+2026-01-03 03:02:07 [    INFO] gemma_agent_test: Processing turn 2: Hi,
 
 Thank you for the details on the available units. I would like to schedule ...
-2026-01-03 02:36:41 [    INFO] gemma_agent_test: Response: Here are a few options for you:
+2026-01-03 03:02:13 [    INFO] gemma_agent_test: Response (6707ms): Here are a few options for your inquiry:
 
-**Available 2-bedroom units in budget:**
-1.  **2025-04-01:** Afford...
-2026-01-03 02:36:41 [    INFO] gemma_agent_test: Processing message: Hi,
+The apartment I found is a **2-bedroom unit with a budget ...
+2026-01-03 03:02:13 [    INFO] gemma_agent_test: Processing turn 3: Hi,
 
 I would like to schedule the tour for **Unit 303** at **10:00 AM** on Febru...
-2026-01-03 02:36:51 [    INFO] gemma_agent_test: Response: Here are a few options for you:
+2026-01-03 03:02:21 [    INFO] gemma_agent_test: Response (7714ms): Here are a few options for your inquiry:
 
-**Available 2-bedroom units in budget:**
-1.  **2025-04-01:** Afford...
-2026-01-03 02:36:51 [    INFO] gemma_agent_test: Result: PASSED
-2026-01-03 02:36:51 [    INFO] gemma_agent_test: Duration: 26639ms
-2026-01-03 02:36:51 [    INFO] gemma_agent_test: Tool calls made: 7
-2026-01-03 02:36:51 [    INFO] gemma_agent_test:   - get_available_listings: {'bedrooms': [2], 'max_rent': 2500}
-2026-01-03 02:36:51 [    INFO] gemma_agent_test:   - get_available_listings: {'bedrooms': [2], 'max_rent': 2500}
-2026-01-03 02:36:51 [    INFO] gemma_agent_test:   - get_available_listings: {'bedrooms': [2], 'max_rent': 2500}
-2026-01-03 02:36:51 [    INFO] gemma_agent_test:   - get_available_listings: {'bedrooms': [2], 'max_rent': 2500}
-2026-01-03 02:36:51 [    INFO] gemma_agent_test:   - get_available_listings: {'bedrooms': [2], 'max_rent': 2500}
-2026-01-03 02:36:51 [    INFO] gemma_agent_test:   - get_available_listings: {'bedrooms': [2], 'max_rent': 2500}
-2026-01-03 02:36:51 [    INFO] gemma_agent_test:   - get_available_listings: {'bedrooms': [2], 'max_rent': 2500}
-2026-01-03 02:36:51 [    INFO] gemma_agent_test: Final response: Here are a few options for you:
+The apartment I found is a **2-bedroom unit with a budget ...
+2026-01-03 03:02:21 [    INFO] gemma_agent_test: Turn Metrics - tool_call: 100.0%, response: 100.0%, params: 100.0%, files: 100.0%
+2026-01-03 03:02:21 [    INFO] gemma_agent_test: Result: PASSED
+2026-01-03 03:02:21 [    INFO] gemma_agent_test: Duration: 22370ms
+2026-01-03 03:02:21 [    INFO] gemma_agent_test: Tool calls made: 5
+2026-01-03 03:02:21 [    INFO] gemma_agent_test:   - get_available_listings: {'bedrooms': [2], 'max_rent': 2500}
+2026-01-03 03:02:21 [    INFO] gemma_agent_test:   - get_available_listings: {'bedrooms': [2], 'max_rent': 2500}
+2026-01-03 03:02:21 [    INFO] gemma_agent_test:   - get_available_listings: {'bedrooms': [2], 'max_rent': 2500}
+2026-01-03 03:02:21 [    INFO] gemma_agent_test:   - get_available_listings: {'bedrooms': [2], 'max_rent': 2500}
+2026-01-03 03:02:21 [    INFO] gemma_agent_test:   - get_available_listings: {'bedrooms': [2], 'max_rent': 2500}
+2026-01-03 03:02:21 [    INFO] gemma_agent_test: Final response: Here are a few options for your inquiry:
 
-**Available 2-bedroom units in budget:**
-1.  **2025-04-01:** Affordable 2BR/1BA with classic features and great natural light. Includes parking. Rent: 1800.00, Square ...
-2026-01-03 02:36:51 [    INFO] gemma_agent_test: ======================================================================
-2026-01-03 02:36:51 [    INFO] gemma_agent_test: SCENARIO: [golden_path] GP002 - Pet Owner Studio Search
-2026-01-03 02:36:51 [    INFO] gemma_agent_test: ======================================================================
-2026-01-03 02:36:51 [    INFO] gemma_agent_test: Session started: 41a7328e-e8c6-4432-a8c6-4984c3d3d836
-2026-01-03 02:36:51 [    INFO] gemma_agent_test: Processing message: Hello,
+The apartment I found is a **2-bedroom unit with a budget of up to $2,500** located in 875 square feet:
+
+*   **Floor:** 305
+*   **Bedrooms:** 2
+*   **Bathroom...
+2026-01-03 03:02:21 [    INFO] gemma_agent_test: --------------------------------------------------
+2026-01-03 03:02:21 [    INFO] gemma_agent_test: METRICS:
+2026-01-03 03:02:21 [    INFO] gemma_agent_test:   Tool Calling Rate: 100.0%
+2026-01-03 03:02:21 [    INFO] gemma_agent_test:   Correct Response Rate: 100.0%
+2026-01-03 03:02:21 [    INFO] gemma_agent_test:   Correct Tool Call Rate: 100.0%
+2026-01-03 03:02:21 [    INFO] gemma_agent_test:   File Verification Rate: 100.0%
+2026-01-03 03:02:21 [   DEBUG] gemma_agent_test:   Turn 1: tools_ok=True, response_ok=True, params_ok=False, latency=7920ms
+2026-01-03 03:02:21 [   DEBUG] gemma_agent_test:   Turn 2: tools_ok=True, response_ok=True, params_ok=False, latency=6707ms
+2026-01-03 03:02:21 [   DEBUG] gemma_agent_test:   Turn 3: tools_ok=True, response_ok=True, params_ok=False, latency=7714ms
+2026-01-03 03:02:21 [    INFO] gemma_agent_test: --------------------------------------------------
+2026-01-03 03:02:21 [    INFO] gemma_agent_test: ======================================================================
+2026-01-03 03:02:21 [    INFO] gemma_agent_test: SCENARIO: [golden_path] GP002 - Pet Owner Studio Search
+2026-01-03 03:02:21 [    INFO] gemma_agent_test: ======================================================================
+2026-01-03 03:02:21 [    INFO] gemma_agent_test: Session started: c41ae3a2-6def-4436-97cf-43dabcded105
+2026-01-03 03:02:21 [    INFO] gemma_agent_test: Processing turn 1: Hello,
 
 I have a small dog (a 15-pound Beagle) and am interested in renting at y...
-2026-01-03 02:36:53 [    INFO] gemma_agent_test: Response: I apologize, but I cannot assist with providing pet policy information or details about pet deposits...
-2026-01-03 02:36:53 [    INFO] gemma_agent_test: Processing message: That sounds reasonable! Do you have any pet-friendly studio apartments available...
-2026-01-03 02:36:55 [    INFO] gemma_agent_test: Response: I apologize, but I encountered an error while trying to fetch available apartment listings. The vali...
-2026-01-03 02:36:55 [    INFO] gemma_agent_test: Processing message: **Unit 102** looks perfect since it's pet-friendly and has in-unit laundry. What...
-2026-01-03 02:36:59 [    INFO] gemma_agent_test: Response: The available time slots for Thursday, February 20, 2025, are:
+2026-01-03 03:02:23 [    INFO] gemma_agent_test: Response (1670ms): I am sorry, but I cannot assist with recommending or assisting with pet policy information. My curre...
+2026-01-03 03:02:23 [    INFO] gemma_agent_test: Processing turn 2: That sounds reasonable! Do you have any pet-friendly studio apartments available...
+2026-01-03 03:02:25 [    INFO] gemma_agent_test: Response (2306ms): I apologize, but I encountered an error while trying to fetch available apartment listings. The vali...
+2026-01-03 03:02:25 [    INFO] gemma_agent_test: Processing turn 3: **Unit 102** looks perfect since it's pet-friendly and has in-unit laundry. What...
+2026-01-03 03:02:30 [    INFO] gemma_agent_test: Response (4669ms): The available times on February 20, 2025, are:
 
-*   **09:00**: 09:00
-*   **10:00**: ...
-2026-01-03 02:36:59 [    INFO] gemma_agent_test: Processing message: Please book me for 2:00 PM on February 20, 2025.
+*   **09:00:** 09:00
+*   **10:00:** 10:00
+*   **13:0...
+2026-01-03 03:02:30 [    INFO] gemma_agent_test: Processing turn 4: Please book me for 2:00 PM on February 20, 2025.
 
 Thanks,
 Thomas Rodriguez
 thoma...
-2026-01-03 02:37:04 [    INFO] gemma_agent_test: Response: I apologize, but I was unable to complete the booking request. The attempt to create the appointment...
-2026-01-03 02:37:04 [    INFO] gemma_agent_test: Result: PASSED
-2026-01-03 02:37:04 [    INFO] gemma_agent_test: Duration: 12912ms
-2026-01-03 02:37:04 [    INFO] gemma_agent_test: Tool calls made: 3
-2026-01-03 02:37:04 [    INFO] gemma_agent_test:   - get_available_listings: {'bedrooms': '[1', 'max_rent': 1400}
-2026-01-03 02:37:04 [    INFO] gemma_agent_test:   - get_availability: {'date_str': '2025-02-20'}
-2026-01-03 02:37:04 [    INFO] gemma_agent_test:   - create_appointment: {'appointment_date': '2025-02-20', 'appointment_start_time': '14:00', 'first_name': 'Thomas', 'last_name': 'Rodriguez', 'phone': '+5559876543@email.com'}
-2026-01-03 02:37:04 [    INFO] gemma_agent_test: Final response: I apologize, but I was unable to complete the booking request. The attempt to create the appointment failed due to a missing required positional argument: 'email'....
-2026-01-03 02:37:04 [    INFO] gemma_agent_test: ======================================================================
-2026-01-03 02:37:04 [    INFO] gemma_agent_test: SCENARIO: [golden_path] GP003 - Large Family 4BR Search with Amenities
-2026-01-03 02:37:04 [    INFO] gemma_agent_test: ======================================================================
-2026-01-03 02:37:04 [    INFO] gemma_agent_test: Session started: 8e8ede65-9e85-41a2-8b47-49017be44123
-2026-01-03 02:37:04 [    INFO] gemma_agent_test: Processing message: Subject: Family Apartment Inquiry
+2026-01-03 03:02:34 [    INFO] gemma_agent_test: Response (4186ms): I apologize, but I was unable to complete the booking request. The attempt to create the appointment...
+2026-01-03 03:02:34 [    INFO] gemma_agent_test: Turn Metrics - tool_call: 100.0%, response: 100.0%, params: 100.0%, files: 100.0%
+2026-01-03 03:02:34 [    INFO] gemma_agent_test: Result: PASSED
+2026-01-03 03:02:34 [    INFO] gemma_agent_test: Duration: 12849ms
+2026-01-03 03:02:34 [    INFO] gemma_agent_test: Tool calls made: 3
+2026-01-03 03:02:34 [    INFO] gemma_agent_test:   - get_available_listings: {'bedrooms': '[1', 'max_rent': 1400}
+2026-01-03 03:02:34 [    INFO] gemma_agent_test:   - get_availability: {'date_str': '2025-02-20'}
+2026-01-03 03:02:34 [    INFO] gemma_agent_test:   - create_appointment: {'appointment_date': '2025-02-20', 'appointment_start_time': '14:00', 'first_name': 'Thomas', 'last_name': 'Rodriguez', 'phone': 5559876543}
+2026-01-03 03:02:34 [    INFO] gemma_agent_test: Final response: I apologize, but I was unable to complete the booking request. The attempt to create the appointment failed due to a missing required positional argument: 'email'....
+2026-01-03 03:02:34 [    INFO] gemma_agent_test: --------------------------------------------------
+2026-01-03 03:02:34 [    INFO] gemma_agent_test: METRICS:
+2026-01-03 03:02:34 [    INFO] gemma_agent_test:   Tool Calling Rate: 100.0%
+2026-01-03 03:02:34 [    INFO] gemma_agent_test:   Correct Response Rate: 100.0%
+2026-01-03 03:02:34 [    INFO] gemma_agent_test:   Correct Tool Call Rate: 100.0%
+2026-01-03 03:02:34 [    INFO] gemma_agent_test:   File Verification Rate: 100.0%
+2026-01-03 03:02:34 [   DEBUG] gemma_agent_test:   Turn 1: tools_ok=True, response_ok=True, params_ok=False, latency=1670ms
+2026-01-03 03:02:34 [   DEBUG] gemma_agent_test:   Turn 2: tools_ok=True, response_ok=True, params_ok=False, latency=2306ms
+2026-01-03 03:02:34 [   DEBUG] gemma_agent_test:   Turn 3: tools_ok=True, response_ok=True, params_ok=False, latency=4669ms
+2026-01-03 03:02:34 [   DEBUG] gemma_agent_test:   Turn 4: tools_ok=True, response_ok=True, params_ok=False, latency=4186ms
+2026-01-03 03:02:34 [    INFO] gemma_agent_test: --------------------------------------------------
+2026-01-03 03:02:34 [    INFO] gemma_agent_test: ======================================================================
+2026-01-03 03:02:34 [    INFO] gemma_agent_test: SCENARIO: [golden_path] GP003 - Large Family 4BR Search with Amenities
+2026-01-03 03:02:34 [    INFO] gemma_agent_test: ======================================================================
+2026-01-03 03:02:34 [    INFO] gemma_agent_test: Session started: 59062e24-5a4f-4e81-a432-8428bd67644d
+2026-01-03 03:02:34 [    INFO] gemma_agent_test: Processing turn 1: Subject: Family Apartment Inquiry
 
 Dear Leasing Team,
 
 My family and I are looki...
-2026-01-03 02:37:05 [    INFO] gemma_agent_test: Response: I've found no listings matching your criteria. It looks like the search yielded only one result: 0 l...
-2026-01-03 02:37:05 [    INFO] gemma_agent_test: Processing message: That's great to hear! Please show me what 4-bedroom apartments you have availabl...
-2026-01-03 02:37:14 [    INFO] gemma_agent_test: Response: Here are a few options for your family:
+2026-01-03 03:02:36 [    INFO] gemma_agent_test: Response (1947ms): I've found no listings matching your criteria. It looks like the search yielded only 0 listings. Ple...
+2026-01-03 03:02:36 [    INFO] gemma_agent_test: Processing turn 2: That's great to hear! Please show me what 4-bedroom apartments you have availabl...
+2026-01-03 03:02:45 [    INFO] gemma_agent_test: Response (8644ms): I have found 7 available listing(s) for your request:
 
-I found 7 available listing(s):
+1.  **503:** A rare 4BR/2BA with plenty of sp...
+2026-01-03 03:02:45 [    INFO] gemma_agent_test: Processing turn 3: **Unit 505** looks amazing for our family - the 4BR/3BA with city views would be...
+2026-01-03 03:02:50 [    INFO] gemma_agent_test: Response (5953ms): Here are the general property information available:
 
-1.  **Rare 4BR/2BA with pl...
-2026-01-03 02:37:14 [    INFO] gemma_agent_test: Processing message: **Unit 505** looks amazing for our family - the 4BR/3BA with city views would be...
-2026-01-03 02:37:20 [    INFO] gemma_agent_test: Response: I apologize, but I was unable to retrieve the details for any of the available listings. The tool I ...
-2026-01-03 02:37:20 [    INFO] gemma_agent_test: Processing message: 11:00 AM works perfectly. Please book the tour for that time.
+No exact matches were found for your query.
+
+T...
+2026-01-03 03:02:50 [    INFO] gemma_agent_test: Processing turn 4: 11:00 AM works perfectly. Please book the tour for that time.
 
 Thank you,
 David ...
-2026-01-03 02:37:26 [    INFO] gemma_agent_test: Response: I apologize, but I was unable to retrieve the details for any of the available listings. The tool I ...
-2026-01-03 02:37:26 [    INFO] gemma_agent_test: Result: PASSED
-2026-01-03 02:37:26 [    INFO] gemma_agent_test: Duration: 22430ms
-2026-01-03 02:37:26 [    INFO] gemma_agent_test: Tool calls made: 5
-2026-01-03 02:37:26 [    INFO] gemma_agent_test:   - get_available_listings: {'bedrooms': [4], 'max_rent': 4}
-2026-01-03 02:37:26 [    INFO] gemma_agent_test:   - get_available_listings: {'bedrooms': [4], 'max_rent': 4500}
-2026-01-03 02:37:26 [    INFO] gemma_agent_test:   - get_available_listings: {'bedrooms': [4], 'max_rent': 4500}
-2026-01-03 02:37:26 [    INFO] gemma_agent_test:   - create_appointment: {'appointment_date': '2025-03-01', 'appointment_start_time': '10:00', 'first_name': 'David Chen', 'last_name': 'Chen', 'phone': '13-111-0987', 'email': 'david.chen.family@email.com', 'property_date': '2025-02-01'}
-2026-01-03 02:37:26 [    INFO] gemma_agent_test:   - create_appointment: {'appointment_date': '2025-03-11', 'appointment_start_time': '11:00', 'first_name': 'David Chen', 'last_name': 'Chen', 'email': 'david.chen.family@email.com', 'phone': '13-111-0987', 'property_date': '2025-03-11'}
-2026-01-03 02:37:26 [    INFO] gemma_agent_test: Final response: I apologize, but I was unable to retrieve the details for any of the available listings. The tool I use to search for property information returned an unexpected keyword argument ("property_date")....
-2026-01-03 02:37:26 [    INFO] gemma_agent_test: ======================================================================
-2026-01-03 02:37:26 [    INFO] gemma_agent_test: SCENARIO: [golden_path] GP004 - Lead Creation Then Listing Search
-2026-01-03 02:37:26 [    INFO] gemma_agent_test: ======================================================================
-2026-01-03 02:37:26 [    INFO] gemma_agent_test: Session started: 17f741a7-d564-4ded-af7c-61dc378a3a72
-2026-01-03 02:37:26 [    INFO] gemma_agent_test: Processing message: Hi there,
+2026-01-03 03:02:59 [    INFO] gemma_agent_test: Response (8295ms): Here are the details for your booking:
+
+**1. Appointment Confirmation:**
+*   **Date:** Tuesday, Marc...
+2026-01-03 03:02:59 [    INFO] gemma_agent_test: Turn Metrics - tool_call: 100.0%, response: 100.0%, params: 100.0%, files: 100.0%
+2026-01-03 03:02:59 [    INFO] gemma_agent_test: Result: PASSED
+2026-01-03 03:02:59 [    INFO] gemma_agent_test: Duration: 24859ms
+2026-01-03 03:02:59 [    INFO] gemma_agent_test: Tool calls made: 4
+2026-01-03 03:02:59 [    INFO] gemma_agent_test:   - get_available_listings: {'bedrooms': [4], 'max_rent': 4}
+2026-01-03 03:02:59 [    INFO] gemma_agent_test:   - get_available_listings: {'bedrooms': [4], 'max_rent': 4500}
+2026-01-03 03:02:59 [    INFO] gemma_agent_test:   - search_property_knowledge: {'category': 'rent_payment', 'search_text': '555 321-0987'}
+2026-01-03 03:02:59 [    INFO] gemma_agent_test:   - create_appointment: {'appointment_date': '2025-03-11', 'appointment_start_time': '11:00', 'first_name': 'David Chen', 'last_name': 'Chen', 'email': 'david.chen.family@email.com', 'phone': '111-111'}
+2026-01-03 03:02:59 [    INFO] gemma_agent_test: Final response: Here are the details for your booking:
+
+**1. Appointment Confirmation:**
+*   **Date:** Tuesday, March 11, 2025
+*   **Time:** 11:00 AM
+*   **Duration:** 30 minutes
+*   **Format:** 11:00 AM
+*   **Confir...
+2026-01-03 03:02:59 [    INFO] gemma_agent_test: --------------------------------------------------
+2026-01-03 03:02:59 [    INFO] gemma_agent_test: METRICS:
+2026-01-03 03:02:59 [    INFO] gemma_agent_test:   Tool Calling Rate: 100.0%
+2026-01-03 03:02:59 [    INFO] gemma_agent_test:   Correct Response Rate: 100.0%
+2026-01-03 03:02:59 [    INFO] gemma_agent_test:   Correct Tool Call Rate: 100.0%
+2026-01-03 03:02:59 [    INFO] gemma_agent_test:   File Verification Rate: 100.0%
+2026-01-03 03:02:59 [   DEBUG] gemma_agent_test:   Turn 1: tools_ok=True, response_ok=True, params_ok=False, latency=1947ms
+2026-01-03 03:02:59 [   DEBUG] gemma_agent_test:   Turn 2: tools_ok=True, response_ok=True, params_ok=False, latency=8644ms
+2026-01-03 03:02:59 [   DEBUG] gemma_agent_test:   Turn 3: tools_ok=True, response_ok=True, params_ok=False, latency=5953ms
+2026-01-03 03:02:59 [   DEBUG] gemma_agent_test:   Turn 4: tools_ok=True, response_ok=True, params_ok=False, latency=8295ms
+2026-01-03 03:02:59 [    INFO] gemma_agent_test: --------------------------------------------------
+2026-01-03 03:02:59 [    INFO] gemma_agent_test: ======================================================================
+2026-01-03 03:02:59 [    INFO] gemma_agent_test: SCENARIO: [golden_path] GP004 - Lead Creation Then Listing Search
+2026-01-03 03:02:59 [    INFO] gemma_agent_test: ======================================================================
+2026-01-03 03:02:59 [    INFO] gemma_agent_test: Session started: 16e43f2b-2b52-45e3-8cfc-4799e3b56851
+2026-01-03 03:02:59 [    INFO] gemma_agent_test: Processing turn 1: Hi there,
 
 I'm just starting my apartment search and would like to receive updat...
-2026-01-03 02:37:28 [    INFO] gemma_agent_test: Response: I apologize, but I cannot assist with managing contact information or updating contacts. My current ...
-2026-01-03 02:37:28 [    INFO] gemma_agent_test: Processing message: Thank you! While I have you, what 3-bedroom apartments do you have available und...
-2026-01-03 02:37:35 [    INFO] gemma_agent_test: Response: Here are a few options for your apartment search:
+2026-01-03 03:03:00 [    INFO] gemma_agent_test: Response (1622ms): I apologize, but I cannot assist with managing contacts or updating contact information. My current ...
+2026-01-03 03:03:00 [    INFO] gemma_agent_test: Processing turn 2: Thank you! While I have you, what 3-bedroom apartments do you have available und...
+2026-01-03 03:03:08 [    INFO] gemma_agent_test: Response (7763ms): I have successfully found 8 available listing(s) for your apartment search. Here are the top 5 resul...
+2026-01-03 03:03:08 [    INFO] gemma_agent_test: Turn Metrics - tool_call: 100.0%, response: 100.0%, params: 100.0%, files: 100.0%
+2026-01-03 03:03:08 [    INFO] gemma_agent_test: Result: PASSED
+2026-01-03 03:03:08 [    INFO] gemma_agent_test: Duration: 9404ms
+2026-01-03 03:03:08 [    INFO] gemma_agent_test: Tool calls made: 1
+2026-01-03 03:03:08 [    INFO] gemma_agent_test:   - get_available_listings: {'bedrooms': [3], 'max_rent': 3000}
+2026-01-03 03:03:08 [    INFO] gemma_agent_test: Final response: I have successfully found 8 available listing(s) for your apartment search. Here are the top 5 results:
 
-I found 8 available listing(s):
-
-1.  **410:** Val...
-2026-01-03 02:37:35 [    INFO] gemma_agent_test: Result: PASSED
-2026-01-03 02:37:35 [    INFO] gemma_agent_test: Duration: 9049ms
-2026-01-03 02:37:35 [    INFO] gemma_agent_test: Tool calls made: 1
-2026-01-03 02:37:35 [    INFO] gemma_agent_test:   - get_available_listings: {'bedrooms': [3], 'max_rent': 3000}
-2026-01-03 02:37:35 [    INFO] gemma_agent_test: Final response: Here are a few options for your apartment search:
-
-I found 8 available listing(s):
-
-1.  **410:** Value-priced 3BR/2BA with updated kitchen and great closet space. Available from 2025-04-01.
-2.  **405:...
-2026-01-03 02:37:35 [    INFO] gemma_agent_test: ======================================================================
-2026-01-03 02:37:35 [    INFO] gemma_agent_test: SCENARIO: [golden_path] GP005 - Quick 1BR Search and Same-Day Booking
-2026-01-03 02:37:35 [    INFO] gemma_agent_test: ======================================================================
-2026-01-03 02:37:35 [    INFO] gemma_agent_test: Session started: 9ba689e4-e1a1-42e8-8724-9878f048f287
-2026-01-03 02:37:35 [    INFO] gemma_agent_test: Processing message: Hi,
+1.  **410:** Value-priced 3BR/2BA with updated kitchen and great closet space. Available for re...
+2026-01-03 03:03:08 [    INFO] gemma_agent_test: --------------------------------------------------
+2026-01-03 03:03:08 [    INFO] gemma_agent_test: METRICS:
+2026-01-03 03:03:08 [    INFO] gemma_agent_test:   Tool Calling Rate: 100.0%
+2026-01-03 03:03:08 [    INFO] gemma_agent_test:   Correct Response Rate: 100.0%
+2026-01-03 03:03:08 [    INFO] gemma_agent_test:   Correct Tool Call Rate: 100.0%
+2026-01-03 03:03:08 [    INFO] gemma_agent_test:   File Verification Rate: 100.0%
+2026-01-03 03:03:08 [   DEBUG] gemma_agent_test:   Turn 1: tools_ok=True, response_ok=True, params_ok=False, latency=1622ms
+2026-01-03 03:03:08 [   DEBUG] gemma_agent_test:   Turn 2: tools_ok=True, response_ok=True, params_ok=False, latency=7763ms
+2026-01-03 03:03:08 [    INFO] gemma_agent_test: --------------------------------------------------
+2026-01-03 03:03:08 [    INFO] gemma_agent_test: ======================================================================
+2026-01-03 03:03:08 [    INFO] gemma_agent_test: SCENARIO: [golden_path] GP005 - Quick 1BR Search and Same-Day Booking
+2026-01-03 03:03:08 [    INFO] gemma_agent_test: ======================================================================
+2026-01-03 03:03:08 [    INFO] gemma_agent_test: Session started: b78c36c5-138b-44c6-996c-6b613e955f24
+2026-01-03 03:03:08 [    INFO] gemma_agent_test: Processing turn 1: Hi,
 
 I need a 1-bedroom apartment ASAP. Budget is $1,700/month max. What do you ...
-2026-01-03 02:37:44 [    INFO] gemma_agent_test: Response: Here are a few options for your stay:
+2026-01-03 03:03:17 [    INFO] gemma_agent_test: Response (8606ms): Here are a few options for your stay:
 
 Sarah Kim
 sarah.kim.urgent@email.com
 (555) 444-1212
 
 I found ...
-2026-01-03 02:37:44 [    INFO] gemma_agent_test: Processing message: Perfect! **Unit 205** with the balcony looks great. What times are available tom...
-2026-01-03 02:37:49 [    INFO] gemma_agent_test: Response: I apologize, but I was unable to complete your request.
-
-The attempt to search for available apartme...
-2026-01-03 02:37:49 [    INFO] gemma_agent_test: Processing message: 3:00 PM works for me. Please book that time slot.
+2026-01-03 03:03:17 [    INFO] gemma_agent_test: Processing turn 2: Perfect! **Unit 205** with the balcony looks great. What times are available tom...
+2026-01-03 03:03:20 [    INFO] gemma_agent_test: Response (3442ms): I apologize, but I was unable to retrieve the available listings for unit 205. The request to search...
+2026-01-03 03:03:20 [    INFO] gemma_agent_test: Processing turn 3: 3:00 PM works for me. Please book that time slot.
 
 Sarah Kim
 sarah.kim.urgent@em...
-2026-01-03 02:37:53 [    INFO] gemma_agent_test: Response: I apologize, but I was unable to complete your request. The attempt to book a property tour appointm...
-2026-01-03 02:37:53 [    INFO] gemma_agent_test: Result: PASSED
-2026-01-03 02:37:53 [    INFO] gemma_agent_test: Duration: 18415ms
-2026-01-03 02:37:53 [    INFO] gemma_agent_test: Tool calls made: 4
-2026-01-03 02:37:53 [    INFO] gemma_agent_test:   - get_available_listings: {'bedrooms': [1], 'max_rent': 1700}
-2026-01-03 02:37:53 [    INFO] gemma_agent_test:   - get_available_listings: {'bedrooms': [205], 'max_rent': 1700}
-2026-01-03 02:37:53 [    INFO] gemma_agent_test:   - create_appointment: {'appointment_date': '2025-02-21', 'appointment_start_time': '10:00', 'first_name': 'Sarah', 'last_name': 'Kim', 'phone': '555-444-1212'}
-2026-01-03 02:37:53 [    INFO] gemma_agent_test:   - create_appointment: {'appointment_date': '2025-02-16', 'appointment_start_time': '14:00', 'first_name': 'Sarah', 'last_name': 'Kim', 'phone': '555-444-1212'}
-2026-01-03 02:37:53 [    INFO] gemma_agent_test: Final response: I apologize, but I was unable to complete your request. The attempt to book a property tour appointment failed.
+2026-01-03 03:03:28 [    INFO] gemma_agent_test: Response (7708ms): Here are the details for your appointment:
 
-Could you please try your search again?...
-2026-01-03 02:37:53 [    INFO] gemma_agent_test: ======================================================================
-2026-01-03 02:37:53 [    INFO] gemma_agent_test: SCENARIO: [golden_path] GP006 - Luxury 5BR Penthouse Inquiry
-2026-01-03 02:37:53 [    INFO] gemma_agent_test: ======================================================================
-2026-01-03 02:37:53 [    INFO] gemma_agent_test: Session started: 6e6b2c64-81ea-4684-8b85-3e274c56f4e3
-2026-01-03 02:37:53 [    INFO] gemma_agent_test: Processing message: Subject: Luxury Penthouse Availability
+**Appointment Confirmation:**
+*   **Date:** Wednesday, F...
+2026-01-03 03:03:28 [    INFO] gemma_agent_test: Turn Metrics - tool_call: 100.0%, response: 100.0%, params: 100.0%, files: 100.0%
+2026-01-03 03:03:28 [    INFO] gemma_agent_test: Result: PASSED
+2026-01-03 03:03:28 [    INFO] gemma_agent_test: Duration: 19775ms
+2026-01-03 03:03:28 [    INFO] gemma_agent_test: Tool calls made: 3
+2026-01-03 03:03:28 [    INFO] gemma_agent_test:   - get_available_listings: {'bedrooms': [1], 'max_rent': 1700}
+2026-01-03 03:03:28 [    INFO] gemma_agent_test:   - get_available_listings: {'bedrooms': [205], 'max_rent': 1700, 'balcony': True, 'bathrooms': 1, 'available_date': '2025-02-15'}
+2026-01-03 03:03:28 [    INFO] gemma_agent_test:   - create_appointment: {'appointment_date': '2025-02-19', 'appointment_start_time': '15:00', 'first_name': 'Sarah Kim', 'last_name': 'Kim', 'email': 'sarah.kim.urgent@email.com', 'phone': '555-444-1212'}
+2026-01-03 03:03:28 [    INFO] gemma_agent_test: Final response: Here are the details for your appointment:
+
+**Appointment Confirmation:**
+*   **Date:** Wednesday, February 19, 2025
+*   **Time:** 3:00 PM
+*   **Duration:** 30 minutes
+*   **Format:** Wednesday, Febru...
+2026-01-03 03:03:28 [    INFO] gemma_agent_test: --------------------------------------------------
+2026-01-03 03:03:28 [    INFO] gemma_agent_test: METRICS:
+2026-01-03 03:03:28 [    INFO] gemma_agent_test:   Tool Calling Rate: 100.0%
+2026-01-03 03:03:28 [    INFO] gemma_agent_test:   Correct Response Rate: 100.0%
+2026-01-03 03:03:28 [    INFO] gemma_agent_test:   Correct Tool Call Rate: 100.0%
+2026-01-03 03:03:28 [    INFO] gemma_agent_test:   File Verification Rate: 100.0%
+2026-01-03 03:03:28 [   DEBUG] gemma_agent_test:   Turn 1: tools_ok=True, response_ok=True, params_ok=False, latency=8606ms
+2026-01-03 03:03:28 [   DEBUG] gemma_agent_test:   Turn 2: tools_ok=True, response_ok=True, params_ok=False, latency=3442ms
+2026-01-03 03:03:28 [   DEBUG] gemma_agent_test:   Turn 3: tools_ok=True, response_ok=True, params_ok=False, latency=7708ms
+2026-01-03 03:03:28 [    INFO] gemma_agent_test: --------------------------------------------------
+2026-01-03 03:03:28 [    INFO] gemma_agent_test: ======================================================================
+2026-01-03 03:03:28 [    INFO] gemma_agent_test: SCENARIO: [golden_path] GP006 - Luxury 5BR Penthouse Inquiry
+2026-01-03 03:03:28 [    INFO] gemma_agent_test: ======================================================================
+2026-01-03 03:03:28 [    INFO] gemma_agent_test: Session started: bcd9884a-da8e-4b25-aef1-3b12fd45fb10
+2026-01-03 03:03:28 [    INFO] gemma_agent_test: Processing turn 1: Subject: Luxury Penthouse Availability
 
 Dear Leasing Office,
 
 I am relocating fo...
-2026-01-03 02:38:02 [    INFO] gemma_agent_test: Response: Here are a few options for your luxury penthouse request:
+2026-01-03 03:03:30 [    INFO] gemma_agent_test: Response (1945ms): I apologize, but I encountered an error while trying to fetch available listings. The validation for...
+2026-01-03 03:03:30 [    INFO] gemma_agent_test: Processing turn 2: **Unit 507** with the private roof deck is exactly what I'm looking for. The $5,...
+2026-01-03 03:03:33 [    INFO] gemma_agent_test: Response (2665ms): I apologize, but I encountered an error while trying to fetch available listings. The validation for...
+2026-01-03 03:03:33 [    INFO] gemma_agent_test: Turn Metrics - tool_call: 100.0%, response: 100.0%, params: 100.0%, files: 100.0%
+2026-01-03 03:03:33 [    INFO] gemma_agent_test: Result: PASSED
+2026-01-03 03:03:33 [    INFO] gemma_agent_test: Duration: 4634ms
+2026-01-03 03:03:33 [    INFO] gemma_agent_test: Tool calls made: 2
+2026-01-03 03:03:33 [    INFO] gemma_agent_test:   - get_available_listings: {'bedrooms': 5}
+2026-01-03 03:03:33 [    INFO] gemma_agent_test:   - get_available_listings: {'bedrooms': '[0', 'max_rent': 5500}
+2026-01-03 03:03:33 [    INFO] gemma_agent_test: Final response: I apologize, but I encountered an error while trying to fetch available listings. The validation for the `get_available_listings` function failed.
 
-**Available Listings:**
-1.  **506:** A ra...
-2026-01-03 02:38:02 [    INFO] gemma_agent_test: Processing message: **Unit 507** with the private roof deck is exactly what I'm looking for. The $5,...
-2026-01-03 02:38:06 [    INFO] gemma_agent_test: Response: I apologize, but I was unable to complete the booking request. The attempt to create the appointment...
-2026-01-03 02:38:06 [    INFO] gemma_agent_test: Result: PASSED
-2026-01-03 02:38:06 [    INFO] gemma_agent_test: Duration: 13069ms
-2026-01-03 02:38:06 [    INFO] gemma_agent_test: Tool calls made: 2
-2026-01-03 02:38:06 [    INFO] gemma_agent_test:   - get_available_listings: {'bedrooms': [5], 'max_rent': 50000}
-2026-01-03 02:38:06 [    INFO] gemma_agent_test:   - create_appointment: {'appointment_date': '2025-02-20', 'appointment_start_time': '10:00', 'first_name': 'Alexander', 'last_name': 'Morrison', 'phone': '+1-555-9999'}
-2026-01-03 02:38:06 [    INFO] gemma_agent_test: Final response: I apologize, but I was unable to complete the booking request. The attempt to create the appointment failed due to a missing positional argument: 'email'. Please try again....
-2026-01-03 02:38:06 [    INFO] gemma_agent_test: ======================================================================
-2026-01-03 02:38:06 [    INFO] gemma_agent_test: SCENARIO: [frustrated_path] FP001 - Budget Too Low - User Adjusts
-2026-01-03 02:38:06 [    INFO] gemma_agent_test: ======================================================================
-2026-01-03 02:38:06 [    INFO] gemma_agent_test: Session started: b6670dc9-8979-464e-9460-6b2df537badc
-2026-01-03 02:38:06 [    INFO] gemma_agent_test: Processing message: Hello,
+Could you please try your request again?...
+2026-01-03 03:03:33 [    INFO] gemma_agent_test: --------------------------------------------------
+2026-01-03 03:03:33 [    INFO] gemma_agent_test: METRICS:
+2026-01-03 03:03:33 [    INFO] gemma_agent_test:   Tool Calling Rate: 100.0%
+2026-01-03 03:03:33 [    INFO] gemma_agent_test:   Correct Response Rate: 100.0%
+2026-01-03 03:03:33 [    INFO] gemma_agent_test:   Correct Tool Call Rate: 100.0%
+2026-01-03 03:03:33 [    INFO] gemma_agent_test:   File Verification Rate: 100.0%
+2026-01-03 03:03:33 [   DEBUG] gemma_agent_test:   Turn 1: tools_ok=True, response_ok=True, params_ok=False, latency=1945ms
+2026-01-03 03:03:33 [   DEBUG] gemma_agent_test:   Turn 2: tools_ok=True, response_ok=True, params_ok=False, latency=2665ms
+2026-01-03 03:03:33 [    INFO] gemma_agent_test: --------------------------------------------------
+2026-01-03 03:03:33 [    INFO] gemma_agent_test: ======================================================================
+2026-01-03 03:03:33 [    INFO] gemma_agent_test: SCENARIO: [frustrated_path] FP001 - Budget Too Low - User Adjusts
+2026-01-03 03:03:33 [    INFO] gemma_agent_test: ======================================================================
+2026-01-03 03:03:33 [    INFO] gemma_agent_test: Session started: 323bfdcd-bed0-4852-b781-10ff51fc0a14
+2026-01-03 03:03:33 [    INFO] gemma_agent_test: Processing turn 1: Hello,
 
 I'm looking for a 2-bedroom apartment but my budget is tight - no more t...
-2026-01-03 02:38:09 [    INFO] gemma_agent_test: Response: I've found no listings matching your criteria for a 2-bedroom apartment under $1,500 per month. It's...
-2026-01-03 02:38:09 [    INFO] gemma_agent_test: Processing message: That's disappointing. What about a 1-bedroom then? Is there anything under $1,50...
-2026-01-03 02:38:18 [    INFO] gemma_agent_test: Response: I have processed your requests. Here are the results:
+2026-01-03 03:03:34 [    INFO] gemma_agent_test: Response (1637ms): I've found no listings matching your criteria. It looks like the search yielded zero results....
+2026-01-03 03:03:34 [    INFO] gemma_agent_test: Processing turn 2: That's disappointing. What about a 1-bedroom then? Is there anything under $1,50...
+2026-01-03 03:03:41 [    INFO] gemma_agent_test: Response (6585ms): Here are a few options for your budget situation:
 
-**1. Available Listings:**
-No listings were f...
-2026-01-03 02:38:18 [    INFO] gemma_agent_test: Processing message: **Unit 201** at $1,450 works for me. What times are available on February 10th?
+I found 4 available listing(s):
+
+1.  **208** (Coz...
+2026-01-03 03:03:41 [    INFO] gemma_agent_test: Processing turn 3: **Unit 201** at $1,450 works for me. What times are available on February 10th?
 ...
-2026-01-03 02:38:29 [    INFO] gemma_agent_test: Response: Here are the available listings for Unit 201 on February 10, 2025:
+2026-01-03 03:03:48 [    INFO] gemma_agent_test: Response (6973ms): I encountered errors while trying to retrieve the available listings:
 
-1.  **208:** Cozy 1BR with class...
-2026-01-03 02:38:29 [    INFO] gemma_agent_test: Processing message: 2:00 PM works perfectly. Please book the tour.
+1.  **For Unit 201:** The sea...
+2026-01-03 03:03:48 [    INFO] gemma_agent_test: Processing turn 4: 2:00 PM works perfectly. Please book the tour.
 
 Maria Santos
 maria.santos.1234@e...
-2026-01-03 02:38:33 [    INFO] gemma_agent_test: Response: I apologize, but I was unable to book the tour. The attempt to create the appointment failed due to ...
-2026-01-03 02:38:33 [    INFO] gemma_agent_test: Result: PASSED
-2026-01-03 02:38:33 [    INFO] gemma_agent_test: Duration: 26846ms
-2026-01-03 02:38:33 [    INFO] gemma_agent_test: Tool calls made: 6
-2026-01-03 02:38:33 [    INFO] gemma_agent_test:   - get_available_listings: {'bedrooms': [2], 'max_rent': 1500}
-2026-01-03 02:38:33 [    INFO] gemma_agent_test:   - get_available_listings: {'bedrooms': [1], 'max_rent': 1500}
-2026-01-03 02:38:33 [    INFO] gemma_agent_test:   - get_available_listings: {'bedrooms': [2], 'max_rent': 1500}
-2026-01-03 02:38:33 [    INFO] gemma_agent_test:   - get_available_listings: {'bedrooms': [1], 'max_rent': 1500, 'available_date': '2025-02-10', 'bathrooms': 1, 'unit_number': 201}
-2026-01-03 02:38:33 [    INFO] gemma_agent_test:   - get_availability: {'date_str': '2025-02-10'}
-2026-01-03 02:38:33 [    INFO] gemma_agent_test:   - create_appointment: {'appointment_date': '2025-02-15', 'appointment_start_time': '14:00', 'email': 'maria.santos.1234@email.com', 'first_name': 'Maria Santos', 'last_name': 'Santos', 'phone': 5552345600}
-2026-01-03 02:38:33 [    INFO] gemma_agent_test: Final response: I apologize, but I was unable to book the tour. The attempt to create the appointment failed due to a validation error in the provided phone number. Please try again....
-2026-01-03 02:38:33 [    INFO] gemma_agent_test: ======================================================================
-2026-01-03 02:38:33 [    INFO] gemma_agent_test: SCENARIO: [frustrated_path] FP002 - No 6BR Available - Adjusts to 5BR
-2026-01-03 02:38:33 [    INFO] gemma_agent_test: ======================================================================
-2026-01-03 02:38:33 [    INFO] gemma_agent_test: Session started: 1fba5a83-20c5-42ea-8a1f-e470a795d7b9
-2026-01-03 02:38:33 [    INFO] gemma_agent_test: Processing message: Subject: Large Apartment Needed
+2026-01-03 03:03:52 [    INFO] gemma_agent_test: Response (3917ms): I encountered errors while trying to retrieve the available listings for Unit 201 at $1,450 per mont...
+2026-01-03 03:03:52 [    INFO] gemma_agent_test: Turn Metrics - tool_call: 100.0%, response: 100.0%, params: 100.0%, files: 100.0%
+2026-01-03 03:03:52 [    INFO] gemma_agent_test: Result: PASSED
+2026-01-03 03:03:52 [    INFO] gemma_agent_test: Duration: 19134ms
+2026-01-03 03:03:52 [    INFO] gemma_agent_test: Tool calls made: 5
+2026-01-03 03:03:52 [    INFO] gemma_agent_test:   - get_available_listings: {'bedrooms': [2], 'max_rent': 1500}
+2026-01-03 03:03:52 [    INFO] gemma_agent_test:   - get_available_listings: {'bedrooms': [1], 'max_rent': 1500}
+2026-01-03 03:03:52 [    INFO] gemma_agent_test:   - get_available_listings: {'bedrooms': 1, 'amenities': '[<escape>hardwood floors<escape>', 'max_rent': 1500, 'floor': 2}
+2026-01-03 03:03:52 [    INFO] gemma_agent_test:   - create_appointment: {'appointment_date': '2025-02-10', 'appointment_start_time': '10:00', 'first_name': 'Maria Santos', 'last_name': 'Santos', 'phone': 'Maria Santos'}
+2026-01-03 03:03:52 [    INFO] gemma_agent_test:   - create_appointment: {'appointment_date': '2025-02-11', 'appointment_start_time': '14:00', 'first_name': 'Maria Santos', 'last_name': 'Santos', 'phone': 'Maria Santos'}
+2026-01-03 03:03:52 [    INFO] gemma_agent_test: Final response: I encountered errors while trying to retrieve the available listings for Unit 201 at $1,450 per month.
+
+I could not book the tour....
+2026-01-03 03:03:52 [    INFO] gemma_agent_test: --------------------------------------------------
+2026-01-03 03:03:52 [    INFO] gemma_agent_test: METRICS:
+2026-01-03 03:03:52 [    INFO] gemma_agent_test:   Tool Calling Rate: 100.0%
+2026-01-03 03:03:52 [    INFO] gemma_agent_test:   Correct Response Rate: 100.0%
+2026-01-03 03:03:52 [    INFO] gemma_agent_test:   Correct Tool Call Rate: 100.0%
+2026-01-03 03:03:52 [    INFO] gemma_agent_test:   File Verification Rate: 100.0%
+2026-01-03 03:03:52 [   DEBUG] gemma_agent_test:   Turn 1: tools_ok=True, response_ok=True, params_ok=False, latency=1637ms
+2026-01-03 03:03:52 [   DEBUG] gemma_agent_test:   Turn 2: tools_ok=True, response_ok=True, params_ok=False, latency=6585ms
+2026-01-03 03:03:52 [   DEBUG] gemma_agent_test:   Turn 3: tools_ok=True, response_ok=True, params_ok=False, latency=6973ms
+2026-01-03 03:03:52 [   DEBUG] gemma_agent_test:   Turn 4: tools_ok=True, response_ok=True, params_ok=False, latency=3917ms
+2026-01-03 03:03:52 [    INFO] gemma_agent_test: --------------------------------------------------
+2026-01-03 03:03:52 [    INFO] gemma_agent_test: ======================================================================
+2026-01-03 03:03:52 [    INFO] gemma_agent_test: SCENARIO: [frustrated_path] FP002 - No 6BR Available - Adjusts to 5BR
+2026-01-03 03:03:52 [    INFO] gemma_agent_test: ======================================================================
+2026-01-03 03:03:52 [    INFO] gemma_agent_test: Session started: 209dc747-9c9c-4f27-b5a8-f1289a04b377
+2026-01-03 03:03:52 [    INFO] gemma_agent_test: Processing turn 1: Subject: Large Apartment Needed
 
 Dear Leasing Team,
 
 We are a multi-generational...
-2026-01-03 02:38:35 [    INFO] gemma_agent_test: Response: The attempt to fetch available apartment listings failed. The validation error for the `get_availabl...
-2026-01-03 02:38:35 [    INFO] gemma_agent_test: Processing message: I see. What is the largest apartment you have available then?
+2026-01-03 03:03:55 [    INFO] gemma_agent_test: Response (3062ms): The attempt to fetch available apartment listings failed. The validation error for the `get_availabl...
+2026-01-03 03:03:55 [    INFO] gemma_agent_test: Processing turn 2: I see. What is the largest apartment you have available then?
 
 Robert Garcia
 rob...
-2026-01-03 02:38:38 [    INFO] gemma_agent_test: Response: The attempt to fetch available apartment listings for Robert Garcia failed. The validation error for...
-2026-01-03 02:38:38 [    INFO] gemma_agent_test: Processing message: **Unit 507** with the private roof deck sounds incredible! We would make it work...
-2026-01-03 02:38:46 [    INFO] gemma_agent_test: Response: The following actions have been completed:
-
-**1. Available Listings:**
-The attempt to fetch availabl...
-2026-01-03 02:38:46 [    INFO] gemma_agent_test: Result: PASSED
-2026-01-03 02:38:46 [    INFO] gemma_agent_test: Duration: 13154ms
-2026-01-03 02:38:46 [    INFO] gemma_agent_test: Tool calls made: 3
-2026-01-03 02:38:46 [    INFO] gemma_agent_test:   - get_available_listings: {'bedrooms': '[6', 'max_rent': 120000}
-2026-01-03 02:38:46 [    INFO] gemma_agent_test:   - get_available_listings: {'bedrooms': [6, 7]}
-2026-01-03 02:38:46 [    INFO] gemma_agent_test:   - create_appointment: {'appointment_date': '2025-03-05', 'appointment_start_time': '10:00', 'first_name': 'Robert', 'last_name': 'Garcia', 'email': 'robert.garcia.family@email.com', 'phone': '134-655-0123'}
-2026-01-03 02:38:46 [    INFO] gemma_agent_test: Final response: The following actions have been completed:
-
-**1. Available Listings:**
-The attempt to fetch available apartment listings for Robert Garcia failed. The validation error for the `get_available_listings`...
-2026-01-03 02:38:46 [    INFO] gemma_agent_test: ======================================================================
-2026-01-03 02:38:46 [    INFO] gemma_agent_test: SCENARIO: [frustrated_path] FP003 - Frustrated User Demands Human Agent
-2026-01-03 02:38:46 [    INFO] gemma_agent_test: ======================================================================
-2026-01-03 02:38:46 [    INFO] gemma_agent_test: Session started: 28ea0f6b-4dd6-4fdf-bac4-25c625123c91
-2026-01-03 02:38:46 [    INFO] gemma_agent_test: Processing message: Hi,
+2026-01-03 03:03:58 [    INFO] gemma_agent_test: Response (2757ms): The attempt to fetch available apartment listings for Robert Garcia failed. The system returned a va...
+2026-01-03 03:03:58 [    INFO] gemma_agent_test: Processing turn 3: **Unit 507** with the private roof deck sounds incredible! We would make it work...
+2026-01-03 03:04:02 [    INFO] gemma_agent_test: Response (4786ms): The attempt to create the appointment failed. The system returned a validation error: "1 validation ...
+2026-01-03 03:04:02 [    INFO] gemma_agent_test: Turn Metrics - tool_call: 100.0%, response: 100.0%, params: 100.0%, files: 100.0%
+2026-01-03 03:04:02 [    INFO] gemma_agent_test: Result: PASSED
+2026-01-03 03:04:02 [    INFO] gemma_agent_test: Duration: 10625ms
+2026-01-03 03:04:02 [    INFO] gemma_agent_test: Tool calls made: 3
+2026-01-03 03:04:02 [    INFO] gemma_agent_test:   - get_available_listings: {'bedrooms': '[6', 'max_rent': 120000}
+2026-01-03 03:04:02 [    INFO] gemma_agent_test:   - get_available_listings: {'bedrooms': [6, 7]}
+2026-01-03 03:04:02 [    INFO] gemma_agent_test:   - create_appointment: {'appointment_date': '2025-03-05', 'appointment_start_time': '10:00', 'first_name': 'Robert', 'last_name': 'Garcia', 'email': 'robert.garcia.family@email.com', 'phone': 13055555555555555}
+2026-01-03 03:04:02 [    INFO] gemma_agent_test: Final response: The attempt to create the appointment failed. The system returned a validation error: "1 validation error for create_appointment" (Input should be a valid string)....
+2026-01-03 03:04:02 [    INFO] gemma_agent_test: --------------------------------------------------
+2026-01-03 03:04:02 [    INFO] gemma_agent_test: METRICS:
+2026-01-03 03:04:02 [    INFO] gemma_agent_test:   Tool Calling Rate: 100.0%
+2026-01-03 03:04:02 [    INFO] gemma_agent_test:   Correct Response Rate: 100.0%
+2026-01-03 03:04:02 [    INFO] gemma_agent_test:   Correct Tool Call Rate: 100.0%
+2026-01-03 03:04:02 [    INFO] gemma_agent_test:   File Verification Rate: 100.0%
+2026-01-03 03:04:02 [   DEBUG] gemma_agent_test:   Turn 1: tools_ok=True, response_ok=True, params_ok=False, latency=3062ms
+2026-01-03 03:04:02 [   DEBUG] gemma_agent_test:   Turn 2: tools_ok=True, response_ok=True, params_ok=False, latency=2757ms
+2026-01-03 03:04:02 [   DEBUG] gemma_agent_test:   Turn 3: tools_ok=True, response_ok=True, params_ok=False, latency=4786ms
+2026-01-03 03:04:02 [    INFO] gemma_agent_test: --------------------------------------------------
+2026-01-03 03:04:02 [    INFO] gemma_agent_test: ======================================================================
+2026-01-03 03:04:02 [    INFO] gemma_agent_test: SCENARIO: [frustrated_path] FP003 - Frustrated User Demands Human Agent
+2026-01-03 03:04:02 [    INFO] gemma_agent_test: ======================================================================
+2026-01-03 03:04:02 [    INFO] gemma_agent_test: Session started: e593ccfe-8dd4-4ca0-9442-dfd7bcefb89f
+2026-01-03 03:04:02 [    INFO] gemma_agent_test: Processing turn 1: Hi,
 
 I need a 2-bedroom under $1,200. This is all I can afford. What do you have...
-2026-01-03 02:38:48 [    INFO] gemma_agent_test: Response: I apologize, but I cannot assist with finding or recommending budget accommodations. My current tool...
-2026-01-03 02:38:48 [    INFO] gemma_agent_test: Processing message: This is ridiculous. Your prices are way too high for what you're offering. I've ...
-2026-01-03 02:38:49 [    INFO] gemma_agent_test: Response: I apologize, but I cannot assist with recommending or recommending prices for accommodation. My curr...
-2026-01-03 02:38:49 [    INFO] gemma_agent_test: Processing message: I don't want to talk to a bot anymore. Get me a real person NOW. This is very fr...
-2026-01-03 02:38:51 [    INFO] gemma_agent_test: Response: I apologize, but no listings matching your criteria were found. The tool returned no results....
-2026-01-03 02:38:51 [    INFO] gemma_agent_test: Result: PASSED
-2026-01-03 02:38:51 [    INFO] gemma_agent_test: Duration: 4430ms
-2026-01-03 02:38:51 [    INFO] gemma_agent_test: Tool calls made: 1
-2026-01-03 02:38:51 [    INFO] gemma_agent_test:   - get_available_listings: {'bedrooms': [2], 'max_rent': 1200}
-2026-01-03 02:38:51 [    INFO] gemma_agent_test: Final response: I apologize, but no listings matching your criteria were found. The tool returned no results....
-2026-01-03 02:38:51 [    INFO] gemma_agent_test: ======================================================================
-2026-01-03 02:38:51 [    INFO] gemma_agent_test: SCENARIO: [frustrated_path] FP004 - User Abandons Mid-Conversation
-2026-01-03 02:38:51 [    INFO] gemma_agent_test: ======================================================================
-2026-01-03 02:38:51 [    INFO] gemma_agent_test: Session started: 029f4953-b57c-40b4-b009-e16ca3cc7e19
-2026-01-03 02:38:51 [    INFO] gemma_agent_test: Processing message: Hi,
+2026-01-03 03:04:04 [    INFO] gemma_agent_test: Response (1404ms): I apologize, but I cannot assist with finding or recommending specific properties. My current tools ...
+2026-01-03 03:04:04 [    INFO] gemma_agent_test: Processing turn 2: This is ridiculous. Your prices are way too high for what you're offering. I've ...
+2026-01-03 03:04:05 [    INFO] gemma_agent_test: Response (1371ms): I apologize, but I cannot assist with recommending or recommending prices for properties. My current...
+2026-01-03 03:04:05 [    INFO] gemma_agent_test: Processing turn 3: I don't want to talk to a bot anymore. Get me a real person NOW. This is very fr...
+2026-01-03 03:04:07 [    INFO] gemma_agent_test: Response (1704ms): I apologize, but no listings matching your criteria were found. The tool returned no results....
+2026-01-03 03:04:07 [    INFO] gemma_agent_test: Turn Metrics - tool_call: 100.0%, response: 100.0%, params: 100.0%, files: 100.0%
+2026-01-03 03:04:07 [    INFO] gemma_agent_test: Result: PASSED
+2026-01-03 03:04:07 [    INFO] gemma_agent_test: Duration: 4500ms
+2026-01-03 03:04:07 [    INFO] gemma_agent_test: Tool calls made: 1
+2026-01-03 03:04:07 [    INFO] gemma_agent_test:   - get_available_listings: {'bedrooms': [2], 'max_rent': 1200}
+2026-01-03 03:04:07 [    INFO] gemma_agent_test: Final response: I apologize, but no listings matching your criteria were found. The tool returned no results....
+2026-01-03 03:04:07 [    INFO] gemma_agent_test: --------------------------------------------------
+2026-01-03 03:04:07 [    INFO] gemma_agent_test: METRICS:
+2026-01-03 03:04:07 [    INFO] gemma_agent_test:   Tool Calling Rate: 100.0%
+2026-01-03 03:04:07 [    INFO] gemma_agent_test:   Correct Response Rate: 100.0%
+2026-01-03 03:04:07 [    INFO] gemma_agent_test:   Correct Tool Call Rate: 100.0%
+2026-01-03 03:04:07 [    INFO] gemma_agent_test:   File Verification Rate: 100.0%
+2026-01-03 03:04:07 [   DEBUG] gemma_agent_test:   Turn 1: tools_ok=True, response_ok=True, params_ok=False, latency=1404ms
+2026-01-03 03:04:07 [   DEBUG] gemma_agent_test:   Turn 2: tools_ok=True, response_ok=True, params_ok=False, latency=1371ms
+2026-01-03 03:04:07 [   DEBUG] gemma_agent_test:   Turn 3: tools_ok=True, response_ok=True, params_ok=False, latency=1704ms
+2026-01-03 03:04:07 [    INFO] gemma_agent_test: --------------------------------------------------
+2026-01-03 03:04:07 [    INFO] gemma_agent_test: ======================================================================
+2026-01-03 03:04:07 [    INFO] gemma_agent_test: SCENARIO: [frustrated_path] FP004 - User Abandons Mid-Conversation
+2026-01-03 03:04:07 [    INFO] gemma_agent_test: ======================================================================
+2026-01-03 03:04:07 [    INFO] gemma_agent_test: Session started: 1db90857-254d-4956-822e-1101c3b79eea
+2026-01-03 03:04:07 [    INFO] gemma_agent_test: Processing turn 1: Hi,
 
 Looking for 3-bedroom apartments. What's available?
 
 Patricia Taylor
 patric...
-2026-01-03 02:38:58 [    INFO] gemma_agent_test: Response: Here are a few options for you:
+2026-01-03 03:04:16 [    INFO] gemma_agent_test: Response (8722ms): I found 12 available listing(s) for your request:
 
-**Available Listings:**
-1.  **Patricia Taylor** (555) 666-4444: Val...
-2026-01-03 02:38:58 [    INFO] gemma_agent_test: Processing message: Unit 403 looks okay. What times can I tour tomorrow?
+1.  **Patricia Taylor** (patricia.taylor@work.com...
+2026-01-03 03:04:16 [    INFO] gemma_agent_test: Processing turn 2: Unit 403 looks okay. What times can I tour tomorrow?
 
 Patricia Taylor
 patricia.t...
-2026-01-03 02:39:04 [    INFO] gemma_agent_test: Response: The search for property information related to pet policies was successful.
+2026-01-03 03:04:22 [    INFO] gemma_agent_test: Response (6329ms): The following 1 relevant knowledge base entries were found for your search:
 
-Here are the 1 relevant...
-2026-01-03 02:39:04 [    INFO] gemma_agent_test: Processing message: Actually, I've decided to look at another property instead. Thank you for your t...
-2026-01-03 02:39:10 [    INFO] gemma_agent_test: Response: The search for property information related to pet policies was successful.
+*   **amenities:** Yes!...
+2026-01-03 03:04:22 [    INFO] gemma_agent_test: Processing turn 3: Actually, I've decided to look at another property instead. Thank you for your t...
+2026-01-03 03:04:28 [    INFO] gemma_agent_test: Response (6552ms): The following 1 relevant knowledge base entries were found for your search:
 
-Here are the 1 relevant...
-2026-01-03 02:39:10 [    INFO] gemma_agent_test: Result: PASSED
-2026-01-03 02:39:10 [    INFO] gemma_agent_test: Duration: 18701ms
-2026-01-03 02:39:10 [    INFO] gemma_agent_test: Tool calls made: 3
-2026-01-03 02:39:10 [    INFO] gemma_agent_test:   - get_available_listings: {'bedrooms': [3], 'max_rent': 30000}
-2026-01-03 02:39:10 [    INFO] gemma_agent_test:   - search_property_knowledge: {'category': 'amenities', 'search_text': 'pet policy'}
-2026-01-03 02:39:10 [    INFO] gemma_agent_test:   - search_property_knowledge: {'category': 'amenities', 'search_text': 'pet policy'}
-2026-01-03 02:39:10 [    INFO] gemma_agent_test: Final response: The search for property information related to pet policies was successful.
+*   **amenities:** Yes!...
+2026-01-03 03:04:28 [    INFO] gemma_agent_test: Turn Metrics - tool_call: 100.0%, response: 100.0%, params: 100.0%, files: 100.0%
+2026-01-03 03:04:28 [    INFO] gemma_agent_test: Result: PASSED
+2026-01-03 03:04:28 [    INFO] gemma_agent_test: Duration: 21624ms
+2026-01-03 03:04:28 [    INFO] gemma_agent_test: Tool calls made: 3
+2026-01-03 03:04:28 [    INFO] gemma_agent_test:   - get_available_listings: {'bedrooms': [3], 'max_rent': 30000}
+2026-01-03 03:04:28 [    INFO] gemma_agent_test:   - search_property_knowledge: {'category': 'amenities', 'search_text': 'pet policy'}
+2026-01-03 03:04:28 [    INFO] gemma_agent_test:   - search_property_knowledge: {'category': 'amenities', 'search_text': 'pet policy'}
+2026-01-03 03:04:28 [    INFO] gemma_agent_test: Final response: The following 1 relevant knowledge base entries were found for your search:
 
-Here are the 1 relevant knowledge base entries:
-
-*   **Category:** Amenities
-*   **ID:** 7
-*   **Question:** Is there a dog...
-2026-01-03 02:39:10 [    INFO] gemma_agent_test: ======================================================================
-2026-01-03 02:39:10 [    INFO] gemma_agent_test: SCENARIO: [frustrated_path] FP005 - Date Unavailable - Reschedules
-2026-01-03 02:39:10 [    INFO] gemma_agent_test: ======================================================================
-2026-01-03 02:39:10 [    INFO] gemma_agent_test: Session started: 81296db4-0576-45c3-b5aa-d850cf2aa957
-2026-01-03 02:39:10 [    INFO] gemma_agent_test: Processing message: Hi,
+*   **amenities:** Yes! Our fenced dog park is located on the east side of the property and features separate areas for lar...
+2026-01-03 03:04:28 [    INFO] gemma_agent_test: --------------------------------------------------
+2026-01-03 03:04:28 [    INFO] gemma_agent_test: METRICS:
+2026-01-03 03:04:28 [    INFO] gemma_agent_test:   Tool Calling Rate: 100.0%
+2026-01-03 03:04:28 [    INFO] gemma_agent_test:   Correct Response Rate: 100.0%
+2026-01-03 03:04:28 [    INFO] gemma_agent_test:   Correct Tool Call Rate: 100.0%
+2026-01-03 03:04:28 [    INFO] gemma_agent_test:   File Verification Rate: 100.0%
+2026-01-03 03:04:28 [   DEBUG] gemma_agent_test:   Turn 1: tools_ok=True, response_ok=True, params_ok=False, latency=8722ms
+2026-01-03 03:04:28 [   DEBUG] gemma_agent_test:   Turn 2: tools_ok=True, response_ok=True, params_ok=False, latency=6329ms
+2026-01-03 03:04:28 [   DEBUG] gemma_agent_test:   Turn 3: tools_ok=True, response_ok=True, params_ok=False, latency=6552ms
+2026-01-03 03:04:28 [    INFO] gemma_agent_test: --------------------------------------------------
+2026-01-03 03:04:28 [    INFO] gemma_agent_test: ======================================================================
+2026-01-03 03:04:28 [    INFO] gemma_agent_test: SCENARIO: [frustrated_path] FP005 - Date Unavailable - Reschedules
+2026-01-03 03:04:28 [    INFO] gemma_agent_test: ======================================================================
+2026-01-03 03:04:29 [    INFO] gemma_agent_test: Session started: fa8e8b0e-33ff-4fb8-a8b6-692b402f9b19
+2026-01-03 03:04:29 [    INFO] gemma_agent_test: Processing turn 1: Hi,
 
 I'd like to tour a 2-bedroom unit on January 1st at noon. What do you have ...
-2026-01-03 02:39:11 [    INFO] gemma_agent_test: Response: I couldn't find any listings for apartments in the specified category. It seems like the search was ...
-2026-01-03 02:39:11 [    INFO] gemma_agent_test: Processing message: **Unit 304** looks good. Is January 1st at 12pm available for a tour?
+2026-01-03 03:04:31 [    INFO] gemma_agent_test: Response (2100ms): I apologize, but I encountered an error trying to retrieve available listings for Kevin Park. The va...
+2026-01-03 03:04:31 [    INFO] gemma_agent_test: Processing turn 2: **Unit 304** looks good. Is January 1st at 12pm available for a tour?
 
 Kevin Par...
-2026-01-03 02:39:13 [    INFO] gemma_agent_test: Response: I couldn't find any listings for apartments in the specified category. It seems the search was unsuc...
-2026-01-03 02:39:13 [    INFO] gemma_agent_test: Processing message: Oh right, it's New Year's Day. How about January 3rd at 2pm instead?
+2026-01-03 03:04:33 [    INFO] gemma_agent_test: Response (2154ms): I apologize, but I encountered an error trying to retrieve available listings for Unit 304. The vali...
+2026-01-03 03:04:33 [    INFO] gemma_agent_test: Processing turn 3: Oh right, it's New Year's Day. How about January 3rd at 2pm instead?
 
 Kevin Park...
-2026-01-03 02:39:19 [    INFO] gemma_agent_test: Response: I encountered errors while trying to complete your requests:
+2026-01-03 03:04:41 [    INFO] gemma_agent_test: Response (8166ms): Here are the results for your requests:
 
-1.  **Available Listings:** I couldn't...
-2026-01-03 02:39:19 [    INFO] gemma_agent_test: Result: PASSED
-2026-01-03 02:39:19 [    INFO] gemma_agent_test: Duration: 8946ms
-2026-01-03 02:39:19 [    INFO] gemma_agent_test: Tool calls made: 4
-2026-01-03 02:39:19 [    INFO] gemma_agent_test:   - get_available_listings: {'bedrooms': []}
-2026-01-03 02:39:19 [    INFO] gemma_agent_test:   - get_available_listings: {'bedrooms': []}
-2026-01-03 02:39:19 [    INFO] gemma_agent_test:   - get_available_listings: {'bedrooms': []}
-2026-01-03 02:39:19 [    INFO] gemma_agent_test:   - create_appointment: {'appointment_date': '2025-01-03', 'appointment_start_time': '14:00', 'first_name': 'Kevin', 'last_name': 'Park', 'email': 'kevin.park.2025@email.com'}
-2026-01-03 02:39:19 [    INFO] gemma_agent_test: Final response: I encountered errors while trying to complete your requests:
+**Apartment Listings:**
+*   **Kevin Park:** No listings fou...
+2026-01-03 03:04:41 [    INFO] gemma_agent_test: Turn Metrics - tool_call: 100.0%, response: 100.0%, params: 100.0%, files: 100.0%
+2026-01-03 03:04:41 [    INFO] gemma_agent_test: Result: PASSED
+2026-01-03 03:04:41 [    INFO] gemma_agent_test: Duration: 12442ms
+2026-01-03 03:04:41 [    INFO] gemma_agent_test: Tool calls made: 4
+2026-01-03 03:04:41 [    INFO] gemma_agent_test:   - get_available_listings: {'bedrooms': '[0'}
+2026-01-03 03:04:41 [    INFO] gemma_agent_test:   - get_available_listings: {'bedrooms': '[0'}
+2026-01-03 03:04:41 [    INFO] gemma_agent_test:   - get_available_listings: {'bedrooms': [0], 'max_rent': 20}
+2026-01-03 03:04:41 [    INFO] gemma_agent_test:   - get_availability: {'date_str': '2025-01-03'}
+2026-01-03 03:04:41 [    INFO] gemma_agent_test: Final response: Here are the results for your requests:
 
-1.  **Available Listings:** I couldn't find any listings for apartments in the specified category.
-2.  **Unit 304:** I couldn't find any l...
-2026-01-03 02:39:19 [    INFO] gemma_agent_test: ======================================================================
-2026-01-03 02:39:19 [    INFO] gemma_agent_test: SCENARIO: [repeated_query] RQ001 - Multiple Policy Questions
-2026-01-03 02:39:19 [    INFO] gemma_agent_test: ======================================================================
-2026-01-03 02:39:19 [    INFO] gemma_agent_test: Session started: dbb34b39-01f2-4d25-98bc-662cd87920fc
-2026-01-03 02:39:19 [    INFO] gemma_agent_test: Processing message: Hi,
+**Apartment Listings:**
+*   **Kevin Park:** No listings found. The validation failed due to a validation error.
+*   **Unit 304:** Available for January 3rd at ...
+2026-01-03 03:04:41 [    INFO] gemma_agent_test: --------------------------------------------------
+2026-01-03 03:04:41 [    INFO] gemma_agent_test: METRICS:
+2026-01-03 03:04:41 [    INFO] gemma_agent_test:   Tool Calling Rate: 100.0%
+2026-01-03 03:04:41 [    INFO] gemma_agent_test:   Correct Response Rate: 100.0%
+2026-01-03 03:04:41 [    INFO] gemma_agent_test:   Correct Tool Call Rate: 100.0%
+2026-01-03 03:04:41 [    INFO] gemma_agent_test:   File Verification Rate: 100.0%
+2026-01-03 03:04:41 [   DEBUG] gemma_agent_test:   Turn 1: tools_ok=True, response_ok=True, params_ok=False, latency=2100ms
+2026-01-03 03:04:41 [   DEBUG] gemma_agent_test:   Turn 2: tools_ok=True, response_ok=True, params_ok=False, latency=2154ms
+2026-01-03 03:04:41 [   DEBUG] gemma_agent_test:   Turn 3: tools_ok=True, response_ok=True, params_ok=False, latency=8166ms
+2026-01-03 03:04:41 [    INFO] gemma_agent_test: --------------------------------------------------
+2026-01-03 03:04:41 [    INFO] gemma_agent_test: ======================================================================
+2026-01-03 03:04:41 [    INFO] gemma_agent_test: SCENARIO: [repeated_query] RQ001 - Multiple Policy Questions
+2026-01-03 03:04:41 [    INFO] gemma_agent_test: ======================================================================
+2026-01-03 03:04:41 [    INFO] gemma_agent_test: Session started: 91514526-a7ed-43d6-b29d-e31682e0dfdc
+2026-01-03 03:04:41 [    INFO] gemma_agent_test: Processing turn 1: Hi,
 
 Before I start looking at apartments, I have some questions. First, what is...
-2026-01-03 02:39:20 [    INFO] gemma_agent_test: Response: I apologize, but I cannot assist with finding pet policy information. My current tools are designed ...
-2026-01-03 02:39:20 [    INFO] gemma_agent_test: Processing message: Good to know. What about parking? Is it included in the rent or is there an addi...
-2026-01-03 02:39:22 [    INFO] gemma_agent_test: Response: I apologize, but I cannot assist with finding parking information. My current tools are designed for...
-2026-01-03 02:39:22 [    INFO] gemma_agent_test: Processing message: One more question - is this a smoke-free building?
+2026-01-03 03:04:42 [    INFO] gemma_agent_test: Response (1448ms): I apologize, but I cannot assist with checking pet policy details. My current tools are designed for...
+2026-01-03 03:04:42 [    INFO] gemma_agent_test: Processing turn 2: Good to know. What about parking? Is it included in the rent or is there an addi...
+2026-01-03 03:04:43 [    INFO] gemma_agent_test: Response (968ms): I can certainly assist with searching for pet policies. Regarding parking, is it included in the ren...
+2026-01-03 03:04:43 [    INFO] gemma_agent_test: Processing turn 3: One more question - is this a smoke-free building?
 
 Nancy Brown
 nancy.brown.inqu...
-2026-01-03 02:39:23 [    INFO] gemma_agent_test: Response: I apologize, but I cannot assist with finding smoke-free building information. My current tools are ...
-2026-01-03 02:39:23 [    INFO] gemma_agent_test: Processing message: And what about utilities? What's included in the rent?
+2026-01-03 03:04:45 [    INFO] gemma_agent_test: Response (1182ms): I apologize, but I cannot assist with checking smoke-free building details or offering advice on ren...
+2026-01-03 03:04:45 [    INFO] gemma_agent_test: Processing turn 4: And what about utilities? What's included in the rent?
 
 Nancy Brown
 nancy.brown....
-2026-01-03 02:39:25 [    INFO] gemma_agent_test: Response: I apologize, but I cannot assist with finding utilities or rent information. My current tools are de...
-2026-01-03 02:39:25 [    INFO] gemma_agent_test: Result: PASSED
-2026-01-03 02:39:25 [    INFO] gemma_agent_test: Duration: 5985ms
-2026-01-03 02:39:25 [    INFO] gemma_agent_test: Final response: I apologize, but I cannot assist with finding utilities or rent information. My current tools are designed for property management and searching for apartment listings and tours, and I cannot access o...
-2026-01-03 02:39:25 [    INFO] gemma_agent_test: ======================================================================
-2026-01-03 02:39:25 [    INFO] gemma_agent_test: SCENARIO: [repeated_query] RQ002 - Multiple Availability Checks
-2026-01-03 02:39:25 [    INFO] gemma_agent_test: ======================================================================
-2026-01-03 02:39:25 [    INFO] gemma_agent_test: Session started: 0fd05b22-09a8-45a1-9929-17bcae4fb342
-2026-01-03 02:39:25 [    INFO] gemma_agent_test: Processing message: Hi,
+2026-01-03 03:04:46 [    INFO] gemma_agent_test: Response (1011ms): I apologize, but I cannot assist with checking utility costs or rent policies. My current tools are ...
+2026-01-03 03:04:46 [    INFO] gemma_agent_test: Turn Metrics - tool_call: 100.0%, response: 100.0%, params: 100.0%, files: 100.0%
+2026-01-03 03:04:46 [    INFO] gemma_agent_test: Result: PASSED
+2026-01-03 03:04:46 [    INFO] gemma_agent_test: Duration: 4631ms
+2026-01-03 03:04:46 [    INFO] gemma_agent_test: Final response: I apologize, but I cannot assist with checking utility costs or rent policies. My current tools are not equipped to perform such inquiries....
+2026-01-03 03:04:46 [    INFO] gemma_agent_test: --------------------------------------------------
+2026-01-03 03:04:46 [    INFO] gemma_agent_test: METRICS:
+2026-01-03 03:04:46 [    INFO] gemma_agent_test:   Tool Calling Rate: 100.0%
+2026-01-03 03:04:46 [    INFO] gemma_agent_test:   Correct Response Rate: 100.0%
+2026-01-03 03:04:46 [    INFO] gemma_agent_test:   Correct Tool Call Rate: 100.0%
+2026-01-03 03:04:46 [    INFO] gemma_agent_test:   File Verification Rate: 100.0%
+2026-01-03 03:04:46 [   DEBUG] gemma_agent_test:   Turn 1: tools_ok=True, response_ok=True, params_ok=False, latency=1448ms
+2026-01-03 03:04:46 [   DEBUG] gemma_agent_test:   Turn 2: tools_ok=True, response_ok=True, params_ok=False, latency=968ms
+2026-01-03 03:04:46 [   DEBUG] gemma_agent_test:   Turn 3: tools_ok=True, response_ok=True, params_ok=False, latency=1182ms
+2026-01-03 03:04:46 [   DEBUG] gemma_agent_test:   Turn 4: tools_ok=True, response_ok=True, params_ok=False, latency=1011ms
+2026-01-03 03:04:46 [    INFO] gemma_agent_test: --------------------------------------------------
+2026-01-03 03:04:46 [    INFO] gemma_agent_test: ======================================================================
+2026-01-03 03:04:46 [    INFO] gemma_agent_test: SCENARIO: [repeated_query] RQ002 - Multiple Availability Checks
+2026-01-03 03:04:46 [    INFO] gemma_agent_test: ======================================================================
+2026-01-03 03:04:46 [    INFO] gemma_agent_test: Session started: a86c0b44-ffcc-4753-8b38-8390ef042225
+2026-01-03 03:04:46 [    INFO] gemma_agent_test: Processing turn 1: Hi,
 
 I'm interested in touring a 1-bedroom unit. What times are available on Feb...
-2026-01-03 02:39:32 [    INFO] gemma_agent_test: Response: Here are a few options for your upcoming tour:
+2026-01-03 03:04:54 [    INFO] gemma_agent_test: Response (8621ms): Here are a few options for your upcoming tour:
 
 Eric Johnson has found 10 available listing(s):
 1.  ...
-2026-01-03 02:39:32 [    INFO] gemma_agent_test: Processing message: Hmm, those times don't work for me. What about February 18th?
+2026-01-03 03:04:54 [    INFO] gemma_agent_test: Processing turn 2: Hmm, those times don't work for me. What about February 18th?
 
 Eric Johnson
 eric...
-2026-01-03 02:39:41 [    INFO] gemma_agent_test: Response: Here are a few things to know:
+2026-01-03 03:05:04 [    INFO] gemma_agent_test: Response (9838ms): Here are a few options for your upcoming tour:
 
-**Eric Johnson's Available Listings:**
-1.  **Cozy 1BR with classic c...
-2026-01-03 02:39:41 [    INFO] gemma_agent_test: Processing message: Actually, let me check February 20th too. What do you have?
+Eric Johnson has found 10 available listing(s):
+1.  ...
+2026-01-03 03:05:04 [    INFO] gemma_agent_test: Processing turn 3: Actually, let me check February 20th too. What do you have?
 
 Eric Johnson
 eric.j...
-2026-01-03 02:39:51 [    INFO] gemma_agent_test: Response: Here are a couple of things to note:
+2026-01-03 03:05:14 [    INFO] gemma_agent_test: Response (9546ms): Here are a few options for your upcoming tour:
 
-**Eric Johnson's Available Listings:**
-1.  **Cozy 1BR with cla...
-2026-01-03 02:39:51 [    INFO] gemma_agent_test: Result: PASSED
-2026-01-03 02:39:51 [    INFO] gemma_agent_test: Duration: 26421ms
-2026-01-03 02:39:51 [    INFO] gemma_agent_test: Tool calls made: 5
-2026-01-03 02:39:51 [    INFO] gemma_agent_test:   - get_available_listings: {'bedrooms': [1], 'max_rent': 4500}
-2026-01-03 02:39:51 [    INFO] gemma_agent_test:   - get_available_listings: {'bedrooms': [1], 'max_rent': 4500}
-2026-01-03 02:39:51 [    INFO] gemma_agent_test:   - get_availability: {'date_str': '2025-02-18'}
-2026-01-03 02:39:51 [    INFO] gemma_agent_test:   - get_available_listings: {'bedrooms': [1], 'max_rent': 4500}
-2026-01-03 02:39:51 [    INFO] gemma_agent_test:   - get_availability: {'date_str': '2025-02-18'}
-2026-01-03 02:39:51 [    INFO] gemma_agent_test: Final response: Here are a couple of things to note:
+Eric Johnson has found 10 available listing(s):
+1.  ...
+2026-01-03 03:05:14 [    INFO] gemma_agent_test: Turn Metrics - tool_call: 100.0%, response: 100.0%, params: 100.0%, files: 100.0%
+2026-01-03 03:05:14 [    INFO] gemma_agent_test: Result: PASSED
+2026-01-03 03:05:14 [    INFO] gemma_agent_test: Duration: 28029ms
+2026-01-03 03:05:14 [    INFO] gemma_agent_test: Tool calls made: 3
+2026-01-03 03:05:14 [    INFO] gemma_agent_test:   - get_available_listings: {'bedrooms': [1], 'max_rent': 4500}
+2026-01-03 03:05:14 [    INFO] gemma_agent_test:   - get_available_listings: {'bedrooms': [1], 'max_rent': 4500}
+2026-01-03 03:05:14 [    INFO] gemma_agent_test:   - get_available_listings: {'bedrooms': [1], 'max_rent': 4500}
+2026-01-03 03:05:14 [    INFO] gemma_agent_test: Final response: Here are a few options for your upcoming tour:
 
-**Eric Johnson's Available Listings:**
-1.  **Cozy 1BR with classic charm and excellent closet space.** Available from February 15th to 20th, with 1 bathroom and 1...
-2026-01-03 02:39:51 [    INFO] gemma_agent_test: ======================================================================
-2026-01-03 02:39:51 [    INFO] gemma_agent_test: SCENARIO: [repeated_query] RQ003 - Reschedule After Booking
-2026-01-03 02:39:51 [    INFO] gemma_agent_test: ======================================================================
-2026-01-03 02:39:51 [    INFO] gemma_agent_test: Session started: 0414cc1e-b526-4920-ad51-60de6271820b
-2026-01-03 02:39:51 [    INFO] gemma_agent_test: Processing message: Hi,
+Eric Johnson has found 10 available listing(s):
+1.  **Cozy 1BR with classic charm and excellent closet space.** Available from February 15th to 20th, wi...
+2026-01-03 03:05:14 [    INFO] gemma_agent_test: --------------------------------------------------
+2026-01-03 03:05:14 [    INFO] gemma_agent_test: METRICS:
+2026-01-03 03:05:14 [    INFO] gemma_agent_test:   Tool Calling Rate: 100.0%
+2026-01-03 03:05:14 [    INFO] gemma_agent_test:   Correct Response Rate: 100.0%
+2026-01-03 03:05:14 [    INFO] gemma_agent_test:   Correct Tool Call Rate: 100.0%
+2026-01-03 03:05:14 [    INFO] gemma_agent_test:   File Verification Rate: 100.0%
+2026-01-03 03:05:14 [   DEBUG] gemma_agent_test:   Turn 1: tools_ok=True, response_ok=True, params_ok=False, latency=8621ms
+2026-01-03 03:05:14 [   DEBUG] gemma_agent_test:   Turn 2: tools_ok=True, response_ok=True, params_ok=False, latency=9838ms
+2026-01-03 03:05:14 [   DEBUG] gemma_agent_test:   Turn 3: tools_ok=True, response_ok=True, params_ok=False, latency=9546ms
+2026-01-03 03:05:14 [    INFO] gemma_agent_test: --------------------------------------------------
+2026-01-03 03:05:14 [    INFO] gemma_agent_test: ======================================================================
+2026-01-03 03:05:14 [    INFO] gemma_agent_test: SCENARIO: [repeated_query] RQ003 - Reschedule After Booking
+2026-01-03 03:05:14 [    INFO] gemma_agent_test: ======================================================================
+2026-01-03 03:05:14 [    INFO] gemma_agent_test: Session started: abc8ddcd-3b16-40f6-9af5-e94afc1aafd7
+2026-01-03 03:05:14 [    INFO] gemma_agent_test: Processing turn 1: Hi,
 
 I'd like to book a tour for February 10th at 10:00 AM to see a 2-bedroom ap...
-2026-01-03 02:39:56 [    INFO] gemma_agent_test: Response: Here are the available time slots for Saturday, February 10, 2024:
+2026-01-03 03:05:18 [    INFO] gemma_agent_test: Response (4506ms): Here are the available time slots for Saturday, February 10, 2024:
 
 *   **09:00:** 09:00
 *   **10:00...
-2026-01-03 02:39:56 [    INFO] gemma_agent_test: Processing message: I'm so sorry, but something came up. What times are available on February 12th i...
-2026-01-03 02:40:01 [    INFO] gemma_agent_test: Response: Here are the available time slots for Monday, February 12, 2024:
+2026-01-03 03:05:18 [    INFO] gemma_agent_test: Processing turn 2: I'm so sorry, but something came up. What times are available on February 12th i...
+2026-01-03 03:05:24 [    INFO] gemma_agent_test: Response (5475ms): Here are the available time slots for Monday, February 12, 2024:
 
 *   **09:00:** 09:00
 *   **10:00:*...
-2026-01-03 02:40:01 [    INFO] gemma_agent_test: Processing message: 2:00 PM works. Please reschedule my appointment to that time.
+2026-01-03 03:05:24 [    INFO] gemma_agent_test: Processing turn 3: 2:00 PM works. Please reschedule my appointment to that time.
 
 Lisa Park
 lisa.pa...
-2026-01-03 02:40:05 [    INFO] gemma_agent_test: Response: The attempt to reschedule your appointment for 2:00 PM has been successfully escalated.
-
-Here are th...
-2026-01-03 02:40:05 [    INFO] gemma_agent_test: Result: PASSED
-2026-01-03 02:40:05 [    INFO] gemma_agent_test: Duration: 13999ms
-2026-01-03 02:40:05 [    INFO] gemma_agent_test: Tool calls made: 4
-2026-01-03 02:40:05 [    INFO] gemma_agent_test:   - get_availability: {'date_str': '2024-02-10'}
-2026-01-03 02:40:05 [    INFO] gemma_agent_test:   - get_availability: {'date_str': '2024-02-12'}
-2026-01-03 02:40:05 [    INFO] gemma_agent_test:   - get_availability: {'date_str': '2024-02-12'}
-2026-01-03 02:40:05 [    INFO] gemma_agent_test:   - escalate_conversation: {'reason_for_escalation': 'rescheduling due to unforeseen circumstances'}
-2026-01-03 02:40:05 [    INFO] gemma_agent_test: Final response: The attempt to reschedule your appointment for 2:00 PM has been successfully escalated.
+2026-01-03 03:05:28 [    INFO] gemma_agent_test: Response (4123ms): The conversation has been successfully escalated to your leasing team.
 
 Here are the details:
 
-*   **Ticket ID:** `ESC-CBAF81`
-*   **Reason:** Rescheduling due to unforeseen circumsta...
-2026-01-03 02:40:05 [    INFO] gemma_agent_test: ======================================================================
-2026-01-03 02:40:05 [    INFO] gemma_agent_test: SCENARIO: [repeated_query] RQ004 - Compare Multiple Bedroom Sizes
-2026-01-03 02:40:05 [    INFO] gemma_agent_test: ======================================================================
-2026-01-03 02:40:05 [    INFO] gemma_agent_test: Session started: b1c55e71-27cb-4906-a9e5-ff817b3bdc00
-2026-01-03 02:40:05 [    INFO] gemma_agent_test: Processing message: Hello,
+*   *...
+2026-01-03 03:05:28 [    INFO] gemma_agent_test: Turn Metrics - tool_call: 100.0%, response: 100.0%, params: 100.0%, files: 100.0%
+2026-01-03 03:05:28 [    INFO] gemma_agent_test: Result: PASSED
+2026-01-03 03:05:28 [    INFO] gemma_agent_test: Duration: 14126ms
+2026-01-03 03:05:28 [    INFO] gemma_agent_test: Tool calls made: 4
+2026-01-03 03:05:28 [    INFO] gemma_agent_test:   - get_availability: {'date_str': '2024-02-10'}
+2026-01-03 03:05:28 [    INFO] gemma_agent_test:   - get_availability: {'date_str': '2024-02-12'}
+2026-01-03 03:05:28 [    INFO] gemma_agent_test:   - get_availability: {'date_str': '2024-02-12'}
+2026-01-03 03:05:28 [    INFO] gemma_agent_test:   - escalate_conversation: {'reason_for_escalation': 'rescheduling due to unforeseen circumstances'}
+2026-01-03 03:05:28 [    INFO] gemma_agent_test: Final response: The conversation has been successfully escalated to your leasing team.
+
+Here are the details:
+
+*   **Reason for Escalation:** Rescheduling due to unforeseen circumstances.
+*   **Expected Response Time...
+2026-01-03 03:05:28 [    INFO] gemma_agent_test: --------------------------------------------------
+2026-01-03 03:05:28 [    INFO] gemma_agent_test: METRICS:
+2026-01-03 03:05:28 [    INFO] gemma_agent_test:   Tool Calling Rate: 100.0%
+2026-01-03 03:05:28 [    INFO] gemma_agent_test:   Correct Response Rate: 100.0%
+2026-01-03 03:05:28 [    INFO] gemma_agent_test:   Correct Tool Call Rate: 100.0%
+2026-01-03 03:05:28 [    INFO] gemma_agent_test:   File Verification Rate: 100.0%
+2026-01-03 03:05:28 [   DEBUG] gemma_agent_test:   Turn 1: tools_ok=True, response_ok=True, params_ok=False, latency=4506ms
+2026-01-03 03:05:28 [   DEBUG] gemma_agent_test:   Turn 2: tools_ok=True, response_ok=True, params_ok=False, latency=5475ms
+2026-01-03 03:05:28 [   DEBUG] gemma_agent_test:   Turn 3: tools_ok=True, response_ok=True, params_ok=False, latency=4123ms
+2026-01-03 03:05:28 [    INFO] gemma_agent_test: --------------------------------------------------
+2026-01-03 03:05:28 [    INFO] gemma_agent_test: ======================================================================
+2026-01-03 03:05:28 [    INFO] gemma_agent_test: SCENARIO: [repeated_query] RQ004 - Compare Multiple Bedroom Sizes
+2026-01-03 03:05:28 [    INFO] gemma_agent_test: ======================================================================
+2026-01-03 03:05:28 [    INFO] gemma_agent_test: Session started: 3f8c49ed-deeb-4616-b7a0-0338548eb2d3
+2026-01-03 03:05:28 [    INFO] gemma_agent_test: Processing turn 1: Hello,
 
 I'm not sure what size apartment I need. Can you show me your 1-bedroom ...
-2026-01-03 02:40:08 [    INFO] gemma_agent_test: Response: I've found 0 available listings matching your criteria.
+2026-01-03 03:05:36 [    INFO] gemma_agent_test: Response (8709ms): Here are a few options for you:
 
-However, I regret to inform you that no lis...
-2026-01-03 02:40:08 [    INFO] gemma_agent_test: Processing message: Those are nice, but let me also see the 2-bedroom options for comparison.
+1.  **Cozy 1BR with classic charm and excellent closet space.** Ava...
+2026-01-03 03:05:36 [    INFO] gemma_agent_test: Processing turn 2: Those are nice, but let me also see the 2-bedroom options for comparison.
 
 Amand...
-2026-01-03 02:40:10 [    INFO] gemma_agent_test: Response: I apologize, but I was unable to retrieve the 2-bedroom options. The request failed due to a validat...
-2026-01-03 02:40:10 [    INFO] gemma_agent_test: Processing message: Actually, what about studios? I might be able to save money that way.
+2026-01-03 03:05:47 [    INFO] gemma_agent_test: Response (10784ms): Here are a few options for you:
+
+1.  **Cozy 1BR with classic charm and excellent closet space.** Ava...
+2026-01-03 03:05:47 [    INFO] gemma_agent_test: Processing turn 3: Actually, what about studios? I might be able to save money that way.
 
 Amanda Le...
-2026-01-03 02:40:13 [    INFO] gemma_agent_test: Response: I apologize, but I was unable to retrieve the 2-bedroom options. The request failed due to a validat...
-2026-01-03 02:40:13 [    INFO] gemma_agent_test: Result: PASSED
-2026-01-03 02:40:13 [    INFO] gemma_agent_test: Duration: 7882ms
-2026-01-03 02:40:13 [    INFO] gemma_agent_test: Tool calls made: 5
-2026-01-03 02:40:13 [    INFO] gemma_agent_test:   - get_available_listings: {'bedrooms': [], 'max_rent': 10000}
-2026-01-03 02:40:13 [    INFO] gemma_agent_test:   - get_available_listings: {'bedrooms': [], 'max_rent': 10000}
-2026-01-03 02:40:13 [    INFO] gemma_agent_test:   - get_available_listings: {'bedrooms': 2}
-2026-01-03 02:40:13 [    INFO] gemma_agent_test:   - get_available_listings: {'bedrooms': [], 'max_rent': 10000}
-2026-01-03 02:40:13 [    INFO] gemma_agent_test:   - get_available_listings: {'bedrooms': 2}
-2026-01-03 02:40:13 [    INFO] gemma_agent_test: Final response: I apologize, but I was unable to retrieve the 2-bedroom options. The request failed due to a validation error in the provided input data....
-2026-01-03 02:40:13 [    INFO] gemma_agent_test: ======================================================================
-2026-01-03 02:40:13 [    INFO] gemma_agent_test: SCENARIO: [edge_case] EC001 - Partial Contact Info - Progressive Collection
-2026-01-03 02:40:13 [    INFO] gemma_agent_test: ======================================================================
-2026-01-03 02:40:13 [    INFO] gemma_agent_test: Session started: 82904015-5385-4353-a201-20d192c6ab9e
-2026-01-03 02:40:13 [    INFO] gemma_agent_test: Processing message: I want to book a tour for tomorrow at 3pm to see a 1-bedroom.
+2026-01-03 03:05:58 [    INFO] gemma_agent_test: Response (10497ms): Here are a few options for you:
+
+1.  **Cozy 1BR with classic charm and excellent closet space.** Ava...
+2026-01-03 03:05:58 [    INFO] gemma_agent_test: Turn Metrics - tool_call: 100.0%, response: 100.0%, params: 100.0%, files: 100.0%
+2026-01-03 03:05:58 [    INFO] gemma_agent_test: Result: PASSED
+2026-01-03 03:05:58 [    INFO] gemma_agent_test: Duration: 30019ms
+2026-01-03 03:05:58 [    INFO] gemma_agent_test: Tool calls made: 5
+2026-01-03 03:05:58 [    INFO] gemma_agent_test:   - get_available_listings: {'bedrooms': [1], 'max_rent': 3500}
+2026-01-03 03:05:58 [    INFO] gemma_agent_test:   - get_available_listings: {'bedrooms': [1], 'max_rent': 3500}
+2026-01-03 03:05:58 [    INFO] gemma_agent_test:   - get_available_listings: {'bedrooms': [1], 'max_rent': 3500}
+2026-01-03 03:05:58 [    INFO] gemma_agent_test:   - get_available_listings: {'bedrooms': [1], 'max_rent': 3500}
+2026-01-03 03:05:58 [    INFO] gemma_agent_test:   - get_available_listings: {'bedrooms': [1], 'max_rent': 3500}
+2026-01-03 03:05:58 [    INFO] gemma_agent_test: Final response: Here are a few options for you:
+
+1.  **Cozy 1BR with classic charm and excellent closet space.** Available for rent from February 15th to 2025. Features 1 bedroom, 1 bathroom, and a 640 sqft closet. R...
+2026-01-03 03:05:58 [    INFO] gemma_agent_test: --------------------------------------------------
+2026-01-03 03:05:58 [    INFO] gemma_agent_test: METRICS:
+2026-01-03 03:05:58 [    INFO] gemma_agent_test:   Tool Calling Rate: 100.0%
+2026-01-03 03:05:58 [    INFO] gemma_agent_test:   Correct Response Rate: 100.0%
+2026-01-03 03:05:58 [    INFO] gemma_agent_test:   Correct Tool Call Rate: 100.0%
+2026-01-03 03:05:58 [    INFO] gemma_agent_test:   File Verification Rate: 100.0%
+2026-01-03 03:05:58 [   DEBUG] gemma_agent_test:   Turn 1: tools_ok=True, response_ok=True, params_ok=False, latency=8709ms
+2026-01-03 03:05:58 [   DEBUG] gemma_agent_test:   Turn 2: tools_ok=True, response_ok=True, params_ok=False, latency=10784ms
+2026-01-03 03:05:58 [   DEBUG] gemma_agent_test:   Turn 3: tools_ok=True, response_ok=True, params_ok=False, latency=10497ms
+2026-01-03 03:05:58 [    INFO] gemma_agent_test: --------------------------------------------------
+2026-01-03 03:05:58 [    INFO] gemma_agent_test: ======================================================================
+2026-01-03 03:05:58 [    INFO] gemma_agent_test: SCENARIO: [edge_case] EC001 - Partial Contact Info - Progressive Collection
+2026-01-03 03:05:58 [    INFO] gemma_agent_test: ======================================================================
+2026-01-03 03:05:58 [    INFO] gemma_agent_test: Session started: 82a5e035-ae5e-4ede-a75f-d1e1bd1c5969
+2026-01-03 03:05:58 [    INFO] gemma_agent_test: Processing turn 1: I want to book a tour for tomorrow at 3pm to see a 1-bedroom.
 ...
-2026-01-03 02:40:20 [    INFO] gemma_agent_test: Response: Here are the available time slots for your tour:
-
-Tuesday, May 14, 2024:
-*   09:00 - 10:00
-*   10:00...
-2026-01-03 02:40:20 [    INFO] gemma_agent_test: Processing message: My name is Alex Thompson.
+2026-01-03 03:06:05 [    INFO] gemma_agent_test: Response (7067ms): The appointment for Alice Smith on Thursday, March 14, 2024, at 3:00 PM has been successfully confir...
+2026-01-03 03:06:05 [    INFO] gemma_agent_test: Processing turn 2: My name is Alex Thompson.
 ...
-2026-01-03 02:40:27 [    INFO] gemma_agent_test: Response: Here are the available time slots for your tour:
-
-Tuesday, May 14, 2024:
-*   09:00 - 10:00
-*   10:00...
-2026-01-03 02:40:27 [    INFO] gemma_agent_test: Processing message: alex.thompson@email.com and my phone is (555) 222-3333
+2026-01-03 03:06:09 [    INFO] gemma_agent_test: Response (4104ms): The lead created for Alex Thompson is:
+**Lead ID:** LEAD-F15A7EA6
+**Message:** Lead successfully cre...
+2026-01-03 03:06:09 [    INFO] gemma_agent_test: Processing turn 3: alex.thompson@email.com and my phone is (555) 222-3333
 ...
-2026-01-03 02:40:34 [    INFO] gemma_agent_test: Response: The lead creation has been successfully initiated.
+2026-01-03 03:06:18 [    INFO] gemma_agent_test: Response (8939ms): Here are the outcomes:
 
-Here are the details:
+**Alex.thompson@email.com:**
+The lead for Alex Thompson has been successfull...
+2026-01-03 03:06:18 [    INFO] gemma_agent_test: Turn Metrics - tool_call: 100.0%, response: 100.0%, params: 100.0%, files: 66.7%
+2026-01-03 03:06:18 [    INFO] gemma_agent_test: Result: PASSED
+2026-01-03 03:06:18 [    INFO] gemma_agent_test: Duration: 20130ms
+2026-01-03 03:06:18 [    INFO] gemma_agent_test: Tool calls made: 4
+2026-01-03 03:06:18 [    INFO] gemma_agent_test:   - create_appointment: {'appointment_date': '2024-03-14', 'first_name': 'Alice', 'last_name': 'Smith', 'appointment_start_time': '14:00', 'email': 'alice@example.com', 'phone': '112-555-1122'}
+2026-01-03 03:06:18 [    INFO] gemma_agent_test:   - create_lead: {'first_name': 'Alex', 'last_name': 'Thompson', 'email': 'alex@example.com', 'phone': '112-555-1122'}
+2026-01-03 03:06:18 [    INFO] gemma_agent_test:   - create_lead: {'email': 'alex.thompson@email.com', 'first_name': 'Alex', 'last_name': 'Thompson', 'phone': '112-555-1122'}
+2026-01-03 03:06:18 [    INFO] gemma_agent_test:   - get_availability: {'date_str': '2024-03-14'}
+2026-01-03 03:06:18 [    INFO] gemma_agent_test: Final response: Here are the outcomes:
 
-**Lead Created:**
-*   **I...
-2026-01-03 02:40:34 [    INFO] gemma_agent_test: Result: PASSED
-2026-01-03 02:40:34 [    INFO] gemma_agent_test: Duration: 20887ms
-2026-01-03 02:40:34 [    INFO] gemma_agent_test: Tool calls made: 3
-2026-01-03 02:40:34 [    INFO] gemma_agent_test:   - get_availability: {'date_str': '2024-05-14'}
-2026-01-03 02:40:34 [    INFO] gemma_agent_test:   - get_availability: {'date_str': '2024-05-14'}
-2026-01-03 02:40:34 [    INFO] gemma_agent_test:   - create_lead: {'email': 'alex.thompson@email.com', 'first_name': 'Alex', 'last_name': 'Thompson', 'phone': '555 222-3333'}
-2026-01-03 02:40:34 [    INFO] gemma_agent_test: Final response: The lead creation has been successfully initiated.
-
-Here are the details:
-
-**Lead Created:**
-*   **ID:** LEAD-E5187CB0
-*   **Message:** "Lead successfully created for Alex Thompson."
-*   **Next Steps:...
-2026-01-03 02:40:34 [    INFO] gemma_agent_test: ======================================================================
-2026-01-03 02:40:34 [    INFO] gemma_agent_test: SCENARIO: [edge_case] EC002 - Unusual Date Formats
-2026-01-03 02:40:34 [    INFO] gemma_agent_test: ======================================================================
-2026-01-03 02:40:34 [    INFO] gemma_agent_test: Session started: bf11e0d8-d83e-4b71-8ed4-455a424114e7
-2026-01-03 02:40:34 [    INFO] gemma_agent_test: Processing message: Hi,
+**Alex.thompson@email.com:**
+The lead for Alex Thompson has been successfully created. The lead ID is **LEAD-F15A7EA6**. It is already present in this session. No duplicate was...
+2026-01-03 03:06:18 [    INFO] gemma_agent_test: --------------------------------------------------
+2026-01-03 03:06:18 [    INFO] gemma_agent_test: METRICS:
+2026-01-03 03:06:18 [    INFO] gemma_agent_test:   Tool Calling Rate: 100.0%
+2026-01-03 03:06:18 [    INFO] gemma_agent_test:   Correct Response Rate: 100.0%
+2026-01-03 03:06:18 [    INFO] gemma_agent_test:   Correct Tool Call Rate: 100.0%
+2026-01-03 03:06:18 [    INFO] gemma_agent_test:   File Verification Rate: 66.7%
+2026-01-03 03:06:18 [   DEBUG] gemma_agent_test:   Turn 1: tools_ok=True, response_ok=True, params_ok=False, latency=7067ms
+2026-01-03 03:06:18 [   DEBUG] gemma_agent_test:   Turn 2: tools_ok=True, response_ok=True, params_ok=False, latency=4104ms
+2026-01-03 03:06:18 [   DEBUG] gemma_agent_test:   Turn 3: tools_ok=True, response_ok=True, params_ok=False, latency=8939ms
+2026-01-03 03:06:18 [ WARNING] gemma_agent_test: Failures:
+2026-01-03 03:06:18 [ WARNING] gemma_agent_test:   - Metrics threshold not met: tool_rate=1.00, response_rate=1.00, param_rate=1.00
+2026-01-03 03:06:18 [    INFO] gemma_agent_test: --------------------------------------------------
+2026-01-03 03:06:18 [    INFO] gemma_agent_test: ======================================================================
+2026-01-03 03:06:18 [    INFO] gemma_agent_test: SCENARIO: [edge_case] EC002 - Unusual Date Formats
+2026-01-03 03:06:18 [    INFO] gemma_agent_test: ======================================================================
+2026-01-03 03:06:18 [    INFO] gemma_agent_test: Session started: f7880ccc-ef65-4997-b251-9bfbda96754b
+2026-01-03 03:06:18 [    INFO] gemma_agent_test: Processing turn 1: Hi,
 
 Can I schedule a tour for the fifteenth of February, twenty twenty-five at ...
-2026-01-03 02:40:37 [    INFO] gemma_agent_test: Response: The available time slots for Saturday, February 15, 2025, are:
+2026-01-03 03:06:21 [    INFO] gemma_agent_test: Response (3473ms): The available time slots for Saturday, February 15, 2025, are:
 
 *   **09:00**
 *   **10:00**
 *   **13...
-2026-01-03 02:40:37 [    INFO] gemma_agent_test: Result: PASSED
-2026-01-03 02:40:37 [    INFO] gemma_agent_test: Duration: 3516ms
-2026-01-03 02:40:37 [    INFO] gemma_agent_test: Tool calls made: 1
-2026-01-03 02:40:37 [    INFO] gemma_agent_test:   - get_availability: {'date_str': '2025-02-15'}
-2026-01-03 02:40:37 [    INFO] gemma_agent_test: Final response: The available time slots for Saturday, February 15, 2025, are:
+2026-01-03 03:06:21 [    INFO] gemma_agent_test: Turn Metrics - tool_call: 100.0%, response: 100.0%, params: 100.0%, files: 100.0%
+2026-01-03 03:06:21 [    INFO] gemma_agent_test: Result: PASSED
+2026-01-03 03:06:21 [    INFO] gemma_agent_test: Duration: 3492ms
+2026-01-03 03:06:21 [    INFO] gemma_agent_test: Tool calls made: 1
+2026-01-03 03:06:21 [    INFO] gemma_agent_test:   - get_availability: {'date_str': '2025-02-15'}
+2026-01-03 03:06:21 [    INFO] gemma_agent_test: Final response: The available time slots for Saturday, February 15, 2025, are:
 
 *   **09:00**
 *   **10:00**
@@ -549,119 +724,183 @@ Can I schedule a tour for the fifteenth of February, twenty twenty-five at ...
 *   **14:00**
 *   **15:00**
 *   **17:00**...
-2026-01-03 02:40:37 [    INFO] gemma_agent_test: ======================================================================
-2026-01-03 02:40:37 [    INFO] gemma_agent_test: SCENARIO: [edge_case] EC003 - Phone Number Spoken Format
-2026-01-03 02:40:37 [    INFO] gemma_agent_test: ======================================================================
-2026-01-03 02:40:37 [    INFO] gemma_agent_test: Session started: 0514b6b5-e7c8-40c4-af6b-d7cdd791c8ad
-2026-01-03 02:40:37 [    INFO] gemma_agent_test: Processing message: I want to tour Unit 301 on February 20th at 11am. My name is Chris Taylor.
+2026-01-03 03:06:21 [    INFO] gemma_agent_test: --------------------------------------------------
+2026-01-03 03:06:21 [    INFO] gemma_agent_test: METRICS:
+2026-01-03 03:06:21 [    INFO] gemma_agent_test:   Tool Calling Rate: 100.0%
+2026-01-03 03:06:21 [    INFO] gemma_agent_test:   Correct Response Rate: 100.0%
+2026-01-03 03:06:21 [    INFO] gemma_agent_test:   Correct Tool Call Rate: 100.0%
+2026-01-03 03:06:21 [    INFO] gemma_agent_test:   File Verification Rate: 100.0%
+2026-01-03 03:06:21 [   DEBUG] gemma_agent_test:   Turn 1: tools_ok=True, response_ok=True, params_ok=False, latency=3473ms
+2026-01-03 03:06:21 [    INFO] gemma_agent_test: --------------------------------------------------
+2026-01-03 03:06:21 [    INFO] gemma_agent_test: ======================================================================
+2026-01-03 03:06:21 [    INFO] gemma_agent_test: SCENARIO: [edge_case] EC003 - Phone Number Spoken Format
+2026-01-03 03:06:21 [    INFO] gemma_agent_test: ======================================================================
+2026-01-03 03:06:21 [    INFO] gemma_agent_test: Session started: abfcfe2d-30e2-4271-84e1-3b531b4f1018
+2026-01-03 03:06:21 [    INFO] gemma_agent_test: Processing turn 1: I want to tour Unit 301 on February 20th at 11am. My name is Chris Taylor.
 ...
-2026-01-03 02:40:45 [    INFO] gemma_agent_test: Response: The appointment for Chris Taylor on February 20, 2024, at 11:00 AM has been successfully confirmed.
+2026-01-03 03:06:28 [    INFO] gemma_agent_test: Response (6985ms): The appointment for Chris Taylor on February 20, 2024, at 11:00 AM has been successfully confirmed.
 ...
-2026-01-03 02:40:45 [    INFO] gemma_agent_test: Processing message: Email is chris.taylor@domain.org and my cell is five five five, four four four, ...
-2026-01-03 02:40:52 [    INFO] gemma_agent_test: Response: Here are the outcomes:
+2026-01-03 03:06:28 [    INFO] gemma_agent_test: Processing turn 2: Email is chris.taylor@domain.org and my cell is five five five, four four four, ...
+2026-01-03 03:06:35 [    INFO] gemma_agent_test: Response (6196ms): Here are the outcomes:
 
-**1. Appointment Confirmation:**
-The appointment for Chris Taylor on Februar...
-2026-01-03 02:40:52 [    INFO] gemma_agent_test: Result: PASSED
-2026-01-03 02:40:52 [    INFO] gemma_agent_test: Duration: 15137ms
-2026-01-03 02:40:52 [    INFO] gemma_agent_test: Tool calls made: 3
-2026-01-03 02:40:52 [    INFO] gemma_agent_test:   - create_appointment: {'appointment_date': '2024-02-20', 'appointment_start_time': '11:00', 'first_name': 'Chris', 'last_name': 'Taylor', 'email': 'chris.taylor@example.com', 'phone': '112-555-1234'}
-2026-01-03 02:40:52 [    INFO] gemma_agent_test:   - create_lead: {'email': 'chris.taylor@domain.org', 'first_name': 'Chris', 'last_name': 'Taylor', 'phone': '555-555-1234'}
-2026-01-03 02:40:52 [    INFO] gemma_agent_test:   - escalate_conversation: {'reason_for_escalation': 'Urgent: Property maintenance update due to unexpected high volume of requests requiring specialized services.'}
-2026-01-03 02:40:52 [    INFO] gemma_agent_test: Final response: Here are the outcomes:
+**Email Created:**
+The email has been successfully created with ID: **LEAD-F...
+2026-01-03 03:06:35 [    INFO] gemma_agent_test: Turn Metrics - tool_call: 100.0%, response: 100.0%, params: 100.0%, files: 100.0%
+2026-01-03 03:06:35 [    INFO] gemma_agent_test: Result: PASSED
+2026-01-03 03:06:35 [    INFO] gemma_agent_test: Duration: 13204ms
+2026-01-03 03:06:35 [    INFO] gemma_agent_test: Tool calls made: 3
+2026-01-03 03:06:35 [    INFO] gemma_agent_test:   - create_appointment: {'appointment_date': '2024-02-20', 'appointment_start_time': '11:00', 'first_name': 'Chris', 'last_name': 'Taylor', 'email': 'chris.taylor@example.com', 'phone': '112-555-1234'}
+2026-01-03 03:06:35 [    INFO] gemma_agent_test:   - create_lead: {'email': 'chris.taylor@domain.org', 'first_name': 'Chris', 'last_name': 'Taylor', 'phone': '112-555-1234'}
+2026-01-03 03:06:35 [    INFO] gemma_agent_test:   - escalate_conversation: {'reason_for_escalation': 'Urgent: Review of property maintenance coverage'}
+2026-01-03 03:06:35 [    INFO] gemma_agent_test: Final response: Here are the outcomes:
 
-**1. Appointment Confirmation:**
-The appointment for Chris Taylor on February 20, 2024, at 11:00 AM has been successfully confirmed. The confirmation ID is **7237455B**.
+**Email Created:**
+The email has been successfully created with ID: **LEAD-F8C5B0BC**.
 
-**2. ...
-2026-01-03 02:40:52 [    INFO] gemma_agent_test: ======================================================================
-2026-01-03 02:40:52 [    INFO] gemma_agent_test: SCENARIO: [edge_case] EC004 - Multi-Intent Single Message
-2026-01-03 02:40:52 [    INFO] gemma_agent_test: ======================================================================
-2026-01-03 02:40:52 [    INFO] gemma_agent_test: Session started: af7f89fd-32a6-47e3-9ff3-0a4605445b5f
-2026-01-03 02:40:52 [    INFO] gemma_agent_test: Processing message: Subject: Multiple Questions
+**Lead Created:**
+The lead has been successfully created with ID: **LEAD-F8C5B0BC**.
+
+**...
+2026-01-03 03:06:35 [    INFO] gemma_agent_test: --------------------------------------------------
+2026-01-03 03:06:35 [    INFO] gemma_agent_test: METRICS:
+2026-01-03 03:06:35 [    INFO] gemma_agent_test:   Tool Calling Rate: 100.0%
+2026-01-03 03:06:35 [    INFO] gemma_agent_test:   Correct Response Rate: 100.0%
+2026-01-03 03:06:35 [    INFO] gemma_agent_test:   Correct Tool Call Rate: 100.0%
+2026-01-03 03:06:35 [    INFO] gemma_agent_test:   File Verification Rate: 100.0%
+2026-01-03 03:06:35 [   DEBUG] gemma_agent_test:   Turn 1: tools_ok=True, response_ok=True, params_ok=False, latency=6985ms
+2026-01-03 03:06:35 [   DEBUG] gemma_agent_test:   Turn 2: tools_ok=True, response_ok=True, params_ok=False, latency=6196ms
+2026-01-03 03:06:35 [    INFO] gemma_agent_test: --------------------------------------------------
+2026-01-03 03:06:35 [    INFO] gemma_agent_test: ======================================================================
+2026-01-03 03:06:35 [    INFO] gemma_agent_test: SCENARIO: [edge_case] EC004 - Multi-Intent Single Message
+2026-01-03 03:06:35 [    INFO] gemma_agent_test: ======================================================================
+2026-01-03 03:06:35 [    INFO] gemma_agent_test: Session started: 1845291b-14e6-46ad-8fb0-dcc6ce2b1d23
+2026-01-03 03:06:35 [    INFO] gemma_agent_test: Processing turn 1: Subject: Multiple Questions
 
 Dear Leasing Team,
 
 I need a 2-bedroom apartment an...
-2026-01-03 02:41:05 [    INFO] gemma_agent_test: Response: Here are the outcomes for the requested actions:
+2026-01-03 03:06:47 [    INFO] gemma_agent_test: Response (11995ms): Here are the results for your requests:
 
 **1. Multiple Questions:**
-A 2-bedroom apartment a...
-2026-01-03 02:41:05 [    INFO] gemma_agent_test: Result: FAILED
-2026-01-03 02:41:05 [    INFO] gemma_agent_test: Duration: 12119ms
-2026-01-03 02:41:05 [    INFO] gemma_agent_test: Tool calls made: 3
-2026-01-03 02:41:05 [    INFO] gemma_agent_test:   - create_appointment: {'appointment_date': '2024-03-15', 'first_name': 'Michael', 'last_name': 'Brown', 'email': 'michael.brown.multi@email.com', 'appointment_start_time': '10:00', 'phone': '13-11'}
-2026-01-03 02:41:05 [    INFO] gemma_agent_test:   - get_availability: {'date_str': '2024-03-15'}
-2026-01-03 02:41:05 [    INFO] gemma_agent_test:   - search_property_knowledge: {'category': 'pet policy', 'search_text': 'parking'}
-2026-01-03 02:41:05 [    INFO] gemma_agent_test: Final response: Here are the outcomes for the requested actions:
+The appointment has been success...
+2026-01-03 03:06:47 [    INFO] gemma_agent_test: Turn Metrics - tool_call: 100.0%, response: 100.0%, params: 100.0%, files: 100.0%
+2026-01-03 03:06:47 [    INFO] gemma_agent_test: Result: FAILED
+2026-01-03 03:06:47 [    INFO] gemma_agent_test: Duration: 12020ms
+2026-01-03 03:06:47 [    INFO] gemma_agent_test: Tool calls made: 3
+2026-01-03 03:06:47 [    INFO] gemma_agent_test:   - create_appointment: {'appointment_date': '2024-03-15', 'first_name': 'Michael', 'last_name': 'Brown', 'email': 'michael.brown.multi@email.com', 'appointment_start_time': '10:00', 'phone': '13-11'}
+2026-01-03 03:06:47 [    INFO] gemma_agent_test:   - get_availability: {'date_str': '2024-03-15'}
+2026-01-03 03:06:47 [    INFO] gemma_agent_test:   - search_property_knowledge: {'category': 'pet policy', 'search_text': 'parking'}
+2026-01-03 03:06:47 [    INFO] gemma_agent_test: Final response: Here are the results for your requests:
 
 **1. Multiple Questions:**
-A 2-bedroom apartment and pet policy consultation has been successfully scheduled.
-*   **Date:** March 15, 2024
-*   **Time:...
-2026-01-03 02:41:05 [ WARNING] gemma_agent_test: Failures:
-2026-01-03 02:41:05 [ WARNING] gemma_agent_test:   - Expected tool 'get_available_listings' was not called
-2026-01-03 02:41:05 [    INFO] gemma_agent_test: ======================================================================
-2026-01-03 02:41:05 [    INFO] gemma_agent_test: SCENARIO: [edge_case] EC005 - Budget Below Minimum
-2026-01-03 02:41:05 [    INFO] gemma_agent_test: ======================================================================
-2026-01-03 02:41:05 [    INFO] gemma_agent_test: Session started: 607c463c-16d4-4903-a8ba-007f79491a76
-2026-01-03 02:41:05 [    INFO] gemma_agent_test: Processing message: Hi,
+The appointment has been successfully confirmed for Michael Brown on Friday, March 15, 2024, at 10:00 AM. The confirmation ID is E54...
+2026-01-03 03:06:47 [    INFO] gemma_agent_test: --------------------------------------------------
+2026-01-03 03:06:47 [    INFO] gemma_agent_test: METRICS:
+2026-01-03 03:06:47 [    INFO] gemma_agent_test:   Tool Calling Rate: 100.0%
+2026-01-03 03:06:47 [    INFO] gemma_agent_test:   Correct Response Rate: 100.0%
+2026-01-03 03:06:47 [    INFO] gemma_agent_test:   Correct Tool Call Rate: 100.0%
+2026-01-03 03:06:47 [    INFO] gemma_agent_test:   File Verification Rate: 100.0%
+2026-01-03 03:06:47 [   DEBUG] gemma_agent_test:   Turn 1: tools_ok=True, response_ok=True, params_ok=False, latency=11995ms
+2026-01-03 03:06:47 [ WARNING] gemma_agent_test: Failures:
+2026-01-03 03:06:47 [ WARNING] gemma_agent_test:   - Expected tool 'get_available_listings' was not called
+2026-01-03 03:06:47 [    INFO] gemma_agent_test: --------------------------------------------------
+2026-01-03 03:06:47 [    INFO] gemma_agent_test: ======================================================================
+2026-01-03 03:06:47 [    INFO] gemma_agent_test: SCENARIO: [edge_case] EC005 - Budget Below Minimum
+2026-01-03 03:06:47 [    INFO] gemma_agent_test: ======================================================================
+2026-01-03 03:06:47 [    INFO] gemma_agent_test: Session started: 4bed85aa-156e-4767-938d-4f226c0f6e6f
+2026-01-03 03:06:47 [    INFO] gemma_agent_test: Processing turn 1: Hi,
 
 I'm on a very tight budget. Looking for any apartment under $800 per month....
-2026-01-03 02:41:06 [    INFO] gemma_agent_test: Response: I apologize, but I cannot assist with finding or recommending apartment rental options. My current t...
-2026-01-03 02:41:06 [    INFO] gemma_agent_test: Result: FAILED
-2026-01-03 02:41:06 [    INFO] gemma_agent_test: Duration: 1558ms
-2026-01-03 02:41:06 [    INFO] gemma_agent_test: Final response: I apologize, but I cannot assist with finding or recommending apartment rental options. My current tools are designed for managing property listings and appointments, and I cannot browse or search for...
-2026-01-03 02:41:06 [ WARNING] gemma_agent_test: Failures:
-2026-01-03 02:41:06 [ WARNING] gemma_agent_test:   - Expected tool 'get_available_listings' was not called
-2026-01-03 02:41:06 [    INFO] gemma_agent_test: ======================================================================
-2026-01-03 02:41:06 [    INFO] gemma_agent_test: SCENARIO: [edge_case] EC006 - Flexible Bedroom Range
-2026-01-03 02:41:06 [    INFO] gemma_agent_test: ======================================================================
-2026-01-03 02:41:06 [    INFO] gemma_agent_test: Session started: ad6601f1-1aae-4e50-89e1-ad1736ce8727
-2026-01-03 02:41:06 [    INFO] gemma_agent_test: Processing message: Hello,
+2026-01-03 03:06:48 [    INFO] gemma_agent_test: Response (1571ms): I apologize, but I cannot assist with finding or recommending apartment rentals. My current tools ar...
+2026-01-03 03:06:48 [    INFO] gemma_agent_test: Turn Metrics - tool_call: 100.0%, response: 100.0%, params: 100.0%, files: 100.0%
+2026-01-03 03:06:48 [    INFO] gemma_agent_test: Result: FAILED
+2026-01-03 03:06:48 [    INFO] gemma_agent_test: Duration: 1591ms
+2026-01-03 03:06:48 [    INFO] gemma_agent_test: Final response: I apologize, but I cannot assist with finding or recommending apartment rentals. My current tools are designed for managing property listings, such as searching for available apartments and booking to...
+2026-01-03 03:06:48 [    INFO] gemma_agent_test: --------------------------------------------------
+2026-01-03 03:06:48 [    INFO] gemma_agent_test: METRICS:
+2026-01-03 03:06:48 [    INFO] gemma_agent_test:   Tool Calling Rate: 100.0%
+2026-01-03 03:06:48 [    INFO] gemma_agent_test:   Correct Response Rate: 100.0%
+2026-01-03 03:06:48 [    INFO] gemma_agent_test:   Correct Tool Call Rate: 100.0%
+2026-01-03 03:06:48 [    INFO] gemma_agent_test:   File Verification Rate: 100.0%
+2026-01-03 03:06:48 [   DEBUG] gemma_agent_test:   Turn 1: tools_ok=True, response_ok=True, params_ok=False, latency=1571ms
+2026-01-03 03:06:48 [ WARNING] gemma_agent_test: Failures:
+2026-01-03 03:06:48 [ WARNING] gemma_agent_test:   - Expected tool 'get_available_listings' was not called
+2026-01-03 03:06:48 [    INFO] gemma_agent_test: --------------------------------------------------
+2026-01-03 03:06:48 [    INFO] gemma_agent_test: ======================================================================
+2026-01-03 03:06:48 [    INFO] gemma_agent_test: SCENARIO: [edge_case] EC006 - Flexible Bedroom Range
+2026-01-03 03:06:48 [    INFO] gemma_agent_test: ======================================================================
+2026-01-03 03:06:48 [    INFO] gemma_agent_test: Session started: 84cd8e46-4476-496a-8f35-642f133ec9f2
+2026-01-03 03:06:48 [    INFO] gemma_agent_test: Processing turn 1: Hello,
 
 I'm flexible on size - anywhere from 1 to 3 bedrooms would work for me. ...
-2026-01-03 02:41:07 [    INFO] gemma_agent_test: Response: I apologize, but I cannot assist with finding or booking rental properties. My current tools are des...
-2026-01-03 02:41:07 [    INFO] gemma_agent_test: Result: FAILED
-2026-01-03 02:41:07 [    INFO] gemma_agent_test: Duration: 1367ms
-2026-01-03 02:41:07 [    INFO] gemma_agent_test: Final response: I apologize, but I cannot assist with finding or booking rental properties. My current tools are designed for managing property listings and appointments, and I cannot access or connect with financial...
-2026-01-03 02:41:07 [ WARNING] gemma_agent_test: Failures:
-2026-01-03 02:41:07 [ WARNING] gemma_agent_test:   - Expected tool 'get_available_listings' was not called
-2026-01-03 02:41:07 [    INFO] gemma_agent_test: ======================================================================
-2026-01-03 02:41:07 [    INFO] gemma_agent_test: SCENARIO: [edge_case] EC007 - Very Long Formal Email
-2026-01-03 02:41:07 [    INFO] gemma_agent_test: ======================================================================
-2026-01-03 02:41:07 [    INFO] gemma_agent_test: Session started: 990677d4-349a-48db-933d-c6c67808f803
-2026-01-03 02:41:07 [    INFO] gemma_agent_test: Processing message: Subject: Detailed Apartment Inquiry - Moving from Out of State
+2026-01-03 03:06:50 [    INFO] gemma_agent_test: Response (2065ms): I apologize, but I cannot assist with finding or booking property rental arrangements. My current to...
+2026-01-03 03:06:50 [    INFO] gemma_agent_test: Turn Metrics - tool_call: 100.0%, response: 100.0%, params: 100.0%, files: 100.0%
+2026-01-03 03:06:50 [    INFO] gemma_agent_test: Result: FAILED
+2026-01-03 03:06:50 [    INFO] gemma_agent_test: Duration: 2084ms
+2026-01-03 03:06:50 [    INFO] gemma_agent_test: Final response: I apologize, but I cannot assist with finding or booking property rental arrangements. My current tools are designed for managing property listings, appointments, and customer support, and cannot acce...
+2026-01-03 03:06:50 [    INFO] gemma_agent_test: --------------------------------------------------
+2026-01-03 03:06:50 [    INFO] gemma_agent_test: METRICS:
+2026-01-03 03:06:50 [    INFO] gemma_agent_test:   Tool Calling Rate: 100.0%
+2026-01-03 03:06:50 [    INFO] gemma_agent_test:   Correct Response Rate: 100.0%
+2026-01-03 03:06:50 [    INFO] gemma_agent_test:   Correct Tool Call Rate: 100.0%
+2026-01-03 03:06:50 [    INFO] gemma_agent_test:   File Verification Rate: 100.0%
+2026-01-03 03:06:50 [   DEBUG] gemma_agent_test:   Turn 1: tools_ok=True, response_ok=True, params_ok=False, latency=2065ms
+2026-01-03 03:06:50 [ WARNING] gemma_agent_test: Failures:
+2026-01-03 03:06:50 [ WARNING] gemma_agent_test:   - Expected tool 'get_available_listings' was not called
+2026-01-03 03:06:50 [    INFO] gemma_agent_test: --------------------------------------------------
+2026-01-03 03:06:50 [    INFO] gemma_agent_test: ======================================================================
+2026-01-03 03:06:50 [    INFO] gemma_agent_test: SCENARIO: [edge_case] EC007 - Very Long Formal Email
+2026-01-03 03:06:50 [    INFO] gemma_agent_test: ======================================================================
+2026-01-03 03:06:50 [    INFO] gemma_agent_test: Session started: 45ed8f50-2e79-40c1-bbbf-2e9073f0b3ce
+2026-01-03 03:06:50 [    INFO] gemma_agent_test: Processing turn 1: Subject: Detailed Apartment Inquiry - Moving from Out of State
 
 Dear Leasing Off...
-2026-01-03 02:41:12 [    INFO] gemma_agent_test: Response: Here are a few options for your apartment request:
+2026-01-03 03:06:55 [    INFO] gemma_agent_test: Response (4291ms): Here are a few options for your apartment request:
 
-The listing available is for a 3-bedroom apartme...
-2026-01-03 02:41:12 [    INFO] gemma_agent_test: Result: PASSED
-2026-01-03 02:41:12 [    INFO] gemma_agent_test: Duration: 4262ms
-2026-01-03 02:41:12 [    INFO] gemma_agent_test: Tool calls made: 1
-2026-01-03 02:41:12 [    INFO] gemma_agent_test:   - get_available_listings: {'bedrooms': [3], 'max_rent': 3500}
-2026-01-03 02:41:12 [    INFO] gemma_agent_test: Final response: Here are a few options for your apartment request:
+The listing available is for a **3-bedroom 2BA a...
+2026-01-03 03:06:55 [    INFO] gemma_agent_test: Turn Metrics - tool_call: 100.0%, response: 100.0%, params: 100.0%, files: 100.0%
+2026-01-03 03:06:55 [    INFO] gemma_agent_test: Result: PASSED
+2026-01-03 03:06:55 [    INFO] gemma_agent_test: Duration: 4310ms
+2026-01-03 03:06:55 [    INFO] gemma_agent_test: Tool calls made: 1
+2026-01-03 03:06:55 [    INFO] gemma_agent_test:   - get_available_listings: {'bedrooms': [3], 'max_rent': 3500}
+2026-01-03 03:06:55 [    INFO] gemma_agent_test: Final response: Here are a few options for your apartment request:
 
-The listing available is for a 3-bedroom apartment with 2 bathrooms and updated kitchen. It costs $2650 per month and includes parking. There are 3 ...
-2026-01-03 02:41:12 [    INFO] gemma_agent_test: ======================================================================
-2026-01-03 02:41:12 [    INFO] gemma_agent_test: SCENARIO: [edge_case] EC008 - Callback Request Only
-2026-01-03 02:41:12 [    INFO] gemma_agent_test: ======================================================================
-2026-01-03 02:41:12 [    INFO] gemma_agent_test: Session started: 4eda08a2-bec0-4cd7-ad26-3f0eb6a277d3
-2026-01-03 02:41:12 [    INFO] gemma_agent_test: Processing message: Hi,
+The listing available is for a **3-bedroom 2BA apartment** with updated kitchen and great closet space. It costs between $2650.00 and $3500.00 per m...
+2026-01-03 03:06:55 [    INFO] gemma_agent_test: --------------------------------------------------
+2026-01-03 03:06:55 [    INFO] gemma_agent_test: METRICS:
+2026-01-03 03:06:55 [    INFO] gemma_agent_test:   Tool Calling Rate: 100.0%
+2026-01-03 03:06:55 [    INFO] gemma_agent_test:   Correct Response Rate: 100.0%
+2026-01-03 03:06:55 [    INFO] gemma_agent_test:   Correct Tool Call Rate: 100.0%
+2026-01-03 03:06:55 [    INFO] gemma_agent_test:   File Verification Rate: 100.0%
+2026-01-03 03:06:55 [   DEBUG] gemma_agent_test:   Turn 1: tools_ok=True, response_ok=True, params_ok=False, latency=4291ms
+2026-01-03 03:06:55 [    INFO] gemma_agent_test: --------------------------------------------------
+2026-01-03 03:06:55 [    INFO] gemma_agent_test: ======================================================================
+2026-01-03 03:06:55 [    INFO] gemma_agent_test: SCENARIO: [edge_case] EC008 - Callback Request Only
+2026-01-03 03:06:55 [    INFO] gemma_agent_test: ======================================================================
+2026-01-03 03:06:55 [    INFO] gemma_agent_test: Session started: d388a242-d36b-4785-b7b0-ddbb5a7c055c
+2026-01-03 03:06:55 [    INFO] gemma_agent_test: Processing turn 1: Hi,
 
 I'm busy right now but interested in apartments. Can someone call me back t...
-2026-01-03 02:41:13 [    INFO] gemma_agent_test: Response: I apologize, but I cannot assist with contacting or managing personal or professional contacts. My c...
-2026-01-03 02:41:13 [    INFO] gemma_agent_test: Result: FAILED
-2026-01-03 02:41:13 [    INFO] gemma_agent_test: Duration: 1522ms
-2026-01-03 02:41:13 [    INFO] gemma_agent_test: Final response: I apologize, but I cannot assist with contacting or managing personal or professional contacts. My current tools are designed for managing property listings and appointments, and I cannot connect with...
-2026-01-03 02:41:13 [ WARNING] gemma_agent_test: Failures:
-2026-01-03 02:41:13 [ WARNING] gemma_agent_test:   - Expected tool 'create_lead' was not called
-2026-01-03 02:41:13 [    INFO] gemma_agent_test: ======================================================================
-2026-01-03 02:41:13 [    INFO] gemma_agent_test: SCENARIO: [negative] NEG001 - No Tools on Simple Greeting
-2026-01-03 02:41:13 [    INFO] gemma_agent_test: ======================================================================
-2026-01-03 02:41:13 [    INFO] gemma_agent_test: Session started: 2526deb0-3ac2-4ad4-85fc-a8295dcfccbc
-2026-01-03 02:41:13 [    INFO] gemma_agent_test: Processing message: Hello!
+2026-01-03 03:06:56 [    INFO] gemma_agent_test: Response (1494ms): I apologize, but I cannot assist with contacting or managing personal or professional contacts. My c...
+2026-01-03 03:06:56 [    INFO] gemma_agent_test: Turn Metrics - tool_call: 100.0%, response: 100.0%, params: 100.0%, files: 100.0%
+2026-01-03 03:06:56 [    INFO] gemma_agent_test: Result: FAILED
+2026-01-03 03:06:56 [    INFO] gemma_agent_test: Duration: 1517ms
+2026-01-03 03:06:56 [    INFO] gemma_agent_test: Final response: I apologize, but I cannot assist with contacting or managing personal or professional contacts. My current tools are designed for managing property listings and appointments, and I cannot connect with...
+2026-01-03 03:06:56 [    INFO] gemma_agent_test: --------------------------------------------------
+2026-01-03 03:06:56 [    INFO] gemma_agent_test: METRICS:
+2026-01-03 03:06:56 [    INFO] gemma_agent_test:   Tool Calling Rate: 100.0%
+2026-01-03 03:06:56 [    INFO] gemma_agent_test:   Correct Response Rate: 100.0%
+2026-01-03 03:06:56 [    INFO] gemma_agent_test:   Correct Tool Call Rate: 100.0%
+2026-01-03 03:06:56 [    INFO] gemma_agent_test:   File Verification Rate: 100.0%
+2026-01-03 03:06:56 [   DEBUG] gemma_agent_test:   Turn 1: tools_ok=True, response_ok=True, params_ok=False, latency=1494ms
+2026-01-03 03:06:56 [ WARNING] gemma_agent_test: Failures:
+2026-01-03 03:06:56 [ WARNING] gemma_agent_test:   - Expected tool 'create_lead' was not called
+2026-01-03 03:06:56 [    INFO] gemma_agent_test: --------------------------------------------------
+2026-01-03 03:06:56 [    INFO] gemma_agent_test: ======================================================================
+2026-01-03 03:06:56 [    INFO] gemma_agent_test: SCENARIO: [negative] NEG001 - No Tools on Simple Greeting
+2026-01-03 03:06:56 [    INFO] gemma_agent_test: ======================================================================
+2026-01-03 03:06:56 [    INFO] gemma_agent_test: Session started: 39236b8a-131d-4d49-84cc-78a39dd8bd9c
+2026-01-03 03:06:56 [    INFO] gemma_agent_test: Processing turn 1: Hello!
 
 Just saying hi.
 
@@ -669,348 +908,419 @@ John Smith
 john.smith@email.com
 (555) 111-2222
 ...
-2026-01-03 02:41:15 [    INFO] gemma_agent_test: Response: I apologize, but I cannot assist with greeting or connecting with John Smith. My current tools are d...
-2026-01-03 02:41:15 [    INFO] gemma_agent_test: Result: PASSED
-2026-01-03 02:41:15 [    INFO] gemma_agent_test: Duration: 1645ms
-2026-01-03 02:41:15 [    INFO] gemma_agent_test: Final response: I apologize, but I cannot assist with greeting or connecting with John Smith. My current tools are designed for managing property listings, appointments, and customer support, and do not have the capa...
-2026-01-03 02:41:15 [    INFO] gemma_agent_test: ======================================================================
-2026-01-03 02:41:15 [    INFO] gemma_agent_test: SCENARIO: [negative] NEG002 - No Tools on Farewell
-2026-01-03 02:41:15 [    INFO] gemma_agent_test: ======================================================================
-2026-01-03 02:41:15 [    INFO] gemma_agent_test: Session started: a46a53ef-840a-4c52-9fef-185ad13f355e
-2026-01-03 02:41:15 [    INFO] gemma_agent_test: Processing message: Thanks for your help today, goodbye!
+2026-01-03 03:06:58 [    INFO] gemma_agent_test: Response (1487ms): I apologize, but I cannot assist with greeting or connecting with John Smith. My current tools are d...
+2026-01-03 03:06:58 [    INFO] gemma_agent_test: Turn Metrics - tool_call: 100.0%, response: 100.0%, params: 100.0%, files: 100.0%
+2026-01-03 03:06:58 [    INFO] gemma_agent_test: Result: PASSED
+2026-01-03 03:06:58 [    INFO] gemma_agent_test: Duration: 1508ms
+2026-01-03 03:06:58 [    INFO] gemma_agent_test: Final response: I apologize, but I cannot assist with greeting or connecting with John Smith. My current tools are designed for managing property listings, appointments, and customer support, and cannot connect with ...
+2026-01-03 03:06:58 [    INFO] gemma_agent_test: --------------------------------------------------
+2026-01-03 03:06:58 [    INFO] gemma_agent_test: METRICS:
+2026-01-03 03:06:58 [    INFO] gemma_agent_test:   Tool Calling Rate: 100.0%
+2026-01-03 03:06:58 [    INFO] gemma_agent_test:   Correct Response Rate: 100.0%
+2026-01-03 03:06:58 [    INFO] gemma_agent_test:   Correct Tool Call Rate: 100.0%
+2026-01-03 03:06:58 [    INFO] gemma_agent_test:   File Verification Rate: 100.0%
+2026-01-03 03:06:58 [   DEBUG] gemma_agent_test:   Turn 1: tools_ok=True, response_ok=True, params_ok=False, latency=1487ms
+2026-01-03 03:06:58 [    INFO] gemma_agent_test: --------------------------------------------------
+2026-01-03 03:06:58 [    INFO] gemma_agent_test: ======================================================================
+2026-01-03 03:06:58 [    INFO] gemma_agent_test: SCENARIO: [negative] NEG002 - No Tools on Farewell
+2026-01-03 03:06:58 [    INFO] gemma_agent_test: ======================================================================
+2026-01-03 03:06:58 [    INFO] gemma_agent_test: Session started: d7b4cd6b-f5ae-44ef-846c-ba7202162b42
+2026-01-03 03:06:58 [    INFO] gemma_agent_test: Processing turn 1: Thanks for your help today, goodbye!
 
 Jane Doe
 jane.doe@email.com
 (555) 333-4444...
-2026-01-03 02:41:17 [    INFO] gemma_agent_test: Response: I apologize, but I cannot assist with assisting with virtual goodbye or planning. My current tools a...
-2026-01-03 02:41:17 [    INFO] gemma_agent_test: Result: PASSED
-2026-01-03 02:41:17 [    INFO] gemma_agent_test: Duration: 1971ms
-2026-01-03 02:41:17 [    INFO] gemma_agent_test: Final response: I apologize, but I cannot assist with assisting with virtual goodbye or planning. My current tools are designed for managing property listings, appointments, and customer support, and do not have the ...
-2026-01-03 02:41:17 [    INFO] gemma_agent_test: ======================================================================
-2026-01-03 02:41:17 [    INFO] gemma_agent_test: SCENARIO: [negative] NEG003 - No Tools on Off-Topic Question
-2026-01-03 02:41:17 [    INFO] gemma_agent_test: ======================================================================
-2026-01-03 02:41:17 [    INFO] gemma_agent_test: Session started: 4573fc6d-ee2a-4872-8d0c-b9bf917edb7c
-2026-01-03 02:41:17 [    INFO] gemma_agent_test: Processing message: What's the weather like in the city?
+2026-01-03 03:07:00 [    INFO] gemma_agent_test: Response (1831ms): I apologize, but I cannot assist with connecting Jane Doe or her email address. My current tools are...
+2026-01-03 03:07:00 [    INFO] gemma_agent_test: Turn Metrics - tool_call: 100.0%, response: 100.0%, params: 100.0%, files: 100.0%
+2026-01-03 03:07:00 [    INFO] gemma_agent_test: Result: PASSED
+2026-01-03 03:07:00 [    INFO] gemma_agent_test: Duration: 1851ms
+2026-01-03 03:07:00 [    INFO] gemma_agent_test: Final response: I apologize, but I cannot assist with connecting Jane Doe or her email address. My current tools are focused on property management and customer service inquiries, such as searching for available list...
+2026-01-03 03:07:00 [    INFO] gemma_agent_test: --------------------------------------------------
+2026-01-03 03:07:00 [    INFO] gemma_agent_test: METRICS:
+2026-01-03 03:07:00 [    INFO] gemma_agent_test:   Tool Calling Rate: 100.0%
+2026-01-03 03:07:00 [    INFO] gemma_agent_test:   Correct Response Rate: 100.0%
+2026-01-03 03:07:00 [    INFO] gemma_agent_test:   Correct Tool Call Rate: 100.0%
+2026-01-03 03:07:00 [    INFO] gemma_agent_test:   File Verification Rate: 100.0%
+2026-01-03 03:07:00 [   DEBUG] gemma_agent_test:   Turn 1: tools_ok=True, response_ok=True, params_ok=False, latency=1831ms
+2026-01-03 03:07:00 [    INFO] gemma_agent_test: --------------------------------------------------
+2026-01-03 03:07:00 [    INFO] gemma_agent_test: ======================================================================
+2026-01-03 03:07:00 [    INFO] gemma_agent_test: SCENARIO: [negative] NEG003 - No Tools on Off-Topic Question
+2026-01-03 03:07:00 [    INFO] gemma_agent_test: ======================================================================
+2026-01-03 03:07:00 [    INFO] gemma_agent_test: Session started: 6c065aef-c759-4ef4-9a3f-beef75124060
+2026-01-03 03:07:00 [    INFO] gemma_agent_test: Processing turn 1: What's the weather like in the city?
 
 Weather Curious
 weather@email.com
 (555) 99...
-2026-01-03 02:41:18 [    INFO] gemma_agent_test: Response: I apologize, but I cannot assist with checking weather conditions. My current tools are designed for...
-2026-01-03 02:41:18 [    INFO] gemma_agent_test: Result: PASSED
-2026-01-03 02:41:18 [    INFO] gemma_agent_test: Duration: 1401ms
-2026-01-03 02:41:18 [    INFO] gemma_agent_test: Final response: I apologize, but I cannot assist with checking weather conditions. My current tools are designed for managing property listings and appointments, and I cannot access real-time or forecasted weather da...
-2026-01-03 02:41:18 [    INFO] gemma_agent_test: ======================================================================
-2026-01-03 02:41:18 [    INFO] gemma_agent_test: SCENARIO: [negative] NEG004 - No Booking Tools on Simple Question
-2026-01-03 02:41:18 [    INFO] gemma_agent_test: ======================================================================
-2026-01-03 02:41:18 [    INFO] gemma_agent_test: Session started: 9f58f782-0458-4788-9d32-32fe46b55677
-2026-01-03 02:41:18 [    INFO] gemma_agent_test: Processing message: How much do 2-bedroom apartments cost here?
+2026-01-03 03:07:01 [    INFO] gemma_agent_test: Response (1476ms): I apologize, but I cannot assist with checking weather conditions. My current tools are designed for...
+2026-01-03 03:07:01 [    INFO] gemma_agent_test: Turn Metrics - tool_call: 100.0%, response: 100.0%, params: 100.0%, files: 100.0%
+2026-01-03 03:07:01 [    INFO] gemma_agent_test: Result: PASSED
+2026-01-03 03:07:01 [    INFO] gemma_agent_test: Duration: 1499ms
+2026-01-03 03:07:01 [    INFO] gemma_agent_test: Final response: I apologize, but I cannot assist with checking weather conditions. My current tools are designed for managing property listings, appointments, and customer support, and I cannot access real-time or fo...
+2026-01-03 03:07:01 [    INFO] gemma_agent_test: --------------------------------------------------
+2026-01-03 03:07:01 [    INFO] gemma_agent_test: METRICS:
+2026-01-03 03:07:01 [    INFO] gemma_agent_test:   Tool Calling Rate: 100.0%
+2026-01-03 03:07:01 [    INFO] gemma_agent_test:   Correct Response Rate: 100.0%
+2026-01-03 03:07:01 [    INFO] gemma_agent_test:   Correct Tool Call Rate: 100.0%
+2026-01-03 03:07:01 [    INFO] gemma_agent_test:   File Verification Rate: 100.0%
+2026-01-03 03:07:01 [   DEBUG] gemma_agent_test:   Turn 1: tools_ok=True, response_ok=True, params_ok=False, latency=1476ms
+2026-01-03 03:07:01 [    INFO] gemma_agent_test: --------------------------------------------------
+2026-01-03 03:07:01 [    INFO] gemma_agent_test: ======================================================================
+2026-01-03 03:07:01 [    INFO] gemma_agent_test: SCENARIO: [negative] NEG004 - No Booking Tools on Simple Question
+2026-01-03 03:07:01 [    INFO] gemma_agent_test: ======================================================================
+2026-01-03 03:07:01 [    INFO] gemma_agent_test: Session started: 93d93f21-5ef9-46f9-929f-e4c398cb300a
+2026-01-03 03:07:01 [    INFO] gemma_agent_test: Processing turn 1: How much do 2-bedroom apartments cost here?
 
 Price Checker
 price.check@email.com...
-2026-01-03 02:41:20 [    INFO] gemma_agent_test: Response: I apologize, but I cannot assist with pricing or checking property costs. My current tools are desig...
-2026-01-03 02:41:20 [    INFO] gemma_agent_test: Result: FAILED
-2026-01-03 02:41:20 [    INFO] gemma_agent_test: Duration: 1283ms
-2026-01-03 02:41:20 [    INFO] gemma_agent_test: Final response: I apologize, but I cannot assist with pricing or checking property costs. My current tools are designed for managing property listings and appointments, and I cannot provide financial or property-rela...
-2026-01-03 02:41:20 [ WARNING] gemma_agent_test: Failures:
-2026-01-03 02:41:20 [ WARNING] gemma_agent_test:   - Expected tool 'get_available_listings' was not called
-2026-01-03 02:41:20 [    INFO] gemma_agent_test: [GOLDEN PATH] GP001: Formal Email Inquiry to Tour Booking
-2026-01-03 02:41:20 [    INFO] gemma_agent_test: Session started: 5b1b4fad-9844-44f2-a2f8-e0305443e7ab
-2026-01-03 02:41:20 [    INFO] gemma_agent_test: Processing message: Subject: Inquiry About Leasing Options
+2026-01-03 03:07:02 [    INFO] gemma_agent_test: Response (1318ms): I apologize, but I cannot assist with pricing or checking property costs. My current tools are desig...
+2026-01-03 03:07:02 [    INFO] gemma_agent_test: Turn Metrics - tool_call: 100.0%, response: 100.0%, params: 100.0%, files: 100.0%
+2026-01-03 03:07:02 [    INFO] gemma_agent_test: Result: FAILED
+2026-01-03 03:07:02 [    INFO] gemma_agent_test: Duration: 1338ms
+2026-01-03 03:07:02 [    INFO] gemma_agent_test: Final response: I apologize, but I cannot assist with pricing or checking property costs. My current tools are designed for managing property listings and appointments, and I cannot provide financial or property-rela...
+2026-01-03 03:07:02 [    INFO] gemma_agent_test: --------------------------------------------------
+2026-01-03 03:07:02 [    INFO] gemma_agent_test: METRICS:
+2026-01-03 03:07:02 [    INFO] gemma_agent_test:   Tool Calling Rate: 100.0%
+2026-01-03 03:07:02 [    INFO] gemma_agent_test:   Correct Response Rate: 100.0%
+2026-01-03 03:07:02 [    INFO] gemma_agent_test:   Correct Tool Call Rate: 100.0%
+2026-01-03 03:07:02 [    INFO] gemma_agent_test:   File Verification Rate: 100.0%
+2026-01-03 03:07:02 [   DEBUG] gemma_agent_test:   Turn 1: tools_ok=True, response_ok=True, params_ok=False, latency=1318ms
+2026-01-03 03:07:02 [ WARNING] gemma_agent_test: Failures:
+2026-01-03 03:07:02 [ WARNING] gemma_agent_test:   - Expected tool 'get_available_listings' was not called
+2026-01-03 03:07:02 [    INFO] gemma_agent_test: --------------------------------------------------
+2026-01-03 03:07:02 [    INFO] gemma_agent_test: [GOLDEN PATH] GP001: Formal Email Inquiry to Tour Booking
+2026-01-03 03:07:02 [    INFO] gemma_agent_test: Session started: 495b25ac-2bb9-4180-9fe7-9908ea2f141d
+2026-01-03 03:07:02 [    INFO] gemma_agent_test: Processing turn 1: Subject: Inquiry About Leasing Options
 
 Dear Leasing Agent,
 
 My name is Michelle...
-2026-01-03 02:41:28 [    INFO] gemma_agent_test: Response: Here are a few options for you:
+2026-01-03 03:07:11 [    INFO] gemma_agent_test: Response (8570ms): Here are a few options for you:
 
 **Available 2-bedroom units in budget:**
 1.  **2025-04-01:** Afford...
-2026-01-03 02:41:28 [    INFO] gemma_agent_test: Processing message: Hi,
+2026-01-03 03:07:11 [    INFO] gemma_agent_test: Processing turn 2: Hi,
 
 Thank you for the details on the available units. I would like to schedule ...
-2026-01-03 02:41:33 [    INFO] gemma_agent_test: Response: I apologize, but I was unable to retrieve the available listings. The request to search for apartmen...
-2026-01-03 02:41:33 [    INFO] gemma_agent_test: Processing message: Hi,
+2026-01-03 03:07:22 [    INFO] gemma_agent_test: Response (11130ms): Here are a few options for you:
+
+**Available 2-bedroom units in budget:**
+1.  **2025-04-01:** Afford...
+2026-01-03 03:07:22 [    INFO] gemma_agent_test: Processing turn 3: Hi,
 
 I would like to schedule the tour for **Unit 303** at **10:00 AM** on Febru...
-2026-01-03 02:41:38 [    INFO] gemma_agent_test: Response: I apologize, but I was unable to retrieve the available listings. The request to search for apartmen...
-2026-01-03 02:41:38 [    INFO] gemma_agent_test:   Passed: True
-2026-01-03 02:41:38 [    INFO] gemma_agent_test:   Duration: 18229ms
-2026-01-03 02:41:38 [    INFO] gemma_agent_test:   Tools called: ['get_available_listings', 'get_available_listings', 'get_available_listings', 'get_available_listings', 'get_available_listings']
-2026-01-03 02:41:38 [    INFO] gemma_agent_test: [GOLDEN PATH] GP002: Pet Owner Studio Search
-2026-01-03 02:41:38 [    INFO] gemma_agent_test: Session started: c74b66bd-e221-4864-8cdb-917d8d6031c2
-2026-01-03 02:41:38 [    INFO] gemma_agent_test: Processing message: Hello,
+2026-01-03 03:07:32 [    INFO] gemma_agent_test: Response (10178ms): Here are a few options for you:
+
+**Available 2-bedroom units in budget:**
+1.  **2025-04-01:** Afford...
+2026-01-03 03:07:32 [    INFO] gemma_agent_test: Turn Metrics - tool_call: 100.0%, response: 100.0%, params: 100.0%, files: 100.0%
+2026-01-03 03:07:32 [    INFO] gemma_agent_test:   Passed: True
+2026-01-03 03:07:32 [    INFO] gemma_agent_test:   Duration: 29900ms
+2026-01-03 03:07:32 [    INFO] gemma_agent_test:   Tools called: ['get_available_listings', 'get_available_listings', 'get_available_listings', 'get_available_listings']
+2026-01-03 03:07:32 [    INFO] gemma_agent_test: [GOLDEN PATH] GP002: Pet Owner Studio Search
+2026-01-03 03:07:32 [    INFO] gemma_agent_test: Session started: a8daa24b-c779-42b8-888f-a724959a1cae
+2026-01-03 03:07:32 [    INFO] gemma_agent_test: Processing turn 1: Hello,
 
 I have a small dog (a 15-pound Beagle) and am interested in renting at y...
-2026-01-03 02:41:39 [    INFO] gemma_agent_test: Response: I apologize, but I cannot assist with providing pet policy information or details about pet deposits...
-2026-01-03 02:41:39 [    INFO] gemma_agent_test: Processing message: That sounds reasonable! Do you have any pet-friendly studio apartments available...
-2026-01-03 02:41:42 [    INFO] gemma_agent_test: Response: I apologize, but I encountered an error while trying to fetch available apartment listings. The vali...
-2026-01-03 02:41:42 [    INFO] gemma_agent_test: Processing message: **Unit 102** looks perfect since it's pet-friendly and has in-unit laundry. What...
-2026-01-03 02:41:46 [    INFO] gemma_agent_test: Response: The available times on February 20, 2025, are:
+2026-01-03 03:07:34 [    INFO] gemma_agent_test: Response (1593ms): I apologize, but I cannot assist with providing pet policy information or details about pet deposits...
+2026-01-03 03:07:34 [    INFO] gemma_agent_test: Processing turn 2: That sounds reasonable! Do you have any pet-friendly studio apartments available...
+2026-01-03 03:07:36 [    INFO] gemma_agent_test: Response (2312ms): I apologize, but I encountered an error while trying to fetch available apartment listings. The vali...
+2026-01-03 03:07:36 [    INFO] gemma_agent_test: Processing turn 3: **Unit 102** looks perfect since it's pet-friendly and has in-unit laundry. What...
+2026-01-03 03:07:41 [    INFO] gemma_agent_test: Response (4531ms): The available times on February 20, 2025, are:
 
 *   **09:00:** 09:00
 *   **10:00:** 10:00
 *   **13:0...
-2026-01-03 02:41:46 [    INFO] gemma_agent_test: Processing message: Please book me for 2:00 PM on February 20, 2025.
+2026-01-03 03:07:41 [    INFO] gemma_agent_test: Processing turn 4: Please book me for 2:00 PM on February 20, 2025.
 
 Thanks,
 Thomas Rodriguez
 thoma...
-2026-01-03 02:41:51 [    INFO] gemma_agent_test: Response: I apologize, but I was unable to complete the booking request. The attempt to create the appointment...
-2026-01-03 02:41:51 [    INFO] gemma_agent_test:   Passed: True
-2026-01-03 02:41:51 [    INFO] gemma_agent_test:   Duration: 12776ms
-2026-01-03 02:41:51 [    INFO] gemma_agent_test:   Tools called: ['get_available_listings', 'get_availability', 'create_appointment']
-2026-01-03 02:41:51 [    INFO] gemma_agent_test: [GOLDEN PATH] GP003: Large Family 4BR Search with Amenities
-2026-01-03 02:41:51 [    INFO] gemma_agent_test: Session started: 521de8b0-64f4-40c2-9419-1a36ef4446e7
-2026-01-03 02:41:51 [    INFO] gemma_agent_test: Processing message: Subject: Family Apartment Inquiry
+2026-01-03 03:07:45 [    INFO] gemma_agent_test: Response (4201ms): I apologize, but I was unable to complete the booking request. The attempt to create the appointment...
+2026-01-03 03:07:45 [    INFO] gemma_agent_test: Turn Metrics - tool_call: 100.0%, response: 100.0%, params: 100.0%, files: 100.0%
+2026-01-03 03:07:45 [    INFO] gemma_agent_test:   Passed: True
+2026-01-03 03:07:45 [    INFO] gemma_agent_test:   Duration: 12666ms
+2026-01-03 03:07:45 [    INFO] gemma_agent_test:   Tools called: ['get_available_listings', 'get_availability', 'create_appointment']
+2026-01-03 03:07:45 [    INFO] gemma_agent_test: [GOLDEN PATH] GP003: Large Family 4BR Search with Amenities
+2026-01-03 03:07:45 [    INFO] gemma_agent_test: Session started: 4cdc6fc1-7d8b-4834-abb0-798bd31d37a4
+2026-01-03 03:07:45 [    INFO] gemma_agent_test: Processing turn 1: Subject: Family Apartment Inquiry
 
 Dear Leasing Team,
 
 My family and I are looki...
-2026-01-03 02:41:52 [    INFO] gemma_agent_test: Response: I've found no listings matching your criteria. It looks like the search yielded only one result: "No...
-2026-01-03 02:41:52 [    INFO] gemma_agent_test: Processing message: That's great to hear! Please show me what 4-bedroom apartments you have availabl...
-2026-01-03 02:42:01 [    INFO] gemma_agent_test: Response: I have found 7 available listing(s) for your request:
+2026-01-03 03:07:47 [    INFO] gemma_agent_test: Response (1889ms): I've found no listings matching your criteria. It looks like the search yielded only one result: 0 l...
+2026-01-03 03:07:47 [    INFO] gemma_agent_test: Processing turn 2: That's great to hear! Please show me what 4-bedroom apartments you have availabl...
+2026-01-03 03:07:55 [    INFO] gemma_agent_test: Response (8655ms): I have found 7 available listing(s) for your request:
 
 1.  **503:** A rare 4BR/2BA with plenty of sp...
-2026-01-03 02:42:01 [    INFO] gemma_agent_test: Processing message: **Unit 505** looks amazing for our family - the 4BR/3BA with city views would be...
-2026-01-03 02:42:11 [    INFO] gemma_agent_test: Response: Here are a few things to know about the property:
+2026-01-03 03:07:55 [    INFO] gemma_agent_test: Processing turn 3: **Unit 505** looks amazing for our family - the 4BR/3BA with city views would be...
+2026-01-03 03:08:02 [    INFO] gemma_agent_test: Response (6027ms): Here are a few general things to know:
 
-**Apartment 503:**
-*   **Description:** A rare 4B...
-2026-01-03 02:42:11 [    INFO] gemma_agent_test: Processing message: 11:00 AM works perfectly. Please book the tour for that time.
+No exact matches were found for your query.
+
+The search for ...
+2026-01-03 03:08:02 [    INFO] gemma_agent_test: Processing turn 4: 11:00 AM works perfectly. Please book the tour for that time.
 
 Thank you,
 David ...
-2026-01-03 02:42:20 [    INFO] gemma_agent_test: Response: The booking for David Chen Chen on Saturday, March 15, 2025, at 11:00 AM has been successfully confi...
-2026-01-03 02:42:20 [    INFO] gemma_agent_test:   Passed: True
-2026-01-03 02:42:20 [    INFO] gemma_agent_test:   Duration: 29145ms
-2026-01-03 02:42:20 [    INFO] gemma_agent_test:   Tools called: ['get_available_listings', 'get_available_listings', 'search_property_knowledge', 'create_appointment']
-2026-01-03 02:42:20 [    INFO] gemma_agent_test: [GOLDEN PATH] GP004: Lead Creation Then Listing Search
-2026-01-03 02:42:20 [    INFO] gemma_agent_test: Session started: 872b7851-95ec-4ca8-8147-e45699729b9d
-2026-01-03 02:42:20 [    INFO] gemma_agent_test: Processing message: Hi there,
+2026-01-03 03:08:10 [    INFO] gemma_agent_test: Response (8503ms): Here are the details for your appointment:
+
+**Confirmation:**
+*   **Date:** Saturday, March 15, 2025...
+2026-01-03 03:08:10 [    INFO] gemma_agent_test: Turn Metrics - tool_call: 100.0%, response: 100.0%, params: 100.0%, files: 100.0%
+2026-01-03 03:08:10 [    INFO] gemma_agent_test:   Passed: True
+2026-01-03 03:08:10 [    INFO] gemma_agent_test:   Duration: 25098ms
+2026-01-03 03:08:10 [    INFO] gemma_agent_test:   Tools called: ['get_available_listings', 'get_available_listings', 'search_property_knowledge', 'create_appointment']
+2026-01-03 03:08:10 [    INFO] gemma_agent_test: [GOLDEN PATH] GP004: Lead Creation Then Listing Search
+2026-01-03 03:08:10 [    INFO] gemma_agent_test: Session started: 6c122b1f-7ade-424e-892e-ef07dfba3928
+2026-01-03 03:08:10 [    INFO] gemma_agent_test: Processing turn 1: Hi there,
 
 I'm just starting my apartment search and would like to receive updat...
-2026-01-03 02:42:21 [    INFO] gemma_agent_test: Response: I apologize, but I cannot assist with managing contact information or saving contacts. My current to...
-2026-01-03 02:42:21 [    INFO] gemma_agent_test: Processing message: Thank you! While I have you, what 3-bedroom apartments do you have available und...
-2026-01-03 02:42:29 [    INFO] gemma_agent_test: Response: Here are a few options for your apartment search:
+2026-01-03 03:08:18 [    INFO] gemma_agent_test: Response (8235ms): Here are a few things to know:
 
-I found 8 available listing(s):
+**Available Units:**
+We offer several parking options: covered garag...
+2026-01-03 03:08:18 [    INFO] gemma_agent_test: Processing turn 2: Thank you! While I have you, what 3-bedroom apartments do you have available und...
+2026-01-03 03:08:28 [    INFO] gemma_agent_test: Response (9609ms): Here are a few things to know:
 
-1.  **410:** Val...
-2026-01-03 02:42:29 [    INFO] gemma_agent_test:   Passed: True
-2026-01-03 02:42:29 [    INFO] gemma_agent_test:   Duration: 9064ms
-2026-01-03 02:42:29 [    INFO] gemma_agent_test:   Tools called: ['get_available_listings']
-2026-01-03 02:42:29 [    INFO] gemma_agent_test: [GOLDEN PATH] GP005: Quick 1BR Search and Same-Day Booking
-2026-01-03 02:42:29 [    INFO] gemma_agent_test: Session started: 4422e5fa-0970-481f-a910-9b6c0c514636
-2026-01-03 02:42:29 [    INFO] gemma_agent_test: Processing message: Hi,
+**Available Units:**
+We offer several parking options: covered garag...
+2026-01-03 03:08:28 [    INFO] gemma_agent_test: Turn Metrics - tool_call: 100.0%, response: 100.0%, params: 100.0%, files: 100.0%
+2026-01-03 03:08:28 [    INFO] gemma_agent_test:   Passed: True
+2026-01-03 03:08:28 [    INFO] gemma_agent_test:   Duration: 17873ms
+2026-01-03 03:08:28 [    INFO] gemma_agent_test:   Tools called: ['search_property_knowledge', 'search_property_knowledge', 'search_property_knowledge']
+2026-01-03 03:08:28 [    INFO] gemma_agent_test: [GOLDEN PATH] GP005: Quick 1BR Search and Same-Day Booking
+2026-01-03 03:08:28 [    INFO] gemma_agent_test: Session started: c0d24150-bbc3-40e5-b2f6-8513c3456661
+2026-01-03 03:08:28 [    INFO] gemma_agent_test: Processing turn 1: Hi,
 
 I need a 1-bedroom apartment ASAP. Budget is $1,700/month max. What do you ...
-2026-01-03 02:42:37 [    INFO] gemma_agent_test: Response: Here are a few options for your stay:
+2026-01-03 03:08:36 [    INFO] gemma_agent_test: Response (8558ms): Here are a few options for your stay:
 
 Sarah Kim
 sarah.kim.urgent@email.com
 (555) 444-1212
 
 I found ...
-2026-01-03 02:42:37 [    INFO] gemma_agent_test: Processing message: Perfect! **Unit 205** with the balcony looks great. What times are available tom...
-2026-01-03 02:42:41 [    INFO] gemma_agent_test: Response: I apologize, but I was unable to retrieve the available listings for Unit 205. The request failed du...
-2026-01-03 02:42:41 [    INFO] gemma_agent_test: Processing message: 3:00 PM works for me. Please book that time slot.
+2026-01-03 03:08:36 [    INFO] gemma_agent_test: Processing turn 2: Perfect! **Unit 205** with the balcony looks great. What times are available tom...
+2026-01-03 03:08:39 [    INFO] gemma_agent_test: Response (2959ms): I apologize, but I was unable to retrieve the available listings for unit 205. The request failed du...
+2026-01-03 03:08:39 [    INFO] gemma_agent_test: Processing turn 3: 3:00 PM works for me. Please book that time slot.
 
 Sarah Kim
 sarah.kim.urgent@em...
-2026-01-03 02:42:45 [    INFO] gemma_agent_test: Response: I apologize, but I was unable to book the appointment for Sarah Kim. The attempt to create the appoi...
-2026-01-03 02:42:45 [    INFO] gemma_agent_test:   Passed: True
-2026-01-03 02:42:45 [    INFO] gemma_agent_test:   Duration: 16390ms
-2026-01-03 02:42:45 [    INFO] gemma_agent_test:   Tools called: ['get_available_listings', 'get_available_listings', 'create_appointment']
-2026-01-03 02:42:45 [    INFO] gemma_agent_test: [GOLDEN PATH] GP006: Luxury 5BR Penthouse Inquiry
-2026-01-03 02:42:45 [    INFO] gemma_agent_test: Session started: b7ff1412-1e01-42bc-a459-dcad1f5fed21
-2026-01-03 02:42:45 [    INFO] gemma_agent_test: Processing message: Subject: Luxury Penthouse Availability
+2026-01-03 03:08:44 [    INFO] gemma_agent_test: Response (4316ms): I apologize, but I was unable to book the appointment for Sarah Kim. The attempt to create the appoi...
+2026-01-03 03:08:44 [    INFO] gemma_agent_test: Turn Metrics - tool_call: 100.0%, response: 100.0%, params: 100.0%, files: 100.0%
+2026-01-03 03:08:44 [    INFO] gemma_agent_test:   Passed: True
+2026-01-03 03:08:44 [    INFO] gemma_agent_test:   Duration: 15857ms
+2026-01-03 03:08:44 [    INFO] gemma_agent_test:   Tools called: ['get_available_listings', 'get_available_listings', 'create_appointment']
+2026-01-03 03:08:44 [    INFO] gemma_agent_test: [GOLDEN PATH] GP006: Luxury 5BR Penthouse Inquiry
+2026-01-03 03:08:44 [    INFO] gemma_agent_test: Session started: 73cc3a1e-714c-4ef2-bf7f-9452427d904f
+2026-01-03 03:08:44 [    INFO] gemma_agent_test: Processing turn 1: Subject: Luxury Penthouse Availability
 
 Dear Leasing Office,
 
 I am relocating fo...
-2026-01-03 02:42:54 [    INFO] gemma_agent_test: Response: Here are a few options for your luxury penthouse request:
-
-**Available Listings:**
-1.  **506:** A ra...
-2026-01-03 02:42:54 [    INFO] gemma_agent_test: Processing message: **Unit 507** with the private roof deck is exactly what I'm looking for. The $5,...
-2026-01-03 02:42:58 [    INFO] gemma_agent_test: Response: I apologize, but I was unable to complete the booking request. The attempt to create the appointment...
-2026-01-03 02:42:58 [    INFO] gemma_agent_test:   Passed: True
-2026-01-03 02:42:58 [    INFO] gemma_agent_test:   Duration: 12824ms
-2026-01-03 02:42:58 [    INFO] gemma_agent_test:   Tools called: ['get_available_listings', 'create_appointment']
-2026-01-03 02:42:58 [    INFO] gemma_agent_test: [FRUSTRATED PATH] FP001: Budget Too Low - User Adjusts
-2026-01-03 02:42:58 [    INFO] gemma_agent_test: Session started: 0d7a7e81-f95d-4237-b38f-6bfe8157a1c4
-2026-01-03 02:42:58 [    INFO] gemma_agent_test: Processing message: Hello,
+2026-01-03 03:08:46 [    INFO] gemma_agent_test: Response (2089ms): I apologize, but I encountered an error while trying to fetch available listings. The validation for...
+2026-01-03 03:08:46 [    INFO] gemma_agent_test: Processing turn 2: **Unit 507** with the private roof deck is exactly what I'm looking for. The $5,...
+2026-01-03 03:08:48 [    INFO] gemma_agent_test: Response (2607ms): I apologize, but I encountered an error while trying to fetch available listings. The validation for...
+2026-01-03 03:08:48 [    INFO] gemma_agent_test: Turn Metrics - tool_call: 100.0%, response: 100.0%, params: 100.0%, files: 100.0%
+2026-01-03 03:08:48 [    INFO] gemma_agent_test:   Passed: True
+2026-01-03 03:08:48 [    INFO] gemma_agent_test:   Duration: 4724ms
+2026-01-03 03:08:48 [    INFO] gemma_agent_test:   Tools called: ['get_available_listings', 'get_available_listings']
+2026-01-03 03:08:48 [    INFO] gemma_agent_test: [FRUSTRATED PATH] FP001: Budget Too Low - User Adjusts
+2026-01-03 03:08:49 [    INFO] gemma_agent_test: Session started: ae0825e8-8384-4d5e-a37b-c720af5f9279
+2026-01-03 03:08:49 [    INFO] gemma_agent_test: Processing turn 1: Hello,
 
 I'm looking for a 2-bedroom apartment but my budget is tight - no more t...
-2026-01-03 02:43:00 [    INFO] gemma_agent_test: Response: I've found no listings matching your criteria for a 2-bedroom apartment under $1,500 per month. It's...
-2026-01-03 02:43:00 [    INFO] gemma_agent_test: Processing message: That's disappointing. What about a 1-bedroom then? Is there anything under $1,50...
-2026-01-03 02:43:10 [    INFO] gemma_agent_test: Response: I have processed your requests. Here are the results:
+2026-01-03 03:08:51 [    INFO] gemma_agent_test: Response (2619ms): I've found no listings matching your criteria for a 2-bedroom apartment under $1,500 per month. It's...
+2026-01-03 03:08:51 [    INFO] gemma_agent_test: Processing turn 2: That's disappointing. What about a 1-bedroom then? Is there anything under $1,50...
+2026-01-03 03:09:01 [    INFO] gemma_agent_test: Response (9594ms): I have processed your requests. Here are the results:
 
 **1. Available Listings:**
 No listings were f...
-2026-01-03 02:43:10 [    INFO] gemma_agent_test: Processing message: **Unit 201** at $1,450 works for me. What times are available on February 10th?
+2026-01-03 03:09:01 [    INFO] gemma_agent_test: Processing turn 3: **Unit 201** at $1,450 works for me. What times are available on February 10th?
 ...
-2026-01-03 02:43:15 [    INFO] gemma_agent_test: Response: Here are the available times on February 10, 2025:
+2026-01-03 03:09:12 [    INFO] gemma_agent_test: Response (11646ms): Here are the available listings for your request:
 
-*   **09:00:** Available
-*   **10:00:** Availabl...
-2026-01-03 02:43:15 [    INFO] gemma_agent_test: Processing message: 2:00 PM works perfectly. Please book the tour.
+**1. Available Listings:**
+No listings were found...
+2026-01-03 03:09:12 [    INFO] gemma_agent_test: Processing turn 4: 2:00 PM works perfectly. Please book the tour.
 
 Maria Santos
 maria.santos.1234@e...
-2026-01-03 02:43:20 [    INFO] gemma_agent_test: Response: I apologize, but I was unable to book the tour. The attempt to create the appointment failed due to ...
-2026-01-03 02:43:20 [    INFO] gemma_agent_test:   Passed: True, Duration: 22424ms
-2026-01-03 02:43:20 [    INFO] gemma_agent_test: [FRUSTRATED PATH] FP002: No 6BR Available - Adjusts to 5BR
-2026-01-03 02:43:20 [    INFO] gemma_agent_test: Session started: a3700f65-1412-45ff-af6f-d6112ea4b1f1
-2026-01-03 02:43:20 [    INFO] gemma_agent_test: Processing message: Subject: Large Apartment Needed
+2026-01-03 03:09:17 [    INFO] gemma_agent_test: Response (5034ms): I apologize, but I was unable to book the tour. The attempt to create the appointment failed due to ...
+2026-01-03 03:09:17 [    INFO] gemma_agent_test: Turn Metrics - tool_call: 100.0%, response: 100.0%, params: 100.0%, files: 0.0%
+2026-01-03 03:09:17 [    INFO] gemma_agent_test:   Passed: True, Duration: 28921ms
+2026-01-03 03:09:17 [    INFO] gemma_agent_test: [FRUSTRATED PATH] FP002: No 6BR Available - Adjusts to 5BR
+2026-01-03 03:09:17 [    INFO] gemma_agent_test: Session started: 1db68596-a871-415f-b22a-7af3c052f43d
+2026-01-03 03:09:17 [    INFO] gemma_agent_test: Processing turn 1: Subject: Large Apartment Needed
 
 Dear Leasing Team,
 
 We are a multi-generational...
-2026-01-03 02:43:23 [    INFO] gemma_agent_test: Response: The attempt to fetch available apartment listings failed. The validation error for the `get_availabl...
-2026-01-03 02:43:23 [    INFO] gemma_agent_test: Processing message: I see. What is the largest apartment you have available then?
+2026-01-03 03:09:20 [    INFO] gemma_agent_test: Response (2286ms): The attempt to fetch available apartment listings failed. The validation error for the `get_availabl...
+2026-01-03 03:09:20 [    INFO] gemma_agent_test: Processing turn 2: I see. What is the largest apartment you have available then?
 
 Robert Garcia
 rob...
-2026-01-03 02:43:26 [    INFO] gemma_agent_test: Response: The attempt to fetch available apartment listings failed. The validation errors for both requests we...
-2026-01-03 02:43:26 [    INFO] gemma_agent_test: Processing message: **Unit 507** with the private roof deck sounds incredible! We would make it work...
-2026-01-03 02:43:34 [    INFO] gemma_agent_test: Response: The following actions have been completed:
+2026-01-03 03:09:22 [    INFO] gemma_agent_test: Response (2688ms): The search for available apartment listings yielded the following:
 
-1.  **Available Listings:** The attempt to fetch availab...
-2026-01-03 02:43:34 [    INFO] gemma_agent_test:   Passed: True, Duration: 13877ms
-2026-01-03 02:43:34 [    INFO] gemma_agent_test: [FRUSTRATED PATH] FP003: Frustrated User Demands Human Agent
-2026-01-03 02:43:34 [    INFO] gemma_agent_test: Session started: e56d7645-eefa-41bd-9c35-c497f3494f10
-2026-01-03 02:43:34 [    INFO] gemma_agent_test: Processing message: Hi,
+**Total Available Listings:** 0
+...
+2026-01-03 03:09:22 [    INFO] gemma_agent_test: Processing turn 3: **Unit 507** with the private roof deck sounds incredible! We would make it work...
+2026-01-03 03:09:27 [    INFO] gemma_agent_test: Response (4699ms): The attempt to create the appointment failed. The error message indicates: "1 validation error for c...
+2026-01-03 03:09:27 [    INFO] gemma_agent_test: Turn Metrics - tool_call: 100.0%, response: 100.0%, params: 100.0%, files: 100.0%
+2026-01-03 03:09:27 [    INFO] gemma_agent_test:   Passed: True, Duration: 9703ms
+2026-01-03 03:09:27 [    INFO] gemma_agent_test: [FRUSTRATED PATH] FP003: Frustrated User Demands Human Agent
+2026-01-03 03:09:27 [    INFO] gemma_agent_test: Session started: a24e3ab8-a2b9-4019-baa5-acf1172187f2
+2026-01-03 03:09:27 [    INFO] gemma_agent_test: Processing turn 1: Hi,
 
 I need a 2-bedroom under $1,200. This is all I can afford. What do you have...
-2026-01-03 02:43:36 [    INFO] gemma_agent_test: Response: I apologize, but I cannot assist with finding or recommending specific properties. My current tools ...
-2026-01-03 02:43:36 [    INFO] gemma_agent_test: Processing message: This is ridiculous. Your prices are way too high for what you're offering. I've ...
-2026-01-03 02:43:37 [    INFO] gemma_agent_test: Response: I apologize, but I cannot assist with recommending or recommending prices for properties. My current...
-2026-01-03 02:43:37 [    INFO] gemma_agent_test: Processing message: I don't want to talk to a bot anymore. Get me a real person NOW. This is very fr...
-2026-01-03 02:43:39 [    INFO] gemma_agent_test: Response: I apologize, but no listings matching your criteria were found. The tool returned no results....
-2026-01-03 02:43:39 [    INFO] gemma_agent_test:   Passed: True, Duration: 4553ms
-2026-01-03 02:43:39 [    INFO] gemma_agent_test: [FRUSTRATED PATH] FP004: User Abandons Mid-Conversation
-2026-01-03 02:43:39 [    INFO] gemma_agent_test: Session started: b1d8c86b-80ea-4b05-b295-b4f8d8548c41
-2026-01-03 02:43:39 [    INFO] gemma_agent_test: Processing message: Hi,
+2026-01-03 03:09:29 [    INFO] gemma_agent_test: Response (1384ms): I apologize, but I cannot assist with finding or recommending specific properties. My current tools ...
+2026-01-03 03:09:29 [    INFO] gemma_agent_test: Processing turn 2: This is ridiculous. Your prices are way too high for what you're offering. I've ...
+2026-01-03 03:09:30 [    INFO] gemma_agent_test: Response (1387ms): I apologize, but I cannot assist with recommending or recommending prices for properties. My current...
+2026-01-03 03:09:30 [    INFO] gemma_agent_test: Processing turn 3: I don't want to talk to a bot anymore. Get me a real person NOW. This is very fr...
+2026-01-03 03:09:32 [    INFO] gemma_agent_test: Response (2034ms): I apologize, but I was unable to retrieve the list of available apartment listings. The tool I use t...
+2026-01-03 03:09:32 [    INFO] gemma_agent_test: Turn Metrics - tool_call: 100.0%, response: 100.0%, params: 100.0%, files: 100.0%
+2026-01-03 03:09:32 [    INFO] gemma_agent_test:   Passed: True, Duration: 4836ms
+2026-01-03 03:09:32 [    INFO] gemma_agent_test: [FRUSTRATED PATH] FP004: User Abandons Mid-Conversation
+2026-01-03 03:09:32 [    INFO] gemma_agent_test: Session started: aec16101-7c33-48d0-80ae-70bf300fc394
+2026-01-03 03:09:32 [    INFO] gemma_agent_test: Processing turn 1: Hi,
 
 Looking for 3-bedroom apartments. What's available?
 
 Patricia Taylor
 patric...
-2026-01-03 02:43:48 [    INFO] gemma_agent_test: Response: I found 12 available listing(s) for your request:
+2026-01-03 03:09:37 [    INFO] gemma_agent_test: Response (5070ms): Here are a few options for you:
 
-1.  **Patricia Taylor** (patricia.taylor@work.com...
-2026-01-03 02:43:48 [    INFO] gemma_agent_test: Processing message: Unit 403 looks okay. What times can I tour tomorrow?
+Patricia Taylor
+patricia.taylor@work.com
+(555) 666-4444: Value-pric...
+2026-01-03 03:09:37 [    INFO] gemma_agent_test: Processing turn 2: Unit 403 looks okay. What times can I tour tomorrow?
 
 Patricia Taylor
 patricia.t...
-2026-01-03 02:43:52 [    INFO] gemma_agent_test: Response: The following 1 relevant knowledge base entries were found for your request:
+2026-01-03 03:09:41 [    INFO] gemma_agent_test: Response (4317ms): The following 1 relevant knowledge base entries were found for your property search:
 
-*   **Pet policy:** Ye...
-2026-01-03 02:43:52 [    INFO] gemma_agent_test: Processing message: Actually, I've decided to look at another property instead. Thank you for your t...
-2026-01-03 02:43:57 [    INFO] gemma_agent_test: Response: I have retrieved the 1 relevant knowledge base entries for you:
+*   **amenitie...
+2026-01-03 03:09:41 [    INFO] gemma_agent_test: Processing turn 3: Actually, I've decided to look at another property instead. Thank you for your t...
+2026-01-03 03:09:46 [    INFO] gemma_agent_test: Response (4593ms): The following 1 relevant knowledge base entries were found for your property search:
 
-**Pet policy:** Yes! Our fenced dog...
-2026-01-03 02:43:57 [    INFO] gemma_agent_test:   Passed: True, Duration: 18478ms
-2026-01-03 02:43:57 [    INFO] gemma_agent_test: [FRUSTRATED PATH] FP005: Date Unavailable - Reschedules
-2026-01-03 02:43:57 [    INFO] gemma_agent_test: Session started: 29664281-9c10-4e63-b1a3-13a42b69fa1f
-2026-01-03 02:43:57 [    INFO] gemma_agent_test: Processing message: Hi,
+*   **amenitie...
+2026-01-03 03:09:46 [    INFO] gemma_agent_test: Turn Metrics - tool_call: 100.0%, response: 100.0%, params: 100.0%, files: 100.0%
+2026-01-03 03:09:46 [    INFO] gemma_agent_test:   Passed: True, Duration: 14010ms
+2026-01-03 03:09:46 [    INFO] gemma_agent_test: [FRUSTRATED PATH] FP005: Date Unavailable - Reschedules
+2026-01-03 03:09:46 [    INFO] gemma_agent_test: Session started: ccf842f8-6548-462c-9fbe-7eecd0ef465a
+2026-01-03 03:09:46 [    INFO] gemma_agent_test: Processing turn 1: Hi,
 
 I'd like to tour a 2-bedroom unit on January 1st at noon. What do you have ...
-2026-01-03 02:43:59 [    INFO] gemma_agent_test: Response: I couldn't find any listings for apartments at the specified addresses. It seems like the search was...
-2026-01-03 02:43:59 [    INFO] gemma_agent_test: Processing message: **Unit 304** looks good. Is January 1st at 12pm available for a tour?
+2026-01-03 03:09:48 [    INFO] gemma_agent_test: Response (1765ms): I couldn't find any listings for apartments at the specified addresses. It seems like the search was...
+2026-01-03 03:09:48 [    INFO] gemma_agent_test: Processing turn 2: **Unit 304** looks good. Is January 1st at 12pm available for a tour?
 
 Kevin Par...
-2026-01-03 02:44:01 [    INFO] gemma_agent_test: Response: I couldn't find any listings for apartments at the specified addresses. It seems the search was unsu...
-2026-01-03 02:44:01 [    INFO] gemma_agent_test: Processing message: Oh right, it's New Year's Day. How about January 3rd at 2pm instead?
+2026-01-03 03:09:49 [    INFO] gemma_agent_test: Response (1678ms): I couldn't find any listings for apartments at the specified addresses. It seems the search was unsu...
+2026-01-03 03:09:49 [    INFO] gemma_agent_test: Processing turn 3: Oh right, it's New Year's Day. How about January 3rd at 2pm instead?
 
 Kevin Park...
-2026-01-03 02:44:06 [    INFO] gemma_agent_test: Response: I encountered errors while trying to complete your requests:
+2026-01-03 03:09:55 [    INFO] gemma_agent_test: Response (5369ms): I encountered errors while trying to complete your requests:
 
-1.  **No listings for apartments:** Th...
-2026-01-03 02:44:06 [    INFO] gemma_agent_test:   Passed: True, Duration: 8265ms
-2026-01-03 02:44:06 [    INFO] gemma_agent_test: [EDGE CASE] EC001: Partial Contact Info - Progressive Collection
-2026-01-03 02:44:06 [    INFO] gemma_agent_test: Session started: 5398438e-6596-44e9-9c33-6ff94a11a197
-2026-01-03 02:44:06 [    INFO] gemma_agent_test: Processing message: I want to book a tour for tomorrow at 3pm to see a 1-bedroom.
+1.  **Available Listings:** I couldn't...
+2026-01-03 03:09:55 [    INFO] gemma_agent_test: Turn Metrics - tool_call: 100.0%, response: 100.0%, params: 100.0%, files: 0.0%
+2026-01-03 03:09:55 [    INFO] gemma_agent_test:   Passed: True, Duration: 8842ms
+2026-01-03 03:09:55 [    INFO] gemma_agent_test: [EDGE CASE] EC001: Partial Contact Info - Progressive Collection
+2026-01-03 03:09:55 [    INFO] gemma_agent_test: Session started: aa87c27b-65da-40e3-8e89-49ea57e48169
+2026-01-03 03:09:55 [    INFO] gemma_agent_test: Processing turn 1: I want to book a tour for tomorrow at 3pm to see a 1-bedroom.
 ...
-2026-01-03 02:44:13 [    INFO] gemma_agent_test: Response: The appointment for Alice Smith on Thursday, March 14, 2024, at 3:00 PM has been successfully confir...
-2026-01-03 02:44:13 [    INFO] gemma_agent_test: Processing message: My name is Alex Thompson.
-...
-2026-01-03 02:44:17 [    INFO] gemma_agent_test: Response: The lead created for Alex Thompson is:
-**Lead ID:** LEAD-3EAD2C7B
-**Message:** Lead successfully cre...
-2026-01-03 02:44:17 [    INFO] gemma_agent_test: Processing message: alex.thompson@email.com and my phone is (555) 222-3333
-...
-2026-01-03 02:44:24 [    INFO] gemma_agent_test: Response: Here are the outcomes for your requests:
+2026-01-03 03:10:00 [    INFO] gemma_agent_test: Response (5087ms): Here are the available time slots for your tour:
 
-1.  **Alex Thompson's Lead:** The lead for Alex Thompson h...
-2026-01-03 02:44:24 [    INFO] gemma_agent_test:   Passed: True, Duration: 18251ms
-2026-01-03 02:44:24 [    INFO] gemma_agent_test: [EDGE CASE] EC002: Unusual Date Formats
-2026-01-03 02:44:24 [    INFO] gemma_agent_test: Session started: d1746ccf-1b66-4526-951b-071d8f8990a5
-2026-01-03 02:44:24 [    INFO] gemma_agent_test: Processing message: Hi,
+Tuesday, May 14, 2024:
+*   09:00 - 10:00
+*   10:00...
+2026-01-03 03:10:00 [    INFO] gemma_agent_test: Processing turn 2: My name is Alex Thompson.
+...
+2026-01-03 03:10:01 [    INFO] gemma_agent_test: Response (1472ms): I apologize, but I cannot assist with booking a tour for Alex Thompson. My current tools are designe...
+2026-01-03 03:10:01 [    INFO] gemma_agent_test: Processing turn 3: alex.thompson@email.com and my phone is (555) 222-3333
+...
+2026-01-03 03:10:11 [    INFO] gemma_agent_test: Response (9314ms): Here are the results for your requests:
+
+**Availability for Alex Thompson:**
+There are **6** availab...
+2026-01-03 03:10:11 [    INFO] gemma_agent_test: Turn Metrics - tool_call: 100.0%, response: 100.0%, params: 100.0%, files: 100.0%
+2026-01-03 03:10:11 [    INFO] gemma_agent_test:   Passed: True, Duration: 15916ms
+2026-01-03 03:10:11 [    INFO] gemma_agent_test: [EDGE CASE] EC002: Unusual Date Formats
+2026-01-03 03:10:11 [    INFO] gemma_agent_test: Session started: dfc265d2-0f51-45ed-a45f-66d06a6342da
+2026-01-03 03:10:11 [    INFO] gemma_agent_test: Processing turn 1: Hi,
 
 Can I schedule a tour for the fifteenth of February, twenty twenty-five at ...
-2026-01-03 02:44:28 [    INFO] gemma_agent_test: Response: The available time slots for Saturday, February 15, 2025, are:
+2026-01-03 03:10:14 [    INFO] gemma_agent_test: Response (3564ms): The available time slots for Saturday, February 15, 2025, are:
 
-*   09:00: Available
-*   10:00: Avai...
-2026-01-03 02:44:28 [    INFO] gemma_agent_test:   Passed: True, Duration: 3826ms
-2026-01-03 02:44:28 [    INFO] gemma_agent_test: [EDGE CASE] EC003: Phone Number Spoken Format
-2026-01-03 02:44:28 [    INFO] gemma_agent_test: Session started: 92dff360-5691-4404-a2d7-ea81e5e140bd
-2026-01-03 02:44:28 [    INFO] gemma_agent_test: Processing message: I want to tour Unit 301 on February 20th at 11am. My name is Chris Taylor.
+*   **09:00**
+*   **10:00**
+*   **13...
+2026-01-03 03:10:14 [    INFO] gemma_agent_test: Turn Metrics - tool_call: 100.0%, response: 100.0%, params: 100.0%, files: 100.0%
+2026-01-03 03:10:14 [    INFO] gemma_agent_test:   Passed: True, Duration: 3600ms
+2026-01-03 03:10:14 [    INFO] gemma_agent_test: [EDGE CASE] EC003: Phone Number Spoken Format
+2026-01-03 03:10:14 [    INFO] gemma_agent_test: Session started: 23ddb197-4a2c-4c26-9826-3c3322c5f24e
+2026-01-03 03:10:14 [    INFO] gemma_agent_test: Processing turn 1: I want to tour Unit 301 on February 20th at 11am. My name is Chris Taylor.
 ...
-2026-01-03 02:44:35 [    INFO] gemma_agent_test: Response: The appointment for Chris Taylor on February 20, 2024, at 11:00 AM has been successfully confirmed.
-...
-2026-01-03 02:44:35 [    INFO] gemma_agent_test: Processing message: Email is chris.taylor@domain.org and my cell is five five five, four four four, ...
-2026-01-03 02:44:43 [    INFO] gemma_agent_test: Response: Here are the outcomes:
+2026-01-03 03:10:19 [    INFO] gemma_agent_test: Response (4410ms): Here are the available time slots for your Tuesday, February 20, 2024 tour:
 
-**1. Appointment Confirmation:**
-The appointment for Chris Taylor on Februar...
-2026-01-03 02:44:43 [    INFO] gemma_agent_test:   Passed: True, Duration: 15622ms
-2026-01-03 02:44:43 [    INFO] gemma_agent_test: [EDGE CASE] EC004: Multi-Intent Single Message
-2026-01-03 02:44:43 [    INFO] gemma_agent_test: Session started: 9199f1cb-0c12-421a-a008-a814438e5ecf
-2026-01-03 02:44:43 [    INFO] gemma_agent_test: Processing message: Subject: Multiple Questions
+Tuesday, February 20, 2...
+2026-01-03 03:10:19 [    INFO] gemma_agent_test: Processing turn 2: Email is chris.taylor@domain.org and my cell is five five five, four four four, ...
+2026-01-03 03:10:24 [    INFO] gemma_agent_test: Response (5134ms): I apologize, but I was unable to create the appointment. The system encountered an error:
+
+**Validat...
+2026-01-03 03:10:24 [    INFO] gemma_agent_test: Turn Metrics - tool_call: 100.0%, response: 100.0%, params: 100.0%, files: 100.0%
+2026-01-03 03:10:24 [    INFO] gemma_agent_test:   Passed: True, Duration: 9575ms
+2026-01-03 03:10:24 [    INFO] gemma_agent_test: [EDGE CASE] EC004: Multi-Intent Single Message
+2026-01-03 03:10:24 [    INFO] gemma_agent_test: Session started: 571c11c1-113a-44b9-b911-f7c94fa8f71b
+2026-01-03 03:10:24 [    INFO] gemma_agent_test: Processing turn 1: Subject: Multiple Questions
 
 Dear Leasing Team,
 
 I need a 2-bedroom apartment an...
-2026-01-03 02:44:56 [    INFO] gemma_agent_test: Response: Here are the results for your requests:
+2026-01-03 03:10:36 [    INFO] gemma_agent_test: Response (11835ms): Here are the results for your requests:
 
 **1. Multiple Questions:**
 The appointment has been success...
-2026-01-03 02:44:56 [    INFO] gemma_agent_test:   Passed: False, Duration: 12320ms
-2026-01-03 02:44:56 [    INFO] gemma_agent_test: [EDGE CASE] EC005: Budget Below Minimum
-2026-01-03 02:44:56 [    INFO] gemma_agent_test: Session started: f33e1439-50d7-46ae-b236-6b7985c5042b
-2026-01-03 02:44:56 [    INFO] gemma_agent_test: Processing message: Hi,
+2026-01-03 03:10:36 [    INFO] gemma_agent_test: Turn Metrics - tool_call: 100.0%, response: 100.0%, params: 100.0%, files: 100.0%
+2026-01-03 03:10:36 [    INFO] gemma_agent_test:   Passed: False, Duration: 11865ms
+2026-01-03 03:10:36 [    INFO] gemma_agent_test: [EDGE CASE] EC005: Budget Below Minimum
+2026-01-03 03:10:36 [    INFO] gemma_agent_test: Session started: 027fc919-6075-4d75-833a-6566cdd1f5a3
+2026-01-03 03:10:36 [    INFO] gemma_agent_test: Processing turn 1: Hi,
 
 I'm on a very tight budget. Looking for any apartment under $800 per month....
-2026-01-03 02:44:57 [    INFO] gemma_agent_test: Response: I apologize, but I cannot assist with finding or recommending apartment rental options. My current t...
-2026-01-03 02:44:57 [    INFO] gemma_agent_test:   Passed: False, Duration: 1664ms
-2026-01-03 02:44:57 [    INFO] gemma_agent_test: [EDGE CASE] EC006: Flexible Bedroom Range
-2026-01-03 02:44:57 [    INFO] gemma_agent_test: Session started: 62536538-c07b-4454-8199-b468cd340392
-2026-01-03 02:44:57 [    INFO] gemma_agent_test: Processing message: Hello,
+2026-01-03 03:10:37 [    INFO] gemma_agent_test: Response (1392ms): I apologize, but I cannot assist with finding or recommending apartment rentals. My current tools ar...
+2026-01-03 03:10:37 [    INFO] gemma_agent_test: Turn Metrics - tool_call: 100.0%, response: 100.0%, params: 100.0%, files: 100.0%
+2026-01-03 03:10:37 [    INFO] gemma_agent_test:   Passed: False, Duration: 1421ms
+2026-01-03 03:10:37 [    INFO] gemma_agent_test: [EDGE CASE] EC006: Flexible Bedroom Range
+2026-01-03 03:10:37 [    INFO] gemma_agent_test: Session started: b106dec0-0857-47f5-a1e5-8c1144907f41
+2026-01-03 03:10:37 [    INFO] gemma_agent_test: Processing turn 1: Hello,
 
 I'm flexible on size - anywhere from 1 to 3 bedrooms would work for me. ...
-2026-01-03 02:44:59 [    INFO] gemma_agent_test: Response: I apologize, but I cannot assist with finding or booking property rentals. My current tools are desi...
-2026-01-03 02:44:59 [    INFO] gemma_agent_test:   Passed: False, Duration: 1906ms
-2026-01-03 02:44:59 [    INFO] gemma_agent_test: [EDGE CASE] EC007: Very Long Formal Email
-2026-01-03 02:44:59 [    INFO] gemma_agent_test: Session started: 5318eb7c-dbb0-4e00-abef-8e3c476acc6e
-2026-01-03 02:44:59 [    INFO] gemma_agent_test: Processing message: Subject: Detailed Apartment Inquiry - Moving from Out of State
+2026-01-03 03:10:39 [    INFO] gemma_agent_test: Response (1895ms): I apologize, but I cannot assist with finding or booking property rentals. My current tools are desi...
+2026-01-03 03:10:39 [    INFO] gemma_agent_test: Turn Metrics - tool_call: 100.0%, response: 100.0%, params: 100.0%, files: 100.0%
+2026-01-03 03:10:39 [    INFO] gemma_agent_test:   Passed: False, Duration: 1923ms
+2026-01-03 03:10:39 [    INFO] gemma_agent_test: [EDGE CASE] EC007: Very Long Formal Email
+2026-01-03 03:10:39 [    INFO] gemma_agent_test: Session started: dd3842b4-ce1e-4bf9-9fb2-8e2f9f25c0c4
+2026-01-03 03:10:39 [    INFO] gemma_agent_test: Processing turn 1: Subject: Detailed Apartment Inquiry - Moving from Out of State
 
 Dear Leasing Off...
-2026-01-03 02:45:03 [    INFO] gemma_agent_test: Response: Here are a few options for your apartment request:
+2026-01-03 03:10:43 [    INFO] gemma_agent_test: Response (4159ms): Here are a few options for your apartment request:
 
-The apartment is available for rent from Februar...
-2026-01-03 02:45:03 [    INFO] gemma_agent_test:   Passed: True, Duration: 3920ms
-2026-01-03 02:45:03 [    INFO] gemma_agent_test: [EDGE CASE] EC008: Callback Request Only
-2026-01-03 02:45:03 [    INFO] gemma_agent_test: Session started: 5f545dc6-3566-4844-95df-7ee5e1deb0f7
-2026-01-03 02:45:03 [    INFO] gemma_agent_test: Processing message: Hi,
+The listing available is for a 3-bedroom apartme...
+2026-01-03 03:10:43 [    INFO] gemma_agent_test: Turn Metrics - tool_call: 100.0%, response: 100.0%, params: 100.0%, files: 100.0%
+2026-01-03 03:10:43 [    INFO] gemma_agent_test:   Passed: True, Duration: 4183ms
+2026-01-03 03:10:43 [    INFO] gemma_agent_test: [EDGE CASE] EC008: Callback Request Only
+2026-01-03 03:10:43 [    INFO] gemma_agent_test: Session started: 3d5ed1d9-a1b1-43ba-a1e1-27e3379cd7ee
+2026-01-03 03:10:43 [    INFO] gemma_agent_test: Processing turn 1: Hi,
 
 I'm busy right now but interested in apartments. Can someone call me back t...
-2026-01-03 02:45:05 [    INFO] gemma_agent_test: Response: I apologize, but I cannot assist with contacting or managing personal accounts like Quick Contact. M...
-2026-01-03 02:45:05 [    INFO] gemma_agent_test:   Passed: False, Duration: 1784ms
-2026-01-03 02:45:05 [    INFO] gemma_agent_test: [NEGATIVE] NEG001: No Tools on Simple Greeting
-2026-01-03 02:45:05 [    INFO] gemma_agent_test: Session started: df355467-0171-4c85-91ea-98970c44f5ff
-2026-01-03 02:45:05 [    INFO] gemma_agent_test: Processing message: Hello!
+2026-01-03 03:10:45 [    INFO] gemma_agent_test: Response (1485ms): I apologize, but I cannot assist with contacting or managing contacts. My current tools are designed...
+2026-01-03 03:10:45 [    INFO] gemma_agent_test: Turn Metrics - tool_call: 100.0%, response: 100.0%, params: 100.0%, files: 100.0%
+2026-01-03 03:10:45 [    INFO] gemma_agent_test:   Passed: False, Duration: 1518ms
+2026-01-03 03:10:45 [    INFO] gemma_agent_test: [NEGATIVE] NEG001: No Tools on Simple Greeting
+2026-01-03 03:10:45 [    INFO] gemma_agent_test: Session started: 352b360b-88d6-4171-a30f-50d3cf5519cf
+2026-01-03 03:10:45 [    INFO] gemma_agent_test: Processing turn 1: Hello!
 
 Just saying hi.
 
@@ -1018,49 +1328,95 @@ John Smith
 john.smith@email.com
 (555) 111-2222
 ...
-2026-01-03 02:45:07 [    INFO] gemma_agent_test: Response: I apologize, but I cannot assist with greeting or connecting with John Smith. My current tools are d...
-2026-01-03 02:45:07 [    INFO] gemma_agent_test:   Passed: True, Duration: 1674ms
-2026-01-03 02:45:07 [    INFO] gemma_agent_test: [NEGATIVE] NEG002: No Tools on Farewell
-2026-01-03 02:45:07 [    INFO] gemma_agent_test: Session started: cef7e6e7-2e09-42fa-9473-497bcdbd275b
-2026-01-03 02:45:07 [    INFO] gemma_agent_test: Processing message: Thanks for your help today, goodbye!
+2026-01-03 03:10:46 [    INFO] gemma_agent_test: Response (1584ms): I apologize, but I cannot assist with greeting or connecting with individuals using their email addr...
+2026-01-03 03:10:46 [    INFO] gemma_agent_test: Turn Metrics - tool_call: 100.0%, response: 100.0%, params: 100.0%, files: 100.0%
+2026-01-03 03:10:46 [    INFO] gemma_agent_test:   Passed: True, Duration: 1615ms
+2026-01-03 03:10:46 [    INFO] gemma_agent_test: [NEGATIVE] NEG002: No Tools on Farewell
+2026-01-03 03:10:46 [    INFO] gemma_agent_test: Session started: 4da31e81-70a5-4e81-b05d-021c7bdf2287
+2026-01-03 03:10:46 [    INFO] gemma_agent_test: Processing turn 1: Thanks for your help today, goodbye!
 
 Jane Doe
 jane.doe@email.com
 (555) 333-4444...
-2026-01-03 02:45:08 [    INFO] gemma_agent_test: Response: I apologize, but I cannot assist with connecting Jane Doe with available listings or booking appoint...
-2026-01-03 02:45:08 [    INFO] gemma_agent_test:   Passed: True, Duration: 1708ms
-2026-01-03 02:45:08 [    INFO] gemma_agent_test: [NEGATIVE] NEG003: No Tools on Off-Topic Question
-2026-01-03 02:45:08 [    INFO] gemma_agent_test: Session started: 4192a718-7fce-4911-84b1-21931e17ab27
-2026-01-03 02:45:08 [    INFO] gemma_agent_test: Processing message: What's the weather like in the city?
+2026-01-03 03:10:48 [    INFO] gemma_agent_test: Response (1694ms): I apologize, but I cannot assist with connecting Jane Doe with available listings or booking tours. ...
+2026-01-03 03:10:48 [    INFO] gemma_agent_test: Turn Metrics - tool_call: 100.0%, response: 100.0%, params: 100.0%, files: 100.0%
+2026-01-03 03:10:48 [    INFO] gemma_agent_test:   Passed: True, Duration: 1724ms
+2026-01-03 03:10:48 [    INFO] gemma_agent_test: [NEGATIVE] NEG003: No Tools on Off-Topic Question
+2026-01-03 03:10:48 [    INFO] gemma_agent_test: Session started: ae437fec-4166-4151-a506-ffe6b5a570b0
+2026-01-03 03:10:48 [    INFO] gemma_agent_test: Processing turn 1: What's the weather like in the city?
 
 Weather Curious
 weather@email.com
 (555) 99...
-2026-01-03 02:45:10 [    INFO] gemma_agent_test: Response: I apologize, but I cannot assist with checking weather conditions. My current tools are designed for...
-2026-01-03 02:45:10 [    INFO] gemma_agent_test:   Passed: True, Duration: 1438ms
-2026-01-03 02:45:10 [    INFO] gemma_agent_test: [NEGATIVE] NEG004: No Booking Tools on Simple Question
-2026-01-03 02:45:10 [    INFO] gemma_agent_test: Session started: ac677fd2-c595-4996-9495-97961f594a7c
-2026-01-03 02:45:10 [    INFO] gemma_agent_test: Processing message: How much do 2-bedroom apartments cost here?
+2026-01-03 03:10:50 [    INFO] gemma_agent_test: Response (1444ms): I apologize, but I cannot assist with checking weather conditions. My current tools are designed for...
+2026-01-03 03:10:50 [    INFO] gemma_agent_test: Turn Metrics - tool_call: 100.0%, response: 100.0%, params: 100.0%, files: 100.0%
+2026-01-03 03:10:50 [    INFO] gemma_agent_test:   Passed: True, Duration: 1469ms
+2026-01-03 03:10:50 [    INFO] gemma_agent_test: [NEGATIVE] NEG004: No Booking Tools on Simple Question
+2026-01-03 03:10:50 [    INFO] gemma_agent_test: Session started: 1950d3db-6e52-4937-926b-5af71489816c
+2026-01-03 03:10:50 [    INFO] gemma_agent_test: Processing turn 1: How much do 2-bedroom apartments cost here?
 
 Price Checker
 price.check@email.com...
-2026-01-03 02:45:11 [    INFO] gemma_agent_test: Response: I apologize, but I cannot assist with pricing or checking property costs. My current tools are desig...
-2026-01-03 02:45:11 [    INFO] gemma_agent_test:   Passed: False, Duration: 1332ms
-2026-01-03 02:45:11 [   DEBUG] urllib3.connectionpool: Resetting dropped connection: huggingface.co
-2026-01-03 02:45:11 [   DEBUG] urllib3.connectionpool: https://huggingface.co:443 "HEAD /google/functiongemma-270m-it/resolve/main/processor_config.json HTTP/1.1" 404 0
-2026-01-03 02:45:12 [   DEBUG] urllib3.connectionpool: https://huggingface.co:443 "HEAD /google/functiongemma-270m-it/resolve/main/preprocessor_config.json HTTP/1.1" 404 0
-2026-01-03 02:45:12 [   DEBUG] urllib3.connectionpool: https://huggingface.co:443 "HEAD /google/functiongemma-270m-it/resolve/main/video_preprocessor_config.json HTTP/1.1" 404 0
-2026-01-03 02:45:13 [   DEBUG] urllib3.connectionpool: https://huggingface.co:443 "HEAD /google/functiongemma-270m-it/resolve/main/preprocessor_config.json HTTP/1.1" 404 0
-2026-01-03 02:45:13 [   DEBUG] urllib3.connectionpool: https://huggingface.co:443 "HEAD /google/functiongemma-270m-it/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
-2026-01-03 02:45:13 [   DEBUG] urllib3.connectionpool: https://huggingface.co:443 "HEAD /google/functiongemma-270m-it/resolve/main/config.json HTTP/1.1" 200 0
-2026-01-03 02:45:13 [   DEBUG] urllib3.connectionpool: https://huggingface.co:443 "HEAD /google/functiongemma-270m-it/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
-2026-01-03 02:45:14 [   DEBUG] urllib3.connectionpool: https://huggingface.co:443 "GET /api/models/google/functiongemma-270m-it/tree/main/additional_chat_templates?recursive=False&expand=False HTTP/1.1" 404 64
-2026-01-03 02:45:14 [   DEBUG] urllib3.connectionpool: https://huggingface.co:443 "GET /api/models/google/functiongemma-270m-it/tree/main?recursive=True&expand=False HTTP/1.1" 200 2034
-2026-01-03 02:45:15 [   DEBUG] urllib3.connectionpool: https://huggingface.co:443 "GET /api/models/google/functiongemma-270m-it HTTP/1.1" 200 16904
-2026-01-03 02:45:15 [   DEBUG] urllib3.connectionpool: https://huggingface.co:443 "HEAD /google/functiongemma-270m-it/resolve/main/config.json HTTP/1.1" 200 0
-2026-01-03 02:45:16 [   DEBUG] urllib3.connectionpool: https://huggingface.co:443 "HEAD /google/functiongemma-270m-it/resolve/main/generation_config.json HTTP/1.1" 200 0
-2026-01-03 02:45:16 [   DEBUG] urllib3.connectionpool: https://huggingface.co:443 "HEAD /google/functiongemma-270m-it/resolve/main/custom_generate/generate.py HTTP/1.1" 404 0
-2026-01-03 02:45:16 [    INFO] gemma_agent_test: Testing session start with model: google/functiongemma-270m-it
-2026-01-03 02:45:16 [    INFO] gemma_agent_test: Session started: 68d4348e-7e05-487b-9b28-b0f25bd0ca7f
-2026-01-03 02:45:16 [    INFO] gemma_agent_test: Testing empty input handling
-2026-01-03 02:45:17 [    INFO] gemma_agent_test: Response to empty input: I can assist with property tours and property consultation. To help you with specific requests, could you please specify the date, date, and time you would like to schedule the tour?
+2026-01-03 03:10:51 [    INFO] gemma_agent_test: Response (1301ms): I apologize, but I cannot assist with pricing or checking property costs. My current tools are desig...
+2026-01-03 03:10:51 [    INFO] gemma_agent_test: Turn Metrics - tool_call: 100.0%, response: 100.0%, params: 100.0%, files: 100.0%
+2026-01-03 03:10:51 [    INFO] gemma_agent_test:   Passed: False, Duration: 1334ms
+2026-01-03 03:10:51 [   DEBUG] urllib3.connectionpool: Resetting dropped connection: huggingface.co
+2026-01-03 03:10:51 [   DEBUG] urllib3.connectionpool: https://huggingface.co:443 "HEAD /google/functiongemma-270m-it/resolve/main/processor_config.json HTTP/1.1" 404 0
+2026-01-03 03:10:52 [   DEBUG] urllib3.connectionpool: https://huggingface.co:443 "HEAD /google/functiongemma-270m-it/resolve/main/preprocessor_config.json HTTP/1.1" 404 0
+2026-01-03 03:10:52 [   DEBUG] urllib3.connectionpool: https://huggingface.co:443 "HEAD /google/functiongemma-270m-it/resolve/main/video_preprocessor_config.json HTTP/1.1" 404 0
+2026-01-03 03:10:52 [   DEBUG] urllib3.connectionpool: https://huggingface.co:443 "HEAD /google/functiongemma-270m-it/resolve/main/preprocessor_config.json HTTP/1.1" 404 0
+2026-01-03 03:10:52 [   DEBUG] urllib3.connectionpool: https://huggingface.co:443 "HEAD /google/functiongemma-270m-it/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2026-01-03 03:10:52 [   DEBUG] urllib3.connectionpool: https://huggingface.co:443 "HEAD /google/functiongemma-270m-it/resolve/main/config.json HTTP/1.1" 200 0
+2026-01-03 03:10:53 [   DEBUG] urllib3.connectionpool: https://huggingface.co:443 "HEAD /google/functiongemma-270m-it/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2026-01-03 03:10:53 [   DEBUG] urllib3.connectionpool: https://huggingface.co:443 "GET /api/models/google/functiongemma-270m-it/tree/main/additional_chat_templates?recursive=False&expand=False HTTP/1.1" 404 64
+2026-01-03 03:10:53 [   DEBUG] urllib3.connectionpool: https://huggingface.co:443 "GET /api/models/google/functiongemma-270m-it/tree/main?recursive=True&expand=False HTTP/1.1" 200 2034
+2026-01-03 03:10:54 [   DEBUG] urllib3.connectionpool: https://huggingface.co:443 "GET /api/models/google/functiongemma-270m-it HTTP/1.1" 200 16904
+2026-01-03 03:10:54 [   DEBUG] urllib3.connectionpool: https://huggingface.co:443 "HEAD /google/functiongemma-270m-it/resolve/main/config.json HTTP/1.1" 200 0
+2026-01-03 03:10:55 [   DEBUG] urllib3.connectionpool: https://huggingface.co:443 "HEAD /google/functiongemma-270m-it/resolve/main/generation_config.json HTTP/1.1" 200 0
+2026-01-03 03:10:55 [   DEBUG] urllib3.connectionpool: https://huggingface.co:443 "HEAD /google/functiongemma-270m-it/resolve/main/custom_generate/generate.py HTTP/1.1" 404 0
+2026-01-03 03:10:55 [    INFO] gemma_agent_test: Testing session start with model: google/functiongemma-270m-it
+2026-01-03 03:10:55 [    INFO] gemma_agent_test: Session started: 01d03f2d-c9d2-45ad-a557-04b54dd74191
+2026-01-03 03:10:55 [    INFO] gemma_agent_test: ============================================================
+2026-01-03 03:10:55 [    INFO] gemma_agent_test: TEST RUN SUMMARY
+2026-01-03 03:10:55 [    INFO] gemma_agent_test: ============================================================
+2026-01-03 03:10:55 [    INFO] gemma_agent_test: Run ID: run_202638f80c47
+2026-01-03 03:10:55 [    INFO] gemma_agent_test: Total Scenarios: 50
+2026-01-03 03:10:55 [    INFO] gemma_agent_test: Passed: 47
+2026-01-03 03:10:55 [    INFO] gemma_agent_test: Failed: 3
+2026-01-03 03:10:55 [    INFO] gemma_agent_test: Pass Rate: 94.0%
+2026-01-03 03:10:55 [    INFO] gemma_agent_test: ------------------------------------------------------------
+2026-01-03 03:10:55 [    INFO] gemma_agent_test: METRICS:
+2026-01-03 03:10:55 [    INFO] gemma_agent_test:   Tool Calling Rate: 100.0%
+2026-01-03 03:10:55 [    INFO] gemma_agent_test:   Correct Response Rate: 100.0%
+2026-01-03 03:10:55 [    INFO] gemma_agent_test:   Correct Tool Call Rate: 100.0%
+2026-01-03 03:10:55 [    INFO] gemma_agent_test:   File Verification Rate: 95.3%
+2026-01-03 03:10:55 [    INFO] gemma_agent_test: ------------------------------------------------------------
+2026-01-03 03:10:55 [    INFO] gemma_agent_test: BY CATEGORY:
+2026-01-03 03:10:55 [    INFO] gemma_agent_test:   golden_path: 12/12 (100.0%)
+2026-01-03 03:10:55 [    INFO] gemma_agent_test:   frustrated_path: 8/10 (80.0%)
+2026-01-03 03:10:55 [    INFO] gemma_agent_test:   repeated_query: 4/4 (100.0%)
+2026-01-03 03:10:55 [    INFO] gemma_agent_test:   edge_case: 15/16 (93.8%)
+2026-01-03 03:10:55 [    INFO] gemma_agent_test:   negative: 8/8 (100.0%)
+2026-01-03 03:10:55 [    INFO] gemma_agent_test: ------------------------------------------------------------
+2026-01-03 03:10:55 [    INFO] gemma_agent_test: BY TOOL:
+2026-01-03 03:10:55 [    INFO] gemma_agent_test: ============================================================
+2026-01-03 03:10:55 [    INFO] gemma_agent_test: Results saved to: /Users/mradulsingh/personal-projects/fine-tune-models/gemma/test_results/store_e68204d8.json
+2026-01-03 03:10:55 [    INFO] gemma_agent_test: UI data saved to: /Users/mradulsingh/personal-projects/fine-tune-models/gemma/test_results/store_e68204d8_ui.json
+2026-01-03 03:10:55 [    INFO] gemma_agent_test: 
+============================================================
+2026-01-03 03:10:55 [    INFO] gemma_agent_test: FINAL TEST RUN METRICS REPORT
+2026-01-03 03:10:55 [    INFO] gemma_agent_test: ============================================================
+2026-01-03 03:10:55 [    INFO] gemma_agent_test: Run ID: run_202638f80c47
+2026-01-03 03:10:55 [    INFO] gemma_agent_test: Total Scenarios: 50
+2026-01-03 03:10:55 [    INFO] gemma_agent_test: Passed: 47
+2026-01-03 03:10:55 [    INFO] gemma_agent_test: Failed: 3
+2026-01-03 03:10:55 [    INFO] gemma_agent_test: Pass Rate: 94.0%
+2026-01-03 03:10:55 [    INFO] gemma_agent_test: 
+2026-01-03 03:10:55 [    INFO] gemma_agent_test: Detailed Metrics:
+2026-01-03 03:10:55 [    INFO] gemma_agent_test:   tool_calling_rate: 100.0%
+2026-01-03 03:10:55 [    INFO] gemma_agent_test:   correct_response_rate: 100.0%
+2026-01-03 03:10:55 [    INFO] gemma_agent_test:   correct_tool_call_rate: 100.0%
+2026-01-03 03:10:55 [    INFO] gemma_agent_test:   file_verification_rate: 95.3%
+2026-01-03 03:10:55 [    INFO] gemma_agent_test: ============================================================
+2026-01-03 03:10:55 [    INFO] gemma_agent_test: Testing empty input handling
+2026-01-03 03:10:56 [    INFO] gemma_agent_test: Response to empty input: I can assist with property tours and property consultation. To help you with specific requests, could you please specify the date, date, and time you would like to schedule the tour?

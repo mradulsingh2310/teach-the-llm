@@ -1,0 +1,636 @@
+{
+  "property_name": "Sunset Heights Apartments",
+  "last_updated": "2026-01-01",
+  "entries": [
+    {
+      "id": 1,
+      "category": "amenities",
+      "question": "Does the property have a swimming pool?",
+      "answer": "Yes! We have a beautiful heated outdoor pool that is open year-round. The pool area includes lounge chairs, umbrellas, and a separate hot tub. Pool hours are 6 AM to 10 PM daily. Towel service is available, and guests are welcome with resident supervision.",
+      "keywords": ["pool", "swimming", "hot tub", "spa", "heated", "outdoor"]
+    },
+    {
+      "id": 2,
+      "category": "amenities",
+      "question": "What gym equipment is available in the fitness center?",
+      "answer": "Our state-of-the-art fitness center is open 24/7 and features: treadmills, ellipticals, stationary bikes, rowing machines, free weights (5-100 lbs), cable machines, squat racks, bench press stations, kettlebells, yoga mats, stability balls, and a dedicated stretching area. We also have a separate yoga/spin studio.",
+      "keywords": ["gym", "fitness", "workout", "exercise", "weights", "treadmill", "equipment", "24/7"]
+    },
+    {
+      "id": 3,
+      "category": "amenities",
+      "question": "Is there a clubhouse available for residents?",
+      "answer": "Yes, our resident clubhouse features a spacious lounge area with comfortable seating, a large-screen TV, a full kitchen with appliances, and can accommodate up to 50 guests. It's perfect for birthday parties, game nights, or private events. Reservations can be made through the resident portal with a $50 refundable deposit.",
+      "keywords": ["clubhouse", "community room", "party room", "events", "lounge", "gathering"]
+    },
+    {
+      "id": 4,
+      "category": "amenities",
+      "question": "Is there a business center on-site?",
+      "answer": "Our business center is located on the first floor and is available 24/7 for residents. It includes: 4 private workstations with high-speed internet, a printer/copier/scanner, a small conference room that seats 6 (reservable), complimentary coffee and tea, and phone booths for private calls.",
+      "keywords": ["business center", "office", "work", "computer", "printer", "conference room", "coworking"]
+    },
+    {
+      "id": 5,
+      "category": "amenities",
+      "question": "Does the building have a rooftop deck?",
+      "answer": "Yes! Our stunning rooftop deck on the 12th floor offers panoramic city views. Amenities include: lounge seating, fire pits, a built-in BBQ grill station, string lighting for evening ambiance, and a covered pavilion area. The rooftop is open from 8 AM to 11 PM daily.",
+      "keywords": ["rooftop", "deck", "terrace", "views", "outdoor space", "skyline"]
+    },
+    {
+      "id": 6,
+      "category": "amenities",
+      "question": "Is there a BBQ or grilling area?",
+      "answer": "We have two BBQ areas: one on the rooftop deck with premium gas grills and one near the pool with charcoal grills. Both areas include picnic tables, prep counters, and are first-come-first-served. Grilling is allowed from 10 AM to 9 PM. Please clean up after use.",
+      "keywords": ["bbq", "grill", "barbecue", "cookout", "picnic"]
+    },
+    {
+      "id": 7,
+      "category": "amenities",
+      "question": "Is there a dog park on the property?",
+      "answer": "Yes! Our fenced dog park is located on the east side of the property and features separate areas for large dogs (over 25 lbs) and small dogs. Amenities include agility equipment, waste stations, a water fountain for dogs, and benches for owners. The dog park is open from 6 AM to 10 PM.",
+      "keywords": ["dog park", "pet area", "dogs", "off-leash", "pets"]
+    },
+    {
+      "id": 8,
+      "category": "amenities",
+      "question": "How do package deliveries work?",
+      "answer": "We have Amazon Hub package lockers in the mail room that are accessible 24/7 with your unique code. For oversized packages, they are held in our secure package room and you'll receive an email notification. The leasing office can also accept packages during business hours. We partner with all major carriers including UPS, FedEx, USPS, and Amazon.",
+      "keywords": ["package", "delivery", "amazon", "locker", "mail", "ups", "fedex"]
+    },
+    {
+      "id": 9,
+      "category": "amenities",
+      "question": "Is there bike storage available?",
+      "answer": "Yes, we offer secure bike storage in the parking garage at no additional cost. The bike room is accessed via key fob and includes 60 individual bike racks. We also have a bike repair station with basic tools and an air pump. For residents who prefer in-unit storage, bikes are allowed in apartments.",
+      "keywords": ["bike", "bicycle", "storage", "cycling", "bike room"]
+    },
+    {
+      "id": 10,
+      "category": "amenities",
+      "question": "Are there electric vehicle charging stations?",
+      "answer": "Yes! We have 12 Level 2 EV charging stations in the parking garage available on a first-come, first-served basis. Charging is billed at $0.15 per kWh through the ChargePoint app. We also have 2 Tesla-specific connectors. Additional charging stations are planned for installation next year.",
+      "keywords": ["ev", "electric vehicle", "charging", "tesla", "charger", "electric car"]
+    },
+    {
+      "id": 11,
+      "category": "amenities",
+      "question": "Is there a concierge service?",
+      "answer": "Our concierge desk is staffed Monday through Friday, 8 AM to 8 PM, and Saturdays 9 AM to 5 PM. They can assist with: package acceptance, dry cleaning drop-off/pick-up, restaurant reservations, transportation arrangements, local recommendations, and coordinating maintenance appointments. After-hours, security is available 24/7.",
+      "keywords": ["concierge", "front desk", "doorman", "service", "assistance"]
+    },
+    {
+      "id": 12,
+      "category": "amenities",
+      "question": "Does the building have laundry facilities?",
+      "answer": "Most of our units include in-unit washer and dryer connections or full-size appliances. For units without in-unit laundry, we have a laundry room on each floor with high-efficiency washers and dryers. Machines accept credit cards and the LaundryLink app. Cost is $2.50 per wash and $2.00 per dry cycle.",
+      "keywords": ["laundry", "washer", "dryer", "laundromat", "washing machine"]
+    },
+    {
+      "id": 13,
+      "category": "amenities",
+      "question": "What parking options are available?",
+      "answer": "We offer several parking options: covered garage parking ($150/month), reserved spots near elevators ($200/month), and tandem parking for 2 vehicles ($225/month). Each unit includes one parking spot in the base rent. Guest parking is available for up to 48 hours with a visitor pass from the leasing office.",
+      "keywords": ["parking", "garage", "car", "vehicle", "spot", "guest parking"]
+    },
+    {
+      "id": 14,
+      "category": "neighborhood",
+      "question": "What restaurants are nearby?",
+      "answer": "We're surrounded by amazing dining options! Within walking distance: Bella Italia (Italian, 0.2 mi), Golden Dragon (Chinese, 0.3 mi), The Burger Joint (American, 0.1 mi), Sakura Sushi (Japanese, 0.4 mi), Taco Loco (Mexican, 0.2 mi), and Sweet Treats Bakery (0.3 mi). There's also a food hall with 15+ vendors just two blocks away.",
+      "keywords": ["restaurants", "dining", "food", "eating", "nearby", "takeout"]
+    },
+    {
+      "id": 15,
+      "category": "neighborhood",
+      "question": "What shopping options are nearby?",
+      "answer": "Shopping is incredibly convenient! Westfield Mall is just 0.5 miles away with major retailers. Within 3 blocks you'll find: Target, CVS Pharmacy, Trader Joe's, a dry cleaner, and several boutique shops. The downtown shopping district with designer stores is a 10-minute drive or 2 subway stops away.",
+      "keywords": ["shopping", "stores", "mall", "retail", "target", "shops"]
+    },
+    {
+      "id": 16,
+      "category": "neighborhood",
+      "question": "How accessible is public transit?",
+      "answer": "Excellent public transit access! The Metro Blue Line station is just 2 blocks away (5-minute walk). Bus routes 22, 45, and 67 stop directly in front of the building. Downtown is a 15-minute subway ride. We're also near the express bus to the airport (25-minute ride). Many residents commute car-free!",
+      "keywords": ["transit", "subway", "bus", "metro", "transportation", "commute", "train"]
+    },
+    {
+      "id": 17,
+      "category": "neighborhood",
+      "question": "Are there good schools nearby?",
+      "answer": "The property is in the highly-rated Lincoln School District. Nearby schools include: Lincoln Elementary (0.4 mi, 9/10 rating), Washington Middle School (0.8 mi, 8/10 rating), and Jefferson High School (1.2 mi, 8/10 rating). There are also several private schools and preschools within 2 miles.",
+      "keywords": ["schools", "education", "elementary", "high school", "district", "kids", "children"]
+    },
+    {
+      "id": 18,
+      "category": "neighborhood",
+      "question": "What parks are in the area?",
+      "answer": "Green spaces abound! Sunset Park (0.3 mi) has walking trails, a playground, and sports courts. Riverside Park (0.7 mi) offers jogging paths along the river and picnic areas. Central Community Garden (0.4 mi) has plots available for residents. The city's main botanical garden is a 10-minute drive.",
+      "keywords": ["parks", "green space", "outdoor", "playground", "trails", "nature"]
+    },
+    {
+      "id": 19,
+      "category": "neighborhood",
+      "question": "Where is the nearest hospital?",
+      "answer": "St. Mary's Medical Center is 1.2 miles away (5-minute drive) with a full emergency room. CityHealth Urgent Care is just 0.5 miles away for non-emergency medical needs, open 7 days a week. There are also several pharmacies within walking distance including CVS and Walgreens.",
+      "keywords": ["hospital", "medical", "emergency", "healthcare", "doctor", "urgent care"]
+    },
+    {
+      "id": 20,
+      "category": "neighborhood",
+      "question": "What grocery stores are nearby?",
+      "answer": "You have great grocery options! Trader Joe's is 0.3 miles away, Whole Foods is 0.6 miles, and there's a Safeway at 0.8 miles. For quick trips, there's a corner market across the street open until midnight. Grocery delivery services like Instacart typically deliver within 2 hours from multiple stores.",
+      "keywords": ["grocery", "supermarket", "food shopping", "trader joe's", "whole foods", "market"]
+    },
+    {
+      "id": 21,
+      "category": "neighborhood",
+      "question": "What is the nightlife like around here?",
+      "answer": "The neighborhood has a vibrant nightlife scene! Within walking distance: The Blue Note jazz bar, Craft & Co. brewery, The Rooftop Lounge with city views, and several wine bars. The entertainment district with clubs and late-night venues is just 2 subway stops away. Most local bars are open until 2 AM.",
+      "keywords": ["nightlife", "bars", "clubs", "entertainment", "going out", "drinks"]
+    },
+    {
+      "id": 22,
+      "category": "neighborhood",
+      "question": "What is the Walk Score for this property?",
+      "answer": "Our property has a Walk Score of 92 (Walker's Paradise), a Transit Score of 89 (Excellent Transit), and a Bike Score of 85 (Very Bikeable). Daily errands do not require a car. Most amenities, shopping, and dining are within a 15-minute walk.",
+      "keywords": ["walk score", "walkability", "walkable", "bike score", "transit score"]
+    },
+    {
+      "id": 23,
+      "category": "neighborhood",
+      "question": "What is the bike score for this area?",
+      "answer": "The property has a Bike Score of 85 (Very Bikeable). There are protected bike lanes on Main Street and Oak Avenue. The city's bike share program has a station right outside our building. Many residents bike to work and for daily errands. We also have secure bike storage on-site.",
+      "keywords": ["bike score", "biking", "cycling", "bike lanes", "bike share"]
+    },
+    {
+      "id": 24,
+      "category": "leasing",
+      "question": "What lease terms do you offer?",
+      "answer": "We offer flexible lease terms: 6-month, 12-month, and 18-month leases. 12-month leases offer the best rates. 6-month leases have a $100/month premium. 18-month leases offer a $50/month discount. Month-to-month is available after initial lease term at a $200/month premium. Corporate housing options are also available.",
+      "keywords": ["lease", "term", "months", "duration", "flexible", "short term"]
+    },
+    {
+      "id": 25,
+      "category": "leasing",
+      "question": "What is the application process?",
+      "answer": "Our application process is simple: 1) Complete the online application ($50 fee per applicant), 2) Provide proof of income and employment, 3) Consent to background and credit check, 4) Submit rental history references. Applications are typically processed within 24-48 hours. Once approved, you'll have 48 hours to sign the lease and pay deposits.",
+      "keywords": ["application", "apply", "process", "how to apply", "steps"]
+    },
+    {
+      "id": 26,
+      "category": "leasing",
+      "question": "What credit score is required?",
+      "answer": "We generally require a minimum credit score of 650 for approval. Applicants with scores between 600-649 may be approved with an additional security deposit. Scores below 600 may require a qualified guarantor. We consider the full credit picture, not just the score, including payment history and debt-to-income ratio.",
+      "keywords": ["credit", "score", "credit check", "fico", "credit history"]
+    },
+    {
+      "id": 27,
+      "category": "leasing",
+      "question": "What are the income requirements?",
+      "answer": "We require gross monthly income to be at least 3 times the monthly rent. For example, for a $2,000/month apartment, you need to show $6,000/month gross income. Combined income of all leaseholders counts. We accept employment income, self-employment income, retirement income, and other verifiable income sources.",
+      "keywords": ["income", "salary", "requirements", "earnings", "how much", "qualify"]
+    },
+    {
+      "id": 28,
+      "category": "leasing",
+      "question": "Do you accept guarantors?",
+      "answer": "Yes, we accept guarantors! A guarantor must have a credit score of 700+, income of 5x the monthly rent, and reside in the United States. They will sign a guarantor addendum and are financially responsible if the tenant cannot pay. We also accept institutional guarantors like Rhino or Leap.",
+      "keywords": ["guarantor", "cosigner", "co-signer", "guarantee"]
+    },
+    {
+      "id": 29,
+      "category": "leasing",
+      "question": "What are the move-in costs?",
+      "answer": "Move-in costs include: first month's rent, security deposit (equal to one month's rent), and any applicable pet deposits ($500 per pet). Pro-rated rent applies if moving in mid-month. Admin fee of $150 covers lease processing. Total move-in for a $2,000/month apartment is approximately $4,150 (without pets).",
+      "keywords": ["move-in", "costs", "fees", "upfront", "deposits", "how much to move"]
+    },
+    {
+      "id": 30,
+      "category": "leasing",
+      "question": "How much is the security deposit?",
+      "answer": "The security deposit is equal to one month's rent for most approved applicants. Applicants with lower credit scores may be required to pay up to 1.5x monthly rent as deposit. The deposit is fully refundable within 30 days of move-out, minus any deductions for damages beyond normal wear and tear or unpaid rent.",
+      "keywords": ["security deposit", "deposit", "refundable", "move out"]
+    },
+    {
+      "id": 31,
+      "category": "leasing",
+      "question": "How much is the application fee?",
+      "answer": "The application fee is $50 per adult applicant (18+). This covers the cost of credit checks, background screening, and rental history verification. The fee is non-refundable. We use a third-party screening service that provides results within 24 hours. Each adult living in the unit must submit a separate application.",
+      "keywords": ["application fee", "fee", "apply cost", "screening"]
+    },
+    {
+      "id": 32,
+      "category": "leasing",
+      "question": "Is there an admin or move-in fee?",
+      "answer": "Yes, there is a one-time $150 administrative fee due at lease signing. This covers lease preparation, key fob programming, and move-in coordination. This fee is non-refundable and separate from the security deposit. It's a one-time fee, not charged at renewal.",
+      "keywords": ["admin fee", "administrative", "move-in fee", "lease fee"]
+    },
+    {
+      "id": 33,
+      "category": "rent_payment",
+      "question": "What payment methods do you accept for rent?",
+      "answer": "We accept multiple payment methods: ACH bank transfer (preferred, no fee), credit card (2.5% processing fee), debit card (1% fee), personal check (must arrive by due date), money order, and cashier's check. Online payments through our resident portal are available 24/7. We do not accept cash payments.",
+      "keywords": ["payment", "pay rent", "methods", "credit card", "bank transfer", "check"]
+    },
+    {
+      "id": 34,
+      "category": "rent_payment",
+      "question": "When is rent due?",
+      "answer": "Rent is due on the 1st of each month. There is a 5-day grace period, so rent received by the 5th will not incur late fees. We recommend setting up autopay to ensure on-time payments. You can schedule payments in advance through the resident portal.",
+      "keywords": ["due date", "when", "rent due", "first", "monthly"]
+    },
+    {
+      "id": 35,
+      "category": "rent_payment",
+      "question": "What are the late fees?",
+      "answer": "Late fees apply after the 5-day grace period: $50 flat fee on the 6th of the month, plus $10 per day starting the 10th (capped at $150 additional). Total maximum late fee is $200. If rent is not paid by the 15th, we begin the formal notice process. Payment plans may be available; contact us to discuss.",
+      "keywords": ["late fee", "late payment", "penalty", "overdue"]
+    },
+    {
+      "id": 36,
+      "category": "rent_payment",
+      "question": "Is there a grace period for rent payment?",
+      "answer": "Yes! We offer a 5-day grace period. Rent is due on the 1st, but you have until the 5th to pay without penalty. Payments received on the 6th or later will incur late fees. We recommend setting up autopay on the 1st to avoid any issues.",
+      "keywords": ["grace period", "late", "days", "penalty free"]
+    },
+    {
+      "id": 37,
+      "category": "rent_payment",
+      "question": "How do I access the online resident portal?",
+      "answer": "The resident portal is accessible at residents.sunsetheights.com. You'll receive login credentials within 24 hours of lease signing. Through the portal, you can: pay rent, set up autopay, submit maintenance requests, view your lease, update contact info, and communicate with management. There's also a mobile app available for iOS and Android.",
+      "keywords": ["portal", "online", "resident portal", "login", "app", "website"]
+    },
+    {
+      "id": 38,
+      "category": "rent_payment",
+      "question": "Can I set up automatic rent payments?",
+      "answer": "Yes! We strongly encourage autopay. You can set it up through the resident portal. Options include: full rent on the 1st, split payments (1st and 15th), or a custom date within the grace period. You can link a bank account (no fee) or credit/debit card (processing fees apply). You can modify or cancel autopay anytime.",
+      "keywords": ["autopay", "automatic", "recurring", "scheduled", "auto payment"]
+    },
+    {
+      "id": 39,
+      "category": "rent_payment",
+      "question": "How often does rent increase?",
+      "answer": "Rent increases typically occur at lease renewal, not during an active lease term. We provide 60 days notice of any rent increase before your renewal date. Increases average 3-5% annually based on market conditions. Long-term residents and those on 18-month leases often receive more favorable renewal rates.",
+      "keywords": ["rent increase", "raise", "renewal", "higher rent", "price increase"]
+    },
+    {
+      "id": 40,
+      "category": "policies",
+      "question": "What is the pet policy?",
+      "answer": "We welcome pets! Dogs and cats are allowed with approval. Requirements: $500 one-time pet deposit per pet (non-refundable), $50/month pet rent per pet, maximum 2 pets per unit, weight limit of 75 lbs per dog. Some breed restrictions apply (contact us for the list). All pets must be registered with vaccination records. Fish tanks under 20 gallons don't require approval.",
+      "keywords": ["pet", "dog", "cat", "animal", "pet policy", "pets allowed"]
+    },
+    {
+      "id": 41,
+      "category": "policies",
+      "question": "What dog breeds are restricted?",
+      "answer": "The following breeds and their mixes are restricted due to insurance requirements: Pit Bull Terriers, Rottweilers, German Shepherds, Doberman Pinschers, Chow Chows, Akitas, Wolf Hybrids, Mastiffs, and Presa Canarios. We review each case individually and may require a pet interview. Please contact us if you have questions about your specific dog.",
+      "keywords": ["breed restriction", "restricted breeds", "banned dogs", "dog breeds"]
+    },
+    {
+      "id": 42,
+      "category": "policies",
+      "question": "What is the pet weight limit?",
+      "answer": "The weight limit for dogs is 75 lbs. There is no weight limit for cats. If you have a larger dog, please contact us to discuss - we consider each case individually and may make exceptions for well-behaved dogs with excellent references. Support/service animals are exempt from weight restrictions with proper documentation.",
+      "keywords": ["weight limit", "pet weight", "dog size", "large dog"]
+    },
+    {
+      "id": 43,
+      "category": "policies",
+      "question": "Is there a pet deposit?",
+      "answer": "Yes, there is a $500 one-time pet deposit per pet. This is non-refundable and covers potential pet-related damages. Additionally, there is $50/month pet rent per pet. For a second pet, the deposit is $400 and pet rent is $35/month. Service and emotional support animals with proper documentation are exempt from these fees.",
+      "keywords": ["pet deposit", "pet fee", "pet rent", "animal deposit"]
+    },
+    {
+      "id": 44,
+      "category": "policies",
+      "question": "What is your guest policy?",
+      "answer": "Guests are welcome! Short-term guests (under 7 consecutive days) don't require notification. Guests staying 7-14 days should be registered with the office. Anyone staying more than 14 days in a 30-day period must be added to the lease as an occupant. Overnight guests are limited to 2 at a time. Guest parking passes are available at the front desk.",
+      "keywords": ["guest", "visitor", "overnight", "staying over", "guests"]
+    },
+    {
+      "id": 45,
+      "category": "policies",
+      "question": "Is smoking allowed?",
+      "answer": "Sunset Heights is a 100% smoke-free community. Smoking (including cigarettes, cigars, pipes, and e-cigarettes/vaping) is prohibited in all units, common areas, balconies, and within 25 feet of building entrances. Violation may result in a $250 cleaning fee and potential lease termination for repeated offenses. Designated smoking areas are available in the parking lot.",
+      "keywords": ["smoking", "vaping", "cigarettes", "smoke-free", "tobacco"]
+    },
+    {
+      "id": 46,
+      "category": "policies",
+      "question": "What is the noise policy?",
+      "answer": "Quiet hours are 10 PM to 8 AM Sunday through Thursday, and 11 PM to 9 AM on Friday and Saturday. During quiet hours, noise should not be audible outside your unit. At all times, noise should not unreasonably disturb neighbors. Violations may result in warnings, fines ($100 per occurrence), or lease termination for repeated issues.",
+      "keywords": ["noise", "quiet hours", "loud", "sound", "music", "party"]
+    },
+    {
+      "id": 47,
+      "category": "policies",
+      "question": "Can I sublet my apartment?",
+      "answer": "Subletting requires written approval from management. You must submit a sublet request at least 30 days in advance. The subtenant must complete our standard application process and meet all qualification criteria. A $200 sublet fee applies. The original tenant remains responsible for the lease. Short-term rentals (Airbnb, VRBO, etc.) are strictly prohibited.",
+      "keywords": ["sublet", "sublease", "rent out", "airbnb", "temporary"]
+    },
+    {
+      "id": 48,
+      "category": "policies",
+      "question": "Can I have roommates?",
+      "answer": "Yes, roommates are allowed! All residents over 18 must be listed on the lease and complete the application process. Combined income of all leaseholders is considered for qualification. There's a maximum occupancy of 2 people per bedroom plus 1 (e.g., a 2BR can have max 5 occupants). Adding a roommate mid-lease requires a lease amendment and $100 fee.",
+      "keywords": ["roommate", "roommates", "add person", "shared", "multiple tenants"]
+    },
+    {
+      "id": 49,
+      "category": "policies",
+      "question": "Is renters insurance required?",
+      "answer": "Yes, renters insurance is required for all residents. Minimum coverage: $100,000 liability, $10,000 personal property. The property must be listed as an interested party on your policy. Proof of insurance is due before key pickup. We partner with Assurant for affordable policies starting at $15/month if you need assistance finding coverage.",
+      "keywords": ["renters insurance", "insurance", "liability", "coverage", "policy"]
+    },
+    {
+      "id": 50,
+      "category": "policies",
+      "question": "What are the parking rules?",
+      "answer": "Each unit includes one assigned parking spot. Additional spots are $150/month. Rules: park only in your assigned spot, no vehicle repairs in the garage, motorcycles must use designated areas, no overnight guest parking without a pass, no commercial vehicles over 10,000 lbs, and vehicles must be registered and insured. Unregistered or abandoned vehicles may be towed at owner's expense.",
+      "keywords": ["parking rules", "garage", "vehicle", "car rules", "towing"]
+    },
+    {
+      "id": 51,
+      "category": "policies",
+      "question": "Are storage units available?",
+      "answer": "Yes! We have private storage units available for rent: Small (4x4): $75/month, Medium (5x8): $125/month, Large (10x10): $175/month. All units are climate-controlled, individually locked, and accessible from 6 AM to 10 PM. Renters must provide their own lock. Storage unit rental requires a separate agreement. Limited availability; contact us to check.",
+      "keywords": ["storage", "storage unit", "extra space", "belongings"]
+    },
+    {
+      "id": 52,
+      "category": "utilities",
+      "question": "What utilities are included in rent?",
+      "answer": "Water, sewer, and trash removal are included in your monthly rent. You are responsible for electricity, gas (if applicable), internet, and cable/streaming services. We also offer an optional utility package for $150/month that includes internet, basic cable, and renter's insurance.",
+      "keywords": ["utilities included", "what's included", "water", "trash", "bills"]
+    },
+    {
+      "id": 53,
+      "category": "utilities",
+      "question": "What are the average utility costs?",
+      "answer": "Average monthly utility costs by unit type: Studio: $60-80 (electric), 1BR: $80-120 (electric + gas), 2BR: $100-150 (electric + gas), 3BR: $130-200 (electric + gas). Costs vary by season (higher in summer with AC) and usage. Energy-efficient appliances in all units help keep costs down.",
+      "keywords": ["utility cost", "average", "bills", "electricity", "gas", "monthly"]
+    },
+    {
+      "id": 54,
+      "category": "utilities",
+      "question": "What utility providers service this area?",
+      "answer": "Electricity: City Power & Light (must set up before move-in, call 555-POWER). Gas: Metro Gas Company (555-GAS-LINE). Internet options: Comcast Xfinity, AT&T Fiber, and Starlink. The building is wired for fiber with speeds up to 1 Gbps available. We recommend setting up utilities at least 3 business days before move-in.",
+      "keywords": ["utility providers", "electric company", "gas company", "who provides", "service"]
+    },
+    {
+      "id": 55,
+      "category": "utilities",
+      "question": "What internet options are available?",
+      "answer": "The building has fiber infrastructure supporting high-speed internet. Available providers: Comcast Xfinity (up to 1.2 Gbps), AT&T Fiber (up to 1 Gbps), and T-Mobile 5G Home Internet. Many residents use Comcast which offers a building special: 500 Mbps for $49.99/month. Free WiFi is available in common areas.",
+      "keywords": ["internet", "wifi", "broadband", "fiber", "comcast", "speed"]
+    },
+    {
+      "id": 56,
+      "category": "utilities",
+      "question": "How do I set up utilities before moving in?",
+      "answer": "Contact providers directly: 1) City Power & Light: Call 555-POWER with your move-in date and unit number. 2) Metro Gas: Call 555-GAS-LINE (some units are all-electric). 3) Internet: Contact your preferred provider. Set up accounts at least 3 business days before move-in. The leasing office can provide service addresses and contact info.",
+      "keywords": ["set up utilities", "start service", "transfer", "new account"]
+    },
+    {
+      "id": 57,
+      "category": "maintenance",
+      "question": "How do I submit a maintenance request?",
+      "answer": "Submit maintenance requests through: 1) Resident portal (preferred) at residents.sunsetheights.com, 2) Mobile app, 3) Call the office at 555-123-4567, or 4) Email maintenance@sunsetheights.com. Include details about the issue and your availability. For emergencies, call our 24/7 emergency line at 555-123-9999.",
+      "keywords": ["maintenance request", "repair", "fix", "submit request", "something broken"]
+    },
+    {
+      "id": 58,
+      "category": "maintenance",
+      "question": "What is considered an emergency maintenance issue?",
+      "answer": "Emergencies include: no heat (below 50F outside), no hot water, flooding or major water leak, gas smell, fire/smoke, electrical hazard, broken door lock preventing entry, sewage backup, or no electricity (if building-wide). Call our 24/7 emergency line at 555-123-9999 immediately. Non-emergencies submitted after hours will be addressed the next business day.",
+      "keywords": ["emergency", "urgent", "after hours", "24/7", "immediate"]
+    },
+    {
+      "id": 59,
+      "category": "maintenance",
+      "question": "What are the maintenance response times?",
+      "answer": "Response time by priority: Emergency (flooding, no heat, gas): Within 4 hours, 24/7. Urgent (no hot water, broken appliance): Within 24 hours. Standard (leaky faucet, minor repairs): 1-3 business days. Scheduled (painting, upgrades): Appointment-based. We'll notify you before entering your unit except for emergencies.",
+      "keywords": ["response time", "how long", "when fixed", "turnaround"]
+    },
+    {
+      "id": 60,
+      "category": "maintenance",
+      "question": "How often is pest control done?",
+      "answer": "Preventive pest control treatments are performed quarterly in common areas and building perimeters. Individual unit treatments are available upon request at no charge. If you notice any pest issues (insects, rodents), submit a maintenance request immediately. We use pet-safe and eco-friendly treatments. Inspections are done within 48 hours of a report.",
+      "keywords": ["pest control", "bugs", "insects", "rodents", "exterminator", "ants", "roaches"]
+    },
+    {
+      "id": 61,
+      "category": "maintenance",
+      "question": "Who do I contact for maintenance emergencies after hours?",
+      "answer": "For after-hours emergencies, call our 24/7 emergency line: 555-123-9999. A maintenance technician is on-call and will respond to true emergencies within 4 hours. For non-emergency issues discovered after hours, please submit a request through the portal and it will be addressed the next business day.",
+      "keywords": ["after hours", "emergency contact", "night", "weekend", "on-call"]
+    },
+    {
+      "id": 62,
+      "category": "move_in_out",
+      "question": "What is the move-in process?",
+      "answer": "Move-in process: 1) Sign lease and pay move-in costs, 2) Set up utilities (3 days before), 3) Provide proof of renters insurance, 4) Schedule move-in date and elevator reservation, 5) Pick up keys at leasing office during business hours, 6) Complete move-in inspection checklist with staff, 7) Enjoy your new home! Move-ins available Monday-Saturday.",
+      "keywords": ["move-in", "moving in", "process", "steps", "what to do"]
+    },
+    {
+      "id": 63,
+      "category": "move_in_out",
+      "question": "How do I schedule a move-in date?",
+      "answer": "Contact the leasing office at least 5 business days before your desired move-in date. Move-ins are available Monday through Saturday, 9 AM to 5 PM. We don't allow move-ins on Sundays or holidays. You'll need to reserve the freight elevator for large moves (no charge, but required). Early morning slots fill up fastest.",
+      "keywords": ["schedule", "move-in date", "book", "when can I move"]
+    },
+    {
+      "id": 64,
+      "category": "move_in_out",
+      "question": "Is there a move-in inspection?",
+      "answer": "Yes! A move-in inspection is conducted with you on your move-in day. We'll walk through the unit together documenting any existing conditions on the Move-In Condition Report. Take photos/videos for your records. This protects you from being charged for pre-existing damage at move-out. Keep a copy of the signed report.",
+      "keywords": ["inspection", "walkthrough", "condition report", "damage", "check"]
+    },
+    {
+      "id": 65,
+      "category": "move_in_out",
+      "question": "Where do I pick up my keys?",
+      "answer": "Keys and fobs are picked up at the leasing office during business hours (Monday-Friday 9 AM-6 PM, Saturday 10 AM-4 PM). Bring a valid photo ID matching the lease. You'll receive: unit keys (2), mailbox key (1), key fob for building access (2), parking garage remote (if applicable). Additional fobs are $50 each.",
+      "keywords": ["keys", "key pickup", "fob", "access", "collect keys"]
+    },
+    {
+      "id": 66,
+      "category": "move_in_out",
+      "question": "Do I need to reserve the elevator for moving?",
+      "answer": "Yes, freight elevator reservation is required for moves involving large items or furniture. Reserve at least 48 hours in advance through the leasing office. Time slots are 2-hour blocks from 9 AM to 5 PM. No charge for residents. Use of the freight elevator for moves is mandatory; regular elevators cannot be used for moving large items.",
+      "keywords": ["elevator", "freight elevator", "reserve", "moving", "reservation"]
+    },
+    {
+      "id": 67,
+      "category": "move_in_out",
+      "question": "Is there a loading dock for moving trucks?",
+      "answer": "Yes! We have a covered loading dock accessible from the rear parking entrance. It accommodates trucks up to 26 feet. Reserve the loading dock along with your elevator reservation. Dock access is 9 AM to 5 PM. Loading dock use is limited to 4 hours maximum. Moving pods can be placed in designated parking spots with advance approval.",
+      "keywords": ["loading dock", "moving truck", "unloading", "dock", "delivery"]
+    },
+    {
+      "id": 68,
+      "category": "move_in_out",
+      "question": "What is the move-out process?",
+      "answer": "Move-out process: 1) Give 60 days written notice, 2) Schedule move-out inspection, 3) Return all keys/fobs, 4) Forward your mail, 5) Cancel utilities effective move-out date, 6) Leave unit broom-clean, 7) Attend final inspection. Security deposit refund (minus deductions) mailed within 30 days to your forwarding address.",
+      "keywords": ["move-out", "moving out", "leaving", "vacating", "end lease"]
+    },
+    {
+      "id": 69,
+      "category": "move_in_out",
+      "question": "How much notice do I need to give before moving out?",
+      "answer": "You must provide 60 days written notice before your lease end date or before vacating. Notice can be submitted through the resident portal, email, or in writing to the leasing office. Month-to-month residents also require 60 days notice. Early termination (before lease end) requires 60 days notice plus early termination fee equal to 2 months rent.",
+      "keywords": ["notice", "notice period", "how much notice", "days notice", "terminate"]
+    },
+    {
+      "id": 70,
+      "category": "amenities",
+      "question": "Does the property have a media room or theater?",
+      "answer": "Yes! Our resident media room features a 120-inch projection screen, surround sound system, theater-style seating for 20, and streaming device connectivity. Perfect for movie nights or watching the big game. Reserve through the resident portal up to 2 weeks in advance. Free for residents; $25 cleaning fee for private parties.",
+      "keywords": ["media room", "theater", "movie", "screening room", "entertainment"]
+    },
+    {
+      "id": 71,
+      "category": "amenities",
+      "question": "Is there a co-working space or study room?",
+      "answer": "Beyond our business center, we have a dedicated co-working lounge on the 5th floor with: hot desks, standing desks, quiet pods for calls, high-speed WiFi, power outlets at every seat, complimentary coffee, and a small kitchen. Open 24/7 for residents. No reservation needed for open seating; pods can be reserved for 2-hour blocks.",
+      "keywords": ["coworking", "study", "work from home", "remote work", "workspace"]
+    },
+    {
+      "id": 72,
+      "category": "amenities",
+      "question": "Is there a game room or recreation area?",
+      "answer": "Our recreation room includes: billiards table, foosball, ping pong, shuffleboard, arcade games, card tables, and board games. There's also a PlayStation 5 and Nintendo Switch available. Open daily from 7 AM to 11 PM. Located on the 2nd floor next to the clubhouse. Equipment is first-come-first-served.",
+      "keywords": ["game room", "recreation", "pool table", "games", "fun", "entertainment"]
+    },
+    {
+      "id": 73,
+      "category": "policies",
+      "question": "Can I make modifications to my apartment?",
+      "answer": "Minor modifications (like hanging pictures with small nails) are allowed without approval. For larger modifications (painting walls, installing fixtures), you need written approval. Submit a modification request form to the leasing office. Some modifications may require professional installation and restoration to original condition at move-out. Security deposits may be adjusted.",
+      "keywords": ["modifications", "changes", "painting", "install", "customize", "alterations"]
+    },
+    {
+      "id": 74,
+      "category": "policies",
+      "question": "Can I have a water bed or fish tank?",
+      "answer": "Water beds require approval and proof of renter's insurance covering water damage. Fish tanks under 20 gallons are allowed without approval. Tanks 20-55 gallons require approval and must be on ground-floor units or on approved stands. Tanks over 55 gallons are not permitted due to weight and water damage concerns.",
+      "keywords": ["water bed", "fish tank", "aquarium", "water", "heavy items"]
+    },
+    {
+      "id": 75,
+      "category": "policies",
+      "question": "What is the policy on grilling on balconies?",
+      "answer": "Open-flame grills (charcoal, propane) are prohibited on balconies due to fire codes. Electric grills under 1500 watts are permitted with caution. Please use our designated BBQ areas on the rooftop or by the pool for grilling. Violating the open-flame policy can result in fines and lease termination for safety reasons.",
+      "keywords": ["grilling", "balcony", "bbq", "fire", "propane", "charcoal"]
+    },
+    {
+      "id": 76,
+      "category": "leasing",
+      "question": "Do you offer any move-in specials or discounts?",
+      "answer": "Current specials: Get 1 month free on 12-month leases (applied to 2nd month), $500 off first month for 18-month leases, $0 security deposit option through our Rhino partnership (monthly fee applies). Military/first responder discount: $200 off move-in costs. Refer-a-friend program: $500 credit for both parties. Ask about current promotions!",
+      "keywords": ["special", "discount", "promotion", "deal", "move-in special", "free rent"]
+    },
+    {
+      "id": 77,
+      "category": "leasing",
+      "question": "Can I break my lease early?",
+      "answer": "Yes, with conditions. Early lease termination requires: 60 days written notice, payment of early termination fee (2 months rent), and unit must be left in good condition. Alternatively, you may be able to transfer your lease to a new qualified tenant (subject to approval and $200 transfer fee). Military PCS orders exempt from termination fee with documentation.",
+      "keywords": ["break lease", "early termination", "leave early", "end lease", "cancel lease"]
+    },
+    {
+      "id": 78,
+      "category": "leasing",
+      "question": "How do I renew my lease?",
+      "answer": "We'll send a renewal offer 90 days before your lease ends with new terms and rates. To renew: review the offer, accept through the resident portal or in the office, and sign the new lease at least 60 days before expiration. If you don't renew, your lease converts to month-to-month at a higher rate. Early renewal (120+ days out) may lock in better rates.",
+      "keywords": ["renew", "renewal", "extend", "new lease", "stay longer"]
+    },
+    {
+      "id": 79,
+      "category": "neighborhood",
+      "question": "Is the area safe?",
+      "answer": "The neighborhood has a low crime rate and is considered very safe. We have 24/7 security patrol, controlled building access, security cameras throughout common areas and parking, well-lit walkways, and an emergency call station in the parking garage. The local police precinct is 2 blocks away. We recommend normal urban safety precautions.",
+      "keywords": ["safe", "safety", "crime", "security", "neighborhood safety"]
+    },
+    {
+      "id": 80,
+      "category": "utilities",
+      "question": "Can I use smart home devices in my apartment?",
+      "answer": "Yes! You can install smart home devices (thermostats, speakers, cameras, etc.) that don't require permanent modification. The building has strong WiFi coverage. Smart locks are allowed on interior doors only; exterior door locks cannot be changed. We recommend Nest or Ecobee thermostats which are compatible with our HVAC systems. Remove personal devices at move-out.",
+      "keywords": ["smart home", "nest", "alexa", "google home", "thermostat", "connected"]
+    },
+    {
+      "id": 81,
+      "category": "amenities",
+      "question": "Is there a children's play area?",
+      "answer": "Yes! Our children's play area is located near the pool and includes: playground equipment for ages 2-12, a sandbox area, shaded seating for parents, and a small splash pad (seasonal). The play area is open sunrise to sunset. Adult supervision required. Indoor playroom available in the clubhouse during inclement weather.",
+      "keywords": ["playground", "children", "kids", "play area", "family"]
+    },
+    {
+      "id": 82,
+      "category": "amenities",
+      "question": "Does the property have a sauna or steam room?",
+      "answer": "Yes! Adjacent to the fitness center, we have both a sauna (dry heat) and steam room. Hours are 6 AM to 10 PM. Maximum capacity is 6 people each. Towels are provided. Please shower before use and limit sessions to 20 minutes. The sauna/steam room is for adults only (18+).",
+      "keywords": ["sauna", "steam room", "spa", "relaxation", "wellness"]
+    },
+    {
+      "id": 83,
+      "category": "policies",
+      "question": "What happens if I lock myself out?",
+      "answer": "During office hours (M-F 9-6, Sat 10-4), visit the leasing office with ID for emergency access. After hours, call the emergency line (555-123-9999) - a $50 lockout fee applies for non-emergencies. First lockout is free for new residents within 30 days. We recommend keeping a spare key with a trusted friend or using a smart lock.",
+      "keywords": ["lockout", "locked out", "lost keys", "can't get in", "emergency access"]
+    },
+    {
+      "id": 84,
+      "category": "maintenance",
+      "question": "How do I change my air filter?",
+      "answer": "HVAC air filters should be changed every 1-3 months. Filter size varies by unit (check your current filter). You can change it yourself - filters are available at hardware stores - or submit a maintenance request and we'll replace it at no charge. Clean filters improve air quality and reduce energy costs. We do complimentary filter changes every 3 months.",
+      "keywords": ["air filter", "hvac", "filter change", "ac filter", "furnace filter"]
+    },
+    {
+      "id": 85,
+      "category": "move_in_out",
+      "question": "Can I see the exact unit I'll be renting before signing?",
+      "answer": "Yes! We strongly encourage viewing your exact unit before signing. If the unit is currently occupied, we can show a similar model unit. Once the unit is vacated and ready (usually 3-5 days before your move-in), we'll schedule a pre-move-in walkthrough. This ensures the unit meets your expectations before key pickup.",
+      "keywords": ["view unit", "see apartment", "tour unit", "before signing", "preview"]
+    },
+    {
+      "id": 86,
+      "category": "leasing",
+      "question": "Do you accept Section 8 or housing vouchers?",
+      "answer": "Yes, we accept Section 8 Housing Choice Vouchers and other government housing assistance programs. Standard application requirements apply. Please provide your voucher documentation with your application. Our team works directly with housing authorities to complete the necessary paperwork. Processing may take additional time for voucher approval.",
+      "keywords": ["section 8", "voucher", "housing assistance", "subsidized", "government housing"]
+    },
+    {
+      "id": 87,
+      "category": "policies",
+      "question": "Can I run a business from my apartment?",
+      "answer": "Small home businesses are allowed provided they: don't increase foot traffic, don't violate zoning laws, don't disturb neighbors, don't use common areas for business purposes, and don't involve hazardous materials. Examples allowed: remote work, freelancing, online businesses. Not allowed: retail with customers visiting, manufacturing, daycare services. Check with us if unsure.",
+      "keywords": ["home business", "work from home", "run business", "commercial", "office"]
+    },
+    {
+      "id": 88,
+      "category": "amenities",
+      "question": "Is there outdoor seating or courtyard space?",
+      "answer": "Yes! We have several outdoor spaces: central courtyard with gardens and seating, rooftop deck with lounge furniture, poolside patio with chairs and umbrellas, and a quiet reading garden near the dog park. These spaces are open to all residents and don't require reservation. Perfect for relaxing, reading, or socializing.",
+      "keywords": ["courtyard", "outdoor seating", "patio", "garden", "outdoor space"]
+    },
+    {
+      "id": 89,
+      "category": "rent_payment",
+      "question": "What happens if my rent check bounces?",
+      "answer": "If a check or ACH payment is returned, you'll be charged a $35 NSF (non-sufficient funds) fee plus any applicable late fees if the replacement payment isn't received within the grace period. After 2 returned payments, we require certified funds (cashier's check or money order) for all future payments. Contact us immediately if you anticipate payment issues.",
+      "keywords": ["bounced check", "nsf", "returned payment", "insufficient funds"]
+    },
+    {
+      "id": 90,
+      "category": "policies",
+      "question": "Are decorations allowed in common areas or on my door?",
+      "answer": "Seasonal door decorations (wreaths, small signs) are allowed on your unit door. Nothing can be affixed to common area walls or hallways. Holiday decorations must be fire-safe and removed within 2 weeks after the holiday. Balcony decorations are allowed but nothing can hang over the railing. No political signage in common areas.",
+      "keywords": ["decorations", "door decor", "holiday", "wreath", "common areas"]
+    }
+  ]
+}

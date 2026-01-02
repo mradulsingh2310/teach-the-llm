@@ -1,0 +1,1436 @@
+# Test Scenarios for Property Agent Testing Framework
+# Based on realistic conversation patterns from actual user interactions
+# Property: Sunset Heights Apartments (or The Sessanta for formal tests)
+# Available bedroom types: Studio (0), 1BR, 2BR, 3BR, 4BR, 5BR
+# Rent range: $1,200 - $5,500
+# Available dates: 2025-02-01 to 2025-04-01
+
+test_suite:
+  name: "Property Agent Real Conversation Tests"
+  version: "3.0.0"
+  description: "Test scenarios using realistic email-style user message format with contact signatures"
+
+# ============================================================================
+# GOLDEN PATH SCENARIOS - Successful Complete Journeys
+# Users who successfully search, inquire, and book tours
+# ============================================================================
+golden_path_scenarios:
+  - id: "GP001"
+    name: "Formal Email Inquiry to Tour Booking"
+    description: "User sends formal email-style inquiry, gets listings, and books tour"
+    category: "golden_path"
+    multi_turn: true
+    conversation:
+      - role: "user"
+        content: |
+          Subject: Inquiry About Leasing Options
+
+          Dear Leasing Agent,
+
+          My name is Michelle White, and I am interested in leasing an apartment at your property. I am looking for a 2-bedroom unit with a budget of up to $2,500. My desired move-in date is March 1, 2025.
+
+          Could you please let me know if there are any available units that match my preferences?
+
+          Thank you, and I look forward to your response.
+
+          Best,
+          Michelle White
+          michelle.white.2125282139@email.com
+          (212) 528-2139
+      - role: "assistant"
+        expected_tools:
+          - tool_name: "get_available_listings"
+            parameters:
+              bedrooms: [2]
+              max_rent: 2500
+            match_strategy: "contains"
+        expected_response_patterns:
+          - "bedroom|unit|available|rent"
+      - role: "user"
+        content: |
+          Hi,
+
+          Thank you for the details on the available units. I would like to schedule a tour for **Unit 303**, as it has 2 bedrooms and 2 bathrooms which is perfect for my needs.
+
+          Please let me know the available time slots for a tour on February 15, 2025.
+
+          Best,
+          Michelle White
+          michelle.white.2125282139@email.com
+          (212) 528-2139
+      - role: "assistant"
+        expected_tools:
+          - tool_name: "get_availability"
+            parameters:
+              date_str: "2025-02-15"
+            match_strategy: "contains"
+        expected_response_patterns:
+          - "available|time|slot"
+      - role: "user"
+        content: |
+          Hi,
+
+          I would like to schedule the tour for **Unit 303** at **10:00 AM** on February 15, 2025.
+
+          Thank you for arranging this!
+
+          Best,
+          Michelle White
+          michelle.white.2125282139@email.com
+          (212) 528-2139
+      - role: "assistant"
+        expected_tools:
+          - tool_name: "create_appointment"
+            parameters:
+              first_name: "Michelle"
+              last_name: "White"
+              email: "michelle.white.2125282139@email.com"
+              phone: "(212) 528-2139"
+              appointment_start_time: "10:00"
+            match_strategy: "contains"
+        expected_response_patterns:
+          - "confirm|booked|scheduled|appointment"
+    expected_outcomes:
+      - type: "tool_called"
+        tool: "get_available_listings"
+      - type: "tool_called"
+        tool: "get_availability"
+      - type: "tool_called"
+        tool: "create_appointment"
+      - type: "file_write"
+        file: "tour_bookings.txt"
+
+  - id: "GP002"
+    name: "Pet Owner Studio Search"
+    description: "User with pet asks about pet policy, then searches for pet-friendly studio"
+    category: "golden_path"
+    multi_turn: true
+    conversation:
+      - role: "user"
+        content: |
+          Hello,
+
+          I have a small dog (a 15-pound Beagle) and am interested in renting at your property. Before I proceed, could you please tell me about your pet policy? Specifically, I'd like to know about any pet deposits or monthly pet rent.
+
+          Thank you,
+          Thomas Rodriguez
+          thomas.rodriguez.5559876543@email.com
+          (555) 987-6543
+      - role: "assistant"
+        expected_tools:
+          - tool_name: "search_property_knowledge"
+            parameters:
+              search_text: "pet"
+            match_strategy: "contains"
+        expected_response_patterns:
+          - "pet|dog|deposit|policy"
+      - role: "user"
+        content: |
+          That sounds reasonable! Do you have any pet-friendly studio apartments available? My budget is around $1,400 per month.
+
+          Best,
+          Thomas Rodriguez
+          thomas.rodriguez.5559876543@email.com
+          (555) 987-6543
+      - role: "assistant"
+        expected_tools:
+          - tool_name: "get_available_listings"
+            parameters:
+              bedrooms: [0]
+              max_rent: 1400
+            match_strategy: "contains"
+        expected_response_patterns:
+          - "studio|unit|available|pet"
+      - role: "user"
+        content: |
+          **Unit 102** looks perfect since it's pet-friendly and has in-unit laundry. What times are available on February 20, 2025?
+
+          Thanks,
+          Thomas Rodriguez
+          thomas.rodriguez.5559876543@email.com
+          (555) 987-6543
+      - role: "assistant"
+        expected_tools:
+          - tool_name: "get_availability"
+            parameters:
+              date_str: "2025-02-20"
+            match_strategy: "contains"
+        expected_response_patterns:
+          - "available|time|slot"
+      - role: "user"
+        content: |
+          Please book me for 2:00 PM on February 20, 2025.
+
+          Thanks,
+          Thomas Rodriguez
+          thomas.rodriguez.5559876543@email.com
+          (555) 987-6543
+      - role: "assistant"
+        expected_tools:
+          - tool_name: "create_appointment"
+            parameters:
+              first_name: "Thomas"
+              last_name: "Rodriguez"
+              email: "thomas.rodriguez.5559876543@email.com"
+              phone: "(555) 987-6543"
+              appointment_start_time: "14:00"
+            match_strategy: "contains"
+        expected_response_patterns:
+          - "confirm|booked|scheduled"
+    expected_outcomes:
+      - type: "tool_called"
+        tool: "search_property_knowledge"
+      - type: "tool_called"
+        tool: "get_available_listings"
+      - type: "tool_called"
+        tool: "create_appointment"
+
+  - id: "GP003"
+    name: "Large Family 4BR Search with Amenities"
+    description: "Family looking for 4-bedroom asks about playground, then books tour"
+    category: "golden_path"
+    multi_turn: true
+    conversation:
+      - role: "user"
+        content: |
+          Subject: Family Apartment Inquiry
+
+          Dear Leasing Team,
+
+          My family and I are looking for a spacious apartment. We have three children (ages 5, 8, and 12), so we need at least 4 bedrooms. Before looking at units, I wanted to ask: do you have any playground or kid-friendly areas on the property?
+
+          Regards,
+          David Chen
+          david.chen.family@email.com
+          (555) 321-0987
+      - role: "assistant"
+        expected_tools:
+          - tool_name: "search_property_knowledge"
+            parameters:
+              search_text: "playground|children|kids"
+            match_strategy: "regex"
+        expected_response_patterns:
+          - "playground|children|kids|family"
+      - role: "user"
+        content: |
+          That's great to hear! Please show me what 4-bedroom apartments you have available. Our budget is flexible up to $4,500 per month.
+
+          Best,
+          David Chen
+          david.chen.family@email.com
+          (555) 321-0987
+      - role: "assistant"
+        expected_tools:
+          - tool_name: "get_available_listings"
+            parameters:
+              bedrooms: [4]
+              max_rent: 4500
+            match_strategy: "contains"
+        expected_response_patterns:
+          - "bedroom|unit|available"
+      - role: "user"
+        content: |
+          **Unit 505** looks amazing for our family - the 4BR/3BA with city views would be perfect. What times are available on March 1, 2025?
+
+          Thank you,
+          David Chen
+          david.chen.family@email.com
+          (555) 321-0987
+      - role: "assistant"
+        expected_tools:
+          - tool_name: "get_availability"
+            parameters:
+              date_str: "2025-03-01"
+            match_strategy: "contains"
+        expected_response_patterns:
+          - "available|time|slot"
+      - role: "user"
+        content: |
+          11:00 AM works perfectly. Please book the tour for that time.
+
+          Thank you,
+          David Chen
+          david.chen.family@email.com
+          (555) 321-0987
+      - role: "assistant"
+        expected_tools:
+          - tool_name: "create_appointment"
+            parameters:
+              first_name: "David"
+              last_name: "Chen"
+              email: "david.chen.family@email.com"
+              phone: "(555) 321-0987"
+              appointment_start_time: "11:00"
+            match_strategy: "contains"
+        expected_response_patterns:
+          - "confirm|booked|scheduled"
+    expected_outcomes:
+      - type: "tool_called"
+        tool: "search_property_knowledge"
+      - type: "tool_called"
+        tool: "get_available_listings"
+      - type: "tool_called"
+        tool: "create_appointment"
+
+  - id: "GP004"
+    name: "Lead Creation Then Listing Search"
+    description: "User wants to save contact info first, then browse listings"
+    category: "golden_path"
+    multi_turn: true
+    conversation:
+      - role: "user"
+        content: |
+          Hi there,
+
+          I'm just starting my apartment search and would like to receive updates about available units. Could you please save my contact information so your team can reach out to me with new listings?
+
+          Jennifer Lee
+          jennifer.lee@company.com
+          (555) 777-8888
+      - role: "assistant"
+        expected_tools:
+          - tool_name: "create_lead"
+            parameters:
+              first_name: "Jennifer"
+              last_name: "Lee"
+              email: "jennifer.lee@company.com"
+              phone: "(555) 777-8888"
+            match_strategy: "contains"
+        expected_response_patterns:
+          - "contact|information|saved|help"
+      - role: "user"
+        content: |
+          Thank you! While I have you, what 3-bedroom apartments do you have available under $3,000? I'm flexible on the move-in date.
+
+          Jennifer Lee
+          jennifer.lee@company.com
+          (555) 777-8888
+      - role: "assistant"
+        expected_tools:
+          - tool_name: "get_available_listings"
+            parameters:
+              bedrooms: [3]
+              max_rent: 3000
+            match_strategy: "exact"
+        expected_response_patterns:
+          - "bedroom|apartment|unit|available"
+    expected_outcomes:
+      - type: "tool_called"
+        tool: "create_lead"
+      - type: "tool_called"
+        tool: "get_available_listings"
+
+  - id: "GP005"
+    name: "Quick 1BR Search and Same-Day Booking"
+    description: "User knows exactly what they want and books quickly"
+    category: "golden_path"
+    multi_turn: true
+    conversation:
+      - role: "user"
+        content: |
+          Hi,
+
+          I need a 1-bedroom apartment ASAP. Budget is $1,700/month max. What do you have available that I can move into by February 15?
+
+          Sarah Kim
+          sarah.kim.urgent@email.com
+          (555) 444-1212
+      - role: "assistant"
+        expected_tools:
+          - tool_name: "get_available_listings"
+            parameters:
+              bedrooms: [1]
+              max_rent: 1700
+            match_strategy: "contains"
+        expected_response_patterns:
+          - "bedroom|unit|available"
+      - role: "user"
+        content: |
+          Perfect! **Unit 205** with the balcony looks great. What times are available tomorrow?
+
+          Sarah Kim
+          sarah.kim.urgent@email.com
+          (555) 444-1212
+      - role: "assistant"
+        expected_tools:
+          - tool_name: "get_availability"
+        expected_response_patterns:
+          - "available|time|slot"
+      - role: "user"
+        content: |
+          3:00 PM works for me. Please book that time slot.
+
+          Sarah Kim
+          sarah.kim.urgent@email.com
+          (555) 444-1212
+      - role: "assistant"
+        expected_tools:
+          - tool_name: "create_appointment"
+            parameters:
+              first_name: "Sarah"
+              last_name: "Kim"
+              email: "sarah.kim.urgent@email.com"
+              phone: "(555) 444-1212"
+              appointment_start_time: "15:00"
+            match_strategy: "contains"
+        expected_response_patterns:
+          - "confirm|booked|scheduled"
+    expected_outcomes:
+      - type: "tool_called"
+        tool: "get_available_listings"
+      - type: "tool_called"
+        tool: "get_availability"
+      - type: "tool_called"
+        tool: "create_appointment"
+
+  - id: "GP006"
+    name: "Luxury 5BR Penthouse Inquiry"
+    description: "High-budget client inquiring about penthouse with roof deck"
+    category: "golden_path"
+    multi_turn: true
+    conversation:
+      - role: "user"
+        content: |
+          Subject: Luxury Penthouse Availability
+
+          Dear Leasing Office,
+
+          I am relocating for work and looking for your largest and most luxurious unit. I saw online that you may have 5-bedroom penthouses available. Budget is not a concern - I'm looking for the best you have to offer.
+
+          Please advise on availability.
+
+          Best regards,
+          Alexander Morrison III
+          a.morrison@executivemail.com
+          (212) 555-9999
+      - role: "assistant"
+        expected_tools:
+          - tool_name: "get_available_listings"
+            parameters:
+              bedrooms: [5]
+            match_strategy: "contains"
+        expected_response_patterns:
+          - "bedroom|penthouse|unit|available|luxury"
+      - role: "user"
+        content: |
+          **Unit 507** with the private roof deck is exactly what I'm looking for. The $5,500/month rent is acceptable.
+
+          I would like to schedule a private showing on February 20, 2025 at 10:00 AM. Please confirm.
+
+          Best regards,
+          Alexander Morrison III
+          a.morrison@executivemail.com
+          (212) 555-9999
+      - role: "assistant"
+        expected_tools:
+          - tool_name: "get_availability"
+          - tool_name: "create_appointment"
+            parameters:
+              first_name: "Alexander"
+              email: "a.morrison@executivemail.com"
+              phone: "(212) 555-9999"
+              appointment_start_time: "10:00"
+            match_strategy: "contains"
+    expected_outcomes:
+      - type: "tool_called"
+        tool: "get_available_listings"
+      - type: "tool_called"
+        tool: "create_appointment"
+
+# ============================================================================
+# FRUSTRATED PATH SCENARIOS
+# User encounters obstacles - may adjust, escalate, or abandon
+# ============================================================================
+frustrated_path_scenarios:
+  - id: "FP001"
+    name: "Budget Too Low - User Adjusts"
+    description: "User's budget is below available units, agent suggests alternatives"
+    category: "frustrated_path"
+    multi_turn: true
+    conversation:
+      - role: "user"
+        content: |
+          Hello,
+
+          I'm looking for a 2-bedroom apartment but my budget is tight - no more than $1,500 per month. Do you have anything available in that range?
+
+          Thank you,
+          Maria Santos
+          maria.santos.1234@email.com
+          (555) 222-3333
+      - role: "assistant"
+        expected_tools:
+          - tool_name: "get_available_listings"
+            parameters:
+              bedrooms: [2]
+              max_rent: 1500
+            match_strategy: "exact"
+        expected_response_patterns:
+          - "no|unavailable|budget|lowest|sorry|1-bedroom"
+      - role: "user"
+        content: |
+          That's disappointing. What about a 1-bedroom then? Is there anything under $1,500?
+
+          Maria Santos
+          maria.santos.1234@email.com
+          (555) 222-3333
+      - role: "assistant"
+        expected_tools:
+          - tool_name: "get_available_listings"
+            parameters:
+              bedrooms: [1]
+              max_rent: 1500
+            match_strategy: "exact"
+        expected_response_patterns:
+          - "bedroom|unit|available"
+      - role: "user"
+        content: |
+          **Unit 201** at $1,450 works for me. What times are available on February 10th?
+
+          Maria Santos
+          maria.santos.1234@email.com
+          (555) 222-3333
+      - role: "assistant"
+        expected_tools:
+          - tool_name: "get_availability"
+            parameters:
+              date_str: "2025-02-10"
+            match_strategy: "contains"
+        expected_response_patterns:
+          - "available|time|slot"
+      - role: "user"
+        content: |
+          2:00 PM works perfectly. Please book the tour.
+
+          Maria Santos
+          maria.santos.1234@email.com
+          (555) 222-3333
+      - role: "assistant"
+        expected_tools:
+          - tool_name: "create_appointment"
+            parameters:
+              first_name: "Maria"
+              last_name: "Santos"
+              email: "maria.santos.1234@email.com"
+              phone: "(555) 222-3333"
+              appointment_start_time: "14:00"
+            match_strategy: "contains"
+        expected_response_patterns:
+          - "confirm|booked|scheduled"
+    expected_outcomes:
+      - type: "tool_called"
+        tool: "get_available_listings"
+        call_count: 2
+      - type: "tool_called"
+        tool: "get_availability"
+      - type: "tool_called"
+        tool: "create_appointment"
+
+  - id: "FP002"
+    name: "No 6BR Available - Adjusts to 5BR"
+    description: "User asks for bedroom count that doesn't exist"
+    category: "frustrated_path"
+    multi_turn: true
+    conversation:
+      - role: "user"
+        content: |
+          Subject: Large Apartment Needed
+
+          Dear Leasing Team,
+
+          We are a multi-generational family and need a very large apartment - ideally 6 or 7 bedrooms. Do you have anything of that size available?
+
+          Regards,
+          Robert Garcia
+          robert.garcia.family@email.com
+          (555) 888-9999
+      - role: "assistant"
+        expected_tools:
+          - tool_name: "get_available_listings"
+            parameters:
+              bedrooms: [6]
+            match_strategy: "contains"
+        expected_response_patterns:
+          - "no|unavailable|don't have|largest|5|bedroom"
+      - role: "user"
+        content: |
+          I see. What is the largest apartment you have available then?
+
+          Robert Garcia
+          robert.garcia.family@email.com
+          (555) 888-9999
+      - role: "assistant"
+        expected_tools:
+          - tool_name: "get_available_listings"
+            parameters:
+              bedrooms: [5]
+            match_strategy: "contains"
+        expected_response_patterns:
+          - "5|bedroom|largest|penthouse"
+      - role: "user"
+        content: |
+          **Unit 507** with the private roof deck sounds incredible! We would make it work with 5 bedrooms. Can we tour it on March 5, 2025 at 10:00 AM?
+
+          Robert Garcia
+          robert.garcia.family@email.com
+          (555) 888-9999
+      - role: "assistant"
+        expected_tools:
+          - tool_name: "get_availability"
+          - tool_name: "create_appointment"
+            parameters:
+              first_name: "Robert"
+              last_name: "Garcia"
+              email: "robert.garcia.family@email.com"
+              phone: "(555) 888-9999"
+              appointment_start_time: "10:00"
+            match_strategy: "contains"
+    expected_outcomes:
+      - type: "tool_called"
+        tool: "get_available_listings"
+        call_count: 2
+      - type: "tool_called"
+        tool: "create_appointment"
+
+  - id: "FP003"
+    name: "Frustrated User Demands Human Agent"
+    description: "User becomes frustrated and explicitly requests human escalation"
+    category: "frustrated_path"
+    multi_turn: true
+    conversation:
+      - role: "user"
+        content: |
+          Hi,
+
+          I need a 2-bedroom under $1,200. This is all I can afford. What do you have?
+
+          James Wilson
+          james.wilson.budget@email.com
+          (555) 111-0000
+      - role: "assistant"
+        expected_tools:
+          - tool_name: "get_available_listings"
+            parameters:
+              bedrooms: [2]
+              max_rent: 1200
+            match_strategy: "exact"
+        expected_response_patterns:
+          - "no|unavailable|budget|sorry"
+      - role: "user"
+        content: |
+          This is ridiculous. Your prices are way too high for what you're offering. I've seen similar apartments for much less elsewhere.
+
+          James Wilson
+          james.wilson.budget@email.com
+          (555) 111-0000
+      - role: "assistant"
+        expected_response_patterns:
+          - "understand|sorry|help|budget|option"
+      - role: "user"
+        content: |
+          I don't want to talk to a bot anymore. Get me a real person NOW. This is very frustrating!
+
+          James Wilson
+          james.wilson.budget@email.com
+          (555) 111-0000
+      - role: "assistant"
+        expected_tools:
+          - tool_name: "escalate_conversation"
+            parameters:
+              reason_for_escalation: "frustrated|human|person"
+            match_strategy: "regex"
+        expected_response_patterns:
+          - "escalate|team|human|agent|leasing|manager"
+    expected_outcomes:
+      - type: "tool_called"
+        tool: "get_available_listings"
+      - type: "tool_called"
+        tool: "escalate_conversation"
+
+  - id: "FP004"
+    name: "User Abandons Mid-Conversation"
+    description: "User starts process but decides to leave without booking"
+    category: "frustrated_path"
+    multi_turn: true
+    conversation:
+      - role: "user"
+        content: |
+          Hi,
+
+          Looking for 3-bedroom apartments. What's available?
+
+          Patricia Taylor
+          patricia.taylor@work.com
+          (555) 666-4444
+      - role: "assistant"
+        expected_tools:
+          - tool_name: "get_available_listings"
+            parameters:
+              bedrooms: [3]
+            match_strategy: "contains"
+      - role: "user"
+        content: |
+          Unit 403 looks okay. What times can I tour tomorrow?
+
+          Patricia Taylor
+          patricia.taylor@work.com
+          (555) 666-4444
+      - role: "assistant"
+        expected_tools:
+          - tool_name: "get_availability"
+        expected_response_patterns:
+          - "available|time|slot"
+      - role: "user"
+        content: |
+          Actually, I've decided to look at another property instead. Thank you for your time.
+
+          Patricia Taylor
+          patricia.taylor@work.com
+          (555) 666-4444
+      - role: "assistant"
+        expected_tools: []
+        expected_response_patterns:
+          - "thank|welcome|help|future|contact|anytime"
+    expected_outcomes:
+      - type: "tool_called"
+        tool: "get_available_listings"
+      - type: "tool_called"
+        tool: "get_availability"
+      - type: "no_tool_called"
+        on_final_turn: true
+
+  - id: "FP005"
+    name: "Date Unavailable - Reschedules"
+    description: "User's first choice date doesn't work, they pick another"
+    category: "frustrated_path"
+    multi_turn: true
+    conversation:
+      - role: "user"
+        content: |
+          Hi,
+
+          I'd like to tour a 2-bedroom unit on January 1st at noon. What do you have available?
+
+          Kevin Park
+          kevin.park.2025@email.com
+          (555) 999-1111
+      - role: "assistant"
+        expected_tools:
+          - tool_name: "get_available_listings"
+            parameters:
+              bedrooms: [2]
+            match_strategy: "contains"
+      - role: "user"
+        content: |
+          **Unit 304** looks good. Is January 1st at 12pm available for a tour?
+
+          Kevin Park
+          kevin.park.2025@email.com
+          (555) 999-1111
+      - role: "assistant"
+        expected_tools:
+          - tool_name: "get_availability"
+            parameters:
+              date_str: "2025-01-01"
+            match_strategy: "contains"
+        expected_response_patterns:
+          - "holiday|closed|unavailable|different|alternative"
+      - role: "user"
+        content: |
+          Oh right, it's New Year's Day. How about January 3rd at 2pm instead?
+
+          Kevin Park
+          kevin.park.2025@email.com
+          (555) 999-1111
+      - role: "assistant"
+        expected_tools:
+          - tool_name: "get_availability"
+            parameters:
+              date_str: "2025-01-03"
+            match_strategy: "contains"
+          - tool_name: "create_appointment"
+            parameters:
+              first_name: "Kevin"
+              last_name: "Park"
+              email: "kevin.park.2025@email.com"
+              appointment_start_time: "14:00"
+            match_strategy: "contains"
+    expected_outcomes:
+      - type: "tool_called"
+        tool: "get_availability"
+        call_count: 2
+      - type: "tool_called"
+        tool: "create_appointment"
+
+# ============================================================================
+# REPEATED QUERY PATTERNS
+# User asks similar questions multiple times - agent should respond each time
+# ============================================================================
+repeated_query_scenarios:
+  - id: "RQ001"
+    name: "Multiple Policy Questions"
+    description: "User asks about several different policies in sequence"
+    category: "repeated_query"
+    multi_turn: true
+    conversation:
+      - role: "user"
+        content: |
+          Hi,
+
+          Before I start looking at apartments, I have some questions. First, what is your pet policy?
+
+          Nancy Brown
+          nancy.brown.inquiry@email.com
+          (555) 333-2222
+      - role: "assistant"
+        expected_tools:
+          - tool_name: "search_property_knowledge"
+            parameters:
+              search_text: "pet"
+            match_strategy: "contains"
+        expected_response_patterns:
+          - "pet|dog|cat|deposit|policy"
+      - role: "user"
+        content: |
+          Good to know. What about parking? Is it included in the rent or is there an additional fee?
+
+          Nancy Brown
+          nancy.brown.inquiry@email.com
+          (555) 333-2222
+      - role: "assistant"
+        expected_tools:
+          - tool_name: "search_property_knowledge"
+            parameters:
+              search_text: "parking"
+            match_strategy: "contains"
+        expected_response_patterns:
+          - "parking|garage|spot|fee"
+      - role: "user"
+        content: |
+          One more question - is this a smoke-free building?
+
+          Nancy Brown
+          nancy.brown.inquiry@email.com
+          (555) 333-2222
+      - role: "assistant"
+        expected_tools:
+          - tool_name: "search_property_knowledge"
+            parameters:
+              search_text: "smoking"
+            match_strategy: "contains"
+        expected_response_patterns:
+          - "smoke|smoking|prohibited|free"
+      - role: "user"
+        content: |
+          And what about utilities? What's included in the rent?
+
+          Nancy Brown
+          nancy.brown.inquiry@email.com
+          (555) 333-2222
+      - role: "assistant"
+        expected_tools:
+          - tool_name: "search_property_knowledge"
+            parameters:
+              search_text: "utilities"
+            match_strategy: "contains"
+        expected_response_patterns:
+          - "utilities|water|gas|electric|included"
+    expected_outcomes:
+      - type: "tool_called"
+        tool: "search_property_knowledge"
+        call_count: 4
+
+  - id: "RQ002"
+    name: "Multiple Availability Checks"
+    description: "User checks several different dates before deciding"
+    category: "repeated_query"
+    multi_turn: true
+    conversation:
+      - role: "user"
+        content: |
+          Hi,
+
+          I'm interested in touring a 1-bedroom unit. What times are available on February 15th?
+
+          Eric Johnson
+          eric.johnson.tours@email.com
+          (555) 888-7777
+      - role: "assistant"
+        expected_tools:
+          - tool_name: "get_availability"
+            parameters:
+              date_str: "2025-02-15"
+            match_strategy: "contains"
+        expected_response_patterns:
+          - "available|slot|time"
+      - role: "user"
+        content: |
+          Hmm, those times don't work for me. What about February 18th?
+
+          Eric Johnson
+          eric.johnson.tours@email.com
+          (555) 888-7777
+      - role: "assistant"
+        expected_tools:
+          - tool_name: "get_availability"
+            parameters:
+              date_str: "2025-02-18"
+            match_strategy: "contains"
+        expected_response_patterns:
+          - "available|slot|time"
+      - role: "user"
+        content: |
+          Actually, let me check February 20th too. What do you have?
+
+          Eric Johnson
+          eric.johnson.tours@email.com
+          (555) 888-7777
+      - role: "assistant"
+        expected_tools:
+          - tool_name: "get_availability"
+            parameters:
+              date_str: "2025-02-20"
+            match_strategy: "contains"
+        expected_response_patterns:
+          - "available|slot|time"
+    expected_outcomes:
+      - type: "tool_called"
+        tool: "get_availability"
+        call_count: 3
+
+  - id: "RQ003"
+    name: "Reschedule After Booking"
+    description: "User books appointment then needs to reschedule"
+    category: "repeated_query"
+    multi_turn: true
+    conversation:
+      - role: "user"
+        content: |
+          Hi,
+
+          I'd like to book a tour for February 10th at 10:00 AM to see a 2-bedroom apartment.
+
+          Lisa Park
+          lisa.park.schedule@email.com
+          (555) 111-3333
+      - role: "assistant"
+        expected_tools:
+          - tool_name: "get_available_listings"
+            parameters:
+              bedrooms: [2]
+            match_strategy: "contains"
+          - tool_name: "get_availability"
+          - tool_name: "create_appointment"
+            parameters:
+              first_name: "Lisa"
+              last_name: "Park"
+              email: "lisa.park.schedule@email.com"
+              phone: "(555) 111-3333"
+              appointment_start_time: "10:00"
+            match_strategy: "contains"
+        expected_response_patterns:
+          - "confirm|booked|scheduled"
+      - role: "user"
+        content: |
+          I'm so sorry, but something came up. What times are available on February 12th instead?
+
+          Lisa Park
+          lisa.park.schedule@email.com
+          (555) 111-3333
+      - role: "assistant"
+        expected_tools:
+          - tool_name: "get_availability"
+            parameters:
+              date_str: "2025-02-12"
+            match_strategy: "contains"
+        expected_response_patterns:
+          - "available|time|slot"
+      - role: "user"
+        content: |
+          2:00 PM works. Please reschedule my appointment to that time.
+
+          Lisa Park
+          lisa.park.schedule@email.com
+          (555) 111-3333
+      - role: "assistant"
+        expected_tools:
+          - tool_name: "create_appointment"
+            parameters:
+              first_name: "Lisa"
+              email: "lisa.park.schedule@email.com"
+              appointment_start_time: "14:00"
+            match_strategy: "contains"
+        expected_response_patterns:
+          - "reschedule|new|appointment|confirm|booked"
+    expected_outcomes:
+      - type: "tool_called"
+        tool: "create_appointment"
+        call_count: 2
+      - type: "tool_called"
+        tool: "get_availability"
+        call_count: 2
+
+  - id: "RQ004"
+    name: "Compare Multiple Bedroom Sizes"
+    description: "User compares different bedroom options"
+    category: "repeated_query"
+    multi_turn: true
+    conversation:
+      - role: "user"
+        content: |
+          Hello,
+
+          I'm not sure what size apartment I need. Can you show me your 1-bedroom options first?
+
+          Amanda Lee
+          amanda.lee.compare@email.com
+          (555) 444-5555
+      - role: "assistant"
+        expected_tools:
+          - tool_name: "get_available_listings"
+            parameters:
+              bedrooms: [1]
+            match_strategy: "contains"
+      - role: "user"
+        content: |
+          Those are nice, but let me also see the 2-bedroom options for comparison.
+
+          Amanda Lee
+          amanda.lee.compare@email.com
+          (555) 444-5555
+      - role: "assistant"
+        expected_tools:
+          - tool_name: "get_available_listings"
+            parameters:
+              bedrooms: [2]
+            match_strategy: "contains"
+      - role: "user"
+        content: |
+          Actually, what about studios? I might be able to save money that way.
+
+          Amanda Lee
+          amanda.lee.compare@email.com
+          (555) 444-5555
+      - role: "assistant"
+        expected_tools:
+          - tool_name: "get_available_listings"
+            parameters:
+              bedrooms: [0]
+            match_strategy: "contains"
+    expected_outcomes:
+      - type: "tool_called"
+        tool: "get_available_listings"
+        call_count: 3
+
+# ============================================================================
+# EDGE CASE SCENARIOS
+# Unusual inputs, partial information, or complex requests
+# ============================================================================
+edge_case_scenarios:
+  - id: "EC001"
+    name: "Partial Contact Info - Progressive Collection"
+    description: "User provides info piece by piece across messages"
+    category: "edge_case"
+    multi_turn: true
+    conversation:
+      - role: "user"
+        content: |
+          I want to book a tour for tomorrow at 3pm to see a 1-bedroom.
+      - role: "assistant"
+        expected_tools:
+          - tool_name: "get_available_listings"
+            parameters:
+              bedrooms: [1]
+            match_strategy: "contains"
+          - tool_name: "get_availability"
+        expected_response_patterns:
+          - "name|contact|information"
+      - role: "user"
+        content: |
+          My name is Alex Thompson.
+      - role: "assistant"
+        expected_tools: []
+        expected_response_patterns:
+          - "email|phone|contact"
+      - role: "user"
+        content: |
+          alex.thompson@email.com and my phone is (555) 222-3333
+      - role: "assistant"
+        expected_tools:
+          - tool_name: "create_appointment"
+            parameters:
+              first_name: "Alex"
+              last_name: "Thompson"
+              email: "alex.thompson@email.com"
+              phone: "(555) 222-3333"
+            match_strategy: "contains"
+    expected_outcomes:
+      - type: "tool_called"
+        tool: "create_appointment"
+
+  - id: "EC002"
+    name: "Unusual Date Formats"
+    description: "User provides date in non-standard format"
+    category: "edge_case"
+    user_input: |
+      Hi,
+
+      Can I schedule a tour for the fifteenth of February, twenty twenty-five at two o'clock in the afternoon?
+
+      Chris Evans
+      chris.evans.test@email.com
+      (555) 777-8888
+    expected_tools:
+      - tool_name: "get_availability"
+        parameters:
+          date_str: "2025-02-15"
+        match_strategy: "contains"
+    expected_response_patterns:
+      - "February 15|available|slot|time"
+
+  - id: "EC003"
+    name: "Phone Number Spoken Format"
+    description: "User provides phone number spelled out"
+    category: "edge_case"
+    multi_turn: true
+    conversation:
+      - role: "user"
+        content: |
+          I want to tour Unit 301 on February 20th at 11am. My name is Chris Taylor.
+      - role: "assistant"
+        expected_tools:
+          - tool_name: "get_availability"
+        expected_response_patterns:
+          - "email|phone|contact"
+      - role: "user"
+        content: |
+          Email is chris.taylor@domain.org and my cell is five five five, four four four, six six six six
+      - role: "assistant"
+        expected_tools:
+          - tool_name: "create_appointment"
+            parameters:
+              first_name: "Chris"
+              email: "chris.taylor@domain.org"
+            match_strategy: "contains"
+    expected_outcomes:
+      - type: "tool_called"
+        tool: "create_appointment"
+
+  - id: "EC004"
+    name: "Multi-Intent Single Message"
+    description: "User asks about listings AND policies in one message"
+    category: "edge_case"
+    user_input: |
+      Subject: Multiple Questions
+
+      Dear Leasing Team,
+
+      I need a 2-bedroom apartment and I also want to know about your pet policy and parking situation. My budget is around $2,500.
+
+      Best,
+      Michael Brown
+      michael.brown.multi@email.com
+      (555) 666-9999
+    expected_tools:
+      - tool_name: "get_available_listings"
+        parameters:
+          bedrooms: [2]
+          max_rent: 2500
+        match_strategy: "contains"
+      - tool_name: "search_property_knowledge"
+        parameters:
+          search_text: "pet|parking"
+        match_strategy: "regex"
+    expected_response_patterns:
+      - "bedroom|pet|parking"
+
+  - id: "EC005"
+    name: "Budget Below Minimum"
+    description: "User's budget is below all available units"
+    category: "edge_case"
+    user_input: |
+      Hi,
+
+      I'm on a very tight budget. Looking for any apartment under $800 per month. What do you have?
+
+      Student Renter
+      student.budget@university.edu
+      (555) 000-1111
+    expected_tools:
+      - tool_name: "get_available_listings"
+        parameters:
+          max_rent: 800
+        match_strategy: "contains"
+    expected_response_patterns:
+      - "no|unavailable|budget|lowest|minimum|sorry"
+
+  - id: "EC006"
+    name: "Flexible Bedroom Range"
+    description: "User is flexible on bedroom count"
+    category: "edge_case"
+    user_input: |
+      Hello,
+
+      I'm flexible on size - anywhere from 1 to 3 bedrooms would work for me. Budget is $2,500 max.
+
+      Flexible Renter
+      flexible.renter@email.com
+      (555) 123-4567
+    expected_tools:
+      - tool_name: "get_available_listings"
+        parameters:
+          bedrooms: [1, 2, 3]
+          max_rent: 2500
+        match_strategy: "contains"
+    expected_response_patterns:
+      - "bedroom|apartment|available"
+
+  - id: "EC007"
+    name: "Very Long Formal Email"
+    description: "User writes extremely detailed initial email"
+    category: "edge_case"
+    user_input: |
+      Subject: Detailed Apartment Inquiry - Moving from Out of State
+
+      Dear Leasing Office,
+
+      I hope this email finds you well. My name is Dr. Rebecca Anderson, and I am a physician relocating to your city for a new position at the local hospital. I am writing to inquire about apartment availability at your property.
+
+      I am looking for a 3-bedroom apartment as I will be moving with my spouse and one child. Ideally, the unit would have:
+      - At least 2 bathrooms
+      - In-unit laundry (strongly preferred)
+      - A balcony or outdoor space
+      - Pet-friendly (we have a cat)
+
+      Our budget is up to $3,500 per month, and we are hoping to move in by March 1, 2025.
+
+      Could you please provide information on what units might meet our needs?
+
+      Thank you for your time and assistance. I look forward to hearing from you soon.
+
+      Warm regards,
+      Dr. Rebecca Anderson, MD
+      rebecca.anderson.md@hospital.org
+      (555) 999-8888
+    expected_tools:
+      - tool_name: "get_available_listings"
+        parameters:
+          bedrooms: [3]
+          max_rent: 3500
+        match_strategy: "contains"
+    expected_response_patterns:
+      - "3|bedroom|available"
+
+  - id: "EC008"
+    name: "Callback Request Only"
+    description: "User just wants a callback, no immediate search"
+    category: "edge_case"
+    user_input: |
+      Hi,
+
+      I'm busy right now but interested in apartments. Can someone call me back tomorrow?
+
+      Quick Contact
+      quick.contact@email.com
+      (555) 777-1234
+    expected_tools:
+      - tool_name: "create_lead"
+        parameters:
+          first_name: "Quick"
+          email: "quick.contact@email.com"
+          phone: "(555) 777-1234"
+        match_strategy: "contains"
+    expected_response_patterns:
+      - "contact|call|reach|team"
+
+# ============================================================================
+# NEGATIVE TEST SCENARIOS
+# Verify agent does NOT call tools when inappropriate
+# ============================================================================
+negative_scenarios:
+  - id: "NEG001"
+    name: "No Tools on Simple Greeting"
+    description: "Simple greeting should not trigger any tools"
+    category: "negative"
+    user_input: |
+      Hello!
+
+      Just saying hi.
+
+      John Smith
+      john.smith@email.com
+      (555) 111-2222
+    expected_tools: []
+    expected_no_tools:
+      - "get_available_listings"
+      - "get_availability"
+      - "create_appointment"
+      - "search_property_knowledge"
+      - "create_lead"
+      - "escalate_conversation"
+    expected_response_patterns:
+      - "hello|hi|welcome|help|assist"
+
+  - id: "NEG002"
+    name: "No Tools on Farewell"
+    description: "Farewell message should not trigger any tools"
+    category: "negative"
+    user_input: |
+      Thanks for your help today, goodbye!
+
+      Jane Doe
+      jane.doe@email.com
+      (555) 333-4444
+    expected_tools: []
+    expected_no_tools:
+      - "get_available_listings"
+      - "get_availability"
+      - "create_appointment"
+    expected_response_patterns:
+      - "goodbye|bye|thank|welcome|contact"
+
+  - id: "NEG003"
+    name: "No Tools on Off-Topic Question"
+    description: "Off-topic questions should not trigger property tools"
+    category: "negative"
+    user_input: |
+      What's the weather like in the city?
+
+      Weather Curious
+      weather@email.com
+      (555) 999-0000
+    expected_tools: []
+    expected_no_tools:
+      - "get_available_listings"
+      - "get_availability"
+      - "create_appointment"
+      - "search_property_knowledge"
+    expected_response_patterns:
+      - "weather|property|apartment|help"
+
+  - id: "NEG004"
+    name: "No Booking Tools on Simple Question"
+    description: "Just asking about price shouldn't book anything"
+    category: "negative"
+    user_input: |
+      How much do 2-bedroom apartments cost here?
+
+      Price Checker
+      price.check@email.com
+      (555) 123-0000
+    expected_tools:
+      - tool_name: "get_available_listings"
+        parameters:
+          bedrooms: [2]
+        match_strategy: "contains"
+    expected_no_tools:
+      - "create_appointment"
+      - "create_lead"
+      - "escalate_conversation"
+
+# ============================================================================
+# TOOL DEFINITIONS REFERENCE
+# ============================================================================
+tool_definitions:
+  - name: "get_available_listings"
+    description: "Get available listings based on search criteria"
+    required_params:
+      - bedrooms
+    optional_params:
+      - max_rent
+      - pet_friendly
+      - parking_included
+    notes: "Bedrooms 0 = studio. Available: 0-5 bedrooms. Rent range: $1,200-$5,500"
+
+  - name: "get_availability"
+    description: "Get appointment slots for a property on a given date"
+    required_params:
+      - date_str
+    notes: "Returns available time slots for the specified date"
+
+  - name: "create_appointment"
+    description: "Create an appointment for a property tour"
+    required_params:
+      - appointment_date
+      - appointment_start_time
+      - first_name
+      - email
+      - phone
+    optional_params:
+      - last_name
+    notes: "Writes confirmation to tour_bookings.txt"
+
+  - name: "search_property_knowledge"
+    description: "Search the property knowledge base for information"
+    required_params:
+      - search_text
+    optional_params:
+      - category
+    notes: "Categories: amenities, neighborhood, leasing, rent_payment, policies, utilities, maintenance, move_in_out"
+
+  - name: "create_lead"
+    description: "Create a lead from the conversation with prospect information"
+    required_params:
+      - email
+      - phone
+      - first_name
+      - last_name
+    notes: "Used when user wants to be contacted but not ready to book tour"
+
+  - name: "escalate_conversation"
+    description: "Escalate to leasing team for complex or frustrated queries"
+    required_params:
+      - reason_for_escalation
+    notes: "Used when user explicitly requests human or shows frustration"
+
+# ============================================================================
+# TEST DATA REFERENCE
+# ============================================================================
+test_data_reference:
+  available_bedroom_counts: [0, 1, 2, 3, 4, 5]
+  rent_ranges:
+    studio: { min: 1200, max: 1400 }
+    one_br: { min: 1425, max: 1700 }
+    two_br: { min: 1800, max: 2450 }
+    three_br: { min: 2650, max: 3350 }
+    four_br: { min: 3500, max: 4500 }
+    five_br: { min: 4800, max: 5500 }
+  sample_units:
+    - unit: "102"
+      bedrooms: 0
+      rent: 1350
+      pet_friendly: true
+      notes: "Pet-friendly studio with in-unit laundry"
+    - unit: "201"
+      bedrooms: 1
+      rent: 1450
+      pet_friendly: true
+    - unit: "205"
+      bedrooms: 1
+      rent: 1700
+      pet_friendly: true
+      notes: "Premium 1BR with balcony and parking"
+    - unit: "303"
+      bedrooms: 2
+      rent: 2200
+      pet_friendly: true
+      notes: "2BR/2BA with in-unit laundry and balcony"
+    - unit: "304"
+      bedrooms: 2
+      rent: 2350
+      pet_friendly: true
+    - unit: "403"
+      bedrooms: 3
+      rent: 2800
+      pet_friendly: true
+    - unit: "505"
+      bedrooms: 4
+      rent: 4200
+      pet_friendly: true
+      notes: "Luxury 4BR/3BA with city views"
+    - unit: "507"
+      bedrooms: 5
+      rent: 5500
+      pet_friendly: true
+      notes: "Ultimate 5BR/4BA penthouse with private roof deck"
+  property_name: "Sunset Heights Apartments"

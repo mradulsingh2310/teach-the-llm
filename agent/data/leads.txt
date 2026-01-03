@@ -2,3 +2,14 @@
 [2026-01-03T03:06:12.060545] Lead already_exists: LEAD-F15A7EA6 - Alex Thompson (email: alex@example.com, phone: 112-555-1122) - Created: 2026-01-03 03:06:07
 [2026-01-03T03:06:31.548686] Lead created: LEAD-F8C5B0BC - Chris Taylor (email: chris.taylor@domain.org, phone: 112-555-1234) - Created: 2026-01-03 03:06:31
 [2026-01-03T03:10:04.535379] Lead created: LEAD-228AF251 - Alex Thompson (email: alex.thompson@email.com, phone: (555) 222-3333) - Created: 2026-01-03 03:10:04
+[2026-01-03T03:28:22.365767] Lead created: LEAD-AB8FE9FA - Alex Thompson (email: alex.thompson@example.com, phone: 112-555-1122) - Created: 2026-01-03 03:28:22
+[2026-01-03T03:28:27.718823] Lead already_exists: LEAD-AB8FE9FA - Alex Thompson (email: alex.thompson@example.com, phone: 112-555-1122) - Created: 2026-01-03 03:28:22
+[2026-01-03T03:28:59.089077] Lead created: LEAD-FD89AD1C - Michael Brown (email: michael.brown.multi@email.com, phone: 555-666-9999) - Created: 2026-01-03 03:28:59
+[2026-01-03T03:32:24.302033] Lead created: LEAD-0B1D49A8 - Alex Thompson (email: alex.thompson@example.com, phone: 112-555-1122) - Created: 2026-01-03 03:32:24
+[2026-01-03T03:32:29.574452] Lead already_exists: LEAD-0B1D49A8 - Alex Thompson (email: alex.thompson@example.com, phone: 112-555-1122) - Created: 2026-01-03 03:32:24
+[2026-01-03T03:32:51.366746] Lead created: LEAD-CFA7D38B - Chris Taylor (email: chris.taylor@domain.org, phone: +44-2020-8000) - Created: 2026-01-03 03:32:51
+[2026-01-03T03:41:23.969595] Lead created: LEAD-44C11579 - Alex Thompson (email: alex.thompson@example.com, phone: 112-555-1122) - Created: 2026-01-03 03:41:23
+[2026-01-03T03:41:29.348927] Lead already_exists: LEAD-44C11579 - Alex Thompson (email: alex.thompson@example.com, phone: 112-555-1122) - Created: 2026-01-03 03:41:23
+[2026-01-03T03:41:52.917061] Lead created: LEAD-F9EA6DF0 - Michael Brown (email: michael.brown.multi@email.com, phone: 555-666-9999) - Created: 2026-01-03 03:41:52
+[2026-01-03T03:45:31.976725] Lead created: LEAD-C828F373 - Alex Thompson (email: alex.thompson@email.com, phone: (555) 222-3333) - Created: 2026-01-03 03:45:31
+[2026-01-03T03:45:54.963070] Lead created: LEAD-0721A75D - Michael Brown (email: michael.brown.multi@email.com, phone: 555-666-9999) - Created: 2026-01-03 03:45:54

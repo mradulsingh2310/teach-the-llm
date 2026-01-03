@@ -1,0 +1,566 @@
+[
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I need an apartment"},
+      {"role": "assistant", "content": "I'd be happy to help you find an apartment! To show you the best options, could you tell me how many bedrooms you're looking for?"},
+      {"role": "user", "content": "Just one bedroom"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [1]}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I need an apartment"},
+      {"role": "assistant", "content": "Great! I can help you find an apartment. How many bedrooms do you need?"},
+      {"role": "user", "content": "A studio would be fine"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [0]}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I need an apartment"},
+      {"role": "assistant", "content": "I can help you with that! How many bedrooms are you looking for?"},
+      {"role": "user", "content": "2 bedrooms please"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [2]}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Looking to move soon"},
+      {"role": "assistant", "content": "That's exciting! I'd love to help you find your new place. What size apartment are you looking for - how many bedrooms?"},
+      {"role": "user", "content": "I need 2 bedrooms"},
+      {"role": "assistant", "content": "Great, a 2 bedroom apartment. Do you have a budget in mind? What's the maximum rent you'd like to pay?"},
+      {"role": "user", "content": "I can spend up to $2000"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [2], "max_rent": 2000}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Looking to move soon"},
+      {"role": "assistant", "content": "I'd be happy to assist with your apartment search! How many bedrooms are you looking for?"},
+      {"role": "user", "content": "One bedroom"},
+      {"role": "assistant", "content": "Perfect! Do you have a maximum budget for monthly rent?"},
+      {"role": "user", "content": "Around $1500 max"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [1], "max_rent": 1500}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Looking to move soon"},
+      {"role": "assistant", "content": "Great! Let me help you find the perfect place. How many bedrooms do you need?"},
+      {"role": "user", "content": "Either a studio or 1 bedroom"},
+      {"role": "assistant", "content": "Flexible on size, got it! What's your budget for monthly rent?"},
+      {"role": "user", "content": "No more than $1800"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [0, 1], "max_rent": 1800}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "What's available?"},
+      {"role": "assistant", "content": "I'd be glad to show you what we have! To narrow things down, how many bedrooms would you like?"},
+      {"role": "user", "content": "1 or 2"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [1, 2]}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "What's available?"},
+      {"role": "assistant", "content": "Happy to help! What size apartment are you interested in - how many bedrooms?"},
+      {"role": "user", "content": "Something small, studio or 1br"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [0, 1]}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "What's available?"},
+      {"role": "assistant", "content": "I can show you our available listings! How many bedrooms are you looking for?"},
+      {"role": "user", "content": "2 to 3 bedrooms"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [2, 3]}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I want to tour an apartment"},
+      {"role": "assistant", "content": "I'd be happy to set up a tour for you! When would you like to visit?"},
+      {"role": "user", "content": "Next week sometime"},
+      {"role": "assistant", "content": "Sure, I have availability next week. What specific date works best for you?"},
+      {"role": "user", "content": "How about February 20th"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "check_availability", "arguments": {"date": "2025-02-20"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I want to tour an apartment"},
+      {"role": "assistant", "content": "Great! I can help schedule a tour. When were you thinking of coming in?"},
+      {"role": "user", "content": "This Friday"},
+      {"role": "assistant", "content": "This Friday works. What time would be convenient for you?"},
+      {"role": "user", "content": "Around 2pm"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "check_availability", "arguments": {"date": "2025-02-14", "time": "14:00"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I want to tour an apartment"},
+      {"role": "assistant", "content": "Wonderful! Let's get you scheduled for a tour. Do you have a preferred date in mind?"},
+      {"role": "user", "content": "March 5th would be ideal"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "check_availability", "arguments": {"date": "2025-03-05"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I'd like to book a tour"},
+      {"role": "assistant", "content": "I can help you book a tour! To get started, can I get your name?"},
+      {"role": "user", "content": "My name is Sarah"},
+      {"role": "assistant", "content": "Nice to meet you, Sarah! What's your email address?"},
+      {"role": "user", "content": "sarah.johnson@email.com"},
+      {"role": "assistant", "content": "Great! And what's the best phone number to reach you at?"},
+      {"role": "user", "content": "555-234-5678"},
+      {"role": "assistant", "content": "Perfect! When would you like to schedule your tour?"},
+      {"role": "user", "content": "February 25th at 3pm"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_appointment", "arguments": {"appointment_date": "2025-02-25", "appointment_start_time": "15:00", "first_name": "Sarah", "email": "sarah.johnson@email.com", "phone": "555-234-5678"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I want to schedule a tour"},
+      {"role": "assistant", "content": "Great! I'd be happy to help you schedule a tour. May I have your name?"},
+      {"role": "user", "content": "Michael Thompson"},
+      {"role": "assistant", "content": "Thanks, Michael! What email should we use to send confirmation?"},
+      {"role": "user", "content": "michael.t@company.org"},
+      {"role": "assistant", "content": "Got it! And your phone number?"},
+      {"role": "user", "content": "My number is (555) 345-6789"},
+      {"role": "assistant", "content": "When would you like to come in for your tour?"},
+      {"role": "user", "content": "March 10th at 10am works for me"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_appointment", "arguments": {"appointment_date": "2025-03-10", "appointment_start_time": "10:00", "first_name": "Michael", "last_name": "Thompson", "email": "michael.t@company.org", "phone": "(555) 345-6789"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Can I book a viewing?"},
+      {"role": "assistant", "content": "Absolutely! Let me get your contact information. What's your name?"},
+      {"role": "user", "content": "Jennifer Davis"},
+      {"role": "assistant", "content": "Hi Jennifer! What's your email address?"},
+      {"role": "user", "content": "jen.davis@gmail.com"},
+      {"role": "assistant", "content": "And your phone number?"},
+      {"role": "user", "content": "555-456-7890"},
+      {"role": "assistant", "content": "When would you like to visit?"},
+      {"role": "user", "content": "Next Monday at 2pm"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_appointment", "arguments": {"appointment_date": "2025-02-17", "appointment_start_time": "14:00", "first_name": "Jennifer", "last_name": "Davis", "email": "jen.davis@gmail.com", "phone": "555-456-7890"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I'm interested in renting"},
+      {"role": "assistant", "content": "That's great! What size apartment are you looking for?"},
+      {"role": "user", "content": "3 bedrooms"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [3]}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I'm interested in renting"},
+      {"role": "assistant", "content": "Wonderful! How many bedrooms do you need?"},
+      {"role": "user", "content": "Something between 1 and 2 bedrooms"},
+      {"role": "assistant", "content": "Got it! Do you have a budget in mind?"},
+      {"role": "user", "content": "Under $2500"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [1, 2], "max_rent": 2500}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Hi, I'm apartment hunting"},
+      {"role": "assistant", "content": "Welcome! I'd love to help with your search. How many bedrooms are you looking for?"},
+      {"role": "user", "content": "I'm flexible, could be 1, 2, or even 3"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [1, 2, 3]}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Hi, I'm apartment hunting"},
+      {"role": "assistant", "content": "Great! Let me help you find the right place. What bedroom count works for you?"},
+      {"role": "user", "content": "2 bedrooms"},
+      {"role": "assistant", "content": "A 2 bedroom apartment. What's your maximum monthly rent?"},
+      {"role": "user", "content": "I'd like to stay under $1800 if possible"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [2], "max_rent": 1800}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Can you help me find a place to live?"},
+      {"role": "assistant", "content": "Of course! I'd be happy to help. How many bedrooms do you need in your new apartment?"},
+      {"role": "user", "content": "A studio is fine"},
+      {"role": "assistant", "content": "Studios are great! Do you have a budget for rent?"},
+      {"role": "user", "content": "Max $1200"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [0], "max_rent": 1200}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I need a new place"},
+      {"role": "assistant", "content": "I can help with that! What size apartment are you looking for?"},
+      {"role": "user", "content": "Something with 4 bedrooms for my family"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [4]}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I need a new place"},
+      {"role": "assistant", "content": "Happy to help! How many bedrooms are you looking for?"},
+      {"role": "user", "content": "Either 3 or 4 would work"},
+      {"role": "assistant", "content": "Great, larger units! What's your budget range?"},
+      {"role": "user", "content": "Up to $3000 a month"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [3, 4], "max_rent": 3000}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Do you have apartments?"},
+      {"role": "assistant", "content": "Yes, we do! What size apartment are you interested in?"},
+      {"role": "user", "content": "One bedroom would be perfect"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [1]}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Do you have apartments?"},
+      {"role": "assistant", "content": "Absolutely! How many bedrooms are you looking for?"},
+      {"role": "user", "content": "2br preferred"},
+      {"role": "assistant", "content": "Two bedrooms, got it. Is there a maximum rent you'd like to stay under?"},
+      {"role": "user", "content": "Yes, $2200 max"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [2], "max_rent": 2200}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I want to see an apartment"},
+      {"role": "assistant", "content": "I'd be happy to show you our apartments! When would you like to come by?"},
+      {"role": "user", "content": "Sometime this week"},
+      {"role": "assistant", "content": "I have availability this week. Which day works best for you?"},
+      {"role": "user", "content": "Thursday"},
+      {"role": "assistant", "content": "Thursday is great! What time would you prefer?"},
+      {"role": "user", "content": "11am"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "check_availability", "arguments": {"date": "2025-02-13", "time": "11:00"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Can I come see the apartments?"},
+      {"role": "assistant", "content": "Of course! When would you like to schedule a visit?"},
+      {"role": "user", "content": "Maybe next Tuesday?"},
+      {"role": "assistant", "content": "Next Tuesday works! What time is best for you?"},
+      {"role": "user", "content": "Afternoon, like 3pm"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "check_availability", "arguments": {"date": "2025-02-18", "time": "15:00"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Book me a tour"},
+      {"role": "assistant", "content": "I'd be glad to book a tour for you! What's your name?"},
+      {"role": "user", "content": "Robert"},
+      {"role": "assistant", "content": "Hi Robert! What's your last name?"},
+      {"role": "user", "content": "Wilson"},
+      {"role": "assistant", "content": "Thanks Robert Wilson! What's your email address?"},
+      {"role": "user", "content": "rwilson@outlook.com"},
+      {"role": "assistant", "content": "And a phone number where we can reach you?"},
+      {"role": "user", "content": "555-567-8901"},
+      {"role": "assistant", "content": "Perfect! When would you like to schedule your tour?"},
+      {"role": "user", "content": "March 3rd at 1pm"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_appointment", "arguments": {"appointment_date": "2025-03-03", "appointment_start_time": "13:00", "first_name": "Robert", "last_name": "Wilson", "email": "rwilson@outlook.com", "phone": "555-567-8901"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I want to book an appointment"},
+      {"role": "assistant", "content": "Sure thing! Let me get your details. What's your first name?"},
+      {"role": "user", "content": "Amanda"},
+      {"role": "assistant", "content": "And your last name, Amanda?"},
+      {"role": "user", "content": "Garcia"},
+      {"role": "assistant", "content": "Great! What email should I use for confirmation?"},
+      {"role": "user", "content": "amanda.g@yahoo.com"},
+      {"role": "assistant", "content": "Thanks! What's your phone number?"},
+      {"role": "user", "content": "(555) 678-9012"},
+      {"role": "assistant", "content": "When would you like to come in?"},
+      {"role": "user", "content": "February 28th at 4:30pm"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_appointment", "arguments": {"appointment_date": "2025-02-28", "appointment_start_time": "16:30", "first_name": "Amanda", "last_name": "Garcia", "email": "amanda.g@yahoo.com", "phone": "(555) 678-9012"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Hi there"},
+      {"role": "assistant", "content": "Hello! How can I help you today?"},
+      {"role": "user", "content": "I'm looking for an apartment"},
+      {"role": "assistant", "content": "I'd love to help! How many bedrooms are you looking for?"},
+      {"role": "user", "content": "2 bedrooms please"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [2]}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Hi there"},
+      {"role": "assistant", "content": "Hello! What can I assist you with today?"},
+      {"role": "user", "content": "Need to find a place to rent"},
+      {"role": "assistant", "content": "I can definitely help with that! What size apartment do you need?"},
+      {"role": "user", "content": "Studio or one bedroom"},
+      {"role": "assistant", "content": "Great! Do you have a budget in mind?"},
+      {"role": "user", "content": "Nothing over $1600"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [0, 1], "max_rent": 1600}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Show me what you have"},
+      {"role": "assistant", "content": "I'd be happy to! To show you the most relevant listings, how many bedrooms are you looking for?"},
+      {"role": "user", "content": "I need 3 bedrooms for my family"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [3]}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Show me what you have"},
+      {"role": "assistant", "content": "Sure! What bedroom count are you interested in?"},
+      {"role": "user", "content": "1 or 2 would work"},
+      {"role": "assistant", "content": "Flexible, that's good! What's your maximum budget for rent?"},
+      {"role": "user", "content": "$1900"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [1, 2], "max_rent": 1900}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I'd like to schedule something"},
+      {"role": "assistant", "content": "Of course! Would you like to schedule a tour of our apartments?"},
+      {"role": "user", "content": "Yes please"},
+      {"role": "assistant", "content": "Great! What's your name?"},
+      {"role": "user", "content": "I'm Kevin Martinez"},
+      {"role": "assistant", "content": "Nice to meet you, Kevin! What's your email?"},
+      {"role": "user", "content": "kevin.m@email.com"},
+      {"role": "assistant", "content": "And your phone number?"},
+      {"role": "user", "content": "555-789-0123"},
+      {"role": "assistant", "content": "When would you like to come in?"},
+      {"role": "user", "content": "March 15th around 11am"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_appointment", "arguments": {"appointment_date": "2025-03-15", "appointment_start_time": "11:00", "first_name": "Kevin", "last_name": "Martinez", "email": "kevin.m@email.com", "phone": "555-789-0123"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Any units available?"},
+      {"role": "assistant", "content": "Yes, we have several available! What size are you looking for?"},
+      {"role": "user", "content": "Something bigger, like 2-3 beds"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [2, 3]}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Any units available?"},
+      {"role": "assistant", "content": "We do have availability! How many bedrooms do you need?"},
+      {"role": "user", "content": "Just a studio"},
+      {"role": "assistant", "content": "Studios are cozy! Do you have a price range in mind?"},
+      {"role": "user", "content": "Under $1100 would be ideal"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [0], "max_rent": 1100}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I'm relocating to the area"},
+      {"role": "assistant", "content": "Welcome! I'd be happy to help you find a new home. What size apartment are you looking for?"},
+      {"role": "user", "content": "We need at least 2 bedrooms"},
+      {"role": "assistant", "content": "Got it, 2 or more bedrooms. Would 2 or 3 bedrooms work for you?"},
+      {"role": "user", "content": "2 is fine"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [2]}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I'm relocating to the area"},
+      {"role": "assistant", "content": "Exciting! Let me help you find the perfect place. How many bedrooms do you need?"},
+      {"role": "user", "content": "1 bedroom"},
+      {"role": "assistant", "content": "Great! What's your budget for monthly rent?"},
+      {"role": "user", "content": "I can do up to $1700"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [1], "max_rent": 1700}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Can I visit?"},
+      {"role": "assistant", "content": "Absolutely! I'd be happy to show you around. When were you thinking?"},
+      {"role": "user", "content": "Tomorrow if possible"},
+      {"role": "assistant", "content": "Let me check tomorrow's availability. What time works for you?"},
+      {"role": "user", "content": "Morning, like 9am"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "check_availability", "arguments": {"date": "2025-02-11", "time": "09:00"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Can I visit?"},
+      {"role": "assistant", "content": "Of course! When would you like to stop by?"},
+      {"role": "user", "content": "How about Saturday?"},
+      {"role": "assistant", "content": "Saturday works! What time is best for you?"},
+      {"role": "user", "content": "1pm would be great"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "check_availability", "arguments": {"date": "2025-02-15", "time": "13:00"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I'm looking for something affordable"},
+      {"role": "assistant", "content": "I can help you find something within your budget! What's your maximum rent?"},
+      {"role": "user", "content": "$1300 max"},
+      {"role": "assistant", "content": "Got it, under $1300. How many bedrooms do you need?"},
+      {"role": "user", "content": "A studio would work"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [0], "max_rent": 1300}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I'm looking for something affordable"},
+      {"role": "assistant", "content": "Happy to help! What's your budget range?"},
+      {"role": "user", "content": "Under $1500 monthly"},
+      {"role": "assistant", "content": "Great! And how many bedrooms are you looking for?"},
+      {"role": "user", "content": "1 or 2 bedrooms"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [1, 2], "max_rent": 1500}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Help me find a rental"},
+      {"role": "assistant", "content": "I'd be glad to help! How many bedrooms are you looking for?"},
+      {"role": "user", "content": "2 bedrooms for me and my roommate"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [2]}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Help me find a rental"},
+      {"role": "assistant", "content": "Of course! What size place do you need?"},
+      {"role": "user", "content": "3 bedroom house or apartment"},
+      {"role": "assistant", "content": "A 3 bedroom, got it. What's your rent budget?"},
+      {"role": "user", "content": "We can go up to $2800"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [3], "max_rent": 2800}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Set up a showing for me"},
+      {"role": "assistant", "content": "I can help with that! First, what's your name?"},
+      {"role": "user", "content": "Lisa Chen"},
+      {"role": "assistant", "content": "Hi Lisa! What's your email address?"},
+      {"role": "user", "content": "lisa.chen@techcorp.io"},
+      {"role": "assistant", "content": "Great! And your phone number?"},
+      {"role": "user", "content": "555-890-1234"},
+      {"role": "assistant", "content": "Perfect! When would you like to schedule the showing?"},
+      {"role": "user", "content": "Next Wednesday at 2:30pm"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_appointment", "arguments": {"appointment_date": "2025-02-19", "appointment_start_time": "14:30", "first_name": "Lisa", "last_name": "Chen", "email": "lisa.chen@techcorp.io", "phone": "555-890-1234"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "What rentals do you have?"},
+      {"role": "assistant", "content": "We have a variety of units! What bedroom count would work for you?"},
+      {"role": "user", "content": "Just one"},
+      {"role": "assistant", "content": "One bedroom, perfect. Is there a maximum you'd like to spend on rent?"},
+      {"role": "user", "content": "Around $1400"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [1], "max_rent": 1400}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "What rentals do you have?"},
+      {"role": "assistant", "content": "We have several options! How many bedrooms do you need?"},
+      {"role": "user", "content": "0, 1, or 2 - I'm flexible"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [0, 1, 2]}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I want to move in soon"},
+      {"role": "assistant", "content": "Great! Let's find you a place. What size apartment do you need?"},
+      {"role": "user", "content": "2 bedroom"},
+      {"role": "assistant", "content": "Two bedrooms, noted. What's the max rent you're comfortable with?"},
+      {"role": "user", "content": "$2100"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [2], "max_rent": 2100}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Schedule me please"},
+      {"role": "assistant", "content": "Happy to schedule you! What's your name?"},
+      {"role": "user", "content": "David Lee"},
+      {"role": "assistant", "content": "Hi David! What email should I use?"},
+      {"role": "user", "content": "david.lee@startup.co"},
+      {"role": "assistant", "content": "And your phone number?"},
+      {"role": "user", "content": "555-901-2345"},
+      {"role": "assistant", "content": "Great! What date and time work for you?"},
+      {"role": "user", "content": "March 8th at 9am"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_appointment", "arguments": {"appointment_date": "2025-03-08", "appointment_start_time": "09:00", "first_name": "David", "last_name": "Lee", "email": "david.lee@startup.co", "phone": "555-901-2345"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Got any open apartments?"},
+      {"role": "assistant", "content": "Yes we do! How many bedrooms are you looking for?"},
+      {"role": "user", "content": "Either 1 or 2"},
+      {"role": "assistant", "content": "Got it. What's your budget for monthly rent?"},
+      {"role": "user", "content": "Can't go over $1750"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [1, 2], "max_rent": 1750}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I want to come look"},
+      {"role": "assistant", "content": "We'd love to have you visit! When are you available?"},
+      {"role": "user", "content": "This weekend"},
+      {"role": "assistant", "content": "Saturday or Sunday?"},
+      {"role": "user", "content": "Sunday"},
+      {"role": "assistant", "content": "Sunday works! What time?"},
+      {"role": "user", "content": "10am please"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "check_availability", "arguments": {"date": "2025-02-16", "time": "10:00"}}}]}
+    ]
+  }
+]

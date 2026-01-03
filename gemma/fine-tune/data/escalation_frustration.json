@@ -1,0 +1,352 @@
+[
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions: escalate_conversation, get_booking_details, search_tours, cancel_booking"},
+      {"role": "user", "content": "Let me talk to a human please"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "escalate_conversation", "arguments": {"reason_for_escalation": "User explicitly requesting to speak with a human agent"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions: escalate_conversation, get_booking_details, search_tours, cancel_booking"},
+      {"role": "user", "content": "Connect me to someone real, not a bot"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "escalate_conversation", "arguments": {"reason_for_escalation": "User requesting connection to a real person instead of automated system"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions: escalate_conversation, get_booking_details, search_tours, cancel_booking"},
+      {"role": "user", "content": "This is useless, I need actual help"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "escalate_conversation", "arguments": {"reason_for_escalation": "User expressing frustration with automated assistance and requesting better help"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions: escalate_conversation, get_booking_details, search_tours, cancel_booking"},
+      {"role": "user", "content": "You're not helping at all. I want to speak to a real person."},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "escalate_conversation", "arguments": {"reason_for_escalation": "User frustrated with bot assistance and explicitly requesting human agent"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions: escalate_conversation, get_booking_details, search_tours, cancel_booking"},
+      {"role": "user", "content": "I'm done with this bot. Transfer me now."},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "escalate_conversation", "arguments": {"reason_for_escalation": "User expressing strong frustration and demanding immediate transfer to human agent"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions: escalate_conversation, get_booking_details, search_tours, cancel_booking"},
+      {"role": "user", "content": "This is ridiculous! How many times do I have to explain my problem?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "escalate_conversation", "arguments": {"reason_for_escalation": "User angry and frustrated after repeated unsuccessful attempts to resolve issue"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions: escalate_conversation, get_booking_details, search_tours, cancel_booking"},
+      {"role": "user", "content": "I'm very upset with this service. Get me a manager."},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "escalate_conversation", "arguments": {"reason_for_escalation": "User expressing anger with service and requesting manager escalation"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions: escalate_conversation, get_booking_details, search_tours, cancel_booking"},
+      {"role": "user", "content": "This is unacceptable. I demand to speak with someone in charge."},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "escalate_conversation", "arguments": {"reason_for_escalation": "User highly dissatisfied and demanding to speak with authority figure"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions: escalate_conversation, get_booking_details, search_tours, cancel_booking"},
+      {"role": "user", "content": "I've asked you 3 times already and you still don't understand!"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "escalate_conversation", "arguments": {"reason_for_escalation": "User frustrated after multiple failed attempts to communicate issue to bot"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions: escalate_conversation, get_booking_details, search_tours, cancel_booking"},
+      {"role": "user", "content": "You keep misunderstanding me. I need a human agent."},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "escalate_conversation", "arguments": {"reason_for_escalation": "Repeated communication breakdown between user and bot, user requesting human assistance"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions: escalate_conversation, get_booking_details, search_tours, cancel_booking"},
+      {"role": "user", "content": "Forget it, just transfer me to customer service"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "escalate_conversation", "arguments": {"reason_for_escalation": "User giving up on bot interaction and requesting transfer to customer service"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions: escalate_conversation, get_booking_details, search_tours, cancel_booking"},
+      {"role": "user", "content": "Never mind, this is pointless. Human please."},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "escalate_conversation", "arguments": {"reason_for_escalation": "User abandoning bot conversation due to frustration and requesting human agent"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions: escalate_conversation, get_booking_details, search_tours, cancel_booking"},
+      {"role": "user", "content": "I want to speak to a manager right now"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "escalate_conversation", "arguments": {"reason_for_escalation": "User demanding immediate manager escalation"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions: escalate_conversation, get_booking_details, search_tours, cancel_booking"},
+      {"role": "user", "content": "Supervisor please. This bot is hopeless."},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "escalate_conversation", "arguments": {"reason_for_escalation": "User expressing dissatisfaction with bot and requesting supervisor"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions: escalate_conversation, get_booking_details, search_tours, cancel_booking"},
+      {"role": "user", "content": "I can't believe how bad this support is. I need a real representative."},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "escalate_conversation", "arguments": {"reason_for_escalation": "User expressing disbelief at support quality and requesting human representative"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions: escalate_conversation, get_booking_details, search_tours, cancel_booking"},
+      {"role": "user", "content": "Stop giving me automated responses. I want a person!"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "escalate_conversation", "arguments": {"reason_for_escalation": "User frustrated with automated responses and demanding human interaction"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions: escalate_conversation, get_booking_details, search_tours, cancel_booking"},
+      {"role": "user", "content": "This is the worst customer service I've ever experienced. Manager NOW."},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "escalate_conversation", "arguments": {"reason_for_escalation": "User extremely dissatisfied with service quality and urgently demanding manager"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions: escalate_conversation, get_booking_details, search_tours, cancel_booking"},
+      {"role": "user", "content": "Are you even reading what I'm typing? Get me someone who can actually help!"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "escalate_conversation", "arguments": {"reason_for_escalation": "User questioning bot comprehension and requesting competent human assistance"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions: escalate_conversation, get_booking_details, search_tours, cancel_booking"},
+      {"role": "user", "content": "I'm losing my patience here. Transfer me to a live agent."},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "escalate_conversation", "arguments": {"reason_for_escalation": "User patience depleted and requesting transfer to live agent"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions: escalate_conversation, get_booking_details, search_tours, cancel_booking"},
+      {"role": "user", "content": "You've given me the wrong answer twice now. I need human support."},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "escalate_conversation", "arguments": {"reason_for_escalation": "User received incorrect information multiple times and requesting human support"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions: escalate_conversation, get_booking_details, search_tours, cancel_booking"},
+      {"role": "user", "content": "I don't want to talk to a robot anymore"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "escalate_conversation", "arguments": {"reason_for_escalation": "User refusing to continue automated interaction and preferring human contact"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions: escalate_conversation, get_booking_details, search_tours, cancel_booking"},
+      {"role": "user", "content": "This chatbot is terrible. Connect me to your support team."},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "escalate_conversation", "arguments": {"reason_for_escalation": "User criticizing chatbot performance and requesting connection to support team"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions: escalate_conversation, get_booking_details, search_tours, cancel_booking"},
+      {"role": "user", "content": "Why is this so difficult? Just put me through to someone!"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "escalate_conversation", "arguments": {"reason_for_escalation": "User expressing frustration with process difficulty and demanding human connection"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions: escalate_conversation, get_booking_details, search_tours, cancel_booking"},
+      {"role": "user", "content": "I've been going in circles for 20 minutes. I need a real person."},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "escalate_conversation", "arguments": {"reason_for_escalation": "User frustrated after extended unsuccessful interaction and requesting human agent"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions: escalate_conversation, get_booking_details, search_tours, cancel_booking"},
+      {"role": "user", "content": "This is infuriating! Where's your complaint department?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "escalate_conversation", "arguments": {"reason_for_escalation": "User extremely angry and seeking complaint escalation channel"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions: escalate_conversation, get_booking_details, search_tours, cancel_booking"},
+      {"role": "user", "content": "You clearly can't handle my request. Escalate this immediately."},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "escalate_conversation", "arguments": {"reason_for_escalation": "User determined bot is incapable and demanding immediate escalation"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions: escalate_conversation, get_booking_details, search_tours, cancel_booking"},
+      {"role": "user", "content": "I want to file a complaint. Get me a human."},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "escalate_conversation", "arguments": {"reason_for_escalation": "User intending to file complaint and requesting human agent"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions: escalate_conversation, get_booking_details, search_tours, cancel_booking"},
+      {"role": "user", "content": "Enough with the scripted responses! Real person please!"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "escalate_conversation", "arguments": {"reason_for_escalation": "User frustrated with perceived scripted responses and demanding human interaction"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions: escalate_conversation, get_booking_details, search_tours, cancel_booking"},
+      {"role": "user", "content": "I'm absolutely furious. This needs to go to a supervisor."},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "escalate_conversation", "arguments": {"reason_for_escalation": "User expressing extreme anger and requesting supervisor escalation"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions: escalate_conversation, get_booking_details, search_tours, cancel_booking"},
+      {"role": "user", "content": "You're making this worse. Let me speak to someone competent."},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "escalate_conversation", "arguments": {"reason_for_escalation": "User feeling situation worsened by bot and requesting competent human agent"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions: escalate_conversation, get_booking_details, search_tours, cancel_booking"},
+      {"role": "user", "content": "I refuse to continue with this automated system. Human. Now."},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "escalate_conversation", "arguments": {"reason_for_escalation": "User firmly refusing automated assistance and demanding immediate human contact"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions: escalate_conversation, get_booking_details, search_tours, cancel_booking"},
+      {"role": "user", "content": "Your AI is completely broken. I need to talk to tech support."},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "escalate_conversation", "arguments": {"reason_for_escalation": "User reporting AI malfunction and requesting technical support team"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions: escalate_conversation, get_booking_details, search_tours, cancel_booking"},
+      {"role": "user", "content": "That's it. I'm calling your company directly. This is unacceptable."},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "escalate_conversation", "arguments": {"reason_for_escalation": "User threatening to contact company directly due to unacceptable service experience"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions: escalate_conversation, get_booking_details, search_tours, cancel_booking"},
+      {"role": "user", "content": "Do you even understand English? Get me someone who does!"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "escalate_conversation", "arguments": {"reason_for_escalation": "User frustrated with bot comprehension and requesting human with better understanding"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions: escalate_conversation, get_booking_details, search_tours, cancel_booking"},
+      {"role": "user", "content": "I've explained this 4 times. Please just connect me to a person."},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "escalate_conversation", "arguments": {"reason_for_escalation": "User exhausted after multiple explanation attempts and politely requesting human connection"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions: escalate_conversation, get_booking_details, search_tours, cancel_booking"},
+      {"role": "user", "content": "This is a waste of my time. Transfer me or I'm leaving a bad review."},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "escalate_conversation", "arguments": {"reason_for_escalation": "User expressing time wasted and threatening negative review unless transferred"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions: escalate_conversation, get_booking_details, search_tours, cancel_booking"},
+      {"role": "user", "content": "Why won't you just help me?! Get me a real agent!"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "escalate_conversation", "arguments": {"reason_for_escalation": "User feeling helpless with bot assistance and emotionally requesting human agent"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions: escalate_conversation, get_booking_details, search_tours, cancel_booking"},
+      {"role": "user", "content": "I'm so frustrated right now. Can I please speak to a human being?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "escalate_conversation", "arguments": {"reason_for_escalation": "User openly expressing frustration and politely requesting human assistance"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions: escalate_conversation, get_booking_details, search_tours, cancel_booking"},
+      {"role": "user", "content": "You're going around in circles. I demand a manager."},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "escalate_conversation", "arguments": {"reason_for_escalation": "User frustrated with repetitive bot responses and demanding manager escalation"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions: escalate_conversation, get_booking_details, search_tours, cancel_booking"},
+      {"role": "user", "content": "Useless! Absolutely useless! Human support NOW!"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "escalate_conversation", "arguments": {"reason_for_escalation": "User expressing extreme frustration with bot usefulness and urgently demanding human support"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions: escalate_conversation, get_booking_details, search_tours, cancel_booking"},
+      {"role": "user", "content": "I don't have time for this. Put me in touch with someone real."},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "escalate_conversation", "arguments": {"reason_for_escalation": "User expressing time constraints and requesting real human contact"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions: escalate_conversation, get_booking_details, search_tours, cancel_booking"},
+      {"role": "user", "content": "This is beyond frustrating. I need to escalate this issue."},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "escalate_conversation", "arguments": {"reason_for_escalation": "User experiencing extreme frustration and explicitly requesting issue escalation"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions: escalate_conversation, get_booking_details, search_tours, cancel_booking"},
+      {"role": "user", "content": "How hard is it to get a human on the line? Just do it!"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "escalate_conversation", "arguments": {"reason_for_escalation": "User frustrated with difficulty reaching human agent and demanding transfer"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions: escalate_conversation, get_booking_details, search_tours, cancel_booking"},
+      {"role": "user", "content": "You're not listening to me at all. I want human assistance."},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "escalate_conversation", "arguments": {"reason_for_escalation": "User feeling unheard by bot and requesting human assistance"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions: escalate_conversation, get_booking_details, search_tours, cancel_booking"},
+      {"role": "user", "content": "I'm done repeating myself. Get me your supervisor."},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "escalate_conversation", "arguments": {"reason_for_escalation": "User tired of repeating information and demanding supervisor"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions: escalate_conversation, get_booking_details, search_tours, cancel_booking"},
+      {"role": "user", "content": "This bot is making me angry. I need to speak to a person."},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "escalate_conversation", "arguments": {"reason_for_escalation": "User openly expressing anger caused by bot and requesting human contact"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions: escalate_conversation, get_booking_details, search_tours, cancel_booking"},
+      {"role": "user", "content": "Every answer you give is wrong! Transfer me immediately!"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "escalate_conversation", "arguments": {"reason_for_escalation": "User frustrated with consistently incorrect responses and demanding immediate transfer"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions: escalate_conversation, get_booking_details, search_tours, cancel_booking"},
+      {"role": "user", "content": "I'm about to cancel my account. Let me talk to retention."},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "escalate_conversation", "arguments": {"reason_for_escalation": "User threatening account cancellation and requesting retention team"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions: escalate_conversation, get_booking_details, search_tours, cancel_booking"},
+      {"role": "user", "content": "Forget the bot. I just want to talk to someone who can actually solve this."},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "escalate_conversation", "arguments": {"reason_for_escalation": "User dismissing bot and requesting human capable of problem resolution"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions: escalate_conversation, get_booking_details, search_tours, cancel_booking"},
+      {"role": "user", "content": "This is ridiculous customer service. I want to speak with management."},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "escalate_conversation", "arguments": {"reason_for_escalation": "User criticizing service as ridiculous and requesting management escalation"}}}]}
+    ]
+  }
+]

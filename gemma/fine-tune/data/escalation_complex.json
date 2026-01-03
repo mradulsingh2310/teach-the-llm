@@ -1,0 +1,352 @@
+[
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Can we negotiate the rent? The listed price is a bit higher than my budget."},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "escalate_conversation", "arguments": {"reason_for_escalation": "Rent negotiation request requiring property manager approval"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I'm interested in a 2-year lease. Is there special pricing for longer lease terms?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "escalate_conversation", "arguments": {"reason_for_escalation": "Extended lease term pricing negotiation requiring human decision"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "What happens if I need to break the lease early? What are my options?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "escalate_conversation", "arguments": {"reason_for_escalation": "Early lease termination inquiry requiring legal and policy guidance"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I have some legal concerns about the lease agreement. Can someone explain the liability clause?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "escalate_conversation", "arguments": {"reason_for_escalation": "Legal question about lease terms requiring qualified human response"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I need ADA accommodations in my unit. I use a wheelchair and need grab bars installed."},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "escalate_conversation", "arguments": {"reason_for_escalation": "ADA accommodation request requiring property management coordination"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I have a disability and need modifications made to the bathroom. Who do I talk to?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "escalate_conversation", "arguments": {"reason_for_escalation": "Disability modification request requiring accessibility compliance review"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I want to file a noise complaint about my neighbor in unit 302. They play loud music every night."},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "escalate_conversation", "arguments": {"reason_for_escalation": "Tenant noise complaint requiring property management intervention"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I'm having an issue with another tenant who keeps blocking my parking spot."},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "escalate_conversation", "arguments": {"reason_for_escalation": "Inter-tenant dispute requiring property management mediation"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I just lost my job and I'm not sure I can pay rent this month. What are my options?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "escalate_conversation", "arguments": {"reason_for_escalation": "Financial hardship situation requiring payment arrangement discussion"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I'm going through financial difficulties. Can we work out a payment plan for the rent?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "escalate_conversation", "arguments": {"reason_for_escalation": "Payment plan request due to financial hardship requiring manager approval"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I'm looking to rent this apartment for my company. We need corporate housing for employees."},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "escalate_conversation", "arguments": {"reason_for_escalation": "Corporate rental inquiry requiring commercial lease discussion"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "We need a business lease for our startup. Can the apartment be used as our office address?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "escalate_conversation", "arguments": {"reason_for_escalation": "Business use inquiry requiring commercial zoning and lease review"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I have 5 pets - 3 dogs and 2 cats. Is that allowed?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "escalate_conversation", "arguments": {"reason_for_escalation": "Multiple pet exception request requiring property manager decision"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I want to run my photography business from the apartment. Is that possible?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "escalate_conversation", "arguments": {"reason_for_escalation": "Home business operation request requiring lease and zoning review"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "The rent seems high for this area. Can we discuss a lower monthly rate?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "escalate_conversation", "arguments": {"reason_for_escalation": "Rent reduction negotiation requiring pricing authority approval"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "If I pay 6 months upfront, can I get a discount on the total rent?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "escalate_conversation", "arguments": {"reason_for_escalation": "Prepaid rent discount negotiation requiring financial decision"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I'm being harassed by my neighbor. This is becoming a safety concern."},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "escalate_conversation", "arguments": {"reason_for_escalation": "Tenant harassment and safety concern requiring immediate management attention"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "My lawyer wants to review the lease before I sign. Can you send it to them?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "escalate_conversation", "arguments": {"reason_for_escalation": "Legal review request requiring lease document coordination"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I need to sublet the apartment for 3 months while I'm abroad. Is that allowed?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "escalate_conversation", "arguments": {"reason_for_escalation": "Subletting request requiring lease policy review and approval"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I want to add my partner to the lease. What's the process?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "escalate_conversation", "arguments": {"reason_for_escalation": "Lease modification request to add occupant requiring approval process"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I have an emotional support animal. Do I still need to pay the pet deposit?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "escalate_conversation", "arguments": {"reason_for_escalation": "Emotional support animal accommodation request requiring fair housing compliance review"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "The apartment has mold and I think it's affecting my health. This is a serious issue."},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "escalate_conversation", "arguments": {"reason_for_escalation": "Health and safety concern regarding mold requiring urgent maintenance and management response"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I'm considering legal action because of the unresolved maintenance issues."},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "escalate_conversation", "arguments": {"reason_for_escalation": "Potential legal action threat requiring immediate management escalation"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Can the security deposit be waived? I have excellent rental history."},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "escalate_conversation", "arguments": {"reason_for_escalation": "Security deposit waiver request requiring financial policy exception"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I'm being relocated by my employer. Can I get out of my lease early without penalty?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "escalate_conversation", "arguments": {"reason_for_escalation": "Job relocation early termination request requiring lease break policy review"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I'm in the military and received PCS orders. What are my options for the lease?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "escalate_conversation", "arguments": {"reason_for_escalation": "Military SCRA lease termination request requiring legal compliance handling"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I need to install medical equipment in the apartment. It requires some electrical modifications."},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "escalate_conversation", "arguments": {"reason_for_escalation": "Medical equipment installation request requiring modification approval and coordination"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "There's a bedbug infestation in my unit. Who is responsible for treatment costs?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "escalate_conversation", "arguments": {"reason_for_escalation": "Pest infestation liability question requiring property management determination"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I want to dispute a charge on my account. I don't think I owe this amount."},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "escalate_conversation", "arguments": {"reason_for_escalation": "Billing dispute requiring account review and management resolution"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "My identity was stolen and someone tried to rent using my information. What should I do?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "escalate_conversation", "arguments": {"reason_for_escalation": "Identity theft concern requiring fraud investigation and security protocol"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I'm a real estate agent representing multiple clients. Can we set up a corporate account?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "escalate_conversation", "arguments": {"reason_for_escalation": "Corporate partnership inquiry requiring business development discussion"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I need a rent-controlled apartment. Does this unit qualify?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "escalate_conversation", "arguments": {"reason_for_escalation": "Rent control eligibility inquiry requiring regulatory compliance verification"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I received an eviction notice but I believe it's wrongful. Can someone help me?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "escalate_conversation", "arguments": {"reason_for_escalation": "Eviction dispute requiring legal review and management intervention"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I want to use Section 8 housing voucher for this apartment. Do you accept it?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "escalate_conversation", "arguments": {"reason_for_escalation": "Section 8 voucher acceptance inquiry requiring housing program policy confirmation"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I'm going through a divorce and need to remove my spouse from the lease."},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "escalate_conversation", "arguments": {"reason_for_escalation": "Lease modification due to divorce requiring legal documentation and approval"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I found asbestos in the ceiling. This is a health hazard and I'm very concerned."},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "escalate_conversation", "arguments": {"reason_for_escalation": "Asbestos hazard report requiring immediate health and safety response"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Can I get a month-to-month lease instead of a year-long commitment?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "escalate_conversation", "arguments": {"reason_for_escalation": "Non-standard lease term request requiring pricing and availability decision"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I want to install solar panels on the balcony. Is that permitted?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "escalate_conversation", "arguments": {"reason_for_escalation": "Property modification request requiring building policy and HOA review"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "There was a break-in at my unit. I need to talk to someone about security."},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "escalate_conversation", "arguments": {"reason_for_escalation": "Security incident requiring immediate management response and investigation"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I need my lease in Spanish. Can you provide translated documents?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "escalate_conversation", "arguments": {"reason_for_escalation": "Language accommodation request requiring translated legal document provision"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I'm a senior citizen on fixed income. Do you offer any discounts for seniors?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "escalate_conversation", "arguments": {"reason_for_escalation": "Senior discount inquiry requiring special pricing policy review"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I need to transfer my lease to a different unit in the same building."},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "escalate_conversation", "arguments": {"reason_for_escalation": "Intra-property lease transfer request requiring availability and approval"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "My roommate moved out and I can't afford the rent alone. What are my options?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "escalate_conversation", "arguments": {"reason_for_escalation": "Roommate departure financial concern requiring lease modification discussion"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I want to open a daycare in my apartment. Is home childcare allowed?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "escalate_conversation", "arguments": {"reason_for_escalation": "Home daycare business request requiring zoning and liability review"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "The previous tenant's belongings are still in the unit. What should I do?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "escalate_conversation", "arguments": {"reason_for_escalation": "Abandoned property issue requiring legal protocol and management handling"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I need reasonable accommodations for my service dog. Can we discuss the process?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "escalate_conversation", "arguments": {"reason_for_escalation": "Service animal accommodation request requiring fair housing compliance handling"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I think I'm being discriminated against because of my race. This is unacceptable."},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "escalate_conversation", "arguments": {"reason_for_escalation": "Discrimination complaint requiring immediate fair housing investigation"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Can my company sign a master lease for multiple units for employee housing?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "escalate_conversation", "arguments": {"reason_for_escalation": "Master lease corporate housing request requiring commercial terms negotiation"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "There's been a fire in my unit. I need to know about relocation and insurance."},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "escalate_conversation", "arguments": {"reason_for_escalation": "Emergency fire incident requiring immediate relocation assistance and claims handling"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I want to rent the apartment but my credit score is low. Can we work something out?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "escalate_conversation", "arguments": {"reason_for_escalation": "Low credit score applicant requesting alternative qualification consideration"}}}]}
+    ]
+  }
+]

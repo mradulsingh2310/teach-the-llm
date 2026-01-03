@@ -1,0 +1,552 @@
+[
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Quick question - do you allow dogs?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "pet policy dogs allowed", "category": "policies"}}}]},
+      {"role": "tool", "content": "Pet Policy: Dogs and cats are welcome. $300 pet deposit plus $35/month pet rent per pet. Maximum 2 pets per unit. Weight limit of 75 lbs per dog. Some breed restrictions apply."},
+      {"role": "assistant", "content": "Yes, we are pet-friendly! Dogs are welcome here. There's a $300 pet deposit and $35 per month pet rent. We do have a 75 lb weight limit per dog and some breed restrictions. You can have up to 2 pets per unit."},
+      {"role": "user", "content": "Great, thanks! That's all I needed."},
+      {"role": "assistant", "content": "You're welcome! Let me know if you have any other questions."}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Hi, I'm a current resident and wanted to ask about the gym hours"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "gym hours fitness center", "category": "amenities"}}}]},
+      {"role": "tool", "content": "Fitness Center: Open 24/7 for residents. Equipped with treadmills, ellipticals, free weights, and weight machines. Key fob access required."},
+      {"role": "assistant", "content": "Great news - our fitness center is open 24/7 for residents! You just need your key fob to access it. We have treadmills, ellipticals, free weights, and weight machines available."},
+      {"role": "user", "content": "Perfect, that's exactly what I needed to know. Thanks!"},
+      {"role": "assistant", "content": "Happy to help! Enjoy your workout."}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "My friend lives there and I'm asking for them - what are the quiet hours?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "quiet hours noise policy", "category": "policies"}}}]},
+      {"role": "tool", "content": "Quiet Hours: 10 PM to 8 AM Sunday-Thursday, 11 PM to 9 AM Friday-Saturday. Excessive noise at any time may result in lease violations."},
+      {"role": "assistant", "content": "I'd be happy to help! Quiet hours are from 10 PM to 8 AM on Sunday through Thursday, and 11 PM to 9 AM on Friday and Saturday. It's worth noting that excessive noise at any time can result in lease violations."},
+      {"role": "user", "content": "Got it, I'll let them know. Thanks!"},
+      {"role": "assistant", "content": "You're welcome! Feel free to reach out if your friend has any other questions."}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Just doing some research - is parking included or extra?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "parking included cost fee", "category": "amenities"}}}]},
+      {"role": "tool", "content": "Parking: One covered parking spot included with rent. Additional spots available for $75/month. Guest parking available in designated areas."},
+      {"role": "assistant", "content": "Good question! One covered parking spot is included with your rent at no extra charge. If you need additional parking, extra spots are available for $75 per month. There's also guest parking in designated areas."},
+      {"role": "user", "content": "That's helpful info. Thanks for your time."},
+      {"role": "assistant", "content": "Of course! Best of luck with your research."}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I'm currently a tenant - are cats allowed if I want to get one?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "cats allowed pet policy", "category": "policies"}}}]},
+      {"role": "tool", "content": "Pet Policy: Dogs and cats are welcome. $300 pet deposit plus $35/month pet rent per pet. Maximum 2 pets per unit. No breed restrictions for cats."},
+      {"role": "assistant", "content": "Yes, cats are definitely allowed! As a current tenant, you'd need to pay a $300 pet deposit and $35 per month in pet rent. There are no breed restrictions for cats. You can have up to 2 pets total per unit."},
+      {"role": "user", "content": "Awesome, thanks for the info!"},
+      {"role": "assistant", "content": "You're welcome! Good luck with your new furry friend. Just remember to update the office when you do get a cat."}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "What utilities are included in the rent?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "utilities included rent", "category": "utilities"}}}]},
+      {"role": "tool", "content": "Utilities: Water, sewer, and trash are included in rent. Residents are responsible for electricity, gas (if applicable), and internet/cable."},
+      {"role": "assistant", "content": "Water, sewer, and trash are all included in your rent. You would be responsible for setting up and paying for electricity, gas if your unit uses it, and any internet or cable services."},
+      {"role": "user", "content": "Good to know. Appreciate it."},
+      {"role": "assistant", "content": "Anytime! Let me know if you have other questions."}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I'm considering apartments in the area - do you have a pool?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "swimming pool", "category": "amenities"}}}]},
+      {"role": "tool", "content": "Pool: Resort-style heated pool and spa. Open daily from 8 AM to 10 PM. Pool towels not provided. No glass containers in pool area."},
+      {"role": "assistant", "content": "Yes, we have a resort-style heated pool and spa! It's open daily from 8 AM to 10 PM. Just a heads up that you'll need to bring your own towels and glass containers aren't allowed in the pool area."},
+      {"role": "user", "content": "Nice! Thanks for the info."},
+      {"role": "assistant", "content": "You're welcome! Let me know if you'd like to learn more about the property."}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Current resident here - what are the guest parking rules?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "guest parking visitor rules", "category": "policies"}}}]},
+      {"role": "tool", "content": "Guest Parking: Visitors may park in designated guest spots for up to 48 hours. Guest passes available at the leasing office for extended stays. Overnight guests limited to 14 consecutive days."},
+      {"role": "assistant", "content": "For guest parking, visitors can use the designated guest spots for up to 48 hours. If you have guests staying longer, you can get guest passes from the leasing office. Just keep in mind that overnight guests are limited to 14 consecutive days."},
+      {"role": "user", "content": "That's what I needed. Thanks!"},
+      {"role": "assistant", "content": "Happy to help! Enjoy time with your guests."}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Do you have any breed restrictions for dogs? I have a German Shepherd."},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "breed restrictions dogs", "category": "policies"}}}]},
+      {"role": "tool", "content": "Breed Restrictions: The following breeds are not permitted: Pit Bulls, Rottweilers, Dobermans, Chows, Wolf Hybrids, Akitas, and Staffordshire Terriers. Mixed breeds with these as primary breed are also restricted."},
+      {"role": "assistant", "content": "Good news - German Shepherds are allowed! The restricted breeds are Pit Bulls, Rottweilers, Dobermans, Chows, Wolf Hybrids, Akitas, and Staffordshire Terriers. Since German Shepherds aren't on that list, you should be fine."},
+      {"role": "user", "content": "That's a relief! Thanks for checking."},
+      {"role": "assistant", "content": "Of course! Feel free to reach out if you have any other questions about our pet policy."}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "What lease terms do you offer?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "lease terms length options", "category": "leasing"}}}]},
+      {"role": "tool", "content": "Lease Terms: 6-month, 9-month, and 12-month leases available. Month-to-month available after initial lease term at a premium. 12-month leases offer the best rate."},
+      {"role": "assistant", "content": "We offer 6-month, 9-month, and 12-month lease terms. The 12-month lease gives you the best rate. After your initial lease, you can go month-to-month, though that comes with a premium on the rent."},
+      {"role": "user", "content": "Thanks, that's what I was wondering."},
+      {"role": "assistant", "content": "You're welcome! Let me know if you need any other information."}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Is this a smoke-free property?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "smoking policy smoke-free", "category": "policies"}}}]},
+      {"role": "tool", "content": "Smoking Policy: This is a smoke-free community. Smoking including e-cigarettes and vaping is prohibited in all units, common areas, and within 25 feet of buildings. Designated smoking areas available in parking lot."},
+      {"role": "assistant", "content": "Yes, this is a smoke-free community. Smoking, including e-cigarettes and vaping, is not allowed in any units, common areas, or within 25 feet of the buildings. There are designated smoking areas in the parking lot if needed."},
+      {"role": "user", "content": "Good to know. I appreciate it."},
+      {"role": "assistant", "content": "Of course! Happy to provide that information."}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "How much is the security deposit?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "security deposit amount", "category": "leasing"}}}]},
+      {"role": "tool", "content": "Security Deposit: Standard deposit equals one month's rent. Reduced deposit of $500 available with approved credit. Additional deposit may be required for pets."},
+      {"role": "assistant", "content": "The standard security deposit equals one month's rent. If you have approved credit, you may qualify for a reduced deposit of $500. Keep in mind that if you have pets, there's an additional pet deposit required on top of the security deposit."},
+      {"role": "user", "content": "Okay, that helps. Thanks!"},
+      {"role": "assistant", "content": "You're welcome! Feel free to ask if you have more questions."}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I live in building C - do we have in-unit laundry or is there a laundry room?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "laundry in-unit washer dryer", "category": "amenities"}}}]},
+      {"role": "tool", "content": "Laundry: Select units have full-size washer/dryer included. Other units have washer/dryer hookups. On-site laundry facilities available 24/7 in each building for units without hookups."},
+      {"role": "assistant", "content": "It depends on your specific unit! Some units have full-size washer/dryers included, while others have hookups where you can install your own. Either way, there are also on-site laundry facilities in each building that are open 24/7 if you need them."},
+      {"role": "user", "content": "I have hookups but haven't set anything up yet. Good to know about the laundry room!"},
+      {"role": "assistant", "content": "Absolutely! The laundry room is a great option while you figure out your in-unit setup. Let me know if you need anything else."}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Quick question about your pet policy - is there a weight limit?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "pet weight limit", "category": "policies"}}}]},
+      {"role": "tool", "content": "Pet Weight Limit: Dogs must be 75 lbs or under. No weight limit for cats. Combined weight of all pets should not exceed 150 lbs."},
+      {"role": "assistant", "content": "Yes, there is a weight limit for dogs - they need to be 75 lbs or under. Cats don't have a weight limit. Also, the combined weight of all your pets shouldn't exceed 150 lbs."},
+      {"role": "user", "content": "My dog is about 60 lbs so should be fine. Thanks!"},
+      {"role": "assistant", "content": "Perfect, your dog would be well within the limit! Let me know if you have other questions."}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "What are the move-in costs I should expect?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "move-in costs fees", "category": "leasing"}}}]},
+      {"role": "tool", "content": "Move-in Costs: First month's rent, security deposit (one month's rent or $500 with approved credit), $200 administrative fee, and pet deposit ($300) if applicable. Prorated rent if moving in mid-month."},
+      {"role": "assistant", "content": "For move-in costs, you'll need first month's rent, the security deposit (either one month's rent or $500 with approved credit), and a $200 administrative fee. If you have pets, add a $300 pet deposit. If you move in mid-month, your first month would be prorated."},
+      {"role": "user", "content": "That's helpful to plan for. Thanks for the breakdown."},
+      {"role": "assistant", "content": "Happy to help! Budgeting ahead makes the move much smoother."}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Do you have EV charging stations?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "EV charging electric vehicle stations", "category": "amenities"}}}]},
+      {"role": "tool", "content": "EV Charging: 8 Level 2 EV charging stations available in the parking garage. First-come, first-served basis. $0.15 per kWh billed to resident account."},
+      {"role": "assistant", "content": "Yes! We have 8 Level 2 EV charging stations in the parking garage. They're available on a first-come, first-served basis, and usage is billed to your resident account at $0.15 per kWh."},
+      {"role": "user", "content": "Great to know! That's an important feature for me."},
+      {"role": "assistant", "content": "Definitely a popular amenity these days! Let me know if you need any other information."}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "What's your policy on overnight guests?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "overnight guests policy visitor", "category": "policies"}}}]},
+      {"role": "tool", "content": "Guest Policy: Overnight guests permitted for up to 14 consecutive days or 30 days total in a 12-month period. Guests staying longer must be added to the lease. Guest registration not required for stays under 7 days."},
+      {"role": "assistant", "content": "Overnight guests are welcome! They can stay up to 14 consecutive days, or 30 days total within a 12-month period. If someone's staying longer than that, they'd need to be added to your lease. For visits under 7 days, you don't even need to register them."},
+      {"role": "user", "content": "Perfect, my parents are visiting for a week so no issues there."},
+      {"role": "assistant", "content": "Sounds great! Enjoy your visit with your parents."}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Thinking about relocating - is water included in rent there?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "water included rent utilities", "category": "utilities"}}}]},
+      {"role": "tool", "content": "Water: Water and sewer are included in monthly rent. Hot water is provided by individual water heaters in each unit."},
+      {"role": "assistant", "content": "Yes, water and sewer are both included in your monthly rent! Each unit has its own water heater for hot water."},
+      {"role": "user", "content": "That's nice. Thanks for the info!"},
+      {"role": "assistant", "content": "You're welcome! Good luck with your relocation planning."}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Can I have a fish tank in my apartment?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "fish tank aquarium pet policy", "category": "policies"}}}]},
+      {"role": "tool", "content": "Fish/Aquariums: Fish tanks up to 20 gallons are permitted without additional deposit. Larger tanks require management approval and may require renter's insurance verification."},
+      {"role": "assistant", "content": "Yes, fish tanks up to 20 gallons are allowed without any additional deposit. If you want a larger tank, you'd need to get management approval and possibly verify your renter's insurance coverage."},
+      {"role": "user", "content": "Mine is just 10 gallons so perfect. Thanks!"},
+      {"role": "assistant", "content": "Great, you're all set then! Enjoy your fish."}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Is there a penalty for breaking the lease early?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "lease break early termination penalty", "category": "leasing"}}}]},
+      {"role": "tool", "content": "Early Termination: 60 days written notice required. Early termination fee equals 2 months rent. Security deposit forfeiture may apply. Military clause available with PCS orders."},
+      {"role": "assistant", "content": "If you need to break your lease early, you'd need to give 60 days written notice and pay an early termination fee equal to 2 months rent. Your security deposit may also be forfeited depending on circumstances. If you're military, there's a military clause if you have PCS orders."},
+      {"role": "user", "content": "Okay, good to know in case plans change. Thanks."},
+      {"role": "assistant", "content": "Absolutely, always good to understand your options. Let me know if you have other questions."}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I'm curious - do you have a dog park on the property?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "dog park pet area", "category": "amenities"}}}]},
+      {"role": "tool", "content": "Dog Park: Private off-leash dog park available for residents. Open dawn to dusk. Waste stations provided. Aggressive dogs not permitted."},
+      {"role": "assistant", "content": "Yes, we have a private off-leash dog park for residents! It's open from dawn to dusk, and there are waste stations provided. Just note that aggressive dogs aren't permitted in the dog park."},
+      {"role": "user", "content": "That's awesome. My pup would love that."},
+      {"role": "assistant", "content": "It's definitely a favorite amenity for our dog owners! Feel free to reach out if you want to know more about the property."}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "What internet providers are available at the building?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "internet providers available", "category": "utilities"}}}]},
+      {"role": "tool", "content": "Internet: Building is wired for Xfinity/Comcast and AT&T Fiber. Google Fiber available in some buildings. Average speeds up to 1 Gbps with fiber options."},
+      {"role": "assistant", "content": "The building is wired for Xfinity/Comcast and AT&T Fiber. Some buildings also have Google Fiber available. With the fiber options, you can get speeds up to 1 Gbps."},
+      {"role": "user", "content": "Good to know there are options. Thanks!"},
+      {"role": "assistant", "content": "You're welcome! It's always nice to have choices for internet service."}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "My sister asked me to check - can you sublease an apartment there?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "sublease sublet policy", "category": "policies"}}}]},
+      {"role": "tool", "content": "Subletting: Subletting is not permitted without prior written approval from management. Short-term rentals (Airbnb, VRBO, etc.) are strictly prohibited. Lease transfer may be possible with management approval and $250 transfer fee."},
+      {"role": "assistant", "content": "Subletting requires prior written approval from management - it's not automatically allowed. Short-term rentals like Airbnb or VRBO are strictly prohibited. If your sister needs to move, a lease transfer might be possible with management approval and a $250 transfer fee."},
+      {"role": "user", "content": "I'll pass that along to her. Thanks!"},
+      {"role": "assistant", "content": "Sounds good! Feel free to have her reach out directly if she has more questions."}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Is there package delivery/receiving available?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "package delivery receiving lockers", "category": "amenities"}}}]},
+      {"role": "tool", "content": "Package Service: 24-hour package lockers in lobby. Oversized packages held at leasing office during business hours. Amazon Hub Locker available. Refrigerated locker for perishable deliveries."},
+      {"role": "assistant", "content": "Yes! We have 24-hour package lockers in the lobby. For oversized packages, they're held at the leasing office during business hours. There's also an Amazon Hub Locker and even a refrigerated locker for perishable deliveries."},
+      {"role": "user", "content": "Nice, that's really convenient. Thanks for the info."},
+      {"role": "assistant", "content": "Absolutely! Package management is definitely a popular amenity these days."}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "When is rent due each month?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "rent due date payment", "category": "leasing"}}}]},
+      {"role": "tool", "content": "Rent Due Date: Rent is due on the 1st of each month. Grace period until the 5th - no late fee if paid by 11:59 PM on the 5th. After the 5th, a late fee of $75 applies plus $10 per day."},
+      {"role": "assistant", "content": "Rent is due on the 1st of each month. There's a grace period until the 5th though, so you won't get a late fee as long as you pay by 11:59 PM on the 5th. After that, there's a $75 late fee plus $10 per additional day."},
+      {"role": "user", "content": "Good to know about the grace period. Thanks!"},
+      {"role": "assistant", "content": "You're welcome! Always good to know the details."}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Do units have balconies?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "balcony patio outdoor space", "category": "amenities"}}}]},
+      {"role": "tool", "content": "Balconies/Patios: Most units include private balcony or patio. Ground floor units have patios, upper floors have balconies. Select penthouse units have rooftop terraces. No grills permitted on balconies."},
+      {"role": "assistant", "content": "Most units do include either a private balcony or patio! Ground floor units get patios while upper floors have balconies. Some penthouse units even have rooftop terraces. Just note that grills aren't permitted on the balconies."},
+      {"role": "user", "content": "That's good to know. Appreciate it."},
+      {"role": "assistant", "content": "Of course! Let me know if there's anything else you'd like to know."}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "What's the application fee?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "application fee cost", "category": "leasing"}}}]},
+      {"role": "tool", "content": "Application Fee: $50 non-refundable application fee per adult applicant. Fee covers credit check, background check, and rental history verification."},
+      {"role": "assistant", "content": "The application fee is $50 per adult applicant and it's non-refundable. That fee covers the credit check, background check, and rental history verification."},
+      {"role": "user", "content": "Okay, thanks for letting me know."},
+      {"role": "assistant", "content": "Happy to help! Reach out if you have more questions."}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I'm a resident - how do I submit a maintenance request?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "submit maintenance request how", "category": "utilities"}}}]},
+      {"role": "tool", "content": "Maintenance Requests: Submit through resident portal online 24/7, call the office during business hours (9 AM - 6 PM), or use the community app. Emergency maintenance available 24/7 at the emergency line."},
+      {"role": "assistant", "content": "You have several options! You can submit requests through the resident portal online anytime, call the office during business hours (9 AM - 6 PM), or use the community app. For emergencies, there's a 24/7 emergency maintenance line available."},
+      {"role": "user", "content": "I'll try the portal. Thanks!"},
+      {"role": "assistant", "content": "Great choice - it's quick and you can track your request status there too!"}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Can I paint the walls in my apartment?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "paint walls modifications", "category": "policies"}}}]},
+      {"role": "tool", "content": "Painting: Painting walls is not permitted without written approval. If approved, walls must be returned to original color at move-out at resident's expense. Accent walls may be considered on case-by-case basis."},
+      {"role": "assistant", "content": "Painting isn't permitted without written approval from management. If you do get approval, you'd be responsible for returning the walls to the original color when you move out. They might consider accent walls on a case-by-case basis if you want to ask."},
+      {"role": "user", "content": "Got it, probably not worth the hassle then."},
+      {"role": "assistant", "content": "That's understandable! Removable wall decals or art can be a good alternative."}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "How many pets can I have?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "number pets limit maximum", "category": "policies"}}}]},
+      {"role": "tool", "content": "Pet Limit: Maximum of 2 pets per apartment. Combined weight not to exceed 150 lbs. Each pet requires separate deposit and pet rent."},
+      {"role": "assistant", "content": "You can have a maximum of 2 pets per apartment. The combined weight of all pets can't exceed 150 lbs. Each pet requires its own deposit and monthly pet rent."},
+      {"role": "user", "content": "Perfect, I have one dog and one cat so I'm good."},
+      {"role": "assistant", "content": "Sounds like a great combination! You'll be all set within the pet policy."}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Just researching the area - is there storage available for residents?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "storage units available residents", "category": "amenities"}}}]},
+      {"role": "tool", "content": "Storage: Private storage units available for rent. Small (5x5): $50/month, Medium (5x10): $85/month, Large (10x10): $125/month. Climate-controlled. Limited availability."},
+      {"role": "assistant", "content": "Yes, there are private storage units available for rent! They offer small (5x5) for $50/month, medium (5x10) for $85/month, and large (10x10) for $125/month. They're climate-controlled, but availability is limited."},
+      {"role": "user", "content": "Good to know that's an option. Thanks!"},
+      {"role": "assistant", "content": "Absolutely! Storage can be really helpful. Let me know if you need any other information."}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Do you require renter's insurance?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "renter's insurance required", "category": "leasing"}}}]},
+      {"role": "tool", "content": "Renter's Insurance: Required for all residents. Minimum $100,000 liability coverage. Proof must be provided at move-in and maintained throughout lease. Property must be listed as interested party."},
+      {"role": "assistant", "content": "Yes, renter's insurance is required for all residents. You'll need minimum $100,000 liability coverage. Proof needs to be provided at move-in and maintained throughout your lease, and the property must be listed as an interested party on your policy."},
+      {"role": "user", "content": "Makes sense. Thanks for the details."},
+      {"role": "assistant", "content": "You're welcome! It's a pretty standard requirement these days."}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Is there a business center or coworking space?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "business center coworking workspace", "category": "amenities"}}}]},
+      {"role": "tool", "content": "Business Center: 24-hour business center with computers, printer, and scanner. Conference room available for reservation. High-speed WiFi included. Coworking lounge with private phone booths."},
+      {"role": "assistant", "content": "Yes! There's a 24-hour business center with computers, printer, and scanner. You can also reserve the conference room when needed. High-speed WiFi is included, and there's a coworking lounge with private phone booths."},
+      {"role": "user", "content": "That's great for working from home days. Thanks!"},
+      {"role": "assistant", "content": "Definitely! It's become a really popular amenity. Let me know if you have other questions."}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Can I have a grill on my balcony?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "grill balcony BBQ policy", "category": "policies"}}}]},
+      {"role": "tool", "content": "Grilling Policy: Charcoal and propane grills are not permitted on balconies or patios due to fire codes. Small electric grills under 200 sq inches may be allowed. Community grilling stations available poolside."},
+      {"role": "assistant", "content": "Unfortunately, charcoal and propane grills aren't allowed on balconies or patios due to fire codes. Small electric grills under 200 square inches may be permitted though. There are also community grilling stations by the pool you can use."},
+      {"role": "user", "content": "That's disappointing but I understand. Thanks for checking."},
+      {"role": "assistant", "content": "I know it's not ideal, but the community grills are a nice alternative! Happy to help."}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "What credit score is needed to qualify?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "credit score requirements qualify", "category": "leasing"}}}]},
+      {"role": "tool", "content": "Credit Requirements: Minimum credit score of 620 preferred. Applicants below 620 may qualify with additional deposit or co-signer. No minimum score with 12 months of verifiable rent payment history."},
+      {"role": "assistant", "content": "A minimum credit score of 620 is preferred. If you're below that, you might still qualify with an additional deposit or by having a co-signer. Also, if you have 12 months of verifiable rent payment history, there's no minimum score requirement."},
+      {"role": "user", "content": "Good to know there are options. Thanks!"},
+      {"role": "assistant", "content": "Absolutely! They try to work with different situations. Let me know if you need more info."}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Resident here - when do quiet hours end in the morning?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "quiet hours end morning time", "category": "policies"}}}]},
+      {"role": "tool", "content": "Quiet Hours: 10 PM to 8 AM Sunday-Thursday, 11 PM to 9 AM Friday-Saturday. Excessive noise at any time may result in lease violations."},
+      {"role": "assistant", "content": "Quiet hours end at 8 AM on Sunday through Thursday, and at 9 AM on Friday and Saturday mornings."},
+      {"role": "user", "content": "Perfect, thanks!"},
+      {"role": "assistant", "content": "You're welcome!"}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Is there a pool or hot tub?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "pool hot tub spa", "category": "amenities"}}}]},
+      {"role": "tool", "content": "Pool: Resort-style heated pool and spa. Open daily from 8 AM to 10 PM. Pool towels not provided. No glass containers in pool area. Hot tub/spa closes at 9 PM."},
+      {"role": "assistant", "content": "Yes, we have both! There's a resort-style heated pool and a hot tub/spa. The pool is open from 8 AM to 10 PM daily, while the hot tub closes at 9 PM. Just remember to bring your own towels and no glass in the pool area."},
+      {"role": "user", "content": "Sounds relaxing. Thanks for the info!"},
+      {"role": "assistant", "content": "It really is! Enjoy."}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "How much notice do I need to give before moving out?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "notice moving out required", "category": "leasing"}}}]},
+      {"role": "tool", "content": "Move-Out Notice: 60 days written notice required before lease end or going month-to-month. Notice given mid-month counts from the 1st of following month. Written notice must be submitted to leasing office."},
+      {"role": "assistant", "content": "You need to give 60 days written notice before your lease ends or if you're month-to-month. If you give notice mid-month, it counts from the 1st of the following month. The written notice needs to be submitted to the leasing office."},
+      {"role": "user", "content": "Got it. Thanks for clarifying."},
+      {"role": "assistant", "content": "Of course! Happy to help."}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Is gas or electric for cooking?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "gas electric cooking stove", "category": "utilities"}}}]},
+      {"role": "tool", "content": "Cooking: All units feature electric ranges and ovens. No gas cooking available. Microwave included in all units."},
+      {"role": "assistant", "content": "All units have electric ranges and ovens - there's no gas cooking available. A microwave is also included in every unit."},
+      {"role": "user", "content": "I prefer electric anyway. Thanks!"},
+      {"role": "assistant", "content": "Perfect, sounds like a good fit then!"}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Can I mount my TV on the wall?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "mount TV wall holes modifications", "category": "policies"}}}]},
+      {"role": "tool", "content": "Wall Mounting: TV mounting is permitted but residents are responsible for patching and repairing any holes at move-out. Professional installation recommended. Large mounts may require approval."},
+      {"role": "assistant", "content": "Yes, you can mount your TV! Just know that you'll be responsible for patching and repairing any holes when you move out. They recommend professional installation, and if you're using a really large mount, you might need approval first."},
+      {"role": "user", "content": "Okay, I'll make sure to patch it up when I leave."},
+      {"role": "assistant", "content": "Sounds like a plan! Enjoy your setup."}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Do you accept co-signers?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "co-signer guarantor accepted", "category": "leasing"}}}]},
+      {"role": "tool", "content": "Co-signers: Co-signers/guarantors accepted. Co-signer must have credit score of 700+ and income 5x monthly rent. Co-signer application and fee required. Co-signer must be US resident."},
+      {"role": "assistant", "content": "Yes, co-signers are accepted! The co-signer needs a credit score of 700 or higher and income of at least 5 times the monthly rent. They'll need to fill out a separate application with their own fee, and they must be a US resident."},
+      {"role": "user", "content": "Good to know, I might need one. Thanks!"},
+      {"role": "assistant", "content": "No problem! It's a helpful option to have."}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Is there bike storage on the property?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "bike storage bicycle", "category": "amenities"}}}]},
+      {"role": "tool", "content": "Bike Storage: Secure bike storage room in parking garage. Free for residents with registration. Outdoor bike racks also available near building entrances. Bike repair station available."},
+      {"role": "assistant", "content": "Yes! There's a secure bike storage room in the parking garage that's free for residents - you just need to register. There are also outdoor bike racks near the building entrances and even a bike repair station."},
+      {"role": "user", "content": "Awesome, I bike to work so that's helpful."},
+      {"role": "assistant", "content": "That's great! Sounds like it'll be perfect for your commute."}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Can I pay rent with a credit card?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "credit card rent payment", "category": "leasing"}}}]},
+      {"role": "tool", "content": "Rent Payment Methods: Online portal accepts credit/debit cards, ACH bank transfer, or e-check. Credit card payments subject to 2.75% processing fee. Checks accepted at leasing office."},
+      {"role": "assistant", "content": "Yes, you can pay rent with a credit card through the online portal. Just keep in mind there's a 2.75% processing fee for credit card payments. ACH bank transfers and e-checks don't have that fee. You can also drop off checks at the leasing office."},
+      {"role": "user", "content": "I'll probably do ACH then to avoid the fee. Thanks!"},
+      {"role": "assistant", "content": "Smart choice! ACH is quick and free."}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Asking for a friend - is there a playground for kids?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "playground kids children", "category": "amenities"}}}]},
+      {"role": "tool", "content": "Playground: Gated playground area with modern equipment for ages 2-12. Soft ground surface. Open dawn to dusk. Adult supervision required for children under 10."},
+      {"role": "assistant", "content": "Yes! There's a gated playground with modern equipment designed for kids ages 2-12. It has a soft ground surface for safety and is open from dawn to dusk. Kids under 10 need adult supervision."},
+      {"role": "user", "content": "She'll be happy to hear that. Thanks!"},
+      {"role": "assistant", "content": "Happy to help! Feel free to pass along any other questions she has."}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "What's the income requirement to rent?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "income requirement qualify", "category": "leasing"}}}]},
+      {"role": "tool", "content": "Income Requirements: Combined gross income must be 3x monthly rent. Verification required via pay stubs, tax returns, or employment letter. Self-employed applicants need 2 years tax returns."},
+      {"role": "assistant", "content": "The combined gross income needs to be at least 3 times the monthly rent. You'll need to verify income with pay stubs, tax returns, or an employment letter. If you're self-employed, they require 2 years of tax returns."},
+      {"role": "user", "content": "Okay, that's pretty standard. Thanks!"},
+      {"role": "assistant", "content": "It is! Let me know if you have other questions."}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Is there a concierge or front desk?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "concierge front desk service", "category": "amenities"}}}]},
+      {"role": "tool", "content": "Front Desk: Leasing office open Mon-Fri 9 AM-6 PM, Sat 10 AM-5 PM, Sun 12 PM-5 PM. No 24-hour concierge. After-hours emergencies handled via maintenance hotline."},
+      {"role": "assistant", "content": "The leasing office is staffed Monday through Friday 9 AM to 6 PM, Saturday 10 AM to 5 PM, and Sunday 12 PM to 5 PM. There isn't a 24-hour concierge, but after-hours emergencies are handled through the maintenance hotline."},
+      {"role": "user", "content": "Got it, thanks for the info."},
+      {"role": "assistant", "content": "Anytime! Let me know if you need anything else."}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Can my emotional support animal live with me?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "emotional support animal ESA", "category": "policies"}}}]},
+      {"role": "tool", "content": "Assistance Animals: Emotional support animals and service animals are permitted with proper documentation. No pet deposit or pet rent for verified assistance animals. Documentation must be from licensed healthcare provider."},
+      {"role": "assistant", "content": "Yes, emotional support animals are permitted with proper documentation from a licensed healthcare provider. Unlike regular pets, verified assistance animals don't require a pet deposit or monthly pet rent."},
+      {"role": "user", "content": "That's great to know. Thanks!"},
+      {"role": "assistant", "content": "You're welcome! Just make sure to have your documentation ready when you apply."}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Is vaping allowed inside the apartment?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "vaping allowed smoking policy", "category": "policies"}}}]},
+      {"role": "tool", "content": "Smoking Policy: This is a smoke-free community. Smoking including e-cigarettes and vaping is prohibited in all units, common areas, and within 25 feet of buildings. Designated smoking areas available in parking lot."},
+      {"role": "assistant", "content": "No, vaping is not allowed inside the apartments. This is a smoke-free community, which includes e-cigarettes and vaping. That policy applies to all units and common areas. There are designated smoking areas in the parking lot if needed."},
+      {"role": "user", "content": "Okay, makes sense. Thanks for letting me know."},
+      {"role": "assistant", "content": "Of course! Happy to clarify."}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "What's the average electric bill like?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "average electric bill cost", "category": "utilities"}}}]},
+      {"role": "tool", "content": "Electric Costs: Average electric bill ranges $80-150/month depending on unit size and usage. Summer months typically higher due to AC. All-electric units may be higher. Energy-efficient appliances in all units."},
+      {"role": "assistant", "content": "Average electric bills range from $80 to $150 per month, depending on your unit size and personal usage. Summer months are typically higher because of air conditioning. All units have energy-efficient appliances to help keep costs down."},
+      {"role": "user", "content": "That's helpful for budgeting. Thanks!"},
+      {"role": "assistant", "content": "Glad I could help! Good luck with your planning."}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Hey, does the property have a community room I can reserve for events?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "community room reserve events party", "category": "amenities"}}}]},
+      {"role": "tool", "content": "Community Room: Clubhouse available for resident events. Reservations required through leasing office. $50 refundable deposit. Maximum capacity 40 people. Must be reserved 48 hours in advance."},
+      {"role": "assistant", "content": "Yes, we have a clubhouse that residents can reserve for events! You'll need to book through the leasing office at least 48 hours in advance. There's a $50 refundable deposit required, and the room can hold up to 40 people."},
+      {"role": "user", "content": "Perfect, I'm thinking about hosting a small birthday party. Thanks for the info!"},
+      {"role": "assistant", "content": "Sounds like fun! Just swing by the leasing office when you're ready to reserve. Have a great party!"}
+    ]
+  }
+]

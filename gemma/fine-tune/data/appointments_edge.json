@@ -1,0 +1,345 @@
+[
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Book an appointment for 2:30 PM on February 15th, 2025 for Mary Jones, email mary@company.co, phone 555-111-2222"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_appointment", "arguments": {"appointment_date": "2025-02-15", "appointment_start_time": "14:30", "first_name": "Mary", "email": "mary@company.co", "phone": "555-111-2222", "last_name": "Jones"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Schedule something at noon tomorrow for Patrick O'Brien. His email is pobrien@gmail.com and number is (555) 123-4567"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_appointment", "arguments": {"appointment_date": "2025-02-16", "appointment_start_time": "12:00", "first_name": "Patrick", "email": "pobrien@gmail.com", "phone": "(555) 123-4567", "last_name": "O'Brien"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I need an appointment for 9:00 am on March 3rd for Sarah-Jane Williams-Parker, email sjwp@startup.io, phone 5551234567"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_appointment", "arguments": {"appointment_date": "2025-03-03", "appointment_start_time": "09:00", "first_name": "Sarah-Jane", "email": "sjwp@startup.io", "phone": "5551234567", "last_name": "Williams-Parker"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Book for McDonald at 3:45 PM April 10, first name Ronald, ronald.mcdonald@fastfood.org, 555.123.4567"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_appointment", "arguments": {"appointment_date": "2025-04-10", "appointment_start_time": "15:45", "first_name": "Ronald", "email": "ronald.mcdonald@fastfood.org", "phone": "555.123.4567", "last_name": "McDonald"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Set up a meeting at midnight on New Year's Eve for Chen, email chen@tech.co, phone 555 999 8888"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_appointment", "arguments": {"appointment_date": "2025-12-31", "appointment_start_time": "00:00", "first_name": "Chen", "email": "chen@tech.co", "phone": "555 999 8888"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Appointment for María García-López on 2025-05-20 at 11:30am, maria.garcia@empresa.com, +1-555-222-3333"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_appointment", "arguments": {"appointment_date": "2025-05-20", "appointment_start_time": "11:30", "first_name": "María", "email": "maria.garcia@empresa.com", "phone": "+1-555-222-3333", "last_name": "García-López"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "hi can u book me in for quarter past 2 on the 5th of june? im jean-pierre dubois, jp@fashion.fr, 5554443322"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_appointment", "arguments": {"appointment_date": "2025-06-05", "appointment_start_time": "14:15", "first_name": "Jean-Pierre", "email": "jp@fashion.fr", "phone": "5554443322", "last_name": "Dubois"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Need to schedule for half past 8 in the morning, July 22nd. Name: D'Angelo, first name Marcus. marcus.dangelo@music.net (555)777-6666"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_appointment", "arguments": {"appointment_date": "2025-07-22", "appointment_start_time": "08:30", "first_name": "Marcus", "email": "marcus.dangelo@music.net", "phone": "(555)777-6666", "last_name": "D'Angelo"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Book apt 4pm Aug 8 - Björk Guðmundsdóttir bjork@iceland.is 555-ICE-LAND"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_appointment", "arguments": {"appointment_date": "2025-08-08", "appointment_start_time": "16:00", "first_name": "Björk", "email": "bjork@iceland.is", "phone": "555-ICE-LAND", "last_name": "Guðmundsdóttir"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "hey schedule me for 7pm tonight, im just Sam, sam123@yahoo.com, call me at 555 1111"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_appointment", "arguments": {"appointment_date": "2025-02-15", "appointment_start_time": "19:00", "first_name": "Sam", "email": "sam123@yahoo.com", "phone": "555 1111"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I'd like to book an appointment for Mr. Fitzpatrick-O'Connor on September 15th at ten thirty AM. Email: fitz.oconnor@lawfirm.legal, Phone: 1-800-555-1234"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_appointment", "arguments": {"appointment_date": "2025-09-15", "appointment_start_time": "10:30", "first_name": "Mr.", "email": "fitz.oconnor@lawfirm.legal", "phone": "1-800-555-1234", "last_name": "Fitzpatrick-O'Connor"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Appointment at 5:00 P.M. on 10/31/2025 for Nguyen, Thi-Mai. Email: tmai@university.edu Phone: (555) 000 1111"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_appointment", "arguments": {"appointment_date": "2025-10-31", "appointment_start_time": "17:00", "first_name": "Thi-Mai", "email": "tmai@university.edu", "phone": "(555) 000 1111", "last_name": "Nguyen"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "make an appt for 12:01 AM Jan 1st 2026 - New Year celebration! Contact: Aarav Patel, aarav@startup.io, 555.NEW.YEAR"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_appointment", "arguments": {"appointment_date": "2026-01-01", "appointment_start_time": "00:01", "first_name": "Aarav", "email": "aarav@startup.io", "phone": "555.NEW.YEAR", "last_name": "Patel"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Schedule for 23:59 on December 24, name's Kris Kringle, north.pole@christmas.org, 1-800-SANTA"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_appointment", "arguments": {"appointment_date": "2025-12-24", "appointment_start_time": "23:59", "first_name": "Kris", "email": "north.pole@christmas.org", "phone": "1-800-SANTA", "last_name": "Kringle"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Book me for half 3 in the afternoon on 15/03/2025. I'm Anna-Liisa Mäkinen, anna-liisa.makinen@helsinki.fi, +358-555-123456"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_appointment", "arguments": {"appointment_date": "2025-03-15", "appointment_start_time": "15:30", "first_name": "Anna-Liisa", "email": "anna-liisa.makinen@helsinki.fi", "phone": "+358-555-123456", "last_name": "Mäkinen"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "appointment needed @ 6:45am 2025-11-11 for DeShawn Washington-Jr., dshawn.jr@sports.tv, cell: 555 123 4567 ext 890"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_appointment", "arguments": {"appointment_date": "2025-11-11", "appointment_start_time": "06:45", "first_name": "DeShawn", "email": "dshawn.jr@sports.tv", "phone": "555 123 4567 ext 890", "last_name": "Washington-Jr."}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Can you set up an appointment for quarter to 5 PM on February 28th? My name is Lê Văn Minh, email le.van.minh@vietnam.vn, phone 84-555-111-2222"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_appointment", "arguments": {"appointment_date": "2025-02-28", "appointment_start_time": "16:45", "first_name": "Lê Văn", "email": "le.van.minh@vietnam.vn", "phone": "84-555-111-2222", "last_name": "Minh"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Book for MacKenzie-Smith at twenty past nine AM, March 17. First: Fiona. fiona_mackenzie_smith@company-name.co.uk // 44-555-123-4567"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_appointment", "arguments": {"appointment_date": "2025-03-17", "appointment_start_time": "09:20", "first_name": "Fiona", "email": "fiona_mackenzie_smith@company-name.co.uk", "phone": "44-555-123-4567", "last_name": "MacKenzie-Smith"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "hi book apt for 1pm april first - José Ramírez-de la Cruz, jose.ramirez@mexico.mx, (52) 555 1234567"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_appointment", "arguments": {"appointment_date": "2025-04-01", "appointment_start_time": "13:00", "first_name": "José", "email": "jose.ramirez@mexico.mx", "phone": "(52) 555 1234567", "last_name": "Ramírez-de la Cruz"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I need an appt at 11:11 AM on 11/11/2025 for my friend whose name is just Prince. No last name. prince@symbol.music phone 555-DOVE-CRY"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_appointment", "arguments": {"appointment_date": "2025-11-11", "appointment_start_time": "11:11", "first_name": "Prince", "email": "prince@symbol.music", "phone": "555-DOVE-CRY"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Schedule apt for O'Malley-Fitzgibbons, Kevin at 8 o'clock evening May 5th. kevin.omf@irish-pub.ie, ring me at 353.555.123.456"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_appointment", "arguments": {"appointment_date": "2025-05-05", "appointment_start_time": "20:00", "first_name": "Kevin", "email": "kevin.omf@irish-pub.ie", "phone": "353.555.123.456", "last_name": "O'Malley-Fitzgibbons"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "plz book me in for five to midnight on friday june 13th, im Xiao-Ming Zhang, zm@alibaba.cn, +86 555 9999 8888"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_appointment", "arguments": {"appointment_date": "2025-06-13", "appointment_start_time": "23:55", "first_name": "Xiao-Ming", "email": "zm@alibaba.cn", "phone": "+86 555 9999 8888", "last_name": "Zhang"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Make an appointment for 0700 hours on 2025-07-04 for Al-Hassan bin Mohammed, alhassan@saudi.gov.sa, tel: 966-555-1234567"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_appointment", "arguments": {"appointment_date": "2025-07-04", "appointment_start_time": "07:00", "first_name": "Al-Hassan", "email": "alhassan@saudi.gov.sa", "phone": "966-555-1234567", "last_name": "bin Mohammed"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "apt needed for 10 past 10 in the morn, August 20. St. Claire, Marie-Antoinette. marie.st.claire@france.fr / 33-555-123-456"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_appointment", "arguments": {"appointment_date": "2025-08-20", "appointment_start_time": "10:10", "first_name": "Marie-Antoinette", "email": "marie.st.claire@france.fr", "phone": "33-555-123-456", "last_name": "St. Claire"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "hey i need an appointment at high noon on sept 1, name van der Berg, Willem, email willem.vanderberg@netherlands.nl phone 31 555 1234 567"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_appointment", "arguments": {"appointment_date": "2025-09-01", "appointment_start_time": "12:00", "first_name": "Willem", "email": "willem.vanderberg@netherlands.nl", "phone": "31 555 1234 567", "last_name": "van der Berg"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Book for twenty to four PM October 10 - da Silva, Ana-Beatriz. ana.dasilva@brazil.br (55) 555-1234-5678"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_appointment", "arguments": {"appointment_date": "2025-10-10", "appointment_start_time": "15:40", "first_name": "Ana-Beatriz", "email": "ana.dasilva@brazil.br", "phone": "(55) 555-1234-5678", "last_name": "da Silva"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "can u schedule for exactly 3:33 PM on 3/3/2025? my info: Nakamura-Tanaka Yuki, yuki.nt@tokyo.jp, 81-555-333-4444"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_appointment", "arguments": {"appointment_date": "2025-03-03", "appointment_start_time": "15:33", "first_name": "Yuki", "email": "yuki.nt@tokyo.jp", "phone": "81-555-333-4444", "last_name": "Nakamura-Tanaka"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Book appointment for Mc'Intyre, Seán-Patrick at a quarter after 1 PM on St Patrick's Day. sean.mcintyre@dublin.ie mobile: +353 (555) 123-4567"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_appointment", "arguments": {"appointment_date": "2025-03-17", "appointment_start_time": "13:15", "first_name": "Seán-Patrick", "email": "sean.mcintyre@dublin.ie", "phone": "+353 (555) 123-4567", "last_name": "Mc'Intyre"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I want to schedule at 1800 hrs on April 15 for tax deadline. Name: La'Toya Jackson-Williams, email: latoya.jw@irs.gov, ph# 202-555-1040"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_appointment", "arguments": {"appointment_date": "2025-04-15", "appointment_start_time": "18:00", "first_name": "La'Toya", "email": "latoya.jw@irs.gov", "phone": "202-555-1040", "last_name": "Jackson-Williams"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "hi set me up for 10 AM sharp on leap day 2024, im Olówookéré Adéọlá, email adeola@lagos.ng, whatsapp 234-555-1234567"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_appointment", "arguments": {"appointment_date": "2024-02-29", "appointment_start_time": "10:00", "first_name": "Adéọlá", "email": "adeola@lagos.ng", "phone": "234-555-1234567", "last_name": "Olówookéré"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "appointment for De La Hoya Jr., Oscar at five past five pm May 5. oscar.jr@boxing.sport Cell: 1(555)CHAMP-01"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_appointment", "arguments": {"appointment_date": "2025-05-05", "appointment_start_time": "17:05", "first_name": "Oscar", "email": "oscar.jr@boxing.sport", "phone": "1(555)CHAMP-01", "last_name": "De La Hoya Jr."}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Book me at 2 in the afternoon tmrw. Just call me X. x@twitter.com 555-X"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_appointment", "arguments": {"appointment_date": "2025-02-16", "appointment_start_time": "14:00", "first_name": "X", "email": "x@twitter.com", "phone": "555-X"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "plz schedule for 9:59pm june 30 - Søren Kierkegaard-Nielsen, soren.kn@philosophy.dk, +45.555.123.456"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_appointment", "arguments": {"appointment_date": "2025-06-30", "appointment_start_time": "21:59", "first_name": "Søren", "email": "soren.kn@philosophy.dk", "phone": "+45.555.123.456", "last_name": "Kierkegaard-Nielsen"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Can I get an appointment at 06:30 AM on July 4th? McPherson-O'Reilly, Erin. E: erin.mco@celtic.scot P: +44-555-BAGPIPE"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_appointment", "arguments": {"appointment_date": "2025-07-04", "appointment_start_time": "06:30", "first_name": "Erin", "email": "erin.mco@celtic.scot", "phone": "+44-555-BAGPIPE", "last_name": "McPherson-O'Reilly"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Set up appt for ten to two in afternoon Aug 15. Al-Rashid, Fatima-Zahra. fatima.alrashid@dubai.ae // +971-555-1234567"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_appointment", "arguments": {"appointment_date": "2025-08-15", "appointment_start_time": "13:50", "first_name": "Fatima-Zahra", "email": "fatima.alrashid@dubai.ae", "phone": "+971-555-1234567", "last_name": "Al-Rashid"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "booking for 12:30 PM sept 15 - name is just Cher no last name, cher@music.icon, 555-BEL1EVE"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_appointment", "arguments": {"appointment_date": "2025-09-15", "appointment_start_time": "12:30", "first_name": "Cher", "email": "cher@music.icon", "phone": "555-BEL1EVE"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "need apt twenty five past seven evening oct 31. von Trapp-Hohenberg, Maria-Augusta. maria.vth@austria.at tel 43 555 1234 567"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_appointment", "arguments": {"appointment_date": "2025-10-31", "appointment_start_time": "19:25", "first_name": "Maria-Augusta", "email": "maria.vth@austria.at", "phone": "43 555 1234 567", "last_name": "von Trapp-Hohenberg"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "hi plz book for 4:44 AM November 11 - Im Choi, Soon-Yi. Email: soonyi.choi@seoul.kr Phone: +82(555)4444-5555"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_appointment", "arguments": {"appointment_date": "2025-11-11", "appointment_start_time": "04:44", "first_name": "Soon-Yi", "email": "soonyi.choi@seoul.kr", "phone": "+82(555)4444-5555", "last_name": "Choi"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Make appt for 1:01 pm dec 12 for dos Santos, João-Pedro email jp.dossantos@portugal.pt fone +351-555-123-456"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_appointment", "arguments": {"appointment_date": "2025-12-12", "appointment_start_time": "13:01", "first_name": "João-Pedro", "email": "jp.dossantos@portugal.pt", "phone": "+351-555-123-456", "last_name": "dos Santos"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "schedule for exactly midday on the ides of march - Brutus McStabby, no really thats my name, brutus@senate.rome, call me at CDLV-DLXV-MCMXCIX"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_appointment", "arguments": {"appointment_date": "2025-03-15", "appointment_start_time": "12:00", "first_name": "Brutus", "email": "brutus@senate.rome", "phone": "CDLV-DLXV-MCMXCIX", "last_name": "McStabby"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I need an appointment at 3 o'clock sharp PM on 2025-04-20 for O'Brien-MacLeod, Siobhán-Mary. siobhan.obm@eire.ie / +353 555 420 1234"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_appointment", "arguments": {"appointment_date": "2025-04-20", "appointment_start_time": "15:00", "first_name": "Siobhán-Mary", "email": "siobhan.obm@eire.ie", "phone": "+353 555 420 1234", "last_name": "O'Brien-MacLeod"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "apt for twenty after 8 am may 25 - el-Masri, Ahmad-Mahmoud, ahmad.elmasri@cairo.eg, mobile 20-555-123-4567"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_appointment", "arguments": {"appointment_date": "2025-05-25", "appointment_start_time": "08:20", "first_name": "Ahmad-Mahmoud", "email": "ahmad.elmasri@cairo.eg", "phone": "20-555-123-4567", "last_name": "el-Masri"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Book for La'Quisha Devereux-Washington at quarter of 6 in evening June 15. laquisha.dw@hotmail.com, ring 555.DEV.WASH"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_appointment", "arguments": {"appointment_date": "2025-06-15", "appointment_start_time": "17:45", "first_name": "La'Quisha", "email": "laquisha.dw@hotmail.com", "phone": "555.DEV.WASH", "last_name": "Devereux-Washington"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "hi need appt at 11pm july 20 for me - im Þóra Björnsdóttir, thora.b@reykjavik.is, +354-555-1234"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_appointment", "arguments": {"appointment_date": "2025-07-20", "appointment_start_time": "23:00", "first_name": "Þóra", "email": "thora.b@reykjavik.is", "phone": "+354-555-1234", "last_name": "Björnsdóttir"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Set up appointment for 0001 hours Aug 1 - Captain Jean-Luc Picard, picard@enterprise.fed, comm badge 555-ENGAGE"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_appointment", "arguments": {"appointment_date": "2025-08-01", "appointment_start_time": "00:01", "first_name": "Jean-Luc", "email": "picard@enterprise.fed", "phone": "555-ENGAGE", "last_name": "Picard"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Can I book for five to 9 AM on September 5? Name: Okonkwo-Eze, Chukwuemeka-Nnamdi. chukwuemeka.oe@nigeria.ng tel: +234 555 LAGOS 01"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_appointment", "arguments": {"appointment_date": "2025-09-05", "appointment_start_time": "08:55", "first_name": "Chukwuemeka-Nnamdi", "email": "chukwuemeka.oe@nigeria.ng", "phone": "+234 555 LAGOS 01", "last_name": "Okonkwo-Eze"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "appointment at a quarter past midnight Oct 15 for Sánchez de la Vega, María-José. mjsv@spain.es, llamame 34-555-123-4567"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_appointment", "arguments": {"appointment_date": "2025-10-15", "appointment_start_time": "00:15", "first_name": "María-José", "email": "mjsv@spain.es", "phone": "34-555-123-4567", "last_name": "Sánchez de la Vega"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "plz book for 2:22 PM Nov 22 - im just called Madonna, no surname, madonna@pop.queen, 555-MATERIAL"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_appointment", "arguments": {"appointment_date": "2025-11-22", "appointment_start_time": "14:22", "first_name": "Madonna", "email": "madonna@pop.queen", "phone": "555-MATERIAL"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Schedule me for 10 til 5 in the evening December 25. O'Sullivan-McTavish, Liam-Patrick. liam.osmt@christmas.elf, 1-800-XMAS-ELF"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_appointment", "arguments": {"appointment_date": "2025-12-25", "appointment_start_time": "16:50", "first_name": "Liam-Patrick", "email": "liam.osmt@christmas.elf", "phone": "1-800-XMAS-ELF", "last_name": "O'Sullivan-McTavish"}}}]}
+    ]
+  }
+]

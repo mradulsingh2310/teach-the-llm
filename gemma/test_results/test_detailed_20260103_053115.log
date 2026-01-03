@@ -1,0 +1,81 @@
+[05:31:15] INFO: Test logging initialized for FunctionGemma 270M Instruct
+[05:31:15] INFO: Testing 6 tools
+[05:31:15] INFO: Verified tool: get_available_listings
+[05:31:15] INFO: Verified tool: get_availability
+[05:31:15] INFO: Verified tool: create_appointment
+[05:31:15] INFO: Verified tool: escalate_conversation
+[05:31:15] INFO: Verified tool: search_property_knowledge
+[05:31:15] INFO: Verified tool: create_lead
+[05:31:15] INFO: Validated schema for: get_available_listings
+  Properties: ['bedrooms', 'max_rent']
+[05:31:15] INFO: Validated schema for: get_availability
+  Properties: ['date_str']
+[05:31:15] INFO: Validated schema for: create_appointment
+  Properties: ['appointment_date', 'appointment_start_time', 'first_name', 'email', 'phone', 'last_name']
+[05:31:15] INFO: Validated schema for: escalate_conversation
+  Properties: ['reason_for_escalation']
+[05:31:15] INFO: Validated schema for: search_property_knowledge
+  Properties: ['search_text', 'category']
+[05:31:15] INFO: Validated schema for: create_lead
+  Properties: ['email', 'phone', 'first_name', 'last_name']
+[05:31:15] INFO: Initializing GemmaAgent with model: google/functiongemma-270m-it
+[05:31:21] INFO: GemmaAgent initialized successfully
+[05:31:21] INFO: ======================================================================
+[05:31:21] INFO: SCENARIO: [golden_path] GP001 - Formal Email Inquiry to Tour Booking
+[05:31:21] INFO: ======================================================================
+[05:31:21] INFO: Session started: ccbf104d-4618-45ed-a2e6-d844b708896d
+[05:31:21] INFO: Processing turn 1: Subject: Inquiry About Leasing Options
+
+Dear Leasing Agent,
+
+My name is Michelle...
+[05:31:30] INFO: Response (8752ms): Here are a few options for your inquiry:
+
+The apartment I found is for sale:
+*   **2-bedroom unit** ...
+[05:31:30] INFO: Processing turn 2: Hi,
+
+Thank you for the details on the available units. I would like to schedule ...
+[05:31:34] INFO: Response (4880ms): I apologize, but I was unable to retrieve the available listings for Unit 303.
+
+The following errors...
+[05:31:34] INFO: Processing turn 3: Hi,
+
+I would like to schedule the tour for **Unit 303** at **10:00 AM** on Febru...
+[05:31:39] INFO: Response (5111ms): I apologize, but I was unable to retrieve the available listings for Unit 303.
+
+The following errors...
+[05:31:40] INFO: Turn Metrics - tool_call: 33.3%, response: 33.3%, params: 100.0%, files: 100.0%
+[05:31:40] INFO: Result: PASSED
+[05:31:40] INFO: Duration: 18801ms
+[05:31:40] INFO: Tool calls made: 5
+[05:31:40] INFO:   - get_available_listings: {'bedrooms': [2], 'max_rent': 2500}
+[05:31:40] INFO:   - get_available_listings: {'bedrooms': [2], 'bathrooms': 2, 'max_rent': 2500}
+[05:31:40] INFO:   - get_available_listings: {'bedrooms': [2], 'bathrooms': 2, 'max_rent': 2500}
+[05:31:40] INFO:   - get_available_listings: {'bathrooms': 2, 'bedrooms': [2], 'max_rent': 2500}
+[05:31:40] INFO:   - get_available_listings: {'bathrooms': 2, 'bedrooms': [2], 'max_rent': 2500}
+[05:31:40] INFO: Final response: I apologize, but I was unable to retrieve the available listings for Unit 303.
+
+The following errors occurred:
+1.  **For Unit 303:** The request failed due to an unexpected keyword argument ('bathroom...
+[05:31:40] INFO: --------------------------------------------------
+[05:31:40] INFO: METRICS:
+[05:31:40] INFO:   Tool Calling Rate: 33.3%
+[05:31:40] INFO:   Correct Response Rate: 33.3%
+[05:31:40] INFO:   Correct Tool Call Rate: 100.0%
+[05:31:40] INFO:   File Verification Rate: 100.0%
+[05:31:40] DEBUG:   Turn 1: tools_ok=True, response_ok=True, params_ok=True, latency=8752ms
+[05:31:40] DEBUG:   Turn 2: tools_ok=False, response_ok=False, params_ok=False, latency=4880ms
+[05:31:40] DEBUG:     Missing keywords: ['time', 'slot']
+[05:31:40] DEBUG:   Turn 3: tools_ok=False, response_ok=False, params_ok=False, latency=5111ms
+[05:31:40] DEBUG:     Missing keywords: ['scheduled', 'confirmed', 'booked']
+[05:31:40] WARNING: Failures:
+[05:31:40] WARNING:   - Metrics threshold not met: tool_rate=0.33, response_rate=0.33, param_rate=1.00
+[05:31:40] INFO: --------------------------------------------------
+[05:31:40] INFO: ======================================================================
+[05:31:40] INFO: SCENARIO: [golden_path] GP002 - Pet Owner Studio Search
+[05:31:40] INFO: ======================================================================
+[05:31:40] INFO: Session started: 9419b6da-0b37-4be5-a17e-da2223b64669
+[05:31:40] INFO: Processing turn 1: Hello,
+
+I have a small dog (a 15-pound Beagle) and am interested in renting at y...

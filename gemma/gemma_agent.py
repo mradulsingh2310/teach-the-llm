@@ -14,11 +14,21 @@ import re
 import time
 import sys
 from pathlib import Path
-from typing import Any, Callable, Dict, List, Optional
+from typing import Annotated, Any, Callable, Dict, List, Optional
 import torch
 
 # Add parent directory for imports
 sys.path.insert(0, str(Path(__file__).parent.parent))
+
+# Check if fine-tuned model tools are available
+FINETUNED_TOOLS = None
+_finetuned_tools_path = Path(__file__).parent / "fine-tune" / "tools.py"
+if _finetuned_tools_path.exists():
+    import importlib.util
+    spec = importlib.util.spec_from_file_location("finetuned_tools", _finetuned_tools_path)
+    _tools_module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(_tools_module)
+    FINETUNED_TOOLS = _tools_module.TOOLS
 
 from agent.tools.lead_tools import clear_session_leads
 from agent.conversation_logger import ConversationLogger
@@ -42,7 +52,10 @@ from agent.tools.lead_tools import create_lead as _create_lead
 # 3. Call our actual LangChain tool implementations
 # =============================================================================
 
-def get_available_listings(bedrooms: list[int], max_rent: float = None) -> dict:
+def get_available_listings(
+    bedrooms: Annotated[List[int], "List of bedroom counts to search for. Use [0] for studios, [1] for 1BR, [2] for 2BR, etc."],
+    max_rent: Annotated[Optional[float], "Maximum monthly rent in dollars. Optional filter."] = None
+) -> Dict[str, Any]:
     """
     Search for available apartment listings.
 
@@ -51,6 +64,7 @@ def get_available_listings(bedrooms: list[int], max_rent: float = None) -> dict:
         max_rent: Maximum monthly rent in dollars. Optional filter.
 
     Returns:
+        success: Whether the search succeeded
         listings: List of available apartments matching criteria
         total_count: Total number of matches found
         message: Status message
@@ -58,7 +72,9 @@ def get_available_listings(bedrooms: list[int], max_rent: float = None) -> dict:
     return _get_available_listings.invoke({"bedrooms": bedrooms, "max_rent": max_rent})
 
 
-def get_availability(date_str: str) -> dict:
+def get_availability(
+    date_str: Annotated[str, "Date to check availability for, in YYYY-MM-DD format (e.g., '2025-02-15')"]
+) -> Dict[str, Any]:
     """
     Get available tour time slots for a specific date.
 
@@ -66,6 +82,7 @@ def get_availability(date_str: str) -> dict:
         date_str: Date to check availability for, in YYYY-MM-DD format (e.g., "2025-02-15")
 
     Returns:
+        success: Whether the lookup succeeded
         available_slots: List of available time slots
         formatted_date: Human-readable date
         message: Status message
@@ -74,13 +91,13 @@ def get_availability(date_str: str) -> dict:
 
 
 def create_appointment(
-    appointment_date: str,
-    appointment_start_time: str,
-    first_name: str,
-    email: str,
-    phone: str,
-    last_name: str = None
-) -> dict:
+    appointment_date: Annotated[str, "Tour date in YYYY-MM-DD format (e.g., '2025-02-15')"],
+    appointment_start_time: Annotated[str, "Tour time in HH:MM 24-hour format (e.g., '10:00' or '14:30')"],
+    first_name: Annotated[str, "Visitor's first name"],
+    email: Annotated[str, "Visitor's email address for confirmation"],
+    phone: Annotated[str, "Visitor's phone number"],
+    last_name: Annotated[Optional[str], "Visitor's last name (optional)"] = None
+) -> Dict[str, Any]:
     """
     Book a property tour appointment.
 
@@ -93,6 +110,7 @@ def create_appointment(
         last_name: Visitor's last name (optional)
 
     Returns:
+        success: Whether the booking succeeded
         confirmation_id: Unique confirmation number
         appointment_details: Date, time, and duration info
         message: Confirmation message
@@ -107,7 +125,9 @@ def create_appointment(
     })
 
 
-def escalate_conversation(reason_for_escalation: str) -> dict:
+def escalate_conversation(
+    reason_for_escalation: Annotated[str, "Brief description of why human assistance is needed"]
+) -> Dict[str, Any]:
     """
     Transfer the conversation to a human leasing agent.
 
@@ -115,6 +135,7 @@ def escalate_conversation(reason_for_escalation: str) -> dict:
         reason_for_escalation: Brief description of why human assistance is needed
 
     Returns:
+        success: Whether the escalation succeeded
         ticket_id: Escalation ticket number
         message: Confirmation that conversation was escalated
         expected_response_time: When to expect a response
@@ -122,7 +143,10 @@ def escalate_conversation(reason_for_escalation: str) -> dict:
     return _escalate_conversation.invoke({"reason_for_escalation": reason_for_escalation})
 
 
-def search_property_knowledge(search_text: str, category: str = None) -> dict:
+def search_property_knowledge(
+    search_text: Annotated[str, "What to search for (e.g., 'pet policy', 'parking', 'gym hours')"],
+    category: Annotated[Optional[str], "Optional filter - one of: amenities, neighborhood, leasing, rent_payment, policies, utilities, maintenance, move_in_out"] = None
+) -> Dict[str, Any]:
     """
     Search property information about amenities, policies, and services.
 
@@ -131,6 +155,7 @@ def search_property_knowledge(search_text: str, category: str = None) -> dict:
         category: Optional filter - one of: amenities, neighborhood, leasing, rent_payment, policies, utilities, maintenance, move_in_out
 
     Returns:
+        success: Whether the search succeeded
         results: List of relevant knowledge base entries
         total_results: Number of matches found
         message: Status message
@@ -138,7 +163,12 @@ def search_property_knowledge(search_text: str, category: str = None) -> dict:
     return _search_property_knowledge.invoke({"search_text": search_text, "category": category})
 
 
-def create_lead(email: str, phone: str, first_name: str, last_name: str) -> dict:
+def create_lead(
+    email: Annotated[str, "Prospect's email address"],
+    phone: Annotated[str, "Prospect's phone number"],
+    first_name: Annotated[str, "Prospect's first name"],
+    last_name: Annotated[str, "Prospect's last name"]
+) -> Dict[str, Any]:
     """
     Save prospect contact information for follow-up.
 
@@ -149,6 +179,7 @@ def create_lead(email: str, phone: str, first_name: str, last_name: str) -> dict
         last_name: Prospect's last name
 
     Returns:
+        success: Whether the lead was saved
         lead_id: Unique lead identifier
         status: Whether lead was created or already exists
         message: Confirmation message
@@ -255,12 +286,13 @@ class GemmaAgent:
         max_new_tokens: int = 256,
         device: str = None,
         torch_dtype: str = "auto",
+        use_finetuned_tools: bool = None,
     ):
         """
         Initialize the GemmaAgent with HuggingFace Transformers.
 
         Args:
-            model_id: HuggingFace model ID (default: google/functiongemma-270m-it)
+            model_id: HuggingFace model ID or local path to fine-tuned model
             agent_name: Name of the assistant
             property_name: Name of the property
             log_file: Path to conversation log file
@@ -268,6 +300,10 @@ class GemmaAgent:
             max_new_tokens: Maximum tokens to generate per turn
             device: Device to use ('cuda', 'cpu', or None for auto)
             torch_dtype: Torch dtype ('auto', 'float16', 'bfloat16', 'float32')
+            use_finetuned_tools: Tool format to use:
+                - None (default): Auto-detect based on model_id (local path = finetuned, HF ID = base)
+                - True: Use JSON tool schemas from fine-tune/tools.py (for fine-tuned models)
+                - False: Use Python function tools (Google's base model format)
         """
         from transformers import AutoProcessor, AutoModelForCausalLM
 
@@ -300,7 +336,9 @@ class GemmaAgent:
         print(f"Device: {self.device}, Dtype: {self._torch_dtype}")
 
         # Load processor and model using Google's exact approach
-        self.processor = AutoProcessor.from_pretrained(model_id)
+        # fix_mistral_regex=True fixes incorrect regex pattern in tokenizer
+        # See: https://huggingface.co/mistralai/Mistral-Small-3.1-24B-Instruct-2503/discussions/84
+        self.processor = AutoProcessor.from_pretrained(model_id, fix_mistral_regex=True)
         self.model = AutoModelForCausalLM.from_pretrained(
             model_id,
             torch_dtype=self._torch_dtype,
@@ -312,8 +350,27 @@ class GemmaAgent:
 
         print(f"Model loaded successfully!")
 
-        # Tools - plain Python functions
-        self.tools = ALL_TOOL_FUNCTIONS
+        # Determine tool format to use
+        if use_finetuned_tools is None:
+            # Auto-detect: local path = finetuned, HuggingFace ID = base
+            use_finetuned = not model_id.startswith("google/") and Path(model_id).exists()
+        else:
+            use_finetuned = use_finetuned_tools
+
+        # Tools - use JSON schemas for fine-tuned model, Python functions for base model
+        if use_finetuned:
+            if FINETUNED_TOOLS:
+                print("Using JSON tool schemas (fine-tuned model format)")
+                self.tools = FINETUNED_TOOLS
+            else:
+                raise ValueError(
+                    f"use_finetuned_tools=True but no tools found at {_finetuned_tools_path}. "
+                    "Create fine-tune/tools.py with a TOOLS list or set use_finetuned_tools=False."
+                )
+        else:
+            print("Using Python function tools (Google's base model format)")
+            self.tools = ALL_TOOL_FUNCTIONS
+
         self.tool_mapping = TOOL_MAPPING
 
         # Conversation state
@@ -520,16 +577,10 @@ class GemmaAgent:
                     ]
                 })
 
-                # Add tool results (Google's format)
-                # For single result, use dict; for multiple, use list
-                if len(tool_results) == 1:
-                    tool_content = tool_results[0]
-                else:
-                    tool_content = tool_results
-
+                # Add tool results (Google's format - always a list)
                 self._messages.append({
                     "role": "tool",
-                    "content": tool_content
+                    "content": tool_results
                 })
 
             # Log assistant turn
@@ -546,10 +597,10 @@ class GemmaAgent:
             # If no function calls, we're done
             if not function_calls:
                 final_response = clean_response
-                # Add final response to message history
+                # Add final response to message history (use cleaned response, not raw output)
                 self._messages.append({
                     "role": "assistant",
-                    "content": output_text
+                    "content": clean_response
                 })
                 break
 

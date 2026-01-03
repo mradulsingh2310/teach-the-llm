@@ -1,0 +1,345 @@
+[
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Hi, I'm Mary O'Brien. My email is mary.obrien@email.com and my phone is 555-123-4567. I'd like someone to contact me about apartments."},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_lead", "arguments": {"email": "mary.obrien@email.com", "phone": "555-123-4567", "first_name": "Mary", "last_name": "O'Brien"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Please save my info: Patrick O'Connor, patrick.oconnor@gmail.com, (555) 987-6543"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_lead", "arguments": {"email": "patrick.oconnor@gmail.com", "phone": "(555) 987-6543", "first_name": "Patrick", "last_name": "O'Connor"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I'm Sarah McDonald and I'm interested in a 2BR. You can reach me at sarah.mcdonald@yahoo.com or 555.222.3333"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_lead", "arguments": {"email": "sarah.mcdonald@yahoo.com", "phone": "555.222.3333", "first_name": "Sarah", "last_name": "McDonald"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Hey there! Mary-Jane Watson here. Email: mj.watson@email.com, phone: 5551234567"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_lead", "arguments": {"email": "mj.watson@email.com", "phone": "5551234567", "first_name": "Mary-Jane", "last_name": "Watson"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Anna-Marie Smith-Johnson is looking for an apartment. Contact at anna.sj@company.com, 555-444-5555"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_lead", "arguments": {"email": "anna.sj@company.com", "phone": "555-444-5555", "first_name": "Anna-Marie", "last_name": "Smith-Johnson"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "My name is José García. Please have someone call me at (555) 777-8888 or email jose.garcia@outlook.com"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_lead", "arguments": {"email": "jose.garcia@outlook.com", "phone": "(555) 777-8888", "first_name": "José", "last_name": "García"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "François Müller here, interested in leasing. francois.muller@email.de, 555 111 2222"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_lead", "arguments": {"email": "francois.muller@email.de", "phone": "555 111 2222", "first_name": "François", "last_name": "Müller"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I want to be contacted about availability. My details: user+apartments@email.com, 555-333-4444, John Smith"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_lead", "arguments": {"email": "user+apartments@email.com", "phone": "555-333-4444", "first_name": "John", "last_name": "Smith"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Please save: Emily Davis, emily+leasing@mail.company.com, (555)123-4567"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_lead", "arguments": {"email": "emily+leasing@mail.company.com", "phone": "(555)123-4567", "first_name": "Emily", "last_name": "Davis"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Name is Björk Guðmundsdóttir. You can email me at bjork.g@email.is and call 555-999-0000"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_lead", "arguments": {"email": "bjork.g@email.is", "phone": "555-999-0000", "first_name": "Björk", "last_name": "Guðmundsdóttir"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Hi! I'm Jean-Pierre Lefèvre. My email is jp.lefevre@subdomain.company.fr and my number is 555.888.7777"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_lead", "arguments": {"email": "jp.lefevre@subdomain.company.fr", "phone": "555.888.7777", "first_name": "Jean-Pierre", "last_name": "Lefèvre"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I'm looking to move soon. My name is Siobhán O'Sullivan. Best to reach me at siobhan.osullivan@mail.server.com or 5559876543"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_lead", "arguments": {"email": "siobhan.osullivan@mail.server.com", "phone": "5559876543", "first_name": "Siobhán", "last_name": "O'Sullivan"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "My first name is María-Elena and last name is Rodríguez-Santos. Email: me.rodriguez@email.mx, phone: (555) 246-8135"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_lead", "arguments": {"email": "me.rodriguez@email.mx", "phone": "(555) 246-8135", "first_name": "María-Elena", "last_name": "Rodríguez-Santos"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Please add me as a lead. I'm Søren Kierkegaard. soren.k+info@mail.dk, 555 321 6547"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_lead", "arguments": {"email": "soren.k+info@mail.dk", "phone": "555 321 6547", "first_name": "Søren", "last_name": "Kierkegaard"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Hey, this is Li-Wei Chen. You can contact me via email at liwei.chen@tech.subdomain.io or just call me at 5552223334"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_lead", "arguments": {"email": "liwei.chen@tech.subdomain.io", "phone": "5552223334", "first_name": "Li-Wei", "last_name": "Chen"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Save my contact info. First name: Liam. Last name: O'Reilly. My phone number is 555-432-1098. Email is liam.oreilly+apt@gmail.com"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_lead", "arguments": {"email": "liam.oreilly+apt@gmail.com", "phone": "555-432-1098", "first_name": "Liam", "last_name": "O'Reilly"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Interested in 1BR units. Contact: Zoë Saldaña-Cruz, zoe.sc@work.mail.net, (555)789-0123"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_lead", "arguments": {"email": "zoe.sc@work.mail.net", "phone": "(555)789-0123", "first_name": "Zoë", "last_name": "Saldaña-Cruz"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Hi there, I need to add myself. Call me Pádraig MacCarthy. The email I use is padraig.maccarthy@oldmail.co.uk and my cell is 555.654.3210"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_lead", "arguments": {"email": "padraig.maccarthy@oldmail.co.uk", "phone": "555.654.3210", "first_name": "Pádraig", "last_name": "MacCarthy"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "My name is Renée Van Der Berg. Email me at renee+housing@mail.subdomain.nl. You can also call 555 098 7654"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_lead", "arguments": {"email": "renee+housing@mail.subdomain.nl", "phone": "555 098 7654", "first_name": "Renée", "last_name": "Van Der Berg"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Please register me. I'm Anne-Sophie Martin-Dubois, anne.sophie@campus.university.edu, 555-555-1234"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_lead", "arguments": {"email": "anne.sophie@campus.university.edu", "phone": "555-555-1234", "first_name": "Anne-Sophie", "last_name": "Martin-Dubois"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "this is kevin o'malley, email kev.omalley@icloud.com and number is (555) 111 2233"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_lead", "arguments": {"email": "kev.omalley@icloud.com", "phone": "(555) 111 2233", "first_name": "Kevin", "last_name": "O'Malley"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I'm Günther Schmidt. My email is gunther.schmidt@mail.de and my phone is 555-123-4567. Please save my info for follow-up."},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_lead", "arguments": {"email": "gunther.schmidt@mail.de", "phone": "555-123-4567", "first_name": "Günther", "last_name": "Schmidt"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Add Jean-Luc Picard as a lead. The contact email is picard+starfleet@federation.mail.gov and phone is 5551701701"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_lead", "arguments": {"email": "picard+starfleet@federation.mail.gov", "phone": "5551701701", "first_name": "Jean-Luc", "last_name": "Picard"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "name: Ciarán Ó Faoláin. email: ciaran.ofaolain@mail.ie. phone: 555.444.3322"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_lead", "arguments": {"email": "ciaran.ofaolain@mail.ie", "phone": "555.444.3322", "first_name": "Ciarán", "last_name": "Ó Faoláin"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Looking for a studio. My name is Chloë Beaumont-Smythe and you can reach me at chloe.bs+apts@mail.server.co.uk or by phone at (555)222-3344"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_lead", "arguments": {"email": "chloe.bs+apts@mail.server.co.uk", "phone": "(555)222-3344", "first_name": "Chloë", "last_name": "Beaumont-Smythe"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "hey i'm mónica lópez-vázquez. my email is monica.lv@internal.mail.company.mx and u can call me at 555 987 6543"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_lead", "arguments": {"email": "monica.lv@internal.mail.company.mx", "phone": "555 987 6543", "first_name": "Mónica", "last_name": "López-Vázquez"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "My first name is Niamh. Last name is O'Dwyer. I'm reachable at niamh.odwyer+lease@yahoo.ie. My cell is 555-876-5432."},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_lead", "arguments": {"email": "niamh.odwyer+lease@yahoo.ie", "phone": "555-876-5432", "first_name": "Niamh", "last_name": "O'Dwyer"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "pls add me. im andré nguyen-williams and my contact is andre.nw@dept.org.edu, 5554443332"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_lead", "arguments": {"email": "andre.nw@dept.org.edu", "phone": "5554443332", "first_name": "André", "last_name": "Nguyen-Williams"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Hi! First name is Käthe, last name is Müller-Braun. Please call me at 555.123.7890 or send an email to kathe.mb@mail.domain.de"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_lead", "arguments": {"email": "kathe.mb@mail.domain.de", "phone": "555.123.7890", "first_name": "Käthe", "last_name": "Müller-Braun"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Save my details: I go by Seán MacDonald. Best email is sean.mac+inquiry@work.mail.ie and phone number is (555) 333-4455"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_lead", "arguments": {"email": "sean.mac+inquiry@work.mail.ie", "phone": "(555) 333-4455", "first_name": "Seán", "last_name": "MacDonald"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I'd like to be added as a potential renter. Luísa Gonçalves-Ferreira, luisa.gf@mail.br, 555 765 4321"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_lead", "arguments": {"email": "luisa.gf@mail.br", "phone": "555 765 4321", "first_name": "Luísa", "last_name": "Gonçalves-Ferreira"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "contact info to save: Maëlle O'Shea, phone is 555-234-5678, email maelle.oshea+apt@subdomain.mail.com"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_lead", "arguments": {"email": "maelle.oshea+apt@subdomain.mail.com", "phone": "555-234-5678", "first_name": "Maëlle", "last_name": "O'Shea"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "hi, I am interested. My name's Håkon Larsen-Ødegård. you can email me at hakon.lo@mail.no or call (555)666-7788"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_lead", "arguments": {"email": "hakon.lo@mail.no", "phone": "(555)666-7788", "first_name": "Håkon", "last_name": "Larsen-Ødegård"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I'm ready to look at apartments. My name is Fionnuala MacSweeney. Reach me at fionnuala.macs@corp.subdomain.ie, 5559991234"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_lead", "arguments": {"email": "fionnuala.macs@corp.subdomain.ie", "phone": "5559991234", "first_name": "Fionnuala", "last_name": "MacSweeney"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Hey, the name is João Silva-Costa. My number is 555.999.8888. Email is joao.sc+rentals@mail.pt"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_lead", "arguments": {"email": "joao.sc+rentals@mail.pt", "phone": "555.999.8888", "first_name": "João", "last_name": "Silva-Costa"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Could you save my info please? I am Élise Petit-Moreau and you can contact me at elise.pm@university.dept.edu or (555) 444 5566"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_lead", "arguments": {"email": "elise.pm@university.dept.edu", "phone": "(555) 444 5566", "first_name": "Élise", "last_name": "Petit-Moreau"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "register me pls. colm o'brien-kelly, colm.obk+housing@internal.mail.server.com, 555-000-1111"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_lead", "arguments": {"email": "colm.obk+housing@internal.mail.server.com", "phone": "555-000-1111", "first_name": "Colm", "last_name": "O'Brien-Kelly"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Hi there. I'm Naïma Ben-Youssef. I'm looking for a 2 bedroom. My email is naima.by@mail.tn and phone 555 222 1111"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_lead", "arguments": {"email": "naima.by@mail.tn", "phone": "555 222 1111", "first_name": "Naïma", "last_name": "Ben-Youssef"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Greetings. Please add Michèle St-Pierre as a lead. Contact: michele.stp@work.mail.ca, (555)777-8899"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_lead", "arguments": {"email": "michele.stp@work.mail.ca", "phone": "(555)777-8899", "first_name": "Michèle", "last_name": "St-Pierre"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "add me to the list. I'm aisling mcdermott. aisling.mcd@mail.subdomain.ie 5557778899"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_lead", "arguments": {"email": "aisling.mcd@mail.subdomain.ie", "phone": "5557778899", "first_name": "Aisling", "last_name": "McDermott"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "My full name is Raphaël Lévy-Dupont. I'm at raphael.ld+apartments@campus.school.edu and you can reach me by phone at 555.321.0987"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_lead", "arguments": {"email": "raphael.ld+apartments@campus.school.edu", "phone": "555.321.0987", "first_name": "Raphaël", "last_name": "Lévy-Dupont"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Need to save my contact. I'm Tomás Ó Ceallaigh. Reach me at tomas.oceallaigh@mail.ie or at (555) 888-9900"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_lead", "arguments": {"email": "tomas.oceallaigh@mail.ie", "phone": "(555) 888-9900", "first_name": "Tomás", "last_name": "Ó Ceallaigh"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Save me as a lead. Name: Anaïs Tremblay-Côté. Phone: 555 654 3210. Email: anais.tc+inquiry@mail.ca"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_lead", "arguments": {"email": "anais.tc+inquiry@mail.ca", "phone": "555 654 3210", "first_name": "Anaïs", "last_name": "Tremblay-Côté"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Hey so i'm looking for an apartment and want to be contacted. my name is bríd o'donovan. email brid.odonovan@isp.mail.ie phone 5553332211"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_lead", "arguments": {"email": "brid.odonovan@isp.mail.ie", "phone": "5553332211", "first_name": "Bríd", "last_name": "O'Donovan"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Hi, Ségolène Blanc-Morel here, interested in a 1BR. My contact is segolene.bm@research.university.edu (555)111-2244"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_lead", "arguments": {"email": "segolene.bm@research.university.edu", "phone": "(555)111-2244", "first_name": "Ségolène", "last_name": "Blanc-Morel"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "First name: Síle. Last name: MacGinty. Email is sile.macginty+rent@work.subdomain.ie and phone is 555.888.1234"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_lead", "arguments": {"email": "sile.macginty+rent@work.subdomain.ie", "phone": "555.888.1234", "first_name": "Síle", "last_name": "MacGinty"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Could you add my info? Clément Béranger-Roy, clement.br@mail.server.fr, (555) 999 0011"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_lead", "arguments": {"email": "clement.br@mail.server.fr", "phone": "(555) 999 0011", "first_name": "Clément", "last_name": "Béranger-Roy"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "plz save my details. Gráinne O'Connor-Walsh. Email grinne.ocw+home@dept.company.ie and number is 555-456-7890"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_lead", "arguments": {"email": "grinne.ocw+home@dept.company.ie", "phone": "555-456-7890", "first_name": "Gráinne", "last_name": "O'Connor-Walsh"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Register my contact please. Noémie Fontaine-Beauchamp, noemie.fb@secure.mail.ca, 555 123 4567"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_lead", "arguments": {"email": "noemie.fb@secure.mail.ca", "phone": "555 123 4567", "first_name": "Noémie", "last_name": "Fontaine-Beauchamp"}}}]}
+    ]
+  }
+]

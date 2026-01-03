@@ -1,0 +1,1486 @@
+[03:37:23] INFO: Test logging initialized for FunctionGemma 270M Instruct
+[03:37:23] INFO: Testing 6 tools
+[03:37:23] INFO: Verified tool: get_available_listings
+[03:37:23] INFO: Verified tool: get_availability
+[03:37:23] INFO: Verified tool: create_appointment
+[03:37:23] INFO: Verified tool: escalate_conversation
+[03:37:23] INFO: Verified tool: search_property_knowledge
+[03:37:23] INFO: Verified tool: create_lead
+[03:37:23] INFO: Validated schema for: get_available_listings
+  Properties: ['bedrooms', 'max_rent']
+[03:37:23] INFO: Validated schema for: get_availability
+  Properties: ['date_str']
+[03:37:23] INFO: Validated schema for: create_appointment
+  Properties: ['appointment_date', 'appointment_start_time', 'first_name', 'email', 'phone', 'last_name']
+[03:37:23] INFO: Validated schema for: escalate_conversation
+  Properties: ['reason_for_escalation']
+[03:37:23] INFO: Validated schema for: search_property_knowledge
+  Properties: ['search_text', 'category']
+[03:37:23] INFO: Validated schema for: create_lead
+  Properties: ['email', 'phone', 'first_name', 'last_name']
+[03:37:23] INFO: Initializing GemmaAgent with model: google/functiongemma-270m-it
+[03:37:28] INFO: GemmaAgent initialized successfully
+[03:37:28] INFO: ======================================================================
+[03:37:28] INFO: SCENARIO: [golden_path] GP001 - Formal Email Inquiry to Tour Booking
+[03:37:28] INFO: ======================================================================
+[03:37:28] INFO: Session started: 0170d224-24a4-4099-bfb6-d4737bf2b0e7
+[03:37:28] INFO: Processing turn 1: Subject: Inquiry About Leasing Options
+
+Dear Leasing Agent,
+
+My name is Michelle...
+[03:37:37] INFO: Response (8591ms): Here are a few options for you:
+
+**Available 2-bedroom units for rent:**
+1.  **2025-04-01:** Afforda...
+[03:37:37] INFO: Processing turn 2: Hi,
+
+Thank you for the details on the available units. I would like to schedule ...
+[03:37:47] INFO: Response (10022ms): Here are a few options for you:
+
+**Available 2-bedroom units for rent:**
+1.  **2025-04-01:** Afforda...
+[03:37:47] INFO: Processing turn 3: Hi,
+
+I would like to schedule the tour for **Unit 303** at **10:00 AM** on Febru...
+[03:37:57] INFO: Response (10215ms): Here are a few options for you:
+
+**Available 2-bedroom units for rent:**
+1.  **2025-04-01:** Afforda...
+[03:37:57] INFO: Turn Metrics - tool_call: 33.3%, response: 33.3%, params: 100.0%, files: 100.0%
+[03:37:57] INFO: Result: PASSED
+[03:37:57] INFO: Duration: 28882ms
+[03:37:57] INFO: Tool calls made: 4
+[03:37:57] INFO:   - get_available_listings: {'bedrooms': [2], 'max_rent': 2500}
+[03:37:57] INFO:   - get_available_listings: {'bedrooms': [2], 'max_rent': 2500}
+[03:37:57] INFO:   - get_available_listings: {'bedrooms': [2], 'max_rent': 2500}
+[03:37:57] INFO:   - get_available_listings: {'bedrooms': [2], 'max_rent': 2500}
+[03:37:57] INFO: Final response: Here are a few options for you:
+
+**Available 2-bedroom units for rent:**
+1.  **2025-04-01:** Affordable 2BR/1BA with classic features and great natural light. Includes parking. Rent: 1800.00, 875 sq f...
+[03:37:57] INFO: --------------------------------------------------
+[03:37:57] INFO: METRICS:
+[03:37:57] INFO:   Tool Calling Rate: 33.3%
+[03:37:57] INFO:   Correct Response Rate: 33.3%
+[03:37:57] INFO:   Correct Tool Call Rate: 100.0%
+[03:37:57] INFO:   File Verification Rate: 100.0%
+[03:37:57] DEBUG:   Turn 1: tools_ok=True, response_ok=True, params_ok=True, latency=8591ms
+[03:37:57] DEBUG:   Turn 2: tools_ok=False, response_ok=False, params_ok=False, latency=10022ms
+[03:37:57] DEBUG:     Missing keywords: ['slot', 'time']
+[03:37:57] DEBUG:   Turn 3: tools_ok=False, response_ok=False, params_ok=False, latency=10215ms
+[03:37:57] DEBUG:     Missing keywords: ['scheduled', 'booked', 'confirmed']
+[03:37:57] WARNING: Failures:
+[03:37:57] WARNING:   - Metrics threshold not met: tool_rate=0.33, response_rate=0.33, param_rate=1.00
+[03:37:57] INFO: --------------------------------------------------
+[03:37:57] INFO: ======================================================================
+[03:37:57] INFO: SCENARIO: [golden_path] GP002 - Pet Owner Studio Search
+[03:37:57] INFO: ======================================================================
+[03:37:57] INFO: Session started: b638ee29-52a7-4e9a-b345-8dd533438931
+[03:37:57] INFO: Processing turn 1: Hello,
+
+I have a small dog (a 15-pound Beagle) and am interested in renting at y...
+[03:37:58] INFO: Response (1398ms): I am sorry, but I cannot assist with providing pet policy information. My current capabilities are l...
+[03:37:58] INFO: Processing turn 2: That sounds reasonable! Do you have any pet-friendly studio apartments available...
+[03:38:01] INFO: Response (2365ms): I apologize, but I encountered an error while trying to fetch available apartment listings. The vali...
+[03:38:01] INFO: Processing turn 3: **Unit 102** looks perfect since it's pet-friendly and has in-unit laundry. What...
+[03:38:05] INFO: Response (4676ms): The available times for Thursday, February 20, 2025, are:
+
+*   **09:00:** 09:00
+*   **10:00:** 10:00...
+[03:38:05] INFO: Processing turn 4: Please book me for 2:00 PM on February 20, 2025.
+
+Thanks,
+Thomas Rodriguez
+thoma...
+[03:38:10] INFO: Response (4277ms): I apologize, but I was unable to complete the booking request. The attempt to create the appointment...
+[03:38:10] INFO: Turn Metrics - tool_call: 75.0%, response: 25.0%, params: 33.3%, files: 100.0%
+[03:38:10] INFO: Result: PASSED
+[03:38:10] INFO: Duration: 12760ms
+[03:38:10] INFO: Tool calls made: 3
+[03:38:10] INFO:   - get_available_listings: {'bedrooms': '[1', 'max_rent': 1400}
+[03:38:10] INFO:   - get_availability: {'date_str': '2025-02-20'}
+[03:38:10] INFO:   - create_appointment: {'appointment_date': '2025-02-20', 'appointment_start_time': '14:00', 'first_name': 'Thomas', 'last_name': 'Rodriguez', 'phone': 5559876543}
+[03:38:10] INFO: Final response: I apologize, but I was unable to complete the booking request. The attempt to create the appointment failed due to a missing required positional argument: 'email'....
+[03:38:10] INFO: --------------------------------------------------
+[03:38:10] INFO: METRICS:
+[03:38:10] INFO:   Tool Calling Rate: 75.0%
+[03:38:10] INFO:   Correct Response Rate: 25.0%
+[03:38:10] INFO:   Correct Tool Call Rate: 33.3%
+[03:38:10] INFO:   File Verification Rate: 100.0%
+[03:38:10] DEBUG:   Turn 1: tools_ok=False, response_ok=True, params_ok=False, latency=1398ms
+[03:38:10] DEBUG:   Turn 2: tools_ok=True, response_ok=False, params_ok=False, latency=2365ms
+[03:38:10] DEBUG:     Missing keywords: ['bedroom', 'unit']
+[03:38:10] DEBUG:     Parameter errors (get_available_listings): ["Parameter 'bedrooms' mismatch - expected: [0], got: [1"]
+[03:38:10] DEBUG:   Turn 3: tools_ok=True, response_ok=False, params_ok=True, latency=4676ms
+[03:38:10] DEBUG:     Missing keywords: ['slot']
+[03:38:10] DEBUG:   Turn 4: tools_ok=True, response_ok=False, params_ok=False, latency=4277ms
+[03:38:10] DEBUG:     Missing keywords: ['scheduled', 'booked', 'confirmed']
+[03:38:10] DEBUG:     Parameter errors (create_appointment): ['Missing required parameter: email', "Parameter 'email' not provided (expected: thomas.rodriguez.5559876543@email.com)", "Parameter 'phone' mismatch - expected: (555) 987-6543, got: 5559876543"]
+[03:38:10] WARNING: Failures:
+[03:38:10] WARNING:   - Metrics threshold not met: tool_rate=0.75, response_rate=0.25, param_rate=0.33
+[03:38:10] INFO: --------------------------------------------------
+[03:38:10] INFO: ======================================================================
+[03:38:10] INFO: SCENARIO: [golden_path] GP003 - Large Family 4BR Search with Amenities
+[03:38:10] INFO: ======================================================================
+[03:38:10] INFO: Session started: 42a2aca5-5492-4907-8d62-fdb1d4b18888
+[03:38:10] INFO: Processing turn 1: Subject: Family Apartment Inquiry
+
+Dear Leasing Team,
+
+My family and I are looki...
+[03:38:11] INFO: Response (1827ms): I've found no listings matching your criteria. It looks like the search yielded only one result: 0 l...
+[03:38:11] INFO: Processing turn 2: That's great to hear! Please show me what 4-bedroom apartments you have availabl...
+[03:38:20] INFO: Response (8816ms): Here are a few options for your family's apartment:
+
+I found 7 available listing(s) showing top 5 re...
+[03:38:20] INFO: Processing turn 3: **Unit 505** looks amazing for our family - the 4BR/3BA with city views would be...
+[03:38:27] INFO: Response (6956ms): I apologize, but I was unable to retrieve the details for any of the available listings. The tool I ...
+[03:38:27] INFO: Processing turn 4: 11:00 AM works perfectly. Please book the tour for that time.
+
+Thank you,
+David ...
+[03:38:33] INFO: Response (5398ms): I apologize, but I was unable to perform the requested actions. The tool I use to search for propert...
+[03:38:33] INFO: Turn Metrics - tool_call: 50.0%, response: 0.0%, params: 50.0%, files: 100.0%
+[03:38:33] INFO: Result: PASSED
+[03:38:33] INFO: Duration: 23042ms
+[03:38:33] INFO: Tool calls made: 5
+[03:38:33] INFO:   - get_available_listings: {'bedrooms': [4], 'max_rent': 4}
+[03:38:33] INFO:   - get_available_listings: {'bedrooms': [4], 'max_rent': 4500}
+[03:38:33] INFO:   - get_available_listings: {'bedrooms': [4], 'max_rent': 4500}
+[03:38:33] INFO:   - create_appointment: {'appointment_date': '2025-03-01', 'appointment_start_time': '10:00', 'first_name': 'David Chen', 'last_name': 'Chen', 'phone': '+1-555-321-0987', 'email': 'david.chen.family@email.com', 'property_location': 'city view'}
+[03:38:33] INFO:   - create_appointment: {'appointment_date': '2025-03-11', 'appointment_start_time': '11:00', 'first_name': 'David Chen', 'last_name': 'Chen', 'email': 'david.chen.family@email.com', 'phone': '+1-555-321-0987', 'property_location': 'city view'}
+[03:38:33] INFO: Final response: I apologize, but I was unable to perform the requested actions. The tool I use to search for property information returned an unexpected keyword argument ("property_location")....
+[03:38:33] INFO: --------------------------------------------------
+[03:38:33] INFO: METRICS:
+[03:38:33] INFO:   Tool Calling Rate: 50.0%
+[03:38:33] INFO:   Correct Response Rate: 0.0%
+[03:38:33] INFO:   Correct Tool Call Rate: 50.0%
+[03:38:33] INFO:   File Verification Rate: 100.0%
+[03:38:33] DEBUG:   Turn 1: tools_ok=False, response_ok=False, params_ok=False, latency=1827ms
+[03:38:33] DEBUG:     Missing keywords: ['information']
+[03:38:33] DEBUG:   Turn 2: tools_ok=True, response_ok=False, params_ok=True, latency=8816ms
+[03:38:33] DEBUG:     Missing keywords: ['bedroom']
+[03:38:33] DEBUG:   Turn 3: tools_ok=False, response_ok=False, params_ok=False, latency=6956ms
+[03:38:33] DEBUG:     Missing keywords: ['slot', 'time']
+[03:38:33] DEBUG:   Turn 4: tools_ok=True, response_ok=False, params_ok=False, latency=5398ms
+[03:38:33] DEBUG:     Missing keywords: ['scheduled', 'booked', 'confirmed']
+[03:38:33] DEBUG:     Parameter errors (create_appointment): ["Parameter 'phone' mismatch - expected: (555) 321-0987, got: +1-555-321-0987"]
+[03:38:33] WARNING: Failures:
+[03:38:33] WARNING:   - Metrics threshold not met: tool_rate=0.50, response_rate=0.00, param_rate=0.50
+[03:38:33] INFO: --------------------------------------------------
+[03:38:33] INFO: ======================================================================
+[03:38:33] INFO: SCENARIO: [golden_path] GP004 - Lead Creation Then Listing Search
+[03:38:33] INFO: ======================================================================
+[03:38:33] INFO: Session started: 0552e0ec-e40a-49c5-8c64-eefa0e20d997
+[03:38:33] INFO: Processing turn 1: Hi there,
+
+I'm just starting my apartment search and would like to receive updat...
+[03:38:41] INFO: Response (8554ms): Here are a few things to know about our available units:
+
+**amenities:**
+We offer several parking op...
+[03:38:41] INFO: Processing turn 2: Thank you! While I have you, what 3-bedroom apartments do you have available und...
+[03:38:50] INFO: Response (9016ms): Here are a few things to know about our available units:
+
+**amenities:**
+We offer several parking op...
+[03:38:50] INFO: Turn Metrics - tool_call: 0.0%, response: 0.0%, params: 0.0%, files: 100.0%
+[03:38:50] INFO: Result: PASSED
+[03:38:50] INFO: Duration: 17614ms
+[03:38:50] INFO: Tool calls made: 2
+[03:38:50] INFO:   - search_property_knowledge: {'category': 'amenities', 'search_text': 'available units'}
+[03:38:50] INFO:   - search_property_knowledge: {'category': 'amenities', 'search_text': 'available units'}
+[03:38:50] INFO: Final response: Here are a few things to know about our available units:
+
+**amenities:**
+We offer several parking options: covered garage parking ($150/month), reserved spots near elevators ($200/month), and tandem p...
+[03:38:50] INFO: --------------------------------------------------
+[03:38:50] INFO: METRICS:
+[03:38:50] INFO:   Tool Calling Rate: 0.0%
+[03:38:50] INFO:   Correct Response Rate: 0.0%
+[03:38:50] INFO:   Correct Tool Call Rate: 0.0%
+[03:38:50] INFO:   File Verification Rate: 100.0%
+[03:38:50] DEBUG:   Turn 1: tools_ok=False, response_ok=False, params_ok=False, latency=8554ms
+[03:38:50] DEBUG:     Missing keywords: ['saved', 'information', 'contact']
+[03:38:50] DEBUG:   Turn 2: tools_ok=False, response_ok=False, params_ok=False, latency=9016ms
+[03:38:50] DEBUG:     Missing keywords: ['bedroom']
+[03:38:50] WARNING: Failures:
+[03:38:50] WARNING:   - Metrics threshold not met: tool_rate=0.00, response_rate=0.00, param_rate=0.00
+[03:38:50] INFO: --------------------------------------------------
+[03:38:50] INFO: ======================================================================
+[03:38:50] INFO: SCENARIO: [golden_path] GP005 - Quick 1BR Search and Same-Day Booking
+[03:38:50] INFO: ======================================================================
+[03:38:50] INFO: Session started: cfca9b7e-3857-43ad-9a90-4f1ea311ccbc
+[03:38:50] INFO: Processing turn 1: Hi,
+
+I need a 1-bedroom apartment ASAP. Budget is $1,700/month max. What do you ...
+[03:38:59] INFO: Response (8626ms): Here are a few options for your stay:
+
+Sarah Kim
+sarah.kim.urgent@email.com
+(555) 444-1212
+
+I found ...
+[03:38:59] INFO: Processing turn 2: Perfect! **Unit 205** with the balcony looks great. What times are available tom...
+[03:39:02] INFO: Response (3198ms): I apologize, but I was unable to retrieve the available listings for unit 205. The request to search...
+[03:39:02] INFO: Processing turn 3: 3:00 PM works for me. Please book that time slot.
+
+Sarah Kim
+sarah.kim.urgent@em...
+[03:39:06] INFO: Response (4354ms): I apologize, but I was unable to book the appointment for Sarah Kim. The attempt to create the appoi...
+[03:39:07] INFO: Turn Metrics - tool_call: 66.7%, response: 0.0%, params: 50.0%, files: 100.0%
+[03:39:07] INFO: Result: PASSED
+[03:39:07] INFO: Duration: 16223ms
+[03:39:07] INFO: Tool calls made: 3
+[03:39:07] INFO:   - get_available_listings: {'bedrooms': [1], 'max_rent': 1700}
+[03:39:07] INFO:   - get_available_listings: {'bedrooms': [205], 'max_rent': 1700, 'balcony': False, 'bathrooms': 1, 'unit_number': 205}
+[03:39:07] INFO:   - create_appointment: {'appointment_date': '2025-03-08', 'appointment_start_time': '15:00', 'first_name': 'Sarah Kim', 'last_name': 'Kim', 'email': 'sarah.kim.urgent@email.com'}
+[03:39:07] INFO: Final response: I apologize, but I was unable to book the appointment for Sarah Kim. The attempt to create the appointment failed due to a missing positional argument....
+[03:39:07] INFO: --------------------------------------------------
+[03:39:07] INFO: METRICS:
+[03:39:07] INFO:   Tool Calling Rate: 66.7%
+[03:39:07] INFO:   Correct Response Rate: 0.0%
+[03:39:07] INFO:   Correct Tool Call Rate: 50.0%
+[03:39:07] INFO:   File Verification Rate: 100.0%
+[03:39:07] DEBUG:   Turn 1: tools_ok=True, response_ok=False, params_ok=True, latency=8626ms
+[03:39:07] DEBUG:     Missing keywords: ['unit']
+[03:39:07] DEBUG:   Turn 2: tools_ok=False, response_ok=False, params_ok=False, latency=3198ms
+[03:39:07] DEBUG:     Missing keywords: ['slot', 'time']
+[03:39:07] DEBUG:   Turn 3: tools_ok=True, response_ok=False, params_ok=False, latency=4354ms
+[03:39:07] DEBUG:     Missing keywords: ['scheduled', 'booked', 'confirmed']
+[03:39:07] DEBUG:     Parameter errors (create_appointment): ['Missing required parameter: phone', "Parameter 'phone' not provided (expected: (555) 444-1212)"]
+[03:39:07] WARNING: Failures:
+[03:39:07] WARNING:   - Metrics threshold not met: tool_rate=0.67, response_rate=0.00, param_rate=0.50
+[03:39:07] INFO: --------------------------------------------------
+[03:39:07] INFO: ======================================================================
+[03:39:07] INFO: SCENARIO: [golden_path] GP006 - Luxury 5BR Penthouse Inquiry
+[03:39:07] INFO: ======================================================================
+[03:39:07] INFO: Session started: f98abe49-a128-41ba-a7c3-07578f01ade7
+[03:39:07] INFO: Processing turn 1: Subject: Luxury Penthouse Availability
+
+Dear Leasing Office,
+
+I am relocating fo...
+[03:39:09] INFO: Response (2003ms): I apologize, but I encountered an error while trying to fetch available listings. The validation for...
+[03:39:09] INFO: Processing turn 2: **Unit 507** with the private roof deck is exactly what I'm looking for. The $5,...
+[03:39:11] INFO: Response (2686ms): I apologize, but I encountered an error while trying to fetch available listings. The validation for...
+[03:39:11] INFO: Turn Metrics - tool_call: 50.0%, response: 0.0%, params: 0.0%, files: 100.0%
+[03:39:11] INFO: Result: PASSED
+[03:39:11] INFO: Duration: 4734ms
+[03:39:11] INFO: Tool calls made: 2
+[03:39:11] INFO:   - get_available_listings: {'bedrooms': 5}
+[03:39:11] INFO:   - get_available_listings: {'bedrooms': '[0', 'max_rent': 5500}
+[03:39:11] INFO: Final response: I apologize, but I encountered an error while trying to fetch available listings. The validation for the `get_available_listings` function failed. Please try your request again....
+[03:39:11] INFO: --------------------------------------------------
+[03:39:11] INFO: METRICS:
+[03:39:11] INFO:   Tool Calling Rate: 50.0%
+[03:39:11] INFO:   Correct Response Rate: 0.0%
+[03:39:11] INFO:   Correct Tool Call Rate: 0.0%
+[03:39:11] INFO:   File Verification Rate: 100.0%
+[03:39:11] DEBUG:   Turn 1: tools_ok=True, response_ok=False, params_ok=False, latency=2003ms
+[03:39:11] DEBUG:     Missing keywords: ['bedroom', 'unit']
+[03:39:11] DEBUG:     Parameter errors (get_available_listings): ["Parameter 'bedrooms' mismatch - expected: [5], got: 5"]
+[03:39:11] DEBUG:   Turn 2: tools_ok=False, response_ok=False, params_ok=False, latency=2686ms
+[03:39:11] DEBUG:     Missing keywords: ['slot', 'booked', 'time', 'scheduled', 'confirmed']
+[03:39:11] WARNING: Failures:
+[03:39:11] WARNING:   - Metrics threshold not met: tool_rate=0.50, response_rate=0.00, param_rate=0.00
+[03:39:11] INFO: --------------------------------------------------
+[03:39:11] INFO: ======================================================================
+[03:39:11] INFO: SCENARIO: [frustrated_path] FP001 - Budget Too Low - User Adjusts
+[03:39:11] INFO: ======================================================================
+[03:39:11] INFO: Session started: fda9e408-5052-45be-baf4-617c34707eb4
+[03:39:11] INFO: Processing turn 1: Hello,
+
+I'm looking for a 2-bedroom apartment but my budget is tight - no more t...
+[03:39:14] INFO: Response (2383ms): I've found no listings matching your criteria for a 2-bedroom apartment under $1,500 per month. It's...
+[03:39:14] INFO: Processing turn 2: That's disappointing. What about a 1-bedroom then? Is there anything under $1,50...
+[03:39:23] INFO: Response (9639ms): I have processed your requests. Here are the results:
+
+**1. Available Listings:**
+No listings were f...
+[03:39:23] INFO: Processing turn 3: **Unit 201** at $1,450 works for me. What times are available on February 10th?
+...
+[03:39:30] INFO: Response (6420ms): I encountered errors while trying to retrieve the available listings:
+
+1.  **Available Listings:** N...
+[03:39:30] INFO: Processing turn 4: 2:00 PM works perfectly. Please book the tour.
+
+Maria Santos
+maria.santos.1234@e...
+[03:39:34] INFO: Response (4607ms): I encountered an error trying to book the tour. The attempt to create the appointment failed due to ...
+[03:39:34] INFO: Turn Metrics - tool_call: 75.0%, response: 0.0%, params: 66.7%, files: 100.0%
+[03:39:34] INFO: Result: PASSED
+[03:39:34] INFO: Duration: 23099ms
+[03:39:34] INFO: Tool calls made: 6
+[03:39:34] INFO:   - get_available_listings: {'bedrooms': [2], 'max_rent': 1500}
+[03:39:34] INFO:   - get_available_listings: {'bedrooms': [1], 'max_rent': 1500}
+[03:39:34] INFO:   - get_available_listings: {'bedrooms': [2], 'max_rent': 1500}
+[03:39:34] INFO:   - get_available_listings: {'bedrooms': [2], 'max_rent': 1500, 'available_date': '2025-02-15'}
+[03:39:34] INFO:   - get_available_listings: {'bedrooms': [1], 'max_rent': 1500, 'available_date': '2025-02-01'}
+[03:39:34] INFO:   - create_appointment: {'appointment_date': '2025-02-11', 'appointment_start_time': '14:00', 'first_name': 'Maria Santos', 'last_name': 'Santos', 'phone': '555-222-3333'}
+[03:39:34] INFO: Final response: I encountered an error trying to book the tour. The attempt to create the appointment failed due to a missing positional argument: 'email'....
+[03:39:34] INFO: --------------------------------------------------
+[03:39:34] INFO: METRICS:
+[03:39:34] INFO:   Tool Calling Rate: 75.0%
+[03:39:34] INFO:   Correct Response Rate: 0.0%
+[03:39:34] INFO:   Correct Tool Call Rate: 66.7%
+[03:39:34] INFO:   File Verification Rate: 100.0%
+[03:39:34] DEBUG:   Turn 1: tools_ok=True, response_ok=False, params_ok=True, latency=2383ms
+[03:39:34] DEBUG:     Missing keywords: ['available', 'unit']
+[03:39:34] DEBUG:   Turn 2: tools_ok=True, response_ok=False, params_ok=True, latency=9639ms
+[03:39:34] DEBUG:     Missing keywords: ['unit']
+[03:39:34] DEBUG:   Turn 3: tools_ok=False, response_ok=False, params_ok=False, latency=6420ms
+[03:39:34] DEBUG:     Missing keywords: ['slot', 'time']
+[03:39:34] DEBUG:   Turn 4: tools_ok=True, response_ok=False, params_ok=False, latency=4607ms
+[03:39:34] DEBUG:     Missing keywords: ['scheduled', 'booked', 'confirmed']
+[03:39:34] DEBUG:     Parameter errors (create_appointment): ['Missing required parameter: email', "Parameter 'email' not provided (expected: maria.santos.1234@email.com)", "Parameter 'phone' mismatch - expected: (555) 222-3333, got: 555-222-3333"]
+[03:39:34] WARNING: Failures:
+[03:39:34] WARNING:   - Metrics threshold not met: tool_rate=0.75, response_rate=0.00, param_rate=0.67
+[03:39:34] INFO: --------------------------------------------------
+[03:39:34] INFO: ======================================================================
+[03:39:34] INFO: SCENARIO: [frustrated_path] FP002 - No 6BR Available - Adjusts to 5BR
+[03:39:34] INFO: ======================================================================
+[03:39:34] INFO: Session started: 6ce09d33-cf3a-4862-9f28-fd5b91f7cb8d
+[03:39:34] INFO: Processing turn 1: Subject: Large Apartment Needed
+
+Dear Leasing Team,
+
+We are a multi-generational...
+[03:39:40] INFO: Response (6014ms): Here are a few things to know about the 6 or 7 bedroom apartment you listed:
+
+We accept multiple pay...
+[03:39:40] INFO: Processing turn 2: I see. What is the largest apartment you have available then?
+
+Robert Garcia
+rob...
+[03:39:47] INFO: Response (6162ms): Here are a few things to know about the 6 or 7 bedroom apartment you listed:
+
+We accept multiple pay...
+[03:39:47] INFO: Processing turn 3: **Unit 507** with the private roof deck sounds incredible! We would make it work...
+[03:39:55] INFO: Response (8019ms): The appointment for Robert Garcia Garcia on Wednesday, March 05, 2025, at 10:00 AM has been successf...
+[03:39:55] INFO: Turn Metrics - tool_call: 0.0%, response: 0.0%, params: 0.0%, files: 100.0%
+[03:39:55] INFO: Result: PASSED
+[03:39:55] INFO: Duration: 20252ms
+[03:39:55] INFO: Tool calls made: 3
+[03:39:55] INFO:   - search_property_knowledge: {'category': 'rent_payment', 'search_text': '6 or 7 bedrooms apartment'}
+[03:39:55] INFO:   - search_property_knowledge: {'category': 'rent_payment', 'search_text': '6 or 7 bedrooms apartment'}
+[03:39:55] INFO:   - create_appointment: {'appointment_date': '2025-03-05', 'appointment_start_time': '10:00', 'first_name': 'Robert Garcia', 'last_name': 'Garcia', 'phone': 'Robert.garcia.family@email.com', 'email': 'robert.garcia.family@email.com'}
+[03:39:55] INFO: Final response: The appointment for Robert Garcia Garcia on Wednesday, March 05, 2025, at 10:00 AM has been successfully confirmed!
+
+Here are the details:
+
+*   **Confirmation ID:** 810F4FCC
+*   **Time:** 10:00 AM
+*  ...
+[03:39:55] INFO: --------------------------------------------------
+[03:39:55] INFO: METRICS:
+[03:39:55] INFO:   Tool Calling Rate: 0.0%
+[03:39:55] INFO:   Correct Response Rate: 0.0%
+[03:39:55] INFO:   Correct Tool Call Rate: 0.0%
+[03:39:55] INFO:   File Verification Rate: 100.0%
+[03:39:55] DEBUG:   Turn 1: tools_ok=False, response_ok=False, params_ok=False, latency=6014ms
+[03:39:55] DEBUG:     Missing keywords: ['available', 'unit']
+[03:39:55] DEBUG:   Turn 2: tools_ok=False, response_ok=False, params_ok=False, latency=6162ms
+[03:39:55] DEBUG:     Missing keywords: ['available', 'unit']
+[03:39:55] DEBUG:   Turn 3: tools_ok=False, response_ok=False, params_ok=False, latency=8019ms
+[03:39:55] DEBUG:     Missing keywords: ['slot', 'available', 'booked', 'scheduled']
+[03:39:55] DEBUG:     Parameter errors (create_appointment): ["Parameter 'phone' mismatch - expected: (555) 888-9999, got: Robert.garcia.family@email.com"]
+[03:39:55] WARNING: Failures:
+[03:39:55] WARNING:   - Metrics threshold not met: tool_rate=0.00, response_rate=0.00, param_rate=0.00
+[03:39:55] INFO: --------------------------------------------------
+[03:39:55] INFO: ======================================================================
+[03:39:55] INFO: SCENARIO: [frustrated_path] FP003 - Frustrated User Demands Human Agent
+[03:39:55] INFO: ======================================================================
+[03:39:55] INFO: Session started: addad0d7-c2ee-44a3-bd88-17b35b962cd8
+[03:39:55] INFO: Processing turn 1: Hi,
+
+I need a 2-bedroom under $1,200. This is all I can afford. What do you have...
+[03:39:57] INFO: Response (1934ms): I apologize, but I cannot assist with finding or recommending specific properties. My current tools ...
+[03:39:57] INFO: Processing turn 2: This is ridiculous. Your prices are way too high for what you're offering. I've ...
+[03:39:58] INFO: Response (1418ms): I apologize, but I cannot assist with recommending or recommending prices for properties. My current...
+[03:39:58] INFO: Processing turn 3: I don't want to talk to a bot anymore. Get me a real person NOW. This is very fr...
+[03:40:00] INFO: Response (1783ms): I apologize, but no listings matching your criteria were found. The tool returned no results....
+[03:40:00] INFO: Turn Metrics - tool_call: 0.0%, response: 0.0%, params: 0.0%, files: 100.0%
+[03:40:00] INFO: Result: PASSED
+[03:40:00] INFO: Duration: 5187ms
+[03:40:00] INFO: Tool calls made: 1
+[03:40:00] INFO:   - get_available_listings: {'bedrooms': [2], 'max_rent': 1200}
+[03:40:00] INFO: Final response: I apologize, but no listings matching your criteria were found. The tool returned no results....
+[03:40:00] INFO: --------------------------------------------------
+[03:40:00] INFO: METRICS:
+[03:40:00] INFO:   Tool Calling Rate: 0.0%
+[03:40:00] INFO:   Correct Response Rate: 0.0%
+[03:40:00] INFO:   Correct Tool Call Rate: 0.0%
+[03:40:00] INFO:   File Verification Rate: 100.0%
+[03:40:00] DEBUG:   Turn 1: tools_ok=False, response_ok=False, params_ok=False, latency=1934ms
+[03:40:00] DEBUG:     Missing keywords: ['bedroom', 'available', 'unit']
+[03:40:00] DEBUG:   Turn 2: tools_ok=True, response_ok=True, params_ok=False, latency=1418ms
+[03:40:00] DEBUG:   Turn 3: tools_ok=False, response_ok=True, params_ok=False, latency=1783ms
+[03:40:00] WARNING: Failures:
+[03:40:00] WARNING:   - Metrics threshold not met: tool_rate=0.00, response_rate=0.00, param_rate=0.00
+[03:40:00] INFO: --------------------------------------------------
+[03:40:00] INFO: ======================================================================
+[03:40:00] INFO: SCENARIO: [frustrated_path] FP004 - User Abandons Mid-Conversation
+[03:40:00] INFO: ======================================================================
+[03:40:00] INFO: Session started: 6854a15c-5ad4-4459-b616-e87e667dd927
+[03:40:00] INFO: Processing turn 1: Hi,
+
+Looking for 3-bedroom apartments. What's available?
+
+Patricia Taylor
+patric...
+[03:40:08] INFO: Response (7968ms): Here are a few options for you:
+
+**Available Listings:**
+1.  **Patricia Taylor** (555) 666-4444: Val...
+[03:40:08] INFO: Processing turn 2: Unit 403 looks okay. What times can I tour tomorrow?
+
+Patricia Taylor
+patricia.t...
+[03:40:16] INFO: Response (8629ms): Here are a few relevant knowledge base entries:
+
+**amenities:**
+*   We offer several parking options...
+[03:40:16] INFO: Processing turn 3: Actually, I've decided to look at another property instead. Thank you for your t...
+[03:40:19] INFO: Response (2967ms): I apologize, but I was unable to retrieve the property knowledge. The search tool returned an unexpe...
+[03:40:19] INFO: Turn Metrics - tool_call: 50.0%, response: 0.0%, params: 100.0%, files: 100.0%
+[03:40:19] INFO: Result: PASSED
+[03:40:19] INFO: Duration: 19612ms
+[03:40:19] INFO: Tool calls made: 3
+[03:40:19] INFO:   - get_available_listings: {'bedrooms': [3], 'max_rent': 30000}
+[03:40:19] INFO:   - search_property_knowledge: {'category': 'amenities', 'search_text': 'parking'}
+[03:40:19] INFO:   - search_property_knowledge: {'category_filter': 'amenities', 'search_text': 'parking'}
+[03:40:19] INFO: Final response: I apologize, but I was unable to retrieve the property knowledge. The search tool returned an unexpected keyword argument, so I could not complete the search for property information....
+[03:40:19] INFO: --------------------------------------------------
+[03:40:19] INFO: METRICS:
+[03:40:19] INFO:   Tool Calling Rate: 50.0%
+[03:40:19] INFO:   Correct Response Rate: 0.0%
+[03:40:19] INFO:   Correct Tool Call Rate: 100.0%
+[03:40:19] INFO:   File Verification Rate: 100.0%
+[03:40:19] DEBUG:   Turn 1: tools_ok=True, response_ok=False, params_ok=True, latency=7968ms
+[03:40:19] DEBUG:     Missing keywords: ['bedroom', 'unit']
+[03:40:19] DEBUG:   Turn 2: tools_ok=False, response_ok=False, params_ok=False, latency=8629ms
+[03:40:19] DEBUG:     Missing keywords: ['slot', 'time']
+[03:40:19] DEBUG:   Turn 3: tools_ok=True, response_ok=True, params_ok=False, latency=2967ms
+[03:40:19] WARNING: Failures:
+[03:40:19] WARNING:   - Metrics threshold not met: tool_rate=0.50, response_rate=0.00, param_rate=1.00
+[03:40:19] INFO: --------------------------------------------------
+[03:40:19] INFO: ======================================================================
+[03:40:19] INFO: SCENARIO: [frustrated_path] FP005 - Date Unavailable - Reschedules
+[03:40:19] INFO: ======================================================================
+[03:40:19] INFO: Session started: 1bfe1b62-88db-4055-9b7a-b1cfc5bcc3e4
+[03:40:19] INFO: Processing turn 1: Hi,
+
+I'd like to tour a 2-bedroom unit on January 1st at noon. What do you have ...
+[03:40:21] INFO: Response (1779ms): I couldn't find any listings for apartments at the specified addresses. It seems like the search was...
+[03:40:21] INFO: Processing turn 2: **Unit 304** looks good. Is January 1st at 12pm available for a tour?
+
+Kevin Par...
+[03:40:23] INFO: Response (1667ms): I couldn't find any listings for apartments at the specified addresses. It seems the search was unsu...
+[03:40:23] INFO: Processing turn 3: Oh right, it's New Year's Day. How about January 3rd at 2pm instead?
+
+Kevin Park...
+[03:40:28] INFO: Response (5324ms): I encountered errors while trying to retrieve the available listings:
+
+1.  **No listings found:** Th...
+[03:40:28] INFO: Turn Metrics - tool_call: 33.3%, response: 0.0%, params: 50.0%, files: 0.0%
+[03:40:28] INFO: Result: PASSED
+[03:40:28] INFO: Duration: 8816ms
+[03:40:28] INFO: Tool calls made: 4
+[03:40:28] INFO:   - get_available_listings: {'bedrooms': []}
+[03:40:28] INFO:   - get_available_listings: {'bedrooms': []}
+[03:40:28] INFO:   - get_available_listings: {'bedrooms': []}
+[03:40:28] INFO:   - create_appointment: {'appointment_date': '2025-01-03', 'appointment_start_time': '14:00', 'first_name': 'Kevin', 'last_name': 'Park', 'email': 'kevin.park.2025@email.com'}
+[03:40:28] INFO: Final response: I encountered errors while trying to retrieve the available listings:
+
+1.  **No listings found:** The search failed.
+2.  **Total count:** No listings found.
+
+I could not retrieve the available listing...
+[03:40:28] INFO: --------------------------------------------------
+[03:40:28] INFO: METRICS:
+[03:40:28] INFO:   Tool Calling Rate: 33.3%
+[03:40:28] INFO:   Correct Response Rate: 0.0%
+[03:40:28] INFO:   Correct Tool Call Rate: 50.0%
+[03:40:28] INFO:   File Verification Rate: 0.0%
+[03:40:28] DEBUG:   Turn 1: tools_ok=True, response_ok=False, params_ok=False, latency=1779ms
+[03:40:28] DEBUG:     Missing keywords: ['bedroom', 'available', 'unit']
+[03:40:28] DEBUG:     Parameter errors (get_available_listings): ["Parameter 'bedrooms' mismatch - expected: [2], got: []"]
+[03:40:28] DEBUG:   Turn 2: tools_ok=False, response_ok=False, params_ok=False, latency=1667ms
+[03:40:28] DEBUG:     Missing keywords: ['slot', 'available', 'time']
+[03:40:28] DEBUG:   Turn 3: tools_ok=False, response_ok=False, params_ok=True, latency=5324ms
+[03:40:28] DEBUG:     Missing keywords: ['slot', 'booked', 'time', 'scheduled', 'confirmed']
+[03:40:28] WARNING: Failures:
+[03:40:28] WARNING:   - Metrics threshold not met: tool_rate=0.33, response_rate=0.00, param_rate=0.50
+[03:40:28] INFO: --------------------------------------------------
+[03:40:28] INFO: ======================================================================
+[03:40:28] INFO: SCENARIO: [repeated_query] RQ001 - Multiple Policy Questions
+[03:40:28] INFO: ======================================================================
+[03:40:28] INFO: Session started: 6b3150e9-47ec-4657-b1a6-29c71f92e1b7
+[03:40:28] INFO: Processing turn 1: Hi,
+
+Before I start looking at apartments, I have some questions. First, what is...
+[03:40:30] INFO: Response (1389ms): I apologize, but I cannot assist with checking pet policy details. My current tools are designed for...
+[03:40:30] INFO: Processing turn 2: Good to know. What about parking? Is it included in the rent or is there an addi...
+[03:40:31] INFO: Response (1134ms): I can certainly assist with those requests. To help you with your apartment search, could you please...
+[03:40:31] INFO: Processing turn 3: One more question - is this a smoke-free building?
+
+Nancy Brown
+nancy.brown.inqu...
+[03:40:32] INFO: Response (1589ms): I apologize, but I cannot assist with checking smoke-free building details. My current tools are des...
+[03:40:32] INFO: Processing turn 4: And what about utilities? What's included in the rent?
+
+Nancy Brown
+nancy.brown....
+[03:40:34] INFO: Response (1499ms): I apologize, but I cannot assist with checking utility costs or rent details. My current tools are d...
+[03:40:34] INFO: Turn Metrics - tool_call: 0.0%, response: 75.0%, params: 0.0%, files: 100.0%
+[03:40:34] INFO: Result: PASSED
+[03:40:34] INFO: Duration: 5660ms
+[03:40:34] INFO: Final response: I apologize, but I cannot assist with checking utility costs or rent details. My current tools are designed for property searching, managing listings, and booking appointments, and I cannot access or ...
+[03:40:34] INFO: --------------------------------------------------
+[03:40:34] INFO: METRICS:
+[03:40:34] INFO:   Tool Calling Rate: 0.0%
+[03:40:34] INFO:   Correct Response Rate: 75.0%
+[03:40:34] INFO:   Correct Tool Call Rate: 0.0%
+[03:40:34] INFO:   File Verification Rate: 100.0%
+[03:40:34] DEBUG:   Turn 1: tools_ok=False, response_ok=True, params_ok=False, latency=1389ms
+[03:40:34] DEBUG:   Turn 2: tools_ok=False, response_ok=False, params_ok=False, latency=1134ms
+[03:40:34] DEBUG:     Missing keywords: ['information']
+[03:40:34] DEBUG:   Turn 3: tools_ok=False, response_ok=True, params_ok=False, latency=1589ms
+[03:40:34] DEBUG:   Turn 4: tools_ok=False, response_ok=True, params_ok=False, latency=1499ms
+[03:40:34] WARNING: Failures:
+[03:40:34] WARNING:   - Metrics threshold not met: tool_rate=0.00, response_rate=0.75, param_rate=0.00
+[03:40:34] INFO: --------------------------------------------------
+[03:40:34] INFO: ======================================================================
+[03:40:34] INFO: SCENARIO: [repeated_query] RQ002 - Multiple Availability Checks
+[03:40:34] INFO: ======================================================================
+[03:40:34] INFO: Session started: 5cb6c396-5822-4a60-b2ff-351e971bbb7b
+[03:40:34] INFO: Processing turn 1: Hi,
+
+I'm interested in touring a 1-bedroom unit. What times are available on Feb...
+[03:40:39] INFO: Response (4608ms): Here are a few options for your tour:
+
+Eric Johnson's 1-bedroom unit has been found:
+
+**Available Am...
+[03:40:39] INFO: Processing turn 2: Hmm, those times don't work for me. What about February 18th?
+
+Eric Johnson
+eric...
+[03:40:45] INFO: Response (6058ms): Here are a few things to know:
+
+Eric Johnson's 1-bedroom unit has been found:
+
+**Available Amenities...
+[03:40:45] INFO: Processing turn 3: Actually, let me check February 20th too. What do you have?
+
+Eric Johnson
+eric.j...
+[03:40:51] INFO: Response (6725ms): Here are a couple of things to note:
+
+Eric Johnson's 1-bedroom unit has been found:
+
+**Available Ame...
+[03:40:51] INFO: Turn Metrics - tool_call: 66.7%, response: 66.7%, params: 50.0%, files: 100.0%
+[03:40:51] INFO: Result: PASSED
+[03:40:51] INFO: Duration: 17438ms
+[03:40:51] INFO: Tool calls made: 5
+[03:40:51] INFO:   - get_available_listings: {'bedrooms': [1], 'max_rent': 4500}
+[03:40:51] INFO:   - get_available_listings: {'bedrooms': [1], 'max_rent': 4500}
+[03:40:51] INFO:   - get_availability: {'date_str': '2025-02-18'}
+[03:40:51] INFO:   - get_available_listings: {'bedrooms': [1], 'max_rent': 4500}
+[03:40:51] INFO:   - get_availability: {'date_str': '2025-02-18'}
+[03:40:51] INFO: Final response: Here are a couple of things to note:
+
+Eric Johnson's 1-bedroom unit has been found:
+
+**Available Amenities:**
+*   hardwood floors
+*   dishwasher
+*   large closet
+
+**Available Bathrooms:**
+*   1 bathro...
+[03:40:51] INFO: --------------------------------------------------
+[03:40:51] INFO: METRICS:
+[03:40:51] INFO:   Tool Calling Rate: 66.7%
+[03:40:51] INFO:   Correct Response Rate: 66.7%
+[03:40:51] INFO:   Correct Tool Call Rate: 50.0%
+[03:40:51] INFO:   File Verification Rate: 100.0%
+[03:40:51] DEBUG:   Turn 1: tools_ok=False, response_ok=False, params_ok=False, latency=4608ms
+[03:40:51] DEBUG:     Missing keywords: ['slot', 'time']
+[03:40:51] DEBUG:   Turn 2: tools_ok=True, response_ok=True, params_ok=True, latency=6058ms
+[03:40:51] DEBUG:   Turn 3: tools_ok=True, response_ok=True, params_ok=False, latency=6725ms
+[03:40:51] DEBUG:     Parameter errors (get_availability): ["Parameter 'date_str' mismatch - expected: 2025-02-20, got: 2025-02-18"]
+[03:40:51] WARNING: Failures:
+[03:40:51] WARNING:   - Metrics threshold not met: tool_rate=0.67, response_rate=0.67, param_rate=0.50
+[03:40:51] INFO: --------------------------------------------------
+[03:40:51] INFO: ======================================================================
+[03:40:51] INFO: SCENARIO: [repeated_query] RQ003 - Reschedule After Booking
+[03:40:51] INFO: ======================================================================
+[03:40:51] INFO: Session started: 38052363-be32-46b6-a6c4-e196cff1d579
+[03:40:51] INFO: Processing turn 1: Hi,
+
+I'd like to book a tour for February 10th at 10:00 AM to see a 2-bedroom ap...
+[03:40:56] INFO: Response (4644ms): Here are the available time slots for Saturday, February 10, 2024:
+
+*   **09:00:** 09:00
+*   **10:00...
+[03:40:56] INFO: Processing turn 2: I'm so sorry, but something came up. What times are available on February 12th i...
+[03:41:02] INFO: Response (5599ms): Here are the available time slots for Monday, February 12, 2024:
+
+*   **09:00:** 09:00
+*   **10:00:*...
+[03:41:02] INFO: Processing turn 3: 2:00 PM works. Please reschedule my appointment to that time.
+
+Lisa Park
+lisa.pa...
+[03:41:06] INFO: Response (4229ms): The attempt to reschedule your appointment for 2:00 PM has been successfully escalated.
+
+Here are th...
+[03:41:06] INFO: Turn Metrics - tool_call: 33.3%, response: 33.3%, params: 50.0%, files: 100.0%
+[03:41:06] INFO: Result: PASSED
+[03:41:06] INFO: Duration: 14523ms
+[03:41:06] INFO: Tool calls made: 4
+[03:41:06] INFO:   - get_availability: {'date_str': '2024-02-10'}
+[03:41:06] INFO:   - get_availability: {'date_str': '2024-02-12'}
+[03:41:06] INFO:   - get_availability: {'date_str': '2024-02-12'}
+[03:41:06] INFO:   - escalate_conversation: {'reason_for_escalation': 'rescheduling due to work restriction.'}
+[03:41:06] INFO: Final response: The attempt to reschedule your appointment for 2:00 PM has been successfully escalated.
+
+Here are the next steps:
+
+*   **Ticket ID:** `ESC-D94934`
+*   **Reason:** Rescheduling due to work restriction....
+[03:41:06] INFO: --------------------------------------------------
+[03:41:06] INFO: METRICS:
+[03:41:06] INFO:   Tool Calling Rate: 33.3%
+[03:41:06] INFO:   Correct Response Rate: 33.3%
+[03:41:06] INFO:   Correct Tool Call Rate: 50.0%
+[03:41:06] INFO:   File Verification Rate: 100.0%
+[03:41:06] DEBUG:   Turn 1: tools_ok=False, response_ok=False, params_ok=True, latency=4644ms
+[03:41:06] DEBUG:     Missing keywords: ['booked', 'unit', 'confirmed', 'scheduled', 'bedroom']
+[03:41:06] DEBUG:   Turn 2: tools_ok=True, response_ok=True, params_ok=False, latency=5599ms
+[03:41:06] DEBUG:     Parameter errors (get_availability): ["Parameter 'date_str' mismatch - expected: 2025-02-12, got: 2024-02-12"]
+[03:41:06] DEBUG:   Turn 3: tools_ok=False, response_ok=False, params_ok=False, latency=4229ms
+[03:41:06] DEBUG:     Missing keywords: ['scheduled', 'booked', 'confirmed']
+[03:41:06] WARNING: Failures:
+[03:41:06] WARNING:   - Metrics threshold not met: tool_rate=0.33, response_rate=0.33, param_rate=0.50
+[03:41:06] INFO: --------------------------------------------------
+[03:41:06] INFO: ======================================================================
+[03:41:06] INFO: SCENARIO: [repeated_query] RQ004 - Compare Multiple Bedroom Sizes
+[03:41:06] INFO: ======================================================================
+[03:41:06] INFO: Session started: be364901-ee1e-47ae-b94b-76391cba98ac
+[03:41:06] INFO: Processing turn 1: Hello,
+
+I'm not sure what size apartment I need. Can you show me your 1-bedroom ...
+[03:41:08] INFO: Response (2337ms): I apologize, but I was unable to retrieve the 1-bedroom apartment listings. The request to search fo...
+[03:41:08] INFO: Processing turn 2: Those are nice, but let me also see the 2-bedroom options for comparison.
+
+Amand...
+[03:41:11] INFO: Response (3098ms): I apologize, but I was unable to retrieve the 2-bedroom apartment listings. The request to search fo...
+[03:41:11] INFO: Processing turn 3: Actually, what about studios? I might be able to save money that way.
+
+Amanda Le...
+[03:41:14] INFO: Response (3154ms): I apologize, but I was unable to retrieve the 2-bedroom apartment listings. The request to search fo...
+[03:41:14] INFO: Turn Metrics - tool_call: 100.0%, response: 0.0%, params: 0.0%, files: 100.0%
+[03:41:14] INFO: Result: PASSED
+[03:41:14] INFO: Duration: 8638ms
+[03:41:14] INFO: Tool calls made: 5
+[03:41:14] INFO:   - get_available_listings: {'bedrooms': [], 'max_rent': 10000, 'rooms': []}
+[03:41:14] INFO:   - get_available_listings: {'bedrooms': [], 'max_rent': 20000, 'rooms': []}
+[03:41:14] INFO:   - get_available_listings: {'bedrooms': [], 'max_rent': 20000, 'rooms': []}
+[03:41:14] INFO:   - get_available_listings: {'bedrooms': [], 'max_rent': 50000, 'rooms': []}
+[03:41:14] INFO:   - get_available_listings: {'bedrooms': [], 'max_rent': 50000, 'rooms': []}
+[03:41:14] INFO: Final response: I apologize, but I was unable to retrieve the 2-bedroom apartment listings. The request to search for available apartment listings failed with an unexpected keyword argument....
+[03:41:14] INFO: --------------------------------------------------
+[03:41:14] INFO: METRICS:
+[03:41:14] INFO:   Tool Calling Rate: 100.0%
+[03:41:14] INFO:   Correct Response Rate: 0.0%
+[03:41:14] INFO:   Correct Tool Call Rate: 0.0%
+[03:41:14] INFO:   File Verification Rate: 100.0%
+[03:41:14] DEBUG:   Turn 1: tools_ok=True, response_ok=False, params_ok=False, latency=2337ms
+[03:41:14] DEBUG:     Missing keywords: ['unit']
+[03:41:14] DEBUG:     Parameter errors (get_available_listings): ["Parameter 'bedrooms' mismatch - expected: [1], got: []"]
+[03:41:14] DEBUG:   Turn 2: tools_ok=True, response_ok=False, params_ok=False, latency=3098ms
+[03:41:14] DEBUG:     Missing keywords: ['unit']
+[03:41:14] DEBUG:     Parameter errors (get_available_listings): ["Parameter 'bedrooms' mismatch - expected: [2], got: []"]
+[03:41:14] DEBUG:   Turn 3: tools_ok=True, response_ok=False, params_ok=False, latency=3154ms
+[03:41:14] DEBUG:     Missing keywords: ['unit']
+[03:41:14] DEBUG:     Parameter errors (get_available_listings): ["Parameter 'bedrooms' mismatch - expected: [0], got: []"]
+[03:41:14] WARNING: Failures:
+[03:41:14] WARNING:   - Metrics threshold not met: tool_rate=1.00, response_rate=0.00, param_rate=0.00
+[03:41:14] INFO: --------------------------------------------------
+[03:41:15] INFO: ======================================================================
+[03:41:15] INFO: SCENARIO: [edge_case] EC001 - Partial Contact Info - Progressive Collection
+[03:41:15] INFO: ======================================================================
+[03:41:15] INFO: Session started: 7d6796a1-1a55-48ad-91fc-14d2d25a66ad
+[03:41:15] INFO: Processing turn 1: I want to book a tour for tomorrow at 3pm to see a 1-bedroom.
+...
+[03:41:22] INFO: Response (7028ms): The appointment for John Smith on Thursday, March 14, 2024, at 3:00 PM has been successfully confirm...
+[03:41:22] INFO: Processing turn 2: My name is Alex Thompson.
+...
+[03:41:26] INFO: Response (4339ms): The lead created for Alex Thompson is:
+**Lead ID:** LEAD-44C11579
+**Message:** Lead successfully cre...
+[03:41:26] INFO: Processing turn 3: alex.thompson@email.com and my phone is (555) 222-3333
+...
+[03:41:34] INFO: Response (7723ms): Here are the outcomes for your requests:
+
+1.  **Alex Thompson:** The lead for Alex Thompson has been...
+[03:41:34] INFO: Turn Metrics - tool_call: 0.0%, response: 0.0%, params: 0.0%, files: 100.0%
+[03:41:34] INFO: Result: PASSED
+[03:41:34] INFO: Duration: 19138ms
+[03:41:34] INFO: Tool calls made: 4
+[03:41:34] INFO:   - create_appointment: {'appointment_date': '2024-03-14', 'first_name': 'John', 'last_name': 'Smith', 'appointment_start_time': '14:00', 'email': 'john.smith@example.com', 'phone': '112-555-1122'}
+[03:41:34] INFO:   - create_lead: {'first_name': 'Alex', 'last_name': 'Thompson', 'email': 'alex.thompson@example.com', 'phone': '112-555-1122'}
+[03:41:34] INFO:   - create_lead: {'email': 'alex.thompson@example.com', 'first_name': 'Alex', 'last_name': 'Thompson', 'phone': '112-555-1122'}
+[03:41:34] INFO:   - search_property_knowledge: {'category': 'lending', 'search_text': 'alex.thompson@example.com'}
+[03:41:34] INFO: Final response: Here are the outcomes for your requests:
+
+1.  **Alex Thompson:** The lead for Alex Thompson has been successfully created. The ID is **LEAD-44C11579**.
+2.  **Alex Thompson:** The lead for Alex Thompso...
+[03:41:34] INFO: --------------------------------------------------
+[03:41:34] INFO: METRICS:
+[03:41:34] INFO:   Tool Calling Rate: 0.0%
+[03:41:34] INFO:   Correct Response Rate: 0.0%
+[03:41:34] INFO:   Correct Tool Call Rate: 0.0%
+[03:41:34] INFO:   File Verification Rate: 100.0%
+[03:41:34] DEBUG:   Turn 1: tools_ok=False, response_ok=False, params_ok=False, latency=7028ms
+[03:41:34] DEBUG:     Missing keywords: ['slot', 'available', 'unit', 'bedroom']
+[03:41:34] DEBUG:   Turn 2: tools_ok=True, response_ok=True, params_ok=False, latency=4339ms
+[03:41:34] DEBUG:   Turn 3: tools_ok=False, response_ok=False, params_ok=False, latency=7723ms
+[03:41:34] DEBUG:     Missing keywords: ['scheduled', 'booked', 'confirmed']
+[03:41:34] WARNING: Failures:
+[03:41:34] WARNING:   - Metrics threshold not met: tool_rate=0.00, response_rate=0.00, param_rate=0.00
+[03:41:34] INFO: --------------------------------------------------
+[03:41:34] INFO: ======================================================================
+[03:41:34] INFO: SCENARIO: [edge_case] EC002 - Unusual Date Formats
+[03:41:34] INFO: ======================================================================
+[03:41:34] INFO: Session started: e6f0357b-fe1f-47b7-a32a-bbf41204e886
+[03:41:34] INFO: Processing turn 1: Hi,
+
+Can I schedule a tour for the fifteenth of February, twenty twenty-five at ...
+[03:41:39] INFO: Response (5671ms): The available time slots for Saturday, February 15, 2025, are:
+
+*   09:00: Available
+*   10:00: Avai...
+[03:41:39] INFO: Turn Metrics - tool_call: 100.0%, response: 100.0%, params: 100.0%, files: 100.0%
+[03:41:39] INFO: Result: PASSED
+[03:41:39] INFO: Duration: 5718ms
+[03:41:39] INFO: Tool calls made: 1
+[03:41:39] INFO:   - get_availability: {'date_str': '2025-02-15'}
+[03:41:39] INFO: Final response: The available time slots for Saturday, February 15, 2025, are:
+
+*   09:00: Available
+*   10:00: Available
+*   13:00: Available
+*   14:00: Available
+*   15:00: Available
+*   17:00: Available
+
+There are...
+[03:41:39] INFO: --------------------------------------------------
+[03:41:39] INFO: METRICS:
+[03:41:39] INFO:   Tool Calling Rate: 100.0%
+[03:41:39] INFO:   Correct Response Rate: 100.0%
+[03:41:39] INFO:   Correct Tool Call Rate: 100.0%
+[03:41:39] INFO:   File Verification Rate: 100.0%
+[03:41:39] DEBUG:   Turn 1: tools_ok=True, response_ok=True, params_ok=True, latency=5671ms
+[03:41:39] INFO: --------------------------------------------------
+[03:41:39] INFO: ======================================================================
+[03:41:39] INFO: SCENARIO: [edge_case] EC003 - Phone Number Spoken Format
+[03:41:39] INFO: ======================================================================
+[03:41:39] INFO: Session started: a98d0877-8cc2-4cf0-a28c-c8e3ba3ebdd5
+[03:41:39] INFO: Processing turn 1: I want to tour Unit 301 on February 20th at 11am. My name is Chris Taylor.
+...
+[03:41:44] INFO: Response (4660ms): Here are the available time slots for Tuesday, February 20, 2024:
+
+Tuesday, February 20, 2024:
+*   0...
+[03:41:44] INFO: Processing turn 2: Email is chris.taylor@domain.org and my cell is five five five, four four four, ...
+[03:41:48] INFO: Response (4264ms): I apologize, but I was unable to create the appointment. The system encountered a validation error f...
+[03:41:48] INFO: Turn Metrics - tool_call: 100.0%, response: 50.0%, params: 100.0%, files: 100.0%
+[03:41:48] INFO: Result: PASSED
+[03:41:48] INFO: Duration: 8973ms
+[03:41:48] INFO: Tool calls made: 2
+[03:41:48] INFO:   - get_availability: {'date_str': '2024-02-20'}
+[03:41:48] INFO:   - create_appointment: {'appointment_date': '2024-02-20', 'appointment_start_time': '10:00', 'first_name': 'Chris', 'last_name': 'Taylor', 'email': 'chris.taylor@domain.org', 'phone': 55555555555555550}
+[03:41:48] INFO: Final response: I apologize, but I was unable to create the appointment. The system encountered a validation error for the `create_appointment` function.
+
+Please try again....
+[03:41:48] INFO: --------------------------------------------------
+[03:41:48] INFO: METRICS:
+[03:41:48] INFO:   Tool Calling Rate: 100.0%
+[03:41:48] INFO:   Correct Response Rate: 50.0%
+[03:41:48] INFO:   Correct Tool Call Rate: 100.0%
+[03:41:48] INFO:   File Verification Rate: 100.0%
+[03:41:48] DEBUG:   Turn 1: tools_ok=True, response_ok=True, params_ok=True, latency=4660ms
+[03:41:48] DEBUG:   Turn 2: tools_ok=True, response_ok=False, params_ok=True, latency=4264ms
+[03:41:48] DEBUG:     Missing keywords: ['scheduled', 'booked', 'confirmed']
+[03:41:48] WARNING: Failures:
+[03:41:48] WARNING:   - Metrics threshold not met: tool_rate=1.00, response_rate=0.50, param_rate=1.00
+[03:41:48] INFO: --------------------------------------------------
+[03:41:48] INFO: ======================================================================
+[03:41:48] INFO: SCENARIO: [edge_case] EC004 - Multi-Intent Single Message
+[03:41:48] INFO: ======================================================================
+[03:41:48] INFO: Session started: 1d405c9b-385f-4ea9-9a97-fa0c236c1df5
+[03:41:48] INFO: Processing turn 1: Subject: Multiple Questions
+
+Dear Leasing Team,
+
+I need a 2-bedroom apartment an...
+[03:41:59] INFO: Response (10969ms): Here are the outcomes for the requested actions:
+
+**1. Michael Brown Lead:**
+A lead has been success...
+[03:41:59] INFO: Turn Metrics - tool_call: 0.0%, response: 0.0%, params: 0.0%, files: 100.0%
+[03:41:59] INFO: Result: FAILED
+[03:41:59] INFO: Duration: 11018ms
+[03:41:59] INFO: Tool calls made: 4
+[03:41:59] INFO:   - create_lead: {'first_name': 'Michael', 'last_name': 'Brown', 'email': 'michael.brown.multi@email.com', 'phone': '555-666-9999'}
+[03:41:59] INFO:   - get_availability: {'date_str': '2024-05-14'}
+[03:41:59] INFO:   - search_property_knowledge: {'category': 'pet policy', 'search_text': 'pet policy'}
+[03:41:59] INFO:   - search_property_knowledge: {'category': 'parking', 'search_text': 'parking'}
+[03:41:59] INFO: Final response: Here are the outcomes for the requested actions:
+
+**1. Michael Brown Lead:**
+A lead has been successfully created for Michael Brown, with ID: LEAD-F9EA6DF0. The next steps are: Our leasing team will f...
+[03:41:59] INFO: --------------------------------------------------
+[03:41:59] INFO: METRICS:
+[03:41:59] INFO:   Tool Calling Rate: 0.0%
+[03:41:59] INFO:   Correct Response Rate: 0.0%
+[03:41:59] INFO:   Correct Tool Call Rate: 0.0%
+[03:41:59] INFO:   File Verification Rate: 100.0%
+[03:41:59] DEBUG:   Turn 1: tools_ok=False, response_ok=False, params_ok=False, latency=10969ms
+[03:41:59] DEBUG:     Missing keywords: ['bedroom', 'information', 'unit']
+[03:41:59] DEBUG:     Parameter errors (search_property_knowledge): ["Parameter 'search_text' mismatch - expected: pet|parking, got: pet policy"]
+[03:41:59] WARNING: Failures:
+[03:41:59] WARNING:   - Expected tool 'get_available_listings' was not called
+[03:41:59] WARNING:   - Metrics threshold not met: tool_rate=0.00, response_rate=0.00, param_rate=0.00
+[03:41:59] INFO: --------------------------------------------------
+[03:41:59] INFO: ======================================================================
+[03:41:59] INFO: SCENARIO: [edge_case] EC005 - Budget Below Minimum
+[03:41:59] INFO: ======================================================================
+[03:41:59] INFO: Session started: 1bd87968-2da0-4e0a-aefc-ab0cb7874e99
+[03:41:59] INFO: Processing turn 1: Hi,
+
+I'm on a very tight budget. Looking for any apartment under $800 per month....
+[03:42:01] INFO: Response (1534ms): I apologize, but I cannot assist with finding or recommending apartment rental options. My current t...
+[03:42:01] INFO: Turn Metrics - tool_call: 0.0%, response: 0.0%, params: 0.0%, files: 100.0%
+[03:42:01] INFO: Result: FAILED
+[03:42:01] INFO: Duration: 1585ms
+[03:42:01] INFO: Final response: I apologize, but I cannot assist with finding or recommending apartment rental options. My current tools are designed for managing property listings, appointments, and customer support, and I cannot b...
+[03:42:01] INFO: --------------------------------------------------
+[03:42:01] INFO: METRICS:
+[03:42:01] INFO:   Tool Calling Rate: 0.0%
+[03:42:01] INFO:   Correct Response Rate: 0.0%
+[03:42:01] INFO:   Correct Tool Call Rate: 0.0%
+[03:42:01] INFO:   File Verification Rate: 100.0%
+[03:42:01] DEBUG:   Turn 1: tools_ok=False, response_ok=False, params_ok=False, latency=1534ms
+[03:42:01] DEBUG:     Missing keywords: ['bedroom', 'available', 'unit']
+[03:42:01] WARNING: Failures:
+[03:42:01] WARNING:   - Expected tool 'get_available_listings' was not called
+[03:42:01] WARNING:   - Metrics threshold not met: tool_rate=0.00, response_rate=0.00, param_rate=0.00
+[03:42:01] INFO: --------------------------------------------------
+[03:42:01] INFO: ======================================================================
+[03:42:01] INFO: SCENARIO: [edge_case] EC006 - Flexible Bedroom Range
+[03:42:01] INFO: ======================================================================
+[03:42:01] INFO: Session started: de463b21-1c49-4435-b334-c4cde1080268
+[03:42:01] INFO: Processing turn 1: Hello,
+
+I'm flexible on size - anywhere from 1 to 3 bedrooms would work for me. ...
+[03:42:02] INFO: Response (1396ms): I apologize, but I cannot assist with finding or booking rental properties. My current tools are des...
+[03:42:02] INFO: Turn Metrics - tool_call: 0.0%, response: 0.0%, params: 0.0%, files: 100.0%
+[03:42:02] INFO: Result: FAILED
+[03:42:02] INFO: Duration: 1455ms
+[03:42:02] INFO: Final response: I apologize, but I cannot assist with finding or booking rental properties. My current tools are designed for managing property listings and appointments, and I cannot access or connect with financial...
+[03:42:02] INFO: --------------------------------------------------
+[03:42:02] INFO: METRICS:
+[03:42:02] INFO:   Tool Calling Rate: 0.0%
+[03:42:02] INFO:   Correct Response Rate: 0.0%
+[03:42:02] INFO:   Correct Tool Call Rate: 0.0%
+[03:42:02] INFO:   File Verification Rate: 100.0%
+[03:42:02] DEBUG:   Turn 1: tools_ok=False, response_ok=False, params_ok=False, latency=1396ms
+[03:42:02] DEBUG:     Missing keywords: ['bedroom', 'available', 'unit']
+[03:42:02] WARNING: Failures:
+[03:42:02] WARNING:   - Expected tool 'get_available_listings' was not called
+[03:42:02] WARNING:   - Metrics threshold not met: tool_rate=0.00, response_rate=0.00, param_rate=0.00
+[03:42:02] INFO: --------------------------------------------------
+[03:42:02] INFO: ======================================================================
+[03:42:02] INFO: SCENARIO: [edge_case] EC007 - Very Long Formal Email
+[03:42:02] INFO: ======================================================================
+[03:42:02] INFO: Session started: dc40ae3d-a977-4143-8d29-183020ce7012
+[03:42:02] INFO: Processing turn 1: Subject: Detailed Apartment Inquiry - Moving from Out of State
+
+Dear Leasing Off...
+[03:42:11] INFO: Response (8965ms): Here are a few options for your apartment request:
+
+The apartment with 3 bedrooms and 2 bathrooms is...
+[03:42:11] INFO: Turn Metrics - tool_call: 100.0%, response: 0.0%, params: 100.0%, files: 100.0%
+[03:42:11] INFO: Result: PASSED
+[03:42:11] INFO: Duration: 9016ms
+[03:42:11] INFO: Tool calls made: 1
+[03:42:11] INFO:   - get_available_listings: {'bedrooms': [3], 'max_rent': 3500}
+[03:42:11] INFO: Final response: Here are a few options for your apartment request:
+
+The apartment with 3 bedrooms and 2 bathrooms is available for rent from April 1, 2025, to February 1, 2025.
+
+**Available Properties:**
+*   **410:**...
+[03:42:11] INFO: --------------------------------------------------
+[03:42:11] INFO: METRICS:
+[03:42:11] INFO:   Tool Calling Rate: 100.0%
+[03:42:11] INFO:   Correct Response Rate: 0.0%
+[03:42:11] INFO:   Correct Tool Call Rate: 100.0%
+[03:42:11] INFO:   File Verification Rate: 100.0%
+[03:42:11] DEBUG:   Turn 1: tools_ok=True, response_ok=False, params_ok=True, latency=8965ms
+[03:42:11] DEBUG:     Missing keywords: ['unit']
+[03:42:11] WARNING: Failures:
+[03:42:11] WARNING:   - Metrics threshold not met: tool_rate=1.00, response_rate=0.00, param_rate=1.00
+[03:42:11] INFO: --------------------------------------------------
+[03:42:11] INFO: ======================================================================
+[03:42:11] INFO: SCENARIO: [edge_case] EC008 - Callback Request Only
+[03:42:11] INFO: ======================================================================
+[03:42:11] INFO: Session started: f848b4a7-2fa2-4990-aaf3-2dc9629cf621
+[03:42:11] INFO: Processing turn 1: Hi,
+
+I'm busy right now but interested in apartments. Can someone call me back t...
+[03:42:13] INFO: Response (1460ms): I apologize, but I cannot assist with contacting or managing personal contacts. My current capabilit...
+[03:42:13] INFO: Turn Metrics - tool_call: 0.0%, response: 0.0%, params: 0.0%, files: 100.0%
+[03:42:13] INFO: Result: FAILED
+[03:42:13] INFO: Duration: 1508ms
+[03:42:13] INFO: Final response: I apologize, but I cannot assist with contacting or managing personal contacts. My current capabilities are limited to assisting with property management and searching for available listings. I cannot...
+[03:42:13] INFO: --------------------------------------------------
+[03:42:13] INFO: METRICS:
+[03:42:13] INFO:   Tool Calling Rate: 0.0%
+[03:42:13] INFO:   Correct Response Rate: 0.0%
+[03:42:13] INFO:   Correct Tool Call Rate: 0.0%
+[03:42:13] INFO:   File Verification Rate: 100.0%
+[03:42:13] DEBUG:   Turn 1: tools_ok=False, response_ok=False, params_ok=False, latency=1460ms
+[03:42:13] DEBUG:     Missing keywords: ['saved', 'information']
+[03:42:13] WARNING: Failures:
+[03:42:13] WARNING:   - Expected tool 'create_lead' was not called
+[03:42:13] WARNING:   - Metrics threshold not met: tool_rate=0.00, response_rate=0.00, param_rate=0.00
+[03:42:13] INFO: --------------------------------------------------
+[03:42:13] INFO: ======================================================================
+[03:42:13] INFO: SCENARIO: [negative] NEG001 - No Tools on Simple Greeting
+[03:42:13] INFO: ======================================================================
+[03:42:13] INFO: Session started: 86969af7-3823-44e0-baf3-a17b7085d9ce
+[03:42:13] INFO: Processing turn 1: Hello!
+
+Just saying hi.
+
+John Smith
+john.smith@email.com
+(555) 111-2222
+...
+[03:42:14] INFO: Response (1512ms): I apologize, but I cannot assist with greeting or contacting John Smith. My current tools are design...
+[03:42:15] INFO: Turn Metrics - tool_call: 100.0%, response: 100.0%, params: 100.0%, files: 100.0%
+[03:42:15] INFO: Result: PASSED
+[03:42:15] INFO: Duration: 1561ms
+[03:42:15] INFO: Final response: I apologize, but I cannot assist with greeting or contacting John Smith. My current tools are designed for managing property listings, appointments, and customer support, and cannot connect with or as...
+[03:42:15] INFO: --------------------------------------------------
+[03:42:15] INFO: METRICS:
+[03:42:15] INFO:   Tool Calling Rate: 100.0%
+[03:42:15] INFO:   Correct Response Rate: 100.0%
+[03:42:15] INFO:   Correct Tool Call Rate: 100.0%
+[03:42:15] INFO:   File Verification Rate: 100.0%
+[03:42:15] DEBUG:   Turn 1: tools_ok=True, response_ok=True, params_ok=False, latency=1512ms
+[03:42:15] INFO: --------------------------------------------------
+[03:42:15] INFO: ======================================================================
+[03:42:15] INFO: SCENARIO: [negative] NEG002 - No Tools on Farewell
+[03:42:15] INFO: ======================================================================
+[03:42:15] INFO: Session started: 85fa9dcd-2cf1-4921-bf41-7093a09a7aec
+[03:42:15] INFO: Processing turn 1: Thanks for your help today, goodbye!
+
+Jane Doe
+jane.doe@email.com
+(555) 333-4444...
+[03:42:16] INFO: Response (1654ms): I apologize, but I cannot assist with connecting Jane Doe with available listings or booking tours. ...
+[03:42:16] INFO: Turn Metrics - tool_call: 100.0%, response: 100.0%, params: 100.0%, files: 100.0%
+[03:42:16] INFO: Result: PASSED
+[03:42:16] INFO: Duration: 1703ms
+[03:42:16] INFO: Final response: I apologize, but I cannot assist with connecting Jane Doe with available listings or booking tours. My current tools are focused on property management and customer service operations, and I cannot co...
+[03:42:16] INFO: --------------------------------------------------
+[03:42:16] INFO: METRICS:
+[03:42:16] INFO:   Tool Calling Rate: 100.0%
+[03:42:16] INFO:   Correct Response Rate: 100.0%
+[03:42:16] INFO:   Correct Tool Call Rate: 100.0%
+[03:42:16] INFO:   File Verification Rate: 100.0%
+[03:42:16] DEBUG:   Turn 1: tools_ok=True, response_ok=True, params_ok=False, latency=1654ms
+[03:42:16] INFO: --------------------------------------------------
+[03:42:16] INFO: ======================================================================
+[03:42:16] INFO: SCENARIO: [negative] NEG003 - No Tools on Off-Topic Question
+[03:42:16] INFO: ======================================================================
+[03:42:16] INFO: Session started: 11e3509a-f7ab-4da9-be34-0ff173000b79
+[03:42:16] INFO: Processing turn 1: What's the weather like in the city?
+
+Weather Curious
+weather@email.com
+(555) 99...
+[03:42:18] INFO: Response (1469ms): I apologize, but I cannot assist with checking weather conditions. My current tools are designed for...
+[03:42:18] INFO: Turn Metrics - tool_call: 100.0%, response: 100.0%, params: 100.0%, files: 100.0%
+[03:42:18] INFO: Result: PASSED
+[03:42:18] INFO: Duration: 1522ms
+[03:42:18] INFO: Final response: I apologize, but I cannot assist with checking weather conditions. My current tools are designed for managing property listings and appointments, and I cannot access real-time or specific weather data...
+[03:42:18] INFO: --------------------------------------------------
+[03:42:18] INFO: METRICS:
+[03:42:18] INFO:   Tool Calling Rate: 100.0%
+[03:42:18] INFO:   Correct Response Rate: 100.0%
+[03:42:18] INFO:   Correct Tool Call Rate: 100.0%
+[03:42:18] INFO:   File Verification Rate: 100.0%
+[03:42:18] DEBUG:   Turn 1: tools_ok=True, response_ok=True, params_ok=False, latency=1469ms
+[03:42:18] INFO: --------------------------------------------------
+[03:42:18] INFO: ======================================================================
+[03:42:18] INFO: SCENARIO: [negative] NEG004 - No Booking Tools on Simple Question
+[03:42:18] INFO: ======================================================================
+[03:42:18] INFO: Session started: c66c3b87-08ef-4968-8dcc-051ebe193c09
+[03:42:18] INFO: Processing turn 1: How much do 2-bedroom apartments cost here?
+
+Price Checker
+price.check@email.com...
+[03:42:19] INFO: Response (1351ms): I apologize, but I cannot assist with pricing or checking property costs. My current tools are desig...
+[03:42:19] INFO: Turn Metrics - tool_call: 0.0%, response: 0.0%, params: 0.0%, files: 100.0%
+[03:42:19] INFO: Result: FAILED
+[03:42:19] INFO: Duration: 1399ms
+[03:42:19] INFO: Final response: I apologize, but I cannot assist with pricing or checking property costs. My current tools are designed for managing property listings and appointments, and I cannot provide financial or property-rela...
+[03:42:19] INFO: --------------------------------------------------
+[03:42:19] INFO: METRICS:
+[03:42:19] INFO:   Tool Calling Rate: 0.0%
+[03:42:19] INFO:   Correct Response Rate: 0.0%
+[03:42:19] INFO:   Correct Tool Call Rate: 0.0%
+[03:42:19] INFO:   File Verification Rate: 100.0%
+[03:42:19] DEBUG:   Turn 1: tools_ok=False, response_ok=False, params_ok=False, latency=1351ms
+[03:42:19] DEBUG:     Missing keywords: ['bedroom', 'available', 'unit']
+[03:42:19] WARNING: Failures:
+[03:42:19] WARNING:   - Expected tool 'get_available_listings' was not called
+[03:42:19] WARNING:   - Metrics threshold not met: tool_rate=0.00, response_rate=0.00, param_rate=0.00
+[03:42:19] INFO: --------------------------------------------------
+[03:42:19] INFO: [GOLDEN PATH] GP001: Formal Email Inquiry to Tour Booking
+[03:42:19] INFO: Session started: 3d814445-9b5e-41ec-bcb5-db8b5695cd20
+[03:42:19] INFO: Processing turn 1: Subject: Inquiry About Leasing Options
+
+Dear Leasing Agent,
+
+My name is Michelle...
+[03:42:28] INFO: Response (8894ms): Here are a few options for you:
+
+**Available 2-bedroom units in budget:**
+1.  **2025-04-01:** Afford...
+[03:42:28] INFO: Processing turn 2: Hi,
+
+Thank you for the details on the available units. I would like to schedule ...
+[03:42:33] INFO: Response (4488ms): I apologize, but I was unable to retrieve the available listings.
+
+The request to search for availab...
+[03:42:33] INFO: Processing turn 3: Hi,
+
+I would like to schedule the tour for **Unit 303** at **10:00 AM** on Febru...
+[03:42:37] INFO: Response (4050ms): I apologize, but I was unable to retrieve the available listings.
+
+The request to search for availab...
+[03:42:37] INFO: Turn Metrics - tool_call: 33.3%, response: 33.3%, params: 100.0%, files: 100.0%
+[03:42:37] INFO:   Passed: True
+[03:42:37] INFO:   Duration: 17483ms
+[03:42:37] INFO:   Tools called: ['get_available_listings', 'search_property_knowledge', 'get_available_listings', 'search_property_knowledge', 'get_available_listings']
+[03:42:37] INFO: [GOLDEN PATH] GP002: Pet Owner Studio Search
+[03:42:37] INFO: Session started: a647cccd-492b-435c-8947-358d723575f5
+[03:42:37] INFO: Processing turn 1: Hello,
+
+I have a small dog (a 15-pound Beagle) and am interested in renting at y...
+[03:42:38] INFO: Response (1611ms): I am sorry, but I cannot assist with assisting with pet policy inquiries. My current capabilities ar...
+[03:42:38] INFO: Processing turn 2: That sounds reasonable! Do you have any pet-friendly studio apartments available...
+[03:42:41] INFO: Response (2383ms): I apologize, but I encountered an error while trying to fetch available apartment listings. The vali...
+[03:42:41] INFO: Processing turn 3: **Unit 102** looks perfect since it's pet-friendly and has in-unit laundry. What...
+[03:42:46] INFO: Response (4884ms): The available time slots for Thursday, February 20, 2025, are:
+
+*   **09:00:** 09:00
+*   **10:00:** ...
+[03:42:46] INFO: Processing turn 4: Please book me for 2:00 PM on February 20, 2025.
+
+Thanks,
+Thomas Rodriguez
+thoma...
+[03:42:50] INFO: Response (4401ms): I apologize, but I was unable to complete the booking. The attempt to create the appointment failed ...
+[03:42:50] INFO: Turn Metrics - tool_call: 75.0%, response: 50.0%, params: 33.3%, files: 100.0%
+[03:42:50] INFO:   Passed: True
+[03:42:50] INFO:   Duration: 13330ms
+[03:42:50] INFO:   Tools called: ['get_available_listings', 'get_availability', 'create_appointment']
+[03:42:50] INFO: [GOLDEN PATH] GP003: Large Family 4BR Search with Amenities
+[03:42:50] INFO: Session started: d76bdf88-bd69-4633-819c-8fff2e256be0
+[03:42:50] INFO: Processing turn 1: Subject: Family Apartment Inquiry
+
+Dear Leasing Team,
+
+My family and I are looki...
+[03:42:52] INFO: Response (1702ms): I've found no listings matching your criteria. It seems the search could not yield any results....
+[03:42:52] INFO: Processing turn 2: That's great to hear! Please show me what 4-bedroom apartments you have availabl...
+[03:42:54] INFO: Response (2378ms): I apologize, but I couldn't retrieve the availability for apartments with a maximum rent of $4,500 p...
+[03:42:54] INFO: Processing turn 3: **Unit 505** looks amazing for our family - the 4BR/3BA with city views would be...
+[03:43:02] INFO: Response (8176ms): Here are the results for your requests:
+
+**Apartment 505 Available:**
+
+No listings were found matchi...
+[03:43:02] INFO: Processing turn 4: 11:00 AM works perfectly. Please book the tour for that time.
+
+Thank you,
+David ...
+[03:43:08] INFO: Response (5489ms): I apologize, but I was unable to complete either of your requests.
+
+The attempt to create the appoin...
+[03:43:08] INFO: Turn Metrics - tool_call: 50.0%, response: 0.0%, params: 0.0%, files: 100.0%
+[03:43:08] INFO:   Passed: True
+[03:43:08] INFO:   Duration: 17798ms
+[03:43:08] INFO:   Tools called: ['get_available_listings', 'get_available_listings', 'get_available_listings', 'create_appointment', 'create_appointment']
+[03:43:08] INFO: [GOLDEN PATH] GP004: Lead Creation Then Listing Search
+[03:43:08] INFO: Session started: e52ff524-228b-4735-9cce-b7720797e0d6
+[03:43:08] INFO: Processing turn 1: Hi there,
+
+I'm just starting my apartment search and would like to receive updat...
+[03:43:16] INFO: Response (8487ms): Here are a few things to know:
+
+**Available Units:**
+We offer several parking options: covered garag...
+[03:43:16] INFO: Processing turn 2: Thank you! While I have you, what 3-bedroom apartments do you have available und...
+[03:43:26] INFO: Response (9884ms): Here are a few things to know:
+
+**Available Units:**
+We offer several parking options: covered garag...
+[03:43:26] INFO: Turn Metrics - tool_call: 0.0%, response: 0.0%, params: 0.0%, files: 100.0%
+[03:43:26] INFO:   Passed: True
+[03:43:26] INFO:   Duration: 18422ms
+[03:43:26] INFO:   Tools called: ['search_property_knowledge', 'search_property_knowledge', 'search_property_knowledge']
+[03:43:26] INFO: [GOLDEN PATH] GP005: Quick 1BR Search and Same-Day Booking
+[03:43:26] INFO: Session started: 8130a14f-e44f-48e5-9c55-bcae0e81fe7f
+[03:43:26] INFO: Processing turn 1: Hi,
+
+I need a 1-bedroom apartment ASAP. Budget is $1,700/month max. What do you ...
+[03:43:32] INFO: Response (6114ms): Here are a few options for your stay:
+
+Sarah Kim
+sarah.kim.urgent@email.com
+(555) 444-1212
+
+I found ...
+[03:43:32] INFO: Processing turn 2: Perfect! **Unit 205** with the balcony looks great. What times are available tom...
+[03:43:35] INFO: Response (2752ms): I apologize, but I was unable to retrieve the available listings for unit 205. The request to search...
+[03:43:35] INFO: Processing turn 3: 3:00 PM works for me. Please book that time slot.
+
+Sarah Kim
+sarah.kim.urgent@em...
+[03:43:40] INFO: Response (4577ms): I apologize, but I was unable to book the appointment for Sarah Kim. The attempt to create the appoi...
+[03:43:40] INFO: Turn Metrics - tool_call: 66.7%, response: 0.0%, params: 50.0%, files: 100.0%
+[03:43:40] INFO:   Passed: True
+[03:43:40] INFO:   Duration: 13498ms
+[03:43:40] INFO:   Tools called: ['get_available_listings', 'get_available_listings', 'create_appointment']
+[03:43:40] INFO: [GOLDEN PATH] GP006: Luxury 5BR Penthouse Inquiry
+[03:43:40] INFO: Session started: 75f9253a-bdc4-4d34-b9c0-757946190e44
+[03:43:40] INFO: Processing turn 1: Subject: Luxury Penthouse Availability
+
+Dear Leasing Office,
+
+I am relocating fo...
+[03:43:49] INFO: Response (8958ms): Here are a few options for your luxury penthouse request:
+
+**Available Listings:**
+1.  **506:** A ra...
+[03:43:49] INFO: Processing turn 2: **Unit 507** with the private roof deck is exactly what I'm looking for. The $5,...
+[03:43:54] INFO: Response (5683ms): I apologize, but I was unable to create the appointment for you. The attempt to create the appointme...
+[03:43:54] INFO: Turn Metrics - tool_call: 50.0%, response: 0.0%, params: 50.0%, files: 0.0%
+[03:43:54] INFO:   Passed: True
+[03:43:54] INFO:   Duration: 14695ms
+[03:43:54] INFO:   Tools called: ['get_available_listings', 'create_appointment']
+[03:43:54] INFO: [FRUSTRATED PATH] FP001: Budget Too Low - User Adjusts
+[03:43:54] INFO: Session started: d3171b26-4d2e-40ef-a5c7-7932f5f1b24c
+[03:43:54] INFO: Processing turn 1: Hello,
+
+I'm looking for a 2-bedroom apartment but my budget is tight - no more t...
+[03:43:58] INFO: Response (3677ms): I've found 0 available listings that match your criteria: 2 bedrooms, maximum rent of $1,500 per mon...
+[03:43:58] INFO: Processing turn 2: That's disappointing. What about a 1-bedroom then? Is there anything under $1,50...
+[03:44:08] INFO: Response (9688ms): Here are the 4 available listing(s) that match your criteria:
+
+1.  **208** (Cozy 1BR with classic ch...
+[03:44:08] INFO: Processing turn 3: **Unit 201** at $1,450 works for me. What times are available on February 10th?
+...
+[03:44:19] INFO: Response (11086ms): Here are the 4 available listing(s) that match your criteria:
+
+1.  **208** (Cozy 1BR with classic ch...
+[03:44:19] INFO: Processing turn 4: 2:00 PM works perfectly. Please book the tour.
+
+Maria Santos
+maria.santos.1234@e...
+[03:44:31] INFO: Response (11870ms): Here are the 4 available listing(s) that match your criteria:
+
+1.  **208** (Cozy 1BR with classic ch...
+[03:44:31] INFO: Turn Metrics - tool_call: 50.0%, response: 0.0%, params: 50.0%, files: 100.0%
+[03:44:31] INFO:   Passed: True, Duration: 36375ms
+[03:44:31] INFO: [FRUSTRATED PATH] FP002: No 6BR Available - Adjusts to 5BR
+[03:44:31] INFO: Session started: b76728c3-a6ff-498d-989b-40fdb5e0f1a1
+[03:44:31] INFO: Processing turn 1: Subject: Large Apartment Needed
+
+Dear Leasing Team,
+
+We are a multi-generational...
+[03:44:33] INFO: Response (2391ms): I apologize, but I encountered an error trying to fetch available apartment listings. The validation...
+[03:44:33] INFO: Processing turn 2: I see. What is the largest apartment you have available then?
+
+Robert Garcia
+rob...
+[03:44:35] INFO: Response (2116ms): The following apartments were found:
+
+1.  **6 Bedrooms:** Available
+2.  **7 Bedrooms:** Available
+
+W...
+[03:44:35] INFO: Processing turn 3: **Unit 507** with the private roof deck sounds incredible! We would make it work...
+[03:44:45] INFO: Response (10083ms): The following appointments have been successfully scheduled:
+
+**1. 6 Bedrooms:**
+*   **Date:** March...
+[03:44:45] INFO: Turn Metrics - tool_call: 66.7%, response: 0.0%, params: 0.0%, files: 100.0%
+[03:44:45] INFO:   Passed: True, Duration: 14643ms
+[03:44:45] INFO: [FRUSTRATED PATH] FP003: Frustrated User Demands Human Agent
+[03:44:45] INFO: Session started: b14d15c3-5fde-4037-96fa-f6b14ba7983a
+[03:44:45] INFO: Processing turn 1: Hi,
+
+I need a 2-bedroom under $1,200. This is all I can afford. What do you have...
+[03:44:48] INFO: Response (2205ms): I apologize, but I cannot assist with finding or recommending specific properties. My current tools ...
+[03:44:48] INFO: Processing turn 2: This is ridiculous. Your prices are way too high for what you're offering. I've ...
+[03:44:49] INFO: Response (1523ms): I apologize, but I cannot assist with recommending or recommending prices for properties. My current...
+[03:44:49] INFO: Processing turn 3: I don't want to talk to a bot anymore. Get me a real person NOW. This is very fr...
+[03:44:51] INFO: Response (1770ms): I apologize, but no listings matching your criteria were found. The tool returned no results....
+[03:44:51] INFO: Turn Metrics - tool_call: 0.0%, response: 0.0%, params: 0.0%, files: 100.0%
+[03:44:51] INFO:   Passed: True, Duration: 5550ms
+[03:44:51] INFO: [FRUSTRATED PATH] FP004: User Abandons Mid-Conversation
+[03:44:51] INFO: Session started: cfdd2c15-7401-4942-bbe5-862465785f52
+[03:44:51] INFO: Processing turn 1: Hi,
+
+Looking for 3-bedroom apartments. What's available?
+
+Patricia Taylor
+patric...
+[03:45:00] INFO: Response (8617ms): I found 12 available listing(s) for your request:
+
+1.  **Patricia Taylor** (555) 666-4444: Value-pri...
+[03:45:00] INFO: Processing turn 2: Unit 403 looks okay. What times can I tour tomorrow?
+
+Patricia Taylor
+patricia.t...
+[03:45:04] INFO: Response (4484ms): The following 1 relevant knowledge base entries were found for your search:
+
+*   **amenities:** Yes!...
+[03:45:04] INFO: Processing turn 3: Actually, I've decided to look at another property instead. Thank you for your t...
+[03:45:09] INFO: Response (4711ms): The following 1 relevant knowledge base entries were found for your search:
+
+*   **amenities:** Yes!...
+[03:45:09] INFO: Turn Metrics - tool_call: 50.0%, response: 0.0%, params: 100.0%, files: 100.0%
+[03:45:09] INFO:   Passed: True, Duration: 17865ms
+[03:45:09] INFO: [FRUSTRATED PATH] FP005: Date Unavailable - Reschedules
+[03:45:09] INFO: Session started: 84214358-e355-4a3d-98e0-ba8d020ec300
+[03:45:09] INFO: Processing turn 1: Hi,
+
+I'd like to tour a 2-bedroom unit on January 1st at noon. What do you have ...
+[03:45:11] INFO: Response (1804ms): I couldn't find any listings for apartments at the specified addresses. It seems like the search was...
+[03:45:11] INFO: Processing turn 2: **Unit 304** looks good. Is January 1st at 12pm available for a tour?
+
+Kevin Par...
+[03:45:12] INFO: Response (1731ms): I couldn't find any listings for apartments at the specified addresses. It seems the search was unsu...
+[03:45:12] INFO: Processing turn 3: Oh right, it's New Year's Day. How about January 3rd at 2pm instead?
+
+Kevin Park...
+[03:45:18] INFO: Response (5770ms): I encountered errors while trying to complete your requests.
+
+1.  **For January 3rd at 2pm:** I coul...
+[03:45:18] INFO: Turn Metrics - tool_call: 33.3%, response: 0.0%, params: 50.0%, files: 0.0%
+[03:45:18] INFO:   Passed: True, Duration: 9359ms
+[03:45:18] INFO: [EDGE CASE] EC001: Partial Contact Info - Progressive Collection
+[03:45:18] INFO: Session started: 5020b151-7a69-47e1-86d7-0c3c7af72360
+[03:45:18] INFO: Processing turn 1: I want to book a tour for tomorrow at 3pm to see a 1-bedroom.
+...
+[03:45:23] INFO: Response (5199ms): Here are the available time slots for your tour:
+
+Tuesday, May 14, 2024:
+*   09:00 - 10:00
+*   10:00...
+[03:45:23] INFO: Processing turn 2: My name is Alex Thompson.
+...
+[03:45:29] INFO: Response (5325ms): Here are the available time slots for your tour:
+
+Tuesday, May 14, 2024:
+*   09:00 - 10:00
+*   10:00...
+[03:45:29] INFO: Processing turn 3: alex.thompson@email.com and my phone is (555) 222-3333
+...
+[03:45:38] INFO: Response (9351ms): Here are the results for your requests:
+
+1.  **Availability for Alex Thompson:**
+    The availabilit...
+[03:45:38] INFO: Turn Metrics - tool_call: 0.0%, response: 0.0%, params: 100.0%, files: 100.0%
+[03:45:38] INFO:   Passed: True, Duration: 19931ms
+[03:45:38] INFO: [EDGE CASE] EC002: Unusual Date Formats
+[03:45:38] INFO: Session started: 77b7832d-2f68-45e4-a3b2-190970bec2ce
+[03:45:38] INFO: Processing turn 1: Hi,
+
+Can I schedule a tour for the fifteenth of February, twenty twenty-five at ...
+[03:45:42] INFO: Response (3584ms): The available time slots for Saturday, February 15, 2025, are:
+
+*   **09:00**
+*   **10:00**
+*   **13...
+[03:45:42] INFO: Turn Metrics - tool_call: 100.0%, response: 100.0%, params: 100.0%, files: 100.0%
+[03:45:42] INFO:   Passed: True, Duration: 3635ms
+[03:45:42] INFO: [EDGE CASE] EC003: Phone Number Spoken Format
+[03:45:42] INFO: Session started: f6311a2e-26ca-4b07-84a4-81e468787bee
+[03:45:42] INFO: Processing turn 1: I want to tour Unit 301 on February 20th at 11am. My name is Chris Taylor.
+...
+[03:45:46] INFO: Response (4097ms): Here are the available time slots for your Tuesday, February 20, 2024 tour:
+
+Tuesday, February 20, 2...
+[03:45:46] INFO: Processing turn 2: Email is chris.taylor@domain.org and my cell is five five five, four four four, ...
+[03:45:50] INFO: Response (4437ms): I apologize, but I was unable to create the appointment. The system encountered an error stating: "1...
+[03:45:50] INFO: Turn Metrics - tool_call: 100.0%, response: 50.0%, params: 100.0%, files: 100.0%
+[03:45:50] INFO:   Passed: True, Duration: 8589ms
+[03:45:50] INFO: [EDGE CASE] EC004: Multi-Intent Single Message
+[03:45:50] INFO: Session started: 4e736fbf-e8a5-4be5-80d4-df095ac3ac9a
+[03:45:50] INFO: Processing turn 1: Subject: Multiple Questions
+
+Dear Leasing Team,
+
+I need a 2-bedroom apartment an...
+[03:46:01] INFO: Response (11073ms): Here are the outcomes for the requested actions:
+
+**1. Michael Brown (Multi-Question Lead):**
+The le...
+[03:46:01] INFO: Turn Metrics - tool_call: 0.0%, response: 0.0%, params: 0.0%, files: 100.0%
+[03:46:01] INFO:   Passed: False, Duration: 11127ms
+[03:46:02] INFO: [EDGE CASE] EC005: Budget Below Minimum
+[03:46:02] INFO: Session started: 2b130d3a-744e-4c9d-b864-327e4f1fa875
+[03:46:02] INFO: Processing turn 1: Hi,
+
+I'm on a very tight budget. Looking for any apartment under $800 per month....
+[03:46:03] INFO: Response (1398ms): I apologize, but I cannot assist with finding or recommending apartment rentals. My current tools ar...
+[03:46:03] INFO: Turn Metrics - tool_call: 0.0%, response: 0.0%, params: 0.0%, files: 100.0%
+[03:46:03] INFO:   Passed: False, Duration: 1452ms
+[03:46:03] INFO: [EDGE CASE] EC006: Flexible Bedroom Range
+[03:46:03] INFO: Session started: 694e106a-fc09-4a5f-bde3-375f8d47c474
+[03:46:03] INFO: Processing turn 1: Hello,
+
+I'm flexible on size - anywhere from 1 to 3 bedrooms would work for me. ...
+[03:46:04] INFO: Response (1389ms): I apologize, but I cannot assist with finding or booking rental properties. My current tools are des...
+[03:46:04] INFO: Turn Metrics - tool_call: 0.0%, response: 0.0%, params: 0.0%, files: 100.0%
+[03:46:04] INFO:   Passed: False, Duration: 1443ms
+[03:46:04] INFO: [EDGE CASE] EC007: Very Long Formal Email
+[03:46:04] INFO: Session started: ebe59885-3b21-4bec-b67d-74fc8df79db8
+[03:46:04] INFO: Processing turn 1: Subject: Detailed Apartment Inquiry - Moving from Out of State
+
+Dear Leasing Off...
+[03:46:09] INFO: Response (4443ms): Here are a few options for your apartment request:
+
+The listing available is for a **3-bedroom 2BA a...
+[03:46:09] INFO: Turn Metrics - tool_call: 100.0%, response: 0.0%, params: 100.0%, files: 100.0%
+[03:46:09] INFO:   Passed: True, Duration: 4497ms
+[03:46:09] INFO: [EDGE CASE] EC008: Callback Request Only
+[03:46:09] INFO: Session started: c08b782e-a3af-40d2-897b-bc0bf42fde07
+[03:46:09] INFO: Processing turn 1: Hi,
+
+I'm busy right now but interested in apartments. Can someone call me back t...
+[03:46:11] INFO: Response (1535ms): I apologize, but I cannot assist with contacting or managing personal appointments. My current tools...
+[03:46:11] INFO: Turn Metrics - tool_call: 0.0%, response: 0.0%, params: 0.0%, files: 100.0%
+[03:46:11] INFO:   Passed: False, Duration: 1587ms
+[03:46:11] INFO: [NEGATIVE] NEG001: No Tools on Simple Greeting
+[03:46:11] INFO: Session started: b45cbf2a-6883-4350-a82c-87a336b6ffe3
+[03:46:11] INFO: Processing turn 1: Hello!
+
+Just saying hi.
+
+John Smith
+john.smith@email.com
+(555) 111-2222
+...
+[03:46:12] INFO: Response (1611ms): I apologize, but I cannot assist with greeting or connecting with individuals using their email addr...
+[03:46:12] INFO: Turn Metrics - tool_call: 100.0%, response: 100.0%, params: 100.0%, files: 100.0%
+[03:46:12] INFO:   Passed: True, Duration: 1663ms
+[03:46:12] INFO: [NEGATIVE] NEG002: No Tools on Farewell
+[03:46:12] INFO: Session started: 5abf4da4-6119-44c9-b315-b4e394310498
+[03:46:12] INFO: Processing turn 1: Thanks for your help today, goodbye!
+
+Jane Doe
+jane.doe@email.com
+(555) 333-4444...
+[03:46:14] INFO: Response (1277ms): I hope you'll enjoy your stay! I'm glad I could assist with booking your property tour. Please let m...
+[03:46:14] INFO: Turn Metrics - tool_call: 100.0%, response: 100.0%, params: 100.0%, files: 100.0%
+[03:46:14] INFO:   Passed: True, Duration: 1330ms
+[03:46:14] INFO: [NEGATIVE] NEG003: No Tools on Off-Topic Question
+[03:46:14] INFO: Session started: 96a896fa-0498-4d49-8048-34bf33bbbcac
+[03:46:14] INFO: Processing turn 1: What's the weather like in the city?
+
+Weather Curious
+weather@email.com
+(555) 99...
+[03:46:15] INFO: Response (1462ms): I apologize, but I cannot assist with checking weather conditions. My current tools are designed for...
+[03:46:15] INFO: Turn Metrics - tool_call: 100.0%, response: 100.0%, params: 100.0%, files: 100.0%
+[03:46:15] INFO:   Passed: True, Duration: 1516ms
+[03:46:15] INFO: [NEGATIVE] NEG004: No Booking Tools on Simple Question
+[03:46:15] INFO: Session started: ef86bb93-378b-49df-b1a9-c0260af6432c
+[03:46:15] INFO: Processing turn 1: How much do 2-bedroom apartments cost here?
+
+Price Checker
+price.check@email.com...
+[03:46:16] INFO: Response (1355ms): I apologize, but I cannot assist with pricing or checking property costs. My current tools are desig...
+[03:46:16] INFO: Turn Metrics - tool_call: 0.0%, response: 0.0%, params: 0.0%, files: 100.0%
+[03:46:16] INFO:   Passed: False, Duration: 1407ms
+[03:46:21] INFO: Testing session start with model: google/functiongemma-270m-it
+[03:46:21] INFO: Session started: 8cc5c6dc-adb4-44f3-ba3f-b09b2f2bb2e2
+[03:46:21] INFO: ============================================================
+[03:46:21] INFO: TEST RUN SUMMARY
+[03:46:21] INFO: ============================================================
+[03:46:21] INFO: Run ID: run_81aad08d2bab
+[03:46:21] INFO: Total Scenarios: 50
+[03:46:21] INFO: Passed: 8
+[03:46:21] INFO: Failed: 42
+[03:46:21] INFO: Pass Rate: 16.0%
+[03:46:21] INFO: ------------------------------------------------------------
+[03:46:21] INFO: METRICS:
+[03:46:21] INFO:   Tool Calling Rate: 46.2%
+[03:46:21] INFO:   Correct Response Rate: 24.3%
+[03:46:21] INFO:   Correct Tool Call Rate: 45.7%
+[03:46:21] INFO:   File Verification Rate: 94.0%
+[03:46:21] INFO: ------------------------------------------------------------
+[03:46:21] INFO: BY CATEGORY:
+[03:46:21] INFO:   golden_path: 0/12 (0.0%)
+[03:46:21] INFO:   frustrated_path: 0/10 (0.0%)
+[03:46:21] INFO:   repeated_query: 0/4 (0.0%)
+[03:46:21] INFO:   edge_case: 2/16 (12.5%)
+[03:46:21] INFO:   negative: 6/8 (75.0%)
+[03:46:21] INFO: ------------------------------------------------------------
+[03:46:21] INFO: BY TOOL:
+[03:46:21] INFO:   get_available_listings: called 25/42 (rate: 59.5%, param_acc: 60.0%)
+[03:46:21] INFO:   get_availability: called 11/31 (rate: 35.5%, param_acc: 81.8%)
+[03:46:21] INFO:   create_appointment: called 14/22 (rate: 63.6%, param_acc: 77.9%)
+[03:46:21] INFO:   search_property_knowledge: called 2/10 (rate: 20.0%, param_acc: 0.0%)
+[03:46:21] INFO:   create_lead: called 0/4 (rate: 0.0%, param_acc: 0.0%)
+[03:46:21] INFO:   escalate_conversation: called 0/2 (rate: 0.0%, param_acc: 0.0%)
+[03:46:21] INFO: ============================================================
+[03:46:21] INFO: Results saved to: /Users/mradulsingh/personal-projects/fine-tune-models/gemma/test_results/store_9db48979.json
+[03:46:21] INFO: UI data saved to: /Users/mradulsingh/personal-projects/fine-tune-models/gemma/test_results/store_9db48979_ui.json
+[03:46:21] INFO: 
+============================================================
+[03:46:21] INFO: FINAL TEST RUN METRICS REPORT
+[03:46:21] INFO: ============================================================
+[03:46:21] INFO: Run ID: run_81aad08d2bab
+[03:46:21] INFO: Total Scenarios: 50
+[03:46:21] INFO: Passed: 8
+[03:46:21] INFO: Failed: 42
+[03:46:21] INFO: Pass Rate: 16.0%
+[03:46:21] INFO: 
+[03:46:21] INFO: Detailed Metrics:
+[03:46:21] INFO:   tool_calling_rate: 46.2%
+[03:46:21] INFO:   correct_response_rate: 24.3%
+[03:46:21] INFO:   correct_tool_call_rate: 45.7%
+[03:46:21] INFO:   file_verification_rate: 94.0%
+[03:46:21] INFO: ============================================================
+[03:46:21] INFO: Testing empty input handling
+[03:46:22] INFO: Response to empty input: I can assist with property tours and property consultation. To help you with specific requests, could you please specify the date and time you would like to schedule the tour?

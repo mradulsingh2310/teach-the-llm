@@ -13,8 +13,10 @@ import os
 from pathlib import Path
 
 # Model identification - HuggingFace model ID
-MODEL_ID = os.getenv("MODEL_ID", "google/functiongemma-270m-it")
-MODEL_NAME = "FunctionGemma 270M Instruct"
+# Use fine-tuned model if available, otherwise fallback to base model
+FINETUNED_MODEL_PATH = str(Path(__file__).parent / "fine-tune" / "functiongemma-finetuned")
+MODEL_ID = os.getenv("MODEL_ID", FINETUNED_MODEL_PATH if Path(FINETUNED_MODEL_PATH).exists() else "google/functiongemma-270m-it")
+MODEL_NAME = "FunctionGemma 270M Instruct (Fine-tuned)" if Path(FINETUNED_MODEL_PATH).exists() else "FunctionGemma 270M Instruct"
 
 # Generation parameters (optimized for FunctionGemma 270M)
 # Lower temperature prevents repetition in small models

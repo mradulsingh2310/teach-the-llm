@@ -1,0 +1,352 @@
+[
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Show me studio apartments"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [0]}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I'm looking for a studio"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [0]}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Do you have any studios available?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [0]}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "What studios do you have?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [0]}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I want a studio apartment"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [0]}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "lookin for a studio"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [0]}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "need a cheap studio asap"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [0]}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Show me bachelor apartments"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [0]}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I need an efficiency apartment"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [0]}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "What's the smallest unit you have?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [0]}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Do you have any one room apartments?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [0]}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I'm interested in a compact apartment"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [0]}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Looking for a single room unit"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [0]}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Studio under $1000"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [0], "max_rent": 1000}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I want a studio apartment under $800 a month"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [0], "max_rent": 800}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Show me studios for less than $1200"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [0], "max_rent": 1200}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Any studios under 1500?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [0], "max_rent": 1500}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "studio apt max $2000"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [0], "max_rent": 2000}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I can only afford a studio, budget is $900"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [0], "max_rent": 900}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "got any studios around $1100 or less?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [0], "max_rent": 1100}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "bachelor pad under $1300 please"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [0], "max_rent": 1300}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "efficiency under 850"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [0], "max_rent": 850}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "studo apartment"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [0]}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "studoi for rent"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [0]}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "stuido apt under $1000"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [0], "max_rent": 1000}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Can I see your studio listings?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [0]}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "What studio apartments are available right now?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [0]}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Are there any studios for rent?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [0]}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "List all studios"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [0]}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Just need a studio nothing fancy"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [0]}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Im a student looking for a studio"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [0]}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Single person here, need a studio"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [0]}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "whats available in studios?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [0]}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "studio plz"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [0]}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Affordable studio apartments?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [0]}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Show me the cheapest option you have"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [0]}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I dont need much space, just a studio will do"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [0]}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "studio apartment max rent $1800"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [0], "max_rent": 1800}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Looking for something small, like a studio, under $950"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [0], "max_rent": 950}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "budget studios under $750"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [0], "max_rent": 750}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "studios that cost less than $1400/month"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [0], "max_rent": 1400}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Any 0 bedroom apartments?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [0]}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "zero bedroom unit please"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [0]}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "studio type apartments"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [0]}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "just moved to the city need a studio fast"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [0]}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "hi do u have studios"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [0]}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I'm searching for a studio apartment to rent"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [0]}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "studio rental under two thousand dollars"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [0], "max_rent": 2000}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Can you find me a studio for under twelve hundred?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [0], "max_rent": 1200}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "small studio under $1050"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [0], "max_rent": 1050}}}]}
+    ]
+  }
+]

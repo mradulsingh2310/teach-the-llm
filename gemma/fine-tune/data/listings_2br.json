@@ -1,0 +1,352 @@
+[
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Show me 2 bedroom apartments"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [2]}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I'm looking for a two bedroom place"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [2]}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "What 2br units do you have available?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [2]}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Show me 2-br apartments"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [2]}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I need a 2 bed apartment"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [2]}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Looking for a two bed apartment"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [2]}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Any double bedroom apartments available?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [2]}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Me and my roommate need a place with 2 bedrooms"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [2]}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Looking for an apartment for two people, need 2 bedrooms"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [2]}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I need space for a home office, show me 2 bedroom units"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [2]}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Need an extra room for guests, looking at 2 bedrooms"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [2]}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "2 bedroom apartments under $1500"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [2], "max_rent": 1500}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Show me two bedroom places for less than $2000"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [2], "max_rent": 2000}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "2br units under 2500 a month"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [2], "max_rent": 2500}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I'm looking for a 2-br apartment, max budget $3000"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [2], "max_rent": 3000}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "2 bed apartments that cost no more than $3500"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [2], "max_rent": 3500}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "My roommate and I are looking for a 2 bedroom under $2000"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [2], "max_rent": 2000}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Two bedroom apartment with rent below $2500"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [2], "max_rent": 2500}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "What 2 bedroom options do you have for under 1500?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [2], "max_rent": 1500}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Can you show me 2br apartments within my $3000 budget?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [2], "max_rent": 3000}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I want to see all two-bedroom listings"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [2]}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Do you have any 2-bedroom units?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [2]}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "List 2 bedroom rentals please"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [2]}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I'm interested in two-bedroom apartments"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [2]}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Show available 2BR rentals"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [2]}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Looking for a place with two bedrooms for me and my partner"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [2]}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "We need a 2 bedroom for our small family"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [2]}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "2 bedroom place for a couple needing a home office"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [2]}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Find me a two bedroom with space for a nursery"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [2]}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I work from home and need a 2 bed apartment"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [2]}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Affordable 2 bedroom apartments under $1500 please"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [2], "max_rent": 1500}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Two bed units, budget is $2000 max"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [2], "max_rent": 2000}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "2br for $2500 or less"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [2], "max_rent": 2500}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Double bedroom apartments not exceeding $3000"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [2], "max_rent": 3000}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "2 bedroom for $3500 or under"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [2], "max_rent": 3500}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "My friend and I need a 2 bedroom that's under $2500"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [2], "max_rent": 2500}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Show two bedroom options, price cap $1500"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [2], "max_rent": 1500}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Need a 2-bedroom apartment, can spend up to $2000"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [2], "max_rent": 2000}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "What two bedroom places are available in the $3000 range?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [2], "max_rent": 3000}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "2 bed apartment, max rent $3500"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [2], "max_rent": 3500}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Search for 2 bedroom apartments"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [2]}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Any available two-bed units?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [2]}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Pull up 2-bedroom listings"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [2]}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "What's available in 2 bedrooms?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [2]}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Help me find a 2BR apartment"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [2]}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Budget-friendly 2 bedroom under 1500"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [2], "max_rent": 1500}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "2 bedroom apartment rentals below $2000 per month"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [2], "max_rent": 2000}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I can afford up to $2500, need 2 bedrooms"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [2], "max_rent": 2500}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Two bedroom apartments with monthly rent capped at $3000"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [2], "max_rent": 3000}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "2-br places in the $3500 budget"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [2], "max_rent": 3500}}}]}
+    ]
+  }
+]

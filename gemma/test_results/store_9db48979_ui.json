@@ -1,0 +1,649 @@
+{
+  "store_id": "store_9db48979",
+  "model_id": "google_functiongemma-270m-it",
+  "agent_type": "gemma_agent",
+  "test_suite_name": "property_agent_tests",
+  "total_runs": 1,
+  "summary": {
+    "avg_pass_rate": 16.0,
+    "avg_tool_calling_rate": 46.17,
+    "avg_correct_response_rate": 24.33,
+    "avg_correct_tool_call_rate": 45.67,
+    "avg_file_verification_rate": 94.0
+  },
+  "runs": [
+    {
+      "run_id": "run_81aad08d2bab",
+      "run_number": 1,
+      "started_at": "2026-01-02T22:07:28.473875",
+      "duration_ms": 532725,
+      "pass_rate": 16.0,
+      "total_scenarios": 50,
+      "passed_scenarios": 8
+    }
+  ],
+  "scenario_trends": {
+    "GP001": {
+      "runs": 2,
+      "pass_count": 0,
+      "pass_rate": 0.0,
+      "avg_tool_calling_rate": 0.3333333333333333,
+      "avg_correct_response_rate": 0.3333333333333333,
+      "avg_correct_tool_call_rate": 1.0,
+      "trend": [
+        {
+          "run_number": 1,
+          "passed": false,
+          "tool_calling_rate": 0.3333333333333333,
+          "correct_response_rate": 0.3333333333333333,
+          "correct_tool_call_rate": 1.0
+        },
+        {
+          "run_number": 1,
+          "passed": false,
+          "tool_calling_rate": 0.3333333333333333,
+          "correct_response_rate": 0.3333333333333333,
+          "correct_tool_call_rate": 1.0
+        }
+      ]
+    },
+    "GP002": {
+      "runs": 2,
+      "pass_count": 0,
+      "pass_rate": 0.0,
+      "avg_tool_calling_rate": 0.75,
+      "avg_correct_response_rate": 0.375,
+      "avg_correct_tool_call_rate": 0.3333333333333333,
+      "trend": [
+        {
+          "run_number": 1,
+          "passed": false,
+          "tool_calling_rate": 0.75,
+          "correct_response_rate": 0.25,
+          "correct_tool_call_rate": 0.3333333333333333
+        },
+        {
+          "run_number": 1,
+          "passed": false,
+          "tool_calling_rate": 0.75,
+          "correct_response_rate": 0.5,
+          "correct_tool_call_rate": 0.3333333333333333
+        }
+      ]
+    },
+    "GP003": {
+      "runs": 2,
+      "pass_count": 0,
+      "pass_rate": 0.0,
+      "avg_tool_calling_rate": 0.5,
+      "avg_correct_response_rate": 0.0,
+      "avg_correct_tool_call_rate": 0.25,
+      "trend": [
+        {
+          "run_number": 1,
+          "passed": false,
+          "tool_calling_rate": 0.5,
+          "correct_response_rate": 0.0,
+          "correct_tool_call_rate": 0.5
+        },
+        {
+          "run_number": 1,
+          "passed": false,
+          "tool_calling_rate": 0.5,
+          "correct_response_rate": 0.0,
+          "correct_tool_call_rate": 0.0
+        }
+      ]
+    },
+    "GP004": {
+      "runs": 2,
+      "pass_count": 0,
+      "pass_rate": 0.0,
+      "avg_tool_calling_rate": 0.0,
+      "avg_correct_response_rate": 0.0,
+      "avg_correct_tool_call_rate": 0.0,
+      "trend": [
+        {
+          "run_number": 1,
+          "passed": false,
+          "tool_calling_rate": 0.0,
+          "correct_response_rate": 0.0,
+          "correct_tool_call_rate": 0.0
+        },
+        {
+          "run_number": 1,
+          "passed": false,
+          "tool_calling_rate": 0.0,
+          "correct_response_rate": 0.0,
+          "correct_tool_call_rate": 0.0
+        }
+      ]
+    },
+    "GP005": {
+      "runs": 2,
+      "pass_count": 0,
+      "pass_rate": 0.0,
+      "avg_tool_calling_rate": 0.6666666666666666,
+      "avg_correct_response_rate": 0.0,
+      "avg_correct_tool_call_rate": 0.5,
+      "trend": [
+        {
+          "run_number": 1,
+          "passed": false,
+          "tool_calling_rate": 0.6666666666666666,
+          "correct_response_rate": 0.0,
+          "correct_tool_call_rate": 0.5
+        },
+        {
+          "run_number": 1,
+          "passed": false,
+          "tool_calling_rate": 0.6666666666666666,
+          "correct_response_rate": 0.0,
+          "correct_tool_call_rate": 0.5
+        }
+      ]
+    },
+    "GP006": {
+      "runs": 2,
+      "pass_count": 0,
+      "pass_rate": 0.0,
+      "avg_tool_calling_rate": 0.5,
+      "avg_correct_response_rate": 0.0,
+      "avg_correct_tool_call_rate": 0.25,
+      "trend": [
+        {
+          "run_number": 1,
+          "passed": false,
+          "tool_calling_rate": 0.5,
+          "correct_response_rate": 0.0,
+          "correct_tool_call_rate": 0.0
+        },
+        {
+          "run_number": 1,
+          "passed": false,
+          "tool_calling_rate": 0.5,
+          "correct_response_rate": 0.0,
+          "correct_tool_call_rate": 0.5
+        }
+      ]
+    },
+    "FP001": {
+      "runs": 2,
+      "pass_count": 0,
+      "pass_rate": 0.0,
+      "avg_tool_calling_rate": 0.625,
+      "avg_correct_response_rate": 0.0,
+      "avg_correct_tool_call_rate": 0.5833333333333333,
+      "trend": [
+        {
+          "run_number": 1,
+          "passed": false,
+          "tool_calling_rate": 0.75,
+          "correct_response_rate": 0.0,
+          "correct_tool_call_rate": 0.6666666666666666
+        },
+        {
+          "run_number": 1,
+          "passed": false,
+          "tool_calling_rate": 0.5,
+          "correct_response_rate": 0.0,
+          "correct_tool_call_rate": 0.5
+        }
+      ]
+    },
+    "FP002": {
+      "runs": 2,
+      "pass_count": 0,
+      "pass_rate": 0.0,
+      "avg_tool_calling_rate": 0.3333333333333333,
+      "avg_correct_response_rate": 0.0,
+      "avg_correct_tool_call_rate": 0.0,
+      "trend": [
+        {
+          "run_number": 1,
+          "passed": false,
+          "tool_calling_rate": 0.0,
+          "correct_response_rate": 0.0,
+          "correct_tool_call_rate": 0.0
+        },
+        {
+          "run_number": 1,
+          "passed": false,
+          "tool_calling_rate": 0.6666666666666666,
+          "correct_response_rate": 0.0,
+          "correct_tool_call_rate": 0.0
+        }
+      ]
+    },
+    "FP003": {
+      "runs": 2,
+      "pass_count": 0,
+      "pass_rate": 0.0,
+      "avg_tool_calling_rate": 0.0,
+      "avg_correct_response_rate": 0.0,
+      "avg_correct_tool_call_rate": 0.0,
+      "trend": [
+        {
+          "run_number": 1,
+          "passed": false,
+          "tool_calling_rate": 0.0,
+          "correct_response_rate": 0.0,
+          "correct_tool_call_rate": 0.0
+        },
+        {
+          "run_number": 1,
+          "passed": false,
+          "tool_calling_rate": 0.0,
+          "correct_response_rate": 0.0,
+          "correct_tool_call_rate": 0.0
+        }
+      ]
+    },
+    "FP004": {
+      "runs": 2,
+      "pass_count": 0,
+      "pass_rate": 0.0,
+      "avg_tool_calling_rate": 0.5,
+      "avg_correct_response_rate": 0.0,
+      "avg_correct_tool_call_rate": 1.0,
+      "trend": [
+        {
+          "run_number": 1,
+          "passed": false,
+          "tool_calling_rate": 0.5,
+          "correct_response_rate": 0.0,
+          "correct_tool_call_rate": 1.0
+        },
+        {
+          "run_number": 1,
+          "passed": false,
+          "tool_calling_rate": 0.5,
+          "correct_response_rate": 0.0,
+          "correct_tool_call_rate": 1.0
+        }
+      ]
+    },
+    "FP005": {
+      "runs": 2,
+      "pass_count": 0,
+      "pass_rate": 0.0,
+      "avg_tool_calling_rate": 0.3333333333333333,
+      "avg_correct_response_rate": 0.0,
+      "avg_correct_tool_call_rate": 0.5,
+      "trend": [
+        {
+          "run_number": 1,
+          "passed": false,
+          "tool_calling_rate": 0.3333333333333333,
+          "correct_response_rate": 0.0,
+          "correct_tool_call_rate": 0.5
+        },
+        {
+          "run_number": 1,
+          "passed": false,
+          "tool_calling_rate": 0.3333333333333333,
+          "correct_response_rate": 0.0,
+          "correct_tool_call_rate": 0.5
+        }
+      ]
+    },
+    "RQ001": {
+      "runs": 1,
+      "pass_count": 0,
+      "pass_rate": 0.0,
+      "avg_tool_calling_rate": 0.0,
+      "avg_correct_response_rate": 0.75,
+      "avg_correct_tool_call_rate": 0.0,
+      "trend": [
+        {
+          "run_number": 1,
+          "passed": false,
+          "tool_calling_rate": 0.0,
+          "correct_response_rate": 0.75,
+          "correct_tool_call_rate": 0.0
+        }
+      ]
+    },
+    "RQ002": {
+      "runs": 1,
+      "pass_count": 0,
+      "pass_rate": 0.0,
+      "avg_tool_calling_rate": 0.6666666666666666,
+      "avg_correct_response_rate": 0.6666666666666666,
+      "avg_correct_tool_call_rate": 0.5,
+      "trend": [
+        {
+          "run_number": 1,
+          "passed": false,
+          "tool_calling_rate": 0.6666666666666666,
+          "correct_response_rate": 0.6666666666666666,
+          "correct_tool_call_rate": 0.5
+        }
+      ]
+    },
+    "RQ003": {
+      "runs": 1,
+      "pass_count": 0,
+      "pass_rate": 0.0,
+      "avg_tool_calling_rate": 0.3333333333333333,
+      "avg_correct_response_rate": 0.3333333333333333,
+      "avg_correct_tool_call_rate": 0.5,
+      "trend": [
+        {
+          "run_number": 1,
+          "passed": false,
+          "tool_calling_rate": 0.3333333333333333,
+          "correct_response_rate": 0.3333333333333333,
+          "correct_tool_call_rate": 0.5
+        }
+      ]
+    },
+    "RQ004": {
+      "runs": 1,
+      "pass_count": 0,
+      "pass_rate": 0.0,
+      "avg_tool_calling_rate": 1.0,
+      "avg_correct_response_rate": 0.0,
+      "avg_correct_tool_call_rate": 0.0,
+      "trend": [
+        {
+          "run_number": 1,
+          "passed": false,
+          "tool_calling_rate": 1.0,
+          "correct_response_rate": 0.0,
+          "correct_tool_call_rate": 0.0
+        }
+      ]
+    },
+    "EC001": {
+      "runs": 2,
+      "pass_count": 0,
+      "pass_rate": 0.0,
+      "avg_tool_calling_rate": 0.0,
+      "avg_correct_response_rate": 0.0,
+      "avg_correct_tool_call_rate": 0.5,
+      "trend": [
+        {
+          "run_number": 1,
+          "passed": false,
+          "tool_calling_rate": 0.0,
+          "correct_response_rate": 0.0,
+          "correct_tool_call_rate": 0.0
+        },
+        {
+          "run_number": 1,
+          "passed": false,
+          "tool_calling_rate": 0.0,
+          "correct_response_rate": 0.0,
+          "correct_tool_call_rate": 1.0
+        }
+      ]
+    },
+    "EC002": {
+      "runs": 2,
+      "pass_count": 2,
+      "pass_rate": 1.0,
+      "avg_tool_calling_rate": 1.0,
+      "avg_correct_response_rate": 1.0,
+      "avg_correct_tool_call_rate": 1.0,
+      "trend": [
+        {
+          "run_number": 1,
+          "passed": true,
+          "tool_calling_rate": 1.0,
+          "correct_response_rate": 1.0,
+          "correct_tool_call_rate": 1.0
+        },
+        {
+          "run_number": 1,
+          "passed": true,
+          "tool_calling_rate": 1.0,
+          "correct_response_rate": 1.0,
+          "correct_tool_call_rate": 1.0
+        }
+      ]
+    },
+    "EC003": {
+      "runs": 2,
+      "pass_count": 0,
+      "pass_rate": 0.0,
+      "avg_tool_calling_rate": 1.0,
+      "avg_correct_response_rate": 0.5,
+      "avg_correct_tool_call_rate": 1.0,
+      "trend": [
+        {
+          "run_number": 1,
+          "passed": false,
+          "tool_calling_rate": 1.0,
+          "correct_response_rate": 0.5,
+          "correct_tool_call_rate": 1.0
+        },
+        {
+          "run_number": 1,
+          "passed": false,
+          "tool_calling_rate": 1.0,
+          "correct_response_rate": 0.5,
+          "correct_tool_call_rate": 1.0
+        }
+      ]
+    },
+    "EC004": {
+      "runs": 2,
+      "pass_count": 0,
+      "pass_rate": 0.0,
+      "avg_tool_calling_rate": 0.0,
+      "avg_correct_response_rate": 0.0,
+      "avg_correct_tool_call_rate": 0.0,
+      "trend": [
+        {
+          "run_number": 1,
+          "passed": false,
+          "tool_calling_rate": 0.0,
+          "correct_response_rate": 0.0,
+          "correct_tool_call_rate": 0.0
+        },
+        {
+          "run_number": 1,
+          "passed": false,
+          "tool_calling_rate": 0.0,
+          "correct_response_rate": 0.0,
+          "correct_tool_call_rate": 0.0
+        }
+      ]
+    },
+    "EC005": {
+      "runs": 2,
+      "pass_count": 0,
+      "pass_rate": 0.0,
+      "avg_tool_calling_rate": 0.0,
+      "avg_correct_response_rate": 0.0,
+      "avg_correct_tool_call_rate": 0.0,
+      "trend": [
+        {
+          "run_number": 1,
+          "passed": false,
+          "tool_calling_rate": 0.0,
+          "correct_response_rate": 0.0,
+          "correct_tool_call_rate": 0.0
+        },
+        {
+          "run_number": 1,
+          "passed": false,
+          "tool_calling_rate": 0.0,
+          "correct_response_rate": 0.0,
+          "correct_tool_call_rate": 0.0
+        }
+      ]
+    },
+    "EC006": {
+      "runs": 2,
+      "pass_count": 0,
+      "pass_rate": 0.0,
+      "avg_tool_calling_rate": 0.0,
+      "avg_correct_response_rate": 0.0,
+      "avg_correct_tool_call_rate": 0.0,
+      "trend": [
+        {
+          "run_number": 1,
+          "passed": false,
+          "tool_calling_rate": 0.0,
+          "correct_response_rate": 0.0,
+          "correct_tool_call_rate": 0.0
+        },
+        {
+          "run_number": 1,
+          "passed": false,
+          "tool_calling_rate": 0.0,
+          "correct_response_rate": 0.0,
+          "correct_tool_call_rate": 0.0
+        }
+      ]
+    },
+    "EC007": {
+      "runs": 2,
+      "pass_count": 0,
+      "pass_rate": 0.0,
+      "avg_tool_calling_rate": 1.0,
+      "avg_correct_response_rate": 0.0,
+      "avg_correct_tool_call_rate": 1.0,
+      "trend": [
+        {
+          "run_number": 1,
+          "passed": false,
+          "tool_calling_rate": 1.0,
+          "correct_response_rate": 0.0,
+          "correct_tool_call_rate": 1.0
+        },
+        {
+          "run_number": 1,
+          "passed": false,
+          "tool_calling_rate": 1.0,
+          "correct_response_rate": 0.0,
+          "correct_tool_call_rate": 1.0
+        }
+      ]
+    },
+    "EC008": {
+      "runs": 2,
+      "pass_count": 0,
+      "pass_rate": 0.0,
+      "avg_tool_calling_rate": 0.0,
+      "avg_correct_response_rate": 0.0,
+      "avg_correct_tool_call_rate": 0.0,
+      "trend": [
+        {
+          "run_number": 1,
+          "passed": false,
+          "tool_calling_rate": 0.0,
+          "correct_response_rate": 0.0,
+          "correct_tool_call_rate": 0.0
+        },
+        {
+          "run_number": 1,
+          "passed": false,
+          "tool_calling_rate": 0.0,
+          "correct_response_rate": 0.0,
+          "correct_tool_call_rate": 0.0
+        }
+      ]
+    },
+    "NEG001": {
+      "runs": 2,
+      "pass_count": 2,
+      "pass_rate": 1.0,
+      "avg_tool_calling_rate": 1.0,
+      "avg_correct_response_rate": 1.0,
+      "avg_correct_tool_call_rate": 1.0,
+      "trend": [
+        {
+          "run_number": 1,
+          "passed": true,
+          "tool_calling_rate": 1.0,
+          "correct_response_rate": 1.0,
+          "correct_tool_call_rate": 1.0
+        },
+        {
+          "run_number": 1,
+          "passed": true,
+          "tool_calling_rate": 1.0,
+          "correct_response_rate": 1.0,
+          "correct_tool_call_rate": 1.0
+        }
+      ]
+    },
+    "NEG002": {
+      "runs": 2,
+      "pass_count": 2,
+      "pass_rate": 1.0,
+      "avg_tool_calling_rate": 1.0,
+      "avg_correct_response_rate": 1.0,
+      "avg_correct_tool_call_rate": 1.0,
+      "trend": [
+        {
+          "run_number": 1,
+          "passed": true,
+          "tool_calling_rate": 1.0,
+          "correct_response_rate": 1.0,
+          "correct_tool_call_rate": 1.0
+        },
+        {
+          "run_number": 1,
+          "passed": true,
+          "tool_calling_rate": 1.0,
+          "correct_response_rate": 1.0,
+          "correct_tool_call_rate": 1.0
+        }
+      ]
+    },
+    "NEG003": {
+      "runs": 2,
+      "pass_count": 2,
+      "pass_rate": 1.0,
+      "avg_tool_calling_rate": 1.0,
+      "avg_correct_response_rate": 1.0,
+      "avg_correct_tool_call_rate": 1.0,
+      "trend": [
+        {
+          "run_number": 1,
+          "passed": true,
+          "tool_calling_rate": 1.0,
+          "correct_response_rate": 1.0,
+          "correct_tool_call_rate": 1.0
+        },
+        {
+          "run_number": 1,
+          "passed": true,
+          "tool_calling_rate": 1.0,
+          "correct_response_rate": 1.0,
+          "correct_tool_call_rate": 1.0
+        }
+      ]
+    },
+    "NEG004": {
+      "runs": 2,
+      "pass_count": 0,
+      "pass_rate": 0.0,
+      "avg_tool_calling_rate": 0.0,
+      "avg_correct_response_rate": 0.0,
+      "avg_correct_tool_call_rate": 0.0,
+      "trend": [
+        {
+          "run_number": 1,
+          "passed": false,
+          "tool_calling_rate": 0.0,
+          "correct_response_rate": 0.0,
+          "correct_tool_call_rate": 0.0
+        },
+        {
+          "run_number": 1,
+          "passed": false,
+          "tool_calling_rate": 0.0,
+          "correct_response_rate": 0.0,
+          "correct_tool_call_rate": 0.0
+        }
+      ]
+    }
+  },
+  "created_at": "2026-01-02T22:07:28.473930",
+  "updated_at": "2026-01-02T22:16:21.202266"
+}

@@ -1,0 +1,351 @@
+[
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Hi! I'm looking for a 2 bedroom apartment, preferably under $2000."},
+      {
+        "role": "assistant",
+        "content": "<think>The user wants to find apartments with 2 bedrooms and a budget of $2000. I should use get_available_listings with bedrooms=[2] and max_rent=2000.</think>",
+        "tool_calls": [
+          {
+            "id": "call_1",
+            "type": "function",
+            "function": {
+              "name": "get_available_listings",
+              "arguments": {"bedrooms": [2], "max_rent": 2000}
+            }
+          }
+        ]
+      },
+      {
+        "role": "tool",
+        "name": "get_available_listings",
+        "tool_call_id": "call_1",
+        "content": "{\"success\": true, \"listings\": [{\"unit_number\": \"201\", \"bedrooms\": 2, \"bathrooms\": 1, \"rent\": 1850, \"square_feet\": 950, \"available_date\": \"2025-02-01\", \"pet_friendly\": true}], \"total_count\": 1}"
+      },
+      {
+        "role": "assistant",
+        "content": "<think>Found one 2-bedroom unit within budget. I should present the details clearly.</think>\nGreat news! I found a 2-bedroom apartment that fits your budget. Unit 201 is available for $1,850/month. It has 1 bathroom, 950 sq ft, and is pet-friendly. Available starting February 1st. Would you like to schedule a tour?"
+      }
+    ],
+    "tools": [
+      {"type": "function", "function": {"name": "get_available_listings", "description": "Search for available apartment listings based on bedroom count and optional maximum rent.", "parameters": {"type": "object", "properties": {"bedrooms": {"type": "array", "items": {"type": "integer"}, "description": "List of bedroom counts to search for"}, "max_rent": {"type": "number", "description": "Maximum monthly rent in dollars"}}, "required": ["bedrooms"]}}}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "What time slots are available for a tour on February 15th?"},
+      {
+        "role": "assistant",
+        "content": "<think>User wants to check tour availability for February 15th. I need to call get_availability with the date in YYYY-MM-DD format.</think>",
+        "tool_calls": [
+          {
+            "id": "call_1",
+            "type": "function",
+            "function": {
+              "name": "get_availability",
+              "arguments": {"date_str": "2025-02-15"}
+            }
+          }
+        ]
+      },
+      {
+        "role": "tool",
+        "name": "get_availability",
+        "tool_call_id": "call_1",
+        "content": "{\"success\": true, \"date\": \"2025-02-15\", \"available_slots\": [\"10:00\", \"11:00\", \"14:00\", \"15:30\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "<think>There are 4 available time slots. I should list them clearly for the user.</think>\nOn February 15th, we have the following tour times available: 10:00 AM, 11:00 AM, 2:00 PM, and 3:30 PM. Which time works best for you?"
+      }
+    ],
+    "tools": [
+      {"type": "function", "function": {"name": "get_availability", "description": "Get available tour appointment time slots for a specific date.", "parameters": {"type": "object", "properties": {"date_str": {"type": "string", "description": "Date in YYYY-MM-DD format"}}, "required": ["date_str"]}}}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I'd like to book a tour for March 3rd at 2pm. My name is Sarah Johnson, email sarah@example.com, phone 555-123-4567."},
+      {
+        "role": "assistant",
+        "content": "<think>The user provided all required information for booking: date, time, name, email, and phone. I can create the appointment directly.</think>",
+        "tool_calls": [
+          {
+            "id": "call_1",
+            "type": "function",
+            "function": {
+              "name": "create_appointment",
+              "arguments": {
+                "appointment_date": "2025-03-03",
+                "appointment_start_time": "14:00",
+                "first_name": "Sarah",
+                "last_name": "Johnson",
+                "email": "sarah@example.com",
+                "phone": "555-123-4567"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "role": "tool",
+        "name": "create_appointment",
+        "tool_call_id": "call_1",
+        "content": "{\"success\": true, \"appointment_id\": \"APT-12345\", \"message\": \"Appointment confirmed for March 3, 2025 at 2:00 PM\"}"
+      },
+      {
+        "role": "assistant",
+        "content": "<think>Appointment was successfully created. I should confirm the details with the user.</think>\nPerfect, Sarah! Your tour is confirmed for March 3rd at 2:00 PM. You'll receive a confirmation email at sarah@example.com. See you then!"
+      }
+    ],
+    "tools": [
+      {"type": "function", "function": {"name": "create_appointment", "description": "Book a property tour appointment.", "parameters": {"type": "object", "properties": {"appointment_date": {"type": "string", "description": "Tour date in YYYY-MM-DD format"}, "appointment_start_time": {"type": "string", "description": "Tour time in HH:MM 24-hour format"}, "first_name": {"type": "string", "description": "Visitor's first name"}, "last_name": {"type": "string", "description": "Visitor's last name"}, "email": {"type": "string", "description": "Visitor's email address"}, "phone": {"type": "string", "description": "Visitor's phone number"}}, "required": ["appointment_date", "appointment_start_time", "first_name", "email", "phone"]}}}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Do you allow pets? I have a small dog."},
+      {
+        "role": "assistant",
+        "content": "<think>The user is asking about pet policy. I should search the knowledge base for pet-related information.</think>",
+        "tool_calls": [
+          {
+            "id": "call_1",
+            "type": "function",
+            "function": {
+              "name": "search_property_knowledge",
+              "arguments": {"search_text": "pet policy dogs", "category": "policies"}
+            }
+          }
+        ]
+      },
+      {
+        "role": "tool",
+        "name": "search_property_knowledge",
+        "tool_call_id": "call_1",
+        "content": "{\"success\": true, \"results\": [{\"title\": \"Pet Policy\", \"content\": \"We welcome pets! Dogs and cats under 50 lbs are allowed with a $300 pet deposit and $25/month pet rent. Breed restrictions apply.\"}]}"
+      },
+      {
+        "role": "assistant",
+        "content": "<think>Good news for the user - pets are allowed with some conditions.</think>\nYes, we're pet-friendly! Dogs under 50 lbs are welcome. There's a $300 pet deposit and $25/month pet rent. Some breed restrictions apply. Your small dog should be no problem!"
+      }
+    ],
+    "tools": [
+      {"type": "function", "function": {"name": "search_property_knowledge", "description": "Search the property knowledge base for information.", "parameters": {"type": "object", "properties": {"search_text": {"type": "string", "description": "Query text to search for"}, "category": {"type": "string", "description": "Category filter"}}, "required": ["search_text"]}}}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I'm interested but not ready to tour yet. Can you save my info? I'm Mike Chen, mike.chen@gmail.com, 555-987-6543."},
+      {
+        "role": "assistant",
+        "content": "<think>The user wants to be contacted later. I should save their information as a lead for follow-up.</think>",
+        "tool_calls": [
+          {
+            "id": "call_1",
+            "type": "function",
+            "function": {
+              "name": "create_lead",
+              "arguments": {
+                "first_name": "Mike",
+                "last_name": "Chen",
+                "email": "mike.chen@gmail.com",
+                "phone": "555-987-6543"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "role": "tool",
+        "name": "create_lead",
+        "tool_call_id": "call_1",
+        "content": "{\"success\": true, \"lead_id\": \"LEAD-789\", \"message\": \"Lead created successfully\"}"
+      },
+      {
+        "role": "assistant",
+        "content": "<think>Lead was created successfully. The leasing team will follow up.</think>\nGot it, Mike! I've saved your contact information. Our leasing team will reach out when you're ready, or feel free to come back anytime to schedule a tour."
+      }
+    ],
+    "tools": [
+      {"type": "function", "function": {"name": "create_lead", "description": "Save prospect contact information for follow-up.", "parameters": {"type": "object", "properties": {"first_name": {"type": "string", "description": "Prospect's first name"}, "last_name": {"type": "string", "description": "Prospect's last name"}, "email": {"type": "string", "description": "Prospect's email address"}, "phone": {"type": "string", "description": "Prospect's phone number"}}, "required": ["email", "phone", "first_name", "last_name"]}}}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "This is frustrating! I've been trying to get help for 20 minutes. I need to speak to a real person."},
+      {
+        "role": "assistant",
+        "content": "<think>The user is frustrated and explicitly requesting human assistance. I should escalate immediately.</think>",
+        "tool_calls": [
+          {
+            "id": "call_1",
+            "type": "function",
+            "function": {
+              "name": "escalate_conversation",
+              "arguments": {"reason_for_escalation": "User frustrated and requesting human agent after extended wait"}
+            }
+          }
+        ]
+      },
+      {
+        "role": "tool",
+        "name": "escalate_conversation",
+        "tool_call_id": "call_1",
+        "content": "{\"success\": true, \"message\": \"Conversation escalated to human agent\", \"estimated_wait\": \"2 minutes\"}"
+      },
+      {
+        "role": "assistant",
+        "content": "<think>Escalation successful. I should apologize and set expectations.</think>\nI completely understand your frustration, and I apologize for the inconvenience. I'm connecting you with a leasing agent right now. Someone will be with you in about 2 minutes."
+      }
+    ],
+    "tools": [
+      {"type": "function", "function": {"name": "escalate_conversation", "description": "Transfer the conversation to a human leasing agent.", "parameters": {"type": "object", "properties": {"reason_for_escalation": {"type": "string", "description": "Brief description of why human assistance is needed"}}, "required": ["reason_for_escalation"]}}}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Show me studios or 1-bedrooms under $1500."},
+      {
+        "role": "assistant",
+        "content": "<think>User wants studios (0 bedrooms) or 1-bedrooms with max rent $1500. I'll search with bedrooms=[0,1] and max_rent=1500.</think>",
+        "tool_calls": [
+          {
+            "id": "call_1",
+            "type": "function",
+            "function": {
+              "name": "get_available_listings",
+              "arguments": {"bedrooms": [0, 1], "max_rent": 1500}
+            }
+          }
+        ]
+      },
+      {
+        "role": "tool",
+        "name": "get_available_listings",
+        "tool_call_id": "call_1",
+        "content": "{\"success\": true, \"listings\": [{\"unit_number\": \"101\", \"bedrooms\": 0, \"bathrooms\": 1, \"rent\": 1200, \"square_feet\": 450}, {\"unit_number\": \"105\", \"bedrooms\": 1, \"bathrooms\": 1, \"rent\": 1450, \"square_feet\": 650}], \"total_count\": 2}"
+      },
+      {
+        "role": "assistant",
+        "content": "<think>Found 2 units matching the criteria. I should present both options clearly.</think>\nI found 2 options for you:\n\n1. Studio (Unit 101) - $1,200/month, 450 sq ft\n2. 1-Bedroom (Unit 105) - $1,450/month, 650 sq ft\n\nBoth are within your budget. Would you like more details or to schedule a tour?"
+      }
+    ],
+    "tools": [
+      {"type": "function", "function": {"name": "get_available_listings", "description": "Search for available apartment listings based on bedroom count and optional maximum rent.", "parameters": {"type": "object", "properties": {"bedrooms": {"type": "array", "items": {"type": "integer"}, "description": "List of bedroom counts to search for"}, "max_rent": {"type": "number", "description": "Maximum monthly rent in dollars"}}, "required": ["bedrooms"]}}}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "What are the parking options here?"},
+      {
+        "role": "assistant",
+        "content": "<think>User is asking about parking amenities. I should search the knowledge base.</think>",
+        "tool_calls": [
+          {
+            "id": "call_1",
+            "type": "function",
+            "function": {
+              "name": "search_property_knowledge",
+              "arguments": {"search_text": "parking options", "category": "amenities"}
+            }
+          }
+        ]
+      },
+      {
+        "role": "tool",
+        "name": "search_property_knowledge",
+        "tool_call_id": "call_1",
+        "content": "{\"success\": true, \"results\": [{\"title\": \"Parking\", \"content\": \"Covered parking available for $75/month. Street parking is free but limited. Electric vehicle charging stations available in the garage.\"}]}"
+      },
+      {
+        "role": "assistant",
+        "content": "<think>Got parking information. Should mention both covered and street options plus EV charging.</think>\nWe have covered parking available for $75/month in our garage, which also has EV charging stations. Street parking is free but can be limited. Would you like me to add covered parking to your list of preferences?"
+      }
+    ],
+    "tools": [
+      {"type": "function", "function": {"name": "search_property_knowledge", "description": "Search the property knowledge base for information.", "parameters": {"type": "object", "properties": {"search_text": {"type": "string", "description": "Query text to search for"}, "category": {"type": "string", "description": "Category filter"}}, "required": ["search_text"]}}}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Any 3 bedroom apartments available?"},
+      {
+        "role": "assistant",
+        "content": "<think>Simple query for 3-bedroom apartments. No budget specified so I won't set max_rent.</think>",
+        "tool_calls": [
+          {
+            "id": "call_1",
+            "type": "function",
+            "function": {
+              "name": "get_available_listings",
+              "arguments": {"bedrooms": [3]}
+            }
+          }
+        ]
+      },
+      {
+        "role": "tool",
+        "name": "get_available_listings",
+        "tool_call_id": "call_1",
+        "content": "{\"success\": true, \"listings\": [{\"unit_number\": \"410\", \"bedrooms\": 3, \"bathrooms\": 2, \"rent\": 2650, \"square_feet\": 1225, \"available_date\": \"2025-04-01\", \"pet_friendly\": true}], \"total_count\": 1}"
+      },
+      {
+        "role": "assistant",
+        "content": "<think>Found one 3-bedroom unit. Should highlight key features.</think>\nYes! We have a 3-bedroom, 2-bathroom unit available. Unit 410 is $2,650/month, 1,225 sq ft, and pet-friendly. Available April 1st. Interested in seeing it?"
+      }
+    ],
+    "tools": [
+      {"type": "function", "function": {"name": "get_available_listings", "description": "Search for available apartment listings based on bedroom count and optional maximum rent.", "parameters": {"type": "object", "properties": {"bedrooms": {"type": "array", "items": {"type": "integer"}, "description": "List of bedroom counts to search for"}, "max_rent": {"type": "number", "description": "Maximum monthly rent in dollars"}}, "required": ["bedrooms"]}}}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I want to book a tour tomorrow at 11am. Name is Alex Rivera, alex.rivera@work.com, 555-456-7890."},
+      {
+        "role": "assistant",
+        "content": "<think>User wants to book for tomorrow. Today is assumed to be 2025-01-03, so tomorrow is 2025-01-04. They provided all required details.</think>",
+        "tool_calls": [
+          {
+            "id": "call_1",
+            "type": "function",
+            "function": {
+              "name": "create_appointment",
+              "arguments": {
+                "appointment_date": "2025-01-04",
+                "appointment_start_time": "11:00",
+                "first_name": "Alex",
+                "last_name": "Rivera",
+                "email": "alex.rivera@work.com",
+                "phone": "555-456-7890"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "role": "tool",
+        "name": "create_appointment",
+        "tool_call_id": "call_1",
+        "content": "{\"success\": true, \"appointment_id\": \"APT-54321\", \"message\": \"Appointment confirmed for January 4, 2025 at 11:00 AM\"}"
+      },
+      {
+        "role": "assistant",
+        "content": "<think>Appointment booked successfully for tomorrow. Should confirm details.</think>\nAll set, Alex! Your tour is booked for tomorrow, January 4th at 11:00 AM. A confirmation has been sent to alex.rivera@work.com. Looking forward to meeting you!"
+      }
+    ],
+    "tools": [
+      {"type": "function", "function": {"name": "create_appointment", "description": "Book a property tour appointment.", "parameters": {"type": "object", "properties": {"appointment_date": {"type": "string", "description": "Tour date in YYYY-MM-DD format"}, "appointment_start_time": {"type": "string", "description": "Tour time in HH:MM 24-hour format"}, "first_name": {"type": "string", "description": "Visitor's first name"}, "last_name": {"type": "string", "description": "Visitor's last name"}, "email": {"type": "string", "description": "Visitor's email address"}, "phone": {"type": "string", "description": "Visitor's phone number"}}, "required": ["appointment_date", "appointment_start_time", "first_name", "email", "phone"]}}}
+    ]
+  }
+]

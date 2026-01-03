@@ -1,0 +1,345 @@
+[
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Are utilities included in the rent?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "utilities included rent", "category": "utilities"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "What utilities are covered in my monthly rent payment?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "utilities covered monthly rent", "category": "utilities"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Is water included or do I pay separately?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "water included pay separately", "category": "utilities"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Do I need to pay for trash pickup?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "trash pickup included", "category": "utilities"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "What's included in the rent besides the apartment?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "whats included rent apartment utilities", "category": "utilities"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Is sewer and water part of my rent?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "sewer water included rent", "category": "utilities"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Does the property have wifi available?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "wifi available property", "category": "utilities"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "What internet providers service this building?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "internet providers building", "category": "utilities"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Can I get cable TV in the apartment?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "cable TV apartment available", "category": "utilities"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Is high-speed internet available here?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "high speed internet available", "category": "utilities"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Which company provides internet to this complex?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "internet company provider complex", "category": "utilities"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Is there fiber optic internet in this building?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "fiber optic internet building", "category": "utilities"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "How much is the average electric bill here?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "average electric bill cost", "category": "utilities"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Is the heating gas or electric?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "heating gas electric type", "category": "utilities"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "What's the typical monthly utility cost?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "typical monthly utility cost", "category": "utilities"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Do apartments have gas stoves or electric?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "apartments gas stoves electric", "category": "utilities"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "How much should I budget for utilities each month?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "budget utilities monthly average", "category": "utilities"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Is the hot water heater gas or electric?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "hot water heater gas electric", "category": "utilities"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "What utility company do I set up electric with?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "utility company electric setup", "category": "utilities"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "How do I set up utilities for my new apartment?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "setup utilities new apartment", "category": "utilities"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Do I need to transfer utilities into my name?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "transfer utilities name", "category": "utilities"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "When should I call to start utility service?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "start utility service when call", "category": "utilities"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "What's the process for setting up gas service?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "process setting up gas service", "category": "utilities"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Who is the electric provider for this address?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "electric provider address", "category": "utilities"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Can you help me with utility setup instructions?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "utility setup instructions help", "category": "utilities"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "How do I submit a maintenance request?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "submit maintenance request how", "category": "maintenance"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I need something repaired in my apartment"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "repair apartment maintenance", "category": "maintenance"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "How can I get something fixed in my unit?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "get something fixed unit repair", "category": "maintenance"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "My faucet is leaking, how do I report it?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "report leaking faucet maintenance", "category": "maintenance"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Where do I put in a work order for repairs?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "work order repairs submit", "category": "maintenance"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "The AC in my apartment isn't working"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "AC not working maintenance request", "category": "maintenance"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "What's the emergency maintenance number?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "emergency maintenance number phone", "category": "maintenance"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I have a plumbing emergency after hours"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "plumbing emergency after hours", "category": "maintenance"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Who do I call for emergency repairs at night?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "emergency repairs night call", "category": "maintenance"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Is there 24 hour maintenance available?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "24 hour maintenance available", "category": "maintenance"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "My heater stopped working and it's freezing"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "heater stopped working emergency", "category": "maintenance"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "What counts as an emergency maintenance issue?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "emergency maintenance issue definition", "category": "maintenance"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "What's the phone number for maintenance?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "maintenance phone number contact", "category": "maintenance"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Who do I contact about repairs?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "contact repairs who call", "category": "maintenance"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "How can I reach the maintenance team?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "reach maintenance team contact", "category": "maintenance"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Is there an email for maintenance requests?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "email maintenance requests contact", "category": "maintenance"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Can I text the maintenance department?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "text maintenance department contact", "category": "maintenance"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "How long does it take to get repairs done?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "how long repairs done time", "category": "maintenance"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "What's the typical response time for maintenance?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "response time maintenance typical", "category": "maintenance"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "When can I expect someone to fix my issue?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "expect someone fix issue when", "category": "maintenance"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "How quickly are non-emergency repairs handled?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "non-emergency repairs handled quickly time", "category": "maintenance"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I submitted a request 3 days ago, when will it be fixed?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "request days ago when fixed timeline", "category": "maintenance"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "What are the maintenance hours?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "maintenance hours schedule", "category": "maintenance"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Does the rent include heat?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "rent include heat utilities", "category": "utilities"}}}]}
+    ]
+  }
+]

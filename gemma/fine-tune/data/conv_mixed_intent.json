@@ -1,0 +1,928 @@
+[
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Do you have any 2 bedroom apartments?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [2]}}}]},
+      {"role": "tool", "content": "[{\"unit\": \"201\", \"bedrooms\": 2, \"rent\": 2100}, {\"unit\": \"305\", \"bedrooms\": 2, \"rent\": 2250}]"},
+      {"role": "assistant", "content": "Yes! We have several 2-bedroom units available. Unit 201 is $2,100/month and Unit 305 is $2,250/month."},
+      {"role": "user", "content": "Nice. By the way, do you allow cats?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "cats pet policy", "category": "policies"}}}]},
+      {"role": "tool", "content": "[{\"topic\": \"pets\", \"content\": \"Cats are welcome with a $300 pet deposit and $25/month pet rent.\"}]"},
+      {"role": "assistant", "content": "Yes, cats are welcome! There's a $300 pet deposit and $25/month pet rent."},
+      {"role": "user", "content": "Great! What times can I tour on Monday?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_availability", "arguments": {"date_str": "2025-02-17"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Is there a gym in the building?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "gym fitness center", "category": "amenities"}}}]},
+      {"role": "tool", "content": "[{\"topic\": \"gym\", \"content\": \"24-hour fitness center with cardio and weight equipment.\"}]"},
+      {"role": "assistant", "content": "Yes! We have a 24-hour fitness center with cardio machines and weight equipment."},
+      {"role": "user", "content": "Perfect. Can you show me 1 bedroom apartments?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [1]}}}]},
+      {"role": "tool", "content": "[{\"unit\": \"102\", \"bedrooms\": 1, \"rent\": 1650}, {\"unit\": \"205\", \"bedrooms\": 1, \"rent\": 1700}]"},
+      {"role": "assistant", "content": "We have 1-bedroom units available! Unit 102 at $1,650/month and Unit 205 at $1,700/month."},
+      {"role": "user", "content": "Is parking included?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "parking included cost", "category": "amenities"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "When can I tour this Saturday?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_availability", "arguments": {"date_str": "2025-02-08"}}}]},
+      {"role": "tool", "content": "[\"10:00\", \"11:00\", \"14:00\", \"15:00\"]"},
+      {"role": "assistant", "content": "This Saturday we have openings at 10am, 11am, 2pm, and 3pm."},
+      {"role": "user", "content": "What's the minimum lease term?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "minimum lease term length", "category": "leasing"}}}]},
+      {"role": "tool", "content": "[{\"topic\": \"lease\", \"content\": \"Standard leases are 12 months. Shorter terms available at premium.\"}]"},
+      {"role": "assistant", "content": "Our standard lease is 12 months. Shorter terms may be available at a premium rate."},
+      {"role": "user", "content": "Actually, can I check Sunday instead?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_availability", "arguments": {"date_str": "2025-02-09"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Show me 2 bedroom units under $2000"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [2], "max_rent": 2000}}}]},
+      {"role": "tool", "content": "[{\"unit\": \"108\", \"bedrooms\": 2, \"rent\": 1950}]"},
+      {"role": "assistant", "content": "We have Unit 108, a 2-bedroom at $1,950/month within your budget."},
+      {"role": "user", "content": "What about 1 bedrooms?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [1], "max_rent": 2000}}}]},
+      {"role": "tool", "content": "[{\"unit\": \"102\", \"bedrooms\": 1, \"rent\": 1650}, {\"unit\": \"205\", \"bedrooms\": 1, \"rent\": 1700}]"},
+      {"role": "assistant", "content": "For 1-bedrooms under $2000, we have Unit 102 at $1,650 and Unit 205 at $1,700."},
+      {"role": "user", "content": "Do you allow dogs?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "dogs allowed pet policy", "category": "policies"}}}]},
+      {"role": "tool", "content": "[{\"topic\": \"pets\", \"content\": \"Dogs under 50 lbs allowed with deposit.\"}]"},
+      {"role": "assistant", "content": "Yes, dogs under 50 lbs are allowed with a pet deposit."},
+      {"role": "user", "content": "Can I tour on February 20th?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_availability", "arguments": {"date_str": "2025-02-20"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "What's the pet deposit?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "pet deposit fee", "category": "policies"}}}]},
+      {"role": "tool", "content": "[{\"topic\": \"pets\", \"content\": \"Pet deposit is $300 per pet.\"}]"},
+      {"role": "assistant", "content": "The pet deposit is $300 per pet."},
+      {"role": "user", "content": "OK thanks. What studios do you have?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [0]}}}]},
+      {"role": "tool", "content": "[{\"unit\": \"101\", \"bedrooms\": 0, \"rent\": 1200}]"},
+      {"role": "assistant", "content": "We have a studio available - Unit 101 at $1,200/month."},
+      {"role": "user", "content": "Is there in-unit laundry?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "in-unit laundry washer dryer", "category": "amenities"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I need a 3 bedroom apartment"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [3]}}}]},
+      {"role": "tool", "content": "[{\"unit\": \"401\", \"bedrooms\": 3, \"rent\": 3200}]"},
+      {"role": "assistant", "content": "We have a 3-bedroom available - Unit 401 at $3,200/month."},
+      {"role": "user", "content": "Is smoking allowed?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "smoking policy", "category": "policies"}}}]},
+      {"role": "tool", "content": "[{\"topic\": \"smoking\", \"content\": \"This is a smoke-free property. Smoking not permitted.\"}]"},
+      {"role": "assistant", "content": "This is a smoke-free property. Smoking is not permitted anywhere on the premises."},
+      {"role": "user", "content": "What about a pool?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "swimming pool", "category": "amenities"}}}]},
+      {"role": "tool", "content": "[{\"topic\": \"pool\", \"content\": \"Outdoor pool open May-September, 8am-10pm.\"}]"},
+      {"role": "assistant", "content": "Yes! We have an outdoor pool open May through September, from 8am to 10pm."},
+      {"role": "user", "content": "I'd like to schedule a tour for next Tuesday"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_availability", "arguments": {"date_str": "2025-02-11"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "What are the pool hours?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "pool hours", "category": "amenities"}}}]},
+      {"role": "tool", "content": "[{\"topic\": \"pool\", \"content\": \"Pool hours are 8am-10pm daily.\"}]"},
+      {"role": "assistant", "content": "The pool is open 8am to 10pm daily."},
+      {"role": "user", "content": "Nice! Show me 1 or 2 bedroom apartments"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [1, 2]}}}]},
+      {"role": "tool", "content": "[{\"unit\": \"102\", \"bedrooms\": 1, \"rent\": 1650}, {\"unit\": \"201\", \"bedrooms\": 2, \"rent\": 2100}]"},
+      {"role": "assistant", "content": "We have a 1-bedroom (Unit 102 at $1,650) and a 2-bedroom (Unit 201 at $2,100) available."},
+      {"role": "user", "content": "Can I book a tour for March 5th at 2pm? I'm Sarah, sarah@email.com, 555-111-2222"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_appointment", "arguments": {"appointment_date": "2025-03-05", "appointment_start_time": "14:00", "first_name": "Sarah", "email": "sarah@email.com", "phone": "555-111-2222"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I'm looking for a place for me and my roommate"},
+      {"role": "assistant", "content": "I'd be happy to help you find a place! How many bedrooms are you looking for?"},
+      {"role": "user", "content": "2 bedrooms under $2500"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [2], "max_rent": 2500}}}]},
+      {"role": "tool", "content": "[{\"unit\": \"201\", \"bedrooms\": 2, \"rent\": 2100}, {\"unit\": \"305\", \"bedrooms\": 2, \"rent\": 2250}]"},
+      {"role": "assistant", "content": "We have two great options! Unit 201 at $2,100/month and Unit 305 at $2,250/month."},
+      {"role": "user", "content": "Is there guest parking for visitors?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "guest parking visitor", "category": "amenities"}}}]},
+      {"role": "tool", "content": "[{\"topic\": \"parking\", \"content\": \"Guest parking available in designated visitor spots.\"}]"},
+      {"role": "assistant", "content": "Yes, we have designated guest parking spots for visitors."},
+      {"role": "user", "content": "What's the policy on adding a roommate to the lease?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "roommate lease policy", "category": "policies"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Check availability for February 15th"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_availability", "arguments": {"date_str": "2025-02-15"}}}]},
+      {"role": "tool", "content": "[\"09:00\", \"10:00\", \"11:00\", \"14:00\", \"15:00\", \"16:00\"]"},
+      {"role": "assistant", "content": "February 15th has openings at 9am, 10am, 11am, 2pm, 3pm, and 4pm."},
+      {"role": "user", "content": "Before I book, what 1 bedroom units do you have?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [1]}}}]},
+      {"role": "tool", "content": "[{\"unit\": \"102\", \"bedrooms\": 1, \"rent\": 1650}, {\"unit\": \"205\", \"bedrooms\": 1, \"rent\": 1700}]"},
+      {"role": "assistant", "content": "We have Unit 102 at $1,650/month and Unit 205 at $1,700/month available."},
+      {"role": "user", "content": "Do they have balconies?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "balcony patio", "category": "amenities"}}}]},
+      {"role": "tool", "content": "[{\"topic\": \"balcony\", \"content\": \"Select units have private balconies.\"}]"},
+      {"role": "assistant", "content": "Some units have private balconies. I can show you which ones during your tour."},
+      {"role": "user", "content": "Great, book me for Feb 15 at 10am. I'm Mike, mike@email.com, 555-333-4444"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_appointment", "arguments": {"appointment_date": "2025-02-15", "appointment_start_time": "10:00", "first_name": "Mike", "email": "mike@email.com", "phone": "555-333-4444"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "How much is a studio?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [0]}}}]},
+      {"role": "tool", "content": "[{\"unit\": \"101\", \"bedrooms\": 0, \"rent\": 1200}]"},
+      {"role": "assistant", "content": "We have a studio available - Unit 101 at $1,200/month."},
+      {"role": "user", "content": "What utilities are included?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "utilities included", "category": "utilities"}}}]},
+      {"role": "tool", "content": "[{\"topic\": \"utilities\", \"content\": \"Water and trash included. Tenant pays electric and gas.\"}]"},
+      {"role": "assistant", "content": "Water and trash are included in rent. You'd pay for electric and gas separately."},
+      {"role": "user", "content": "What about internet?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "internet wifi included", "category": "utilities"}}}]},
+      {"role": "tool", "content": "[{\"topic\": \"internet\", \"content\": \"Internet is tenant responsibility. Multiple providers available.\"}]"},
+      {"role": "assistant", "content": "Internet is your responsibility, but multiple providers service the building."},
+      {"role": "user", "content": "OK. Can I see it on Wednesday?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_availability", "arguments": {"date_str": "2025-02-12"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Do you have EV charging?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "EV charging electric vehicle", "category": "amenities"}}}]},
+      {"role": "tool", "content": "[{\"topic\": \"ev\", \"content\": \"2 EV charging stations available in garage.\"}]"},
+      {"role": "assistant", "content": "Yes! We have 2 EV charging stations in the parking garage."},
+      {"role": "user", "content": "Great. What 2 bedrooms do you have?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [2]}}}]},
+      {"role": "tool", "content": "[{\"unit\": \"201\", \"bedrooms\": 2, \"rent\": 2100}, {\"unit\": \"305\", \"bedrooms\": 2, \"rent\": 2250}]"},
+      {"role": "assistant", "content": "We have Unit 201 at $2,100/month and Unit 305 at $2,250/month."},
+      {"role": "user", "content": "Is there a security deposit?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "security deposit", "category": "leasing"}}}]},
+      {"role": "tool", "content": "[{\"topic\": \"deposit\", \"content\": \"Security deposit equal to one month rent.\"}]"},
+      {"role": "assistant", "content": "The security deposit is equal to one month's rent."},
+      {"role": "user", "content": "Can I schedule a tour for March 10th?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_availability", "arguments": {"date_str": "2025-03-10"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I need a large apartment for my family"},
+      {"role": "assistant", "content": "I'd be happy to help! Are you looking for a 2 or 3 bedroom?"},
+      {"role": "user", "content": "3 bedrooms please"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [3]}}}]},
+      {"role": "tool", "content": "[{\"unit\": \"401\", \"bedrooms\": 3, \"rent\": 3200}]"},
+      {"role": "assistant", "content": "We have a 3-bedroom available - Unit 401 at $3,200/month."},
+      {"role": "user", "content": "Is there a playground for kids?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "playground kids children", "category": "amenities"}}}]},
+      {"role": "tool", "content": "[{\"topic\": \"playground\", \"content\": \"Community playground located near building B.\"}]"},
+      {"role": "assistant", "content": "Yes! There's a community playground located near building B."},
+      {"role": "user", "content": "What schools are nearby?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "schools nearby", "category": "neighborhood"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "What's the guest policy?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "guest policy visitors", "category": "policies"}}}]},
+      {"role": "tool", "content": "[{\"topic\": \"guests\", \"content\": \"Guests may stay up to 14 consecutive days.\"}]"},
+      {"role": "assistant", "content": "Guests may stay up to 14 consecutive days."},
+      {"role": "user", "content": "Good to know. What 1 bedroom units are available?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [1]}}}]},
+      {"role": "tool", "content": "[{\"unit\": \"102\", \"bedrooms\": 1, \"rent\": 1650}, {\"unit\": \"205\", \"bedrooms\": 1, \"rent\": 1700}]"},
+      {"role": "assistant", "content": "We have Unit 102 at $1,650 and Unit 205 at $1,700."},
+      {"role": "user", "content": "Is there a dog park?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "dog park pet area", "category": "amenities"}}}]},
+      {"role": "tool", "content": "[{\"topic\": \"dog park\", \"content\": \"Fenced dog park on property.\"}]"},
+      {"role": "assistant", "content": "Yes, we have a fenced dog park on the property!"},
+      {"role": "user", "content": "Perfect! Let me book a tour. What's available on Thursday?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_availability", "arguments": {"date_str": "2025-02-13"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Show me apartments under $1800"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [0, 1, 2, 3], "max_rent": 1800}}}]},
+      {"role": "tool", "content": "[{\"unit\": \"101\", \"bedrooms\": 0, \"rent\": 1200}, {\"unit\": \"102\", \"bedrooms\": 1, \"rent\": 1650}, {\"unit\": \"205\", \"bedrooms\": 1, \"rent\": 1700}]"},
+      {"role": "assistant", "content": "Under $1,800, we have: Studio Unit 101 ($1,200), 1BR Unit 102 ($1,650), and 1BR Unit 205 ($1,700)."},
+      {"role": "user", "content": "Do any have in-unit washer dryer?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "in-unit washer dryer laundry", "category": "amenities"}}}]},
+      {"role": "tool", "content": "[{\"topic\": \"laundry\", \"content\": \"Select units have in-unit washer/dryer. Others have hookups.\"}]"},
+      {"role": "assistant", "content": "Some units have in-unit washer/dryer, while others have hookups. I can show you which during the tour."},
+      {"role": "user", "content": "What's the noise policy?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "noise quiet hours", "category": "policies"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Can I tour this weekend?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_availability", "arguments": {"date_str": "2025-02-08"}}}]},
+      {"role": "tool", "content": "[\"10:00\", \"11:00\", \"14:00\", \"15:00\"]"},
+      {"role": "assistant", "content": "Saturday has openings at 10am, 11am, 2pm, and 3pm."},
+      {"role": "user", "content": "What about Sunday?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_availability", "arguments": {"date_str": "2025-02-09"}}}]},
+      {"role": "tool", "content": "[\"12:00\", \"13:00\", \"14:00\"]"},
+      {"role": "assistant", "content": "Sunday has noon, 1pm, and 2pm available."},
+      {"role": "user", "content": "Show me 2 bedrooms before I decide"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [2]}}}]},
+      {"role": "tool", "content": "[{\"unit\": \"201\", \"bedrooms\": 2, \"rent\": 2100}, {\"unit\": \"305\", \"bedrooms\": 2, \"rent\": 2250}]"},
+      {"role": "assistant", "content": "We have Unit 201 at $2,100 and Unit 305 at $2,250."},
+      {"role": "user", "content": "Book me for Sunday at 1pm. I'm Tom, tom@email.com, 555-222-3333"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_appointment", "arguments": {"appointment_date": "2025-02-09", "appointment_start_time": "13:00", "first_name": "Tom", "email": "tom@email.com", "phone": "555-222-3333"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Is there covered parking?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "covered parking garage", "category": "amenities"}}}]},
+      {"role": "tool", "content": "[{\"topic\": \"parking\", \"content\": \"Covered parking garage available for $100/month.\"}]"},
+      {"role": "assistant", "content": "Yes, we have a covered parking garage available for $100/month."},
+      {"role": "user", "content": "What studios do you have?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [0]}}}]},
+      {"role": "tool", "content": "[{\"unit\": \"101\", \"bedrooms\": 0, \"rent\": 1200}]"},
+      {"role": "assistant", "content": "We have one studio - Unit 101 at $1,200/month."},
+      {"role": "user", "content": "Can I have a fish tank?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "fish tank aquarium pet", "category": "policies"}}}]},
+      {"role": "tool", "content": "[{\"topic\": \"fish\", \"content\": \"Fish tanks under 20 gallons allowed without deposit.\"}]"},
+      {"role": "assistant", "content": "Yes! Fish tanks under 20 gallons are allowed without a deposit."},
+      {"role": "user", "content": "Great. What times are free on February 18th?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_availability", "arguments": {"date_str": "2025-02-18"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I'm relocating for work and need an apartment"},
+      {"role": "assistant", "content": "Welcome! I'd be happy to help you find a place. How many bedrooms do you need?"},
+      {"role": "user", "content": "1 bedroom should work"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [1]}}}]},
+      {"role": "tool", "content": "[{\"unit\": \"102\", \"bedrooms\": 1, \"rent\": 1650}, {\"unit\": \"205\", \"bedrooms\": 1, \"rent\": 1700}]"},
+      {"role": "assistant", "content": "We have 1-bedroom units: Unit 102 at $1,650 and Unit 205 at $1,700."},
+      {"role": "user", "content": "What's the move-in process like?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "move-in process", "category": "move_in_out"}}}]},
+      {"role": "tool", "content": "[{\"topic\": \"move-in\", \"content\": \"Schedule move-in with management. Elevator reservation required for large moves.\"}]"},
+      {"role": "assistant", "content": "You'll schedule your move-in with management. For large moves, elevator reservation is required."},
+      {"role": "user", "content": "Is there a business center? I work from home sometimes"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "business center workspace", "category": "amenities"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "What's the application process?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "application process", "category": "leasing"}}}]},
+      {"role": "tool", "content": "[{\"topic\": \"application\", \"content\": \"Online application. $50 fee. Background and credit check required.\"}]"},
+      {"role": "assistant", "content": "We have an online application with a $50 fee. Background and credit checks are required."},
+      {"role": "user", "content": "OK. What 2 bedroom apartments are available?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [2]}}}]},
+      {"role": "tool", "content": "[{\"unit\": \"201\", \"bedrooms\": 2, \"rent\": 2100}, {\"unit\": \"305\", \"bedrooms\": 2, \"rent\": 2250}]"},
+      {"role": "assistant", "content": "We have Unit 201 at $2,100/month and Unit 305 at $2,250/month."},
+      {"role": "user", "content": "Can I schedule a tour for next Friday?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_availability", "arguments": {"date_str": "2025-02-14"}}}]},
+      {"role": "tool", "content": "[\"09:00\", \"10:00\", \"14:00\", \"15:00\", \"16:00\"]"},
+      {"role": "assistant", "content": "Friday has 9am, 10am, 2pm, 3pm, and 4pm available."},
+      {"role": "user", "content": "Book 2pm for Lisa Wong, lisa.wong@email.com, 555-444-5555"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_appointment", "arguments": {"appointment_date": "2025-02-14", "appointment_start_time": "14:00", "first_name": "Lisa", "last_name": "Wong", "email": "lisa.wong@email.com", "phone": "555-444-5555"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Is there a hot tub?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "hot tub jacuzzi spa", "category": "amenities"}}}]},
+      {"role": "tool", "content": "[{\"topic\": \"hot tub\", \"content\": \"Hot tub located by the pool area.\"}]"},
+      {"role": "assistant", "content": "Yes! There's a hot tub located by the pool area."},
+      {"role": "user", "content": "Cool! What 1 bedrooms are under $1700?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [1], "max_rent": 1700}}}]},
+      {"role": "tool", "content": "[{\"unit\": \"102\", \"bedrooms\": 1, \"rent\": 1650}, {\"unit\": \"205\", \"bedrooms\": 1, \"rent\": 1700}]"},
+      {"role": "assistant", "content": "We have Unit 102 at $1,650 and Unit 205 at exactly $1,700."},
+      {"role": "user", "content": "How do I pay rent?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "rent payment methods", "category": "rent_payment"}}}]},
+      {"role": "tool", "content": "[{\"topic\": \"payment\", \"content\": \"Online portal accepts ACH, credit/debit cards. Check also accepted.\"}]"},
+      {"role": "assistant", "content": "Rent can be paid through our online portal via ACH or credit/debit card. Checks are also accepted."},
+      {"role": "user", "content": "What about late fees?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "late fee payment", "category": "rent_payment"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Do you allow Airbnb?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "airbnb short term rental sublease", "category": "policies"}}}]},
+      {"role": "tool", "content": "[{\"topic\": \"airbnb\", \"content\": \"Short-term rentals and Airbnb not permitted.\"}]"},
+      {"role": "assistant", "content": "No, short-term rentals and Airbnb are not permitted."},
+      {"role": "user", "content": "OK. Show me your 2 bedroom options"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [2]}}}]},
+      {"role": "tool", "content": "[{\"unit\": \"201\", \"bedrooms\": 2, \"rent\": 2100}, {\"unit\": \"305\", \"bedrooms\": 2, \"rent\": 2250}]"},
+      {"role": "assistant", "content": "We have Unit 201 at $2,100 and Unit 305 at $2,250."},
+      {"role": "user", "content": "Which floor is 305 on?"},
+      {"role": "assistant", "content": "Unit 305 is on the third floor."},
+      {"role": "user", "content": "Is there an elevator?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "elevator", "category": "amenities"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Any openings on March 15?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_availability", "arguments": {"date_str": "2025-03-15"}}}]},
+      {"role": "tool", "content": "[\"10:00\", \"11:00\", \"14:00\", \"15:00\"]"},
+      {"role": "assistant", "content": "March 15th has 10am, 11am, 2pm, and 3pm available."},
+      {"role": "user", "content": "What about March 16?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_availability", "arguments": {"date_str": "2025-03-16"}}}]},
+      {"role": "tool", "content": "[\"12:00\", \"13:00\"]"},
+      {"role": "assistant", "content": "March 16th has noon and 1pm available."},
+      {"role": "user", "content": "I'll take the 15th. But first, do you have 1 or 2 bedroom units?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [1, 2]}}}]},
+      {"role": "tool", "content": "[{\"unit\": \"102\", \"bedrooms\": 1, \"rent\": 1650}, {\"unit\": \"201\", \"bedrooms\": 2, \"rent\": 2100}]"},
+      {"role": "assistant", "content": "We have 1BR Unit 102 ($1,650) and 2BR Unit 201 ($2,100)."},
+      {"role": "user", "content": "Is there a gym?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "gym fitness center", "category": "amenities"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Can I paint my apartment?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "paint walls modifications", "category": "policies"}}}]},
+      {"role": "tool", "content": "[{\"topic\": \"paint\", \"content\": \"Painting not allowed. Must return unit in original condition.\"}]"},
+      {"role": "assistant", "content": "Painting is not allowed. Units must be returned in their original condition."},
+      {"role": "user", "content": "What about hanging pictures?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "hanging pictures holes walls", "category": "policies"}}}]},
+      {"role": "tool", "content": "[{\"topic\": \"walls\", \"content\": \"Small nail holes for pictures are acceptable.\"}]"},
+      {"role": "assistant", "content": "Small nail holes for hanging pictures are acceptable."},
+      {"role": "user", "content": "OK good. Show me 2 bedroom places under $2200"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [2], "max_rent": 2200}}}]},
+      {"role": "tool", "content": "[{\"unit\": \"201\", \"bedrooms\": 2, \"rent\": 2100}]"},
+      {"role": "assistant", "content": "Unit 201 is a 2-bedroom at $2,100/month, within your budget."},
+      {"role": "user", "content": "When can I see it?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_availability", "arguments": {"date_str": "2025-02-10"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "What restaurants are nearby?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "restaurants nearby dining", "category": "neighborhood"}}}]},
+      {"role": "tool", "content": "[{\"topic\": \"dining\", \"content\": \"Multiple restaurants within walking distance including Italian, Thai, and American cuisine.\"}]"},
+      {"role": "assistant", "content": "There are multiple restaurants within walking distance - Italian, Thai, and American cuisine options nearby."},
+      {"role": "user", "content": "Nice! What 1 bedroom units do you have?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [1]}}}]},
+      {"role": "tool", "content": "[{\"unit\": \"102\", \"bedrooms\": 1, \"rent\": 1650}, {\"unit\": \"205\", \"bedrooms\": 1, \"rent\": 1700}]"},
+      {"role": "assistant", "content": "We have Unit 102 at $1,650 and Unit 205 at $1,700."},
+      {"role": "user", "content": "What's included in rent?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "included rent utilities", "category": "utilities"}}}]},
+      {"role": "tool", "content": "[{\"topic\": \"included\", \"content\": \"Water, trash, and basic cable included in rent.\"}]"},
+      {"role": "assistant", "content": "Water, trash, and basic cable are included in your rent."},
+      {"role": "user", "content": "Can I tour on the 20th of February?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_availability", "arguments": {"date_str": "2025-02-20"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Do you do 6 month leases?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "6 month short term lease", "category": "leasing"}}}]},
+      {"role": "tool", "content": "[{\"topic\": \"short lease\", \"content\": \"6-month leases available at 10% premium.\"}]"},
+      {"role": "assistant", "content": "Yes, 6-month leases are available at a 10% premium on the monthly rent."},
+      {"role": "user", "content": "What's a 1 bedroom cost normally?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [1]}}}]},
+      {"role": "tool", "content": "[{\"unit\": \"102\", \"bedrooms\": 1, \"rent\": 1650}, {\"unit\": \"205\", \"bedrooms\": 1, \"rent\": 1700}]"},
+      {"role": "assistant", "content": "1-bedrooms are $1,650-$1,700/month on a standard 12-month lease."},
+      {"role": "user", "content": "Is there public transit nearby?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "public transit bus train subway", "category": "neighborhood"}}}]},
+      {"role": "tool", "content": "[{\"topic\": \"transit\", \"content\": \"Bus stop 2 blocks away. Metro station within 10 min walk.\"}]"},
+      {"role": "assistant", "content": "Great transit access! Bus stop is 2 blocks away and the metro station is a 10-minute walk."},
+      {"role": "user", "content": "Can I see the place tomorrow?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_availability", "arguments": {"date_str": "2025-02-06"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "How do I submit maintenance requests?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "maintenance request submit", "category": "maintenance"}}}]},
+      {"role": "tool", "content": "[{\"topic\": \"maintenance\", \"content\": \"Submit via online portal or call front desk. Emergency line available 24/7.\"}]"},
+      {"role": "assistant", "content": "You can submit requests through our online portal or call the front desk. Emergency line is available 24/7."},
+      {"role": "user", "content": "Good. What 2 bedrooms are available?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [2]}}}]},
+      {"role": "tool", "content": "[{\"unit\": \"201\", \"bedrooms\": 2, \"rent\": 2100}, {\"unit\": \"305\", \"bedrooms\": 2, \"rent\": 2250}]"},
+      {"role": "assistant", "content": "We have Unit 201 at $2,100 and Unit 305 at $2,250."},
+      {"role": "user", "content": "Do you have package lockers?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "package lockers delivery", "category": "amenities"}}}]},
+      {"role": "tool", "content": "[{\"topic\": \"packages\", \"content\": \"Amazon Hub lockers in lobby. Large packages held at front desk.\"}]"},
+      {"role": "assistant", "content": "Yes! We have Amazon Hub lockers in the lobby. Large packages are held at the front desk."},
+      {"role": "user", "content": "Save my info for follow up: James Wilson, james.wilson@email.com, 555-666-7777"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_lead", "arguments": {"first_name": "James", "last_name": "Wilson", "email": "james.wilson@email.com", "phone": "555-666-7777"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "What's the pet weight limit?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "pet weight limit", "category": "policies"}}}]},
+      {"role": "tool", "content": "[{\"topic\": \"pets\", \"content\": \"Dogs must be under 50 lbs. No weight limit for cats.\"}]"},
+      {"role": "assistant", "content": "Dogs must be under 50 lbs. There's no weight limit for cats."},
+      {"role": "user", "content": "My dog is 45 lbs so that works. Show me 2 bedroom units"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [2]}}}]},
+      {"role": "tool", "content": "[{\"unit\": \"201\", \"bedrooms\": 2, \"rent\": 2100}, {\"unit\": \"305\", \"bedrooms\": 2, \"rent\": 2250}]"},
+      {"role": "assistant", "content": "Great news for your dog! We have Unit 201 at $2,100 and Unit 305 at $2,250."},
+      {"role": "user", "content": "Is there a dog washing station?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "dog washing station pet spa", "category": "amenities"}}}]},
+      {"role": "tool", "content": "[{\"topic\": \"pet amenities\", \"content\": \"Pet washing station located on first floor near parking garage.\"}]"},
+      {"role": "assistant", "content": "Yes! There's a pet washing station on the first floor near the parking garage."},
+      {"role": "user", "content": "Perfect! When can I tour?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_availability", "arguments": {"date_str": "2025-02-10"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Show me your cheapest apartments"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [0, 1, 2, 3], "max_rent": 1500}}}]},
+      {"role": "tool", "content": "[{\"unit\": \"101\", \"bedrooms\": 0, \"rent\": 1200}]"},
+      {"role": "assistant", "content": "Our most affordable option is Studio Unit 101 at $1,200/month."},
+      {"role": "user", "content": "What size is the studio?"},
+      {"role": "assistant", "content": "Studios are typically around 450-500 square feet. I can confirm the exact size during your tour."},
+      {"role": "user", "content": "Is there grocery stores nearby?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "grocery stores shopping nearby", "category": "neighborhood"}}}]},
+      {"role": "tool", "content": "[{\"topic\": \"shopping\", \"content\": \"Whole Foods and Trader Joe's within 1 mile.\"}]"},
+      {"role": "assistant", "content": "Yes! Whole Foods and Trader Joe's are both within 1 mile."},
+      {"role": "user", "content": "When's the soonest I can see it?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_availability", "arguments": {"date_str": "2025-02-05"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Are utilities included?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "utilities included rent", "category": "utilities"}}}]},
+      {"role": "tool", "content": "[{\"topic\": \"utilities\", \"content\": \"Water and trash included. Tenant pays electric and gas.\"}]"},
+      {"role": "assistant", "content": "Water and trash are included. You pay electric and gas separately."},
+      {"role": "user", "content": "What 1 bedrooms are available?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [1]}}}]},
+      {"role": "tool", "content": "[{\"unit\": \"102\", \"bedrooms\": 1, \"rent\": 1650}, {\"unit\": \"205\", \"bedrooms\": 1, \"rent\": 1700}]"},
+      {"role": "assistant", "content": "We have Unit 102 at $1,650 and Unit 205 at $1,700."},
+      {"role": "user", "content": "When's the earliest move-in date?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "move-in date available", "category": "leasing"}}}]},
+      {"role": "tool", "content": "[{\"topic\": \"move-in\", \"content\": \"Units available for immediate move-in upon lease signing.\"}]"},
+      {"role": "assistant", "content": "Units are available for immediate move-in once your lease is signed."},
+      {"role": "user", "content": "Can I come see them on the 15th?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_availability", "arguments": {"date_str": "2025-02-15"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "What are quiet hours?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "quiet hours noise", "category": "policies"}}}]},
+      {"role": "tool", "content": "[{\"topic\": \"quiet hours\", \"content\": \"Quiet hours 10pm-8am daily.\"}]"},
+      {"role": "assistant", "content": "Quiet hours are from 10pm to 8am daily."},
+      {"role": "user", "content": "I work late shifts so that's good. Show me 1 bedrooms"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [1]}}}]},
+      {"role": "tool", "content": "[{\"unit\": \"102\", \"bedrooms\": 1, \"rent\": 1650}, {\"unit\": \"205\", \"bedrooms\": 1, \"rent\": 1700}]"},
+      {"role": "assistant", "content": "We have Unit 102 at $1,650 and Unit 205 at $1,700 available."},
+      {"role": "user", "content": "Is there secure entry?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "secure entry security", "category": "amenities"}}}]},
+      {"role": "tool", "content": "[{\"topic\": \"security\", \"content\": \"Controlled access building with key fob entry.\"}]"},
+      {"role": "assistant", "content": "Yes, it's a controlled access building with key fob entry."},
+      {"role": "user", "content": "Can I tour on a weekday evening?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_availability", "arguments": {"date_str": "2025-02-11"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Do you have 2 or 3 bedroom apartments?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [2, 3]}}}]},
+      {"role": "tool", "content": "[{\"unit\": \"201\", \"bedrooms\": 2, \"rent\": 2100}, {\"unit\": \"305\", \"bedrooms\": 2, \"rent\": 2250}, {\"unit\": \"401\", \"bedrooms\": 3, \"rent\": 3200}]"},
+      {"role": "assistant", "content": "We have 2-bedrooms: Unit 201 ($2,100), Unit 305 ($2,250). And 3-bedroom Unit 401 ($3,200)."},
+      {"role": "user", "content": "What's the pet policy?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "pet policy", "category": "policies"}}}]},
+      {"role": "tool", "content": "[{\"topic\": \"pets\", \"content\": \"Cats and dogs allowed. $300 deposit, $25/month pet rent. Dogs under 50 lbs.\"}]"},
+      {"role": "assistant", "content": "Cats and dogs allowed! $300 deposit and $25/month pet rent. Dogs must be under 50 lbs."},
+      {"role": "user", "content": "We have 2 cats. Is that OK?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "multiple pets limit how many", "category": "policies"}}}]},
+      {"role": "tool", "content": "[{\"topic\": \"pet limit\", \"content\": \"Maximum 2 pets per unit.\"}]"},
+      {"role": "assistant", "content": "Yes! 2 pets per unit is the maximum, so your 2 cats would be welcome."},
+      {"role": "user", "content": "Great! What tours do you have on February 22?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_availability", "arguments": {"date_str": "2025-02-22"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Can I see the property on March 1st?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_availability", "arguments": {"date_str": "2025-03-01"}}}]},
+      {"role": "tool", "content": "[\"09:00\", \"10:00\", \"11:00\", \"14:00\", \"15:00\"]"},
+      {"role": "assistant", "content": "March 1st has openings at 9am, 10am, 11am, 2pm, and 3pm."},
+      {"role": "user", "content": "What units are available?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [0, 1, 2, 3]}}}]},
+      {"role": "tool", "content": "[{\"unit\": \"101\", \"bedrooms\": 0, \"rent\": 1200}, {\"unit\": \"102\", \"bedrooms\": 1, \"rent\": 1650}, {\"unit\": \"201\", \"bedrooms\": 2, \"rent\": 2100}]"},
+      {"role": "assistant", "content": "We have: Studio ($1,200), 1BR ($1,650), and 2BR ($2,100) available."},
+      {"role": "user", "content": "Is there a rooftop?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "rooftop deck terrace", "category": "amenities"}}}]},
+      {"role": "tool", "content": "[{\"topic\": \"rooftop\", \"content\": \"Rooftop lounge with city views, grills available.\"}]"},
+      {"role": "assistant", "content": "Yes! We have a rooftop lounge with city views and grills."},
+      {"role": "user", "content": "Book me for March 1st at 10am - Alex Chen, alex.chen@email.com, 555-888-9999"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_appointment", "arguments": {"appointment_date": "2025-03-01", "appointment_start_time": "10:00", "first_name": "Alex", "last_name": "Chen", "email": "alex.chen@email.com", "phone": "555-888-9999"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "What breed restrictions do you have?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "breed restrictions dogs", "category": "policies"}}}]},
+      {"role": "tool", "content": "[{\"topic\": \"breeds\", \"content\": \"No pit bulls, rottweilers, or wolf hybrids. Other breeds welcome.\"}]"},
+      {"role": "assistant", "content": "Pit bulls, rottweilers, and wolf hybrids are restricted. Other breeds are welcome."},
+      {"role": "user", "content": "I have a golden retriever, so that's fine. What 2 bedrooms do you have?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [2]}}}]},
+      {"role": "tool", "content": "[{\"unit\": \"201\", \"bedrooms\": 2, \"rent\": 2100}, {\"unit\": \"305\", \"bedrooms\": 2, \"rent\": 2250}]"},
+      {"role": "assistant", "content": "Golden retrievers are welcome! We have Unit 201 at $2,100 and Unit 305 at $2,250."},
+      {"role": "user", "content": "Is there a fenced area for dogs?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "dog park fenced area", "category": "amenities"}}}]},
+      {"role": "tool", "content": "[{\"topic\": \"dog area\", \"content\": \"Fenced dog park with agility equipment on east side of property.\"}]"},
+      {"role": "assistant", "content": "Yes! There's a fenced dog park with agility equipment on the east side."},
+      {"role": "user", "content": "This sounds great. Can you save my contact info? Maria Santos, maria.santos@email.com, 555-777-8888"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_lead", "arguments": {"first_name": "Maria", "last_name": "Santos", "email": "maria.santos@email.com", "phone": "555-777-8888"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Is there a concierge?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "concierge doorman front desk", "category": "amenities"}}}]},
+      {"role": "tool", "content": "[{\"topic\": \"front desk\", \"content\": \"Front desk staffed 8am-8pm. No 24-hour concierge.\"}]"},
+      {"role": "assistant", "content": "The front desk is staffed from 8am to 8pm. There's no 24-hour concierge."},
+      {"role": "user", "content": "What apartments do you have under $2000?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [0, 1, 2, 3], "max_rent": 2000}}}]},
+      {"role": "tool", "content": "[{\"unit\": \"101\", \"bedrooms\": 0, \"rent\": 1200}, {\"unit\": \"102\", \"bedrooms\": 1, \"rent\": 1650}, {\"unit\": \"205\", \"bedrooms\": 1, \"rent\": 1700}]"},
+      {"role": "assistant", "content": "Under $2000 we have: Studio at $1,200 and two 1-bedrooms at $1,650 and $1,700."},
+      {"role": "user", "content": "What's the lease break policy?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "lease break early termination", "category": "leasing"}}}]},
+      {"role": "tool", "content": "[{\"topic\": \"lease break\", \"content\": \"60 days notice plus 2 months rent penalty for early termination.\"}]"},
+      {"role": "assistant", "content": "Early termination requires 60 days notice plus a penalty of 2 months rent."},
+      {"role": "user", "content": "When can I tour the 1 bedrooms?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_availability", "arguments": {"date_str": "2025-02-12"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Show me 1 bedroom apartments"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [1]}}}]},
+      {"role": "tool", "content": "[{\"unit\": \"102\", \"bedrooms\": 1, \"rent\": 1650}, {\"unit\": \"205\", \"bedrooms\": 1, \"rent\": 1700}]"},
+      {"role": "assistant", "content": "We have Unit 102 at $1,650 and Unit 205 at $1,700."},
+      {"role": "user", "content": "Which one is bigger?"},
+      {"role": "assistant", "content": "I can show you both during a tour. They may have slightly different layouts and square footage."},
+      {"role": "user", "content": "OK. Is there AC?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "air conditioning AC cooling", "category": "amenities"}}}]},
+      {"role": "tool", "content": "[{\"topic\": \"AC\", \"content\": \"Central air conditioning in all units.\"}]"},
+      {"role": "assistant", "content": "Yes, all units have central air conditioning."},
+      {"role": "user", "content": "What about heating?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "heating heat", "category": "amenities"}}}]},
+      {"role": "tool", "content": "[{\"topic\": \"heat\", \"content\": \"Gas heating included in all units.\"}]"},
+      {"role": "assistant", "content": "All units have gas heating."},
+      {"role": "user", "content": "Can I see them on February 19th?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_availability", "arguments": {"date_str": "2025-02-19"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "What's the income requirement?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "income requirement qualify", "category": "leasing"}}}]},
+      {"role": "tool", "content": "[{\"topic\": \"income\", \"content\": \"Income must be 3x monthly rent. Co-signers accepted.\"}]"},
+      {"role": "assistant", "content": "Income must be 3x the monthly rent. Co-signers are accepted if needed."},
+      {"role": "user", "content": "What 2 bedrooms do you have?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [2]}}}]},
+      {"role": "tool", "content": "[{\"unit\": \"201\", \"bedrooms\": 2, \"rent\": 2100}, {\"unit\": \"305\", \"bedrooms\": 2, \"rent\": 2250}]"},
+      {"role": "assistant", "content": "We have Unit 201 at $2,100 and Unit 305 at $2,250."},
+      {"role": "user", "content": "So I'd need to make $6300 for unit 201?"},
+      {"role": "assistant", "content": "That's correct! For Unit 201 at $2,100/month, you'd need monthly income of $6,300."},
+      {"role": "user", "content": "Do you accept Section 8?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "section 8 housing voucher", "category": "leasing"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Is there bike storage?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "bike storage bicycle", "category": "amenities"}}}]},
+      {"role": "tool", "content": "[{\"topic\": \"bike storage\", \"content\": \"Secure bike storage room in garage. Free for residents.\"}]"},
+      {"role": "assistant", "content": "Yes! There's a secure bike storage room in the garage, free for residents."},
+      {"role": "user", "content": "Perfect. Show me studios and 1 bedrooms"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [0, 1]}}}]},
+      {"role": "tool", "content": "[{\"unit\": \"101\", \"bedrooms\": 0, \"rent\": 1200}, {\"unit\": \"102\", \"bedrooms\": 1, \"rent\": 1650}]"},
+      {"role": "assistant", "content": "We have Studio Unit 101 at $1,200 and 1BR Unit 102 at $1,650."},
+      {"role": "user", "content": "Are there any bike repair stations?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "bike repair station tools", "category": "amenities"}}}]},
+      {"role": "tool", "content": "[{\"topic\": \"bike\", \"content\": \"Bike repair station with tools next to storage room.\"}]"},
+      {"role": "assistant", "content": "Yes! There's a bike repair station with tools right next to the storage room."},
+      {"role": "user", "content": "I'd love to see the studio. What times work on the 25th?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_availability", "arguments": {"date_str": "2025-02-25"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Can I get a tour on April 1st?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_availability", "arguments": {"date_str": "2025-04-01"}}}]},
+      {"role": "tool", "content": "[\"09:00\", \"10:00\", \"14:00\", \"15:00\", \"16:00\"]"},
+      {"role": "assistant", "content": "April 1st has 9am, 10am, 2pm, 3pm, and 4pm available."},
+      {"role": "user", "content": "Before I book, is renters insurance required?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "renters insurance required", "category": "policies"}}}]},
+      {"role": "tool", "content": "[{\"topic\": \"insurance\", \"content\": \"Renters insurance required. Minimum $100k liability coverage.\"}]"},
+      {"role": "assistant", "content": "Yes, renters insurance is required with minimum $100k liability coverage."},
+      {"role": "user", "content": "OK. What apartments are available?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [0, 1, 2, 3]}}}]},
+      {"role": "tool", "content": "[{\"unit\": \"101\", \"bedrooms\": 0, \"rent\": 1200}, {\"unit\": \"102\", \"bedrooms\": 1, \"rent\": 1650}, {\"unit\": \"201\", \"bedrooms\": 2, \"rent\": 2100}]"},
+      {"role": "assistant", "content": "We have a studio ($1,200), 1BR ($1,650), and 2BR ($2,100) available."},
+      {"role": "user", "content": "Book me for April 1 at 2pm. Kevin Park, kevin.park@email.com, 555-123-9876"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_appointment", "arguments": {"appointment_date": "2025-04-01", "appointment_start_time": "14:00", "first_name": "Kevin", "last_name": "Park", "email": "kevin.park@email.com", "phone": "555-123-9876"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Do you have any 3 bedroom units?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [3]}}}]},
+      {"role": "tool", "content": "[{\"unit\": \"401\", \"bedrooms\": 3, \"rent\": 3200}]"},
+      {"role": "assistant", "content": "We have one 3-bedroom - Unit 401 at $3,200/month."},
+      {"role": "user", "content": "What about 2 bedrooms?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [2]}}}]},
+      {"role": "tool", "content": "[{\"unit\": \"201\", \"bedrooms\": 2, \"rent\": 2100}, {\"unit\": \"305\", \"bedrooms\": 2, \"rent\": 2250}]"},
+      {"role": "assistant", "content": "2-bedrooms: Unit 201 at $2,100 and Unit 305 at $2,250."},
+      {"role": "user", "content": "Is there storage space?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "storage unit locker", "category": "amenities"}}}]},
+      {"role": "tool", "content": "[{\"topic\": \"storage\", \"content\": \"Storage lockers available for $50/month.\"}]"},
+      {"role": "assistant", "content": "Storage lockers are available for $50/month."},
+      {"role": "user", "content": "What's the deposit for the 3BR?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "security deposit amount", "category": "leasing"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "What's your garbage disposal policy?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "garbage disposal trash", "category": "utilities"}}}]},
+      {"role": "tool", "content": "[{\"topic\": \"trash\", \"content\": \"Trash chute on each floor. Recycling room in basement.\"}]"},
+      {"role": "assistant", "content": "There's a trash chute on each floor and a recycling room in the basement."},
+      {"role": "user", "content": "Good to know. Show me 1 bedrooms under $1700"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [1], "max_rent": 1700}}}]},
+      {"role": "tool", "content": "[{\"unit\": \"102\", \"bedrooms\": 1, \"rent\": 1650}, {\"unit\": \"205\", \"bedrooms\": 1, \"rent\": 1700}]"},
+      {"role": "assistant", "content": "We have Unit 102 at $1,650 and Unit 205 at exactly $1,700."},
+      {"role": "user", "content": "Is there a dishwasher?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "dishwasher appliances kitchen", "category": "amenities"}}}]},
+      {"role": "tool", "content": "[{\"topic\": \"appliances\", \"content\": \"All units include dishwasher, microwave, and refrigerator.\"}]"},
+      {"role": "assistant", "content": "Yes! All units include a dishwasher, microwave, and refrigerator."},
+      {"role": "user", "content": "Schedule me for March 8th. What's available?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_availability", "arguments": {"date_str": "2025-03-08"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Is there a yoga studio?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "yoga studio fitness", "category": "amenities"}}}]},
+      {"role": "tool", "content": "[{\"topic\": \"yoga\", \"content\": \"Yoga room with mirrors and mats available.\"}]"},
+      {"role": "assistant", "content": "Yes! We have a yoga room with mirrors and mats available for residents."},
+      {"role": "user", "content": "That's awesome! What 1 bedroom apartments do you have?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [1]}}}]},
+      {"role": "tool", "content": "[{\"unit\": \"102\", \"bedrooms\": 1, \"rent\": 1650}, {\"unit\": \"205\", \"bedrooms\": 1, \"rent\": 1700}]"},
+      {"role": "assistant", "content": "We have Unit 102 at $1,650 and Unit 205 at $1,700."},
+      {"role": "user", "content": "Can I have a treadmill in my apartment?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "exercise equipment apartment allowed", "category": "policies"}}}]},
+      {"role": "tool", "content": "[{\"topic\": \"equipment\", \"content\": \"Personal exercise equipment allowed. Be mindful of noise.\"}]"},
+      {"role": "assistant", "content": "Yes, personal exercise equipment is allowed. Just be mindful of noise for neighbors."},
+      {"role": "user", "content": "Perfect. When can I come by next week?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_availability", "arguments": {"date_str": "2025-02-12"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I'm interested in renting but I have a few questions first"},
+      {"role": "assistant", "content": "Of course! I'm happy to help. What would you like to know?"},
+      {"role": "user", "content": "What's the parking situation?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "parking spots garage", "category": "amenities"}}}]},
+      {"role": "tool", "content": "[{\"topic\": \"parking\", \"content\": \"1 spot included. Additional spots $100/month.\"}]"},
+      {"role": "assistant", "content": "One parking spot is included with your unit. Additional spots are $100/month."},
+      {"role": "user", "content": "Good. Show me 2 bedroom units"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [2]}}}]},
+      {"role": "tool", "content": "[{\"unit\": \"201\", \"bedrooms\": 2, \"rent\": 2100}, {\"unit\": \"305\", \"bedrooms\": 2, \"rent\": 2250}]"},
+      {"role": "assistant", "content": "We have Unit 201 at $2,100 and Unit 305 at $2,250."},
+      {"role": "user", "content": "When does the lease start?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "lease start date move in", "category": "leasing"}}}]},
+      {"role": "tool", "content": "[{\"topic\": \"lease start\", \"content\": \"Flexible move-in dates. Lease can start any day of the month.\"}]"},
+      {"role": "assistant", "content": "Move-in dates are flexible - your lease can start any day of the month."},
+      {"role": "user", "content": "I'd like someone to call me. David Kim, dkim@email.com, 555-321-6789"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_lead", "arguments": {"first_name": "David", "last_name": "Kim", "email": "dkim@email.com", "phone": "555-321-6789"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "What's the pet deposit and monthly pet rent?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "pet deposit monthly rent fee", "category": "policies"}}}]},
+      {"role": "tool", "content": "[{\"topic\": \"pet fees\", \"content\": \"$300 pet deposit plus $25/month pet rent per pet.\"}]"},
+      {"role": "assistant", "content": "It's $300 deposit plus $25/month pet rent per pet."},
+      {"role": "user", "content": "OK. What 1 and 2 bedroom options do you have?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [1, 2]}}}]},
+      {"role": "tool", "content": "[{\"unit\": \"102\", \"bedrooms\": 1, \"rent\": 1650}, {\"unit\": \"201\", \"bedrooms\": 2, \"rent\": 2100}]"},
+      {"role": "assistant", "content": "We have 1BR Unit 102 ($1,650) and 2BR Unit 201 ($2,100)."},
+      {"role": "user", "content": "Is there a walking trail nearby?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "walking trail path park", "category": "neighborhood"}}}]},
+      {"role": "tool", "content": "[{\"topic\": \"trails\", \"content\": \"Walking path connects to city park. 2 miles of paved trails.\"}]"},
+      {"role": "assistant", "content": "Yes! A walking path connects to the city park with 2 miles of paved trails."},
+      {"role": "user", "content": "Perfect for my dog! When can I see the 2BR?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_availability", "arguments": {"date_str": "2025-02-13"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "What studios do you have available?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [0]}}}]},
+      {"role": "tool", "content": "[{\"unit\": \"101\", \"bedrooms\": 0, \"rent\": 1200}]"},
+      {"role": "assistant", "content": "We have Studio Unit 101 available at $1,200/month."},
+      {"role": "user", "content": "What floor is it on?"},
+      {"role": "assistant", "content": "Unit 101 is on the first floor."},
+      {"role": "user", "content": "Is there a community garden?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "community garden outdoor space", "category": "amenities"}}}]},
+      {"role": "tool", "content": "[{\"topic\": \"garden\", \"content\": \"Community garden plots available for residents. $50/year.\"}]"},
+      {"role": "assistant", "content": "Yes! Community garden plots are available for $50/year."},
+      {"role": "user", "content": "Nice! Do you offer virtual tours?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "virtual tour video", "category": "leasing"}}}]},
+      {"role": "tool", "content": "[{\"topic\": \"tours\", \"content\": \"Virtual tours available via video call. In-person tours preferred.\"}]"},
+      {"role": "assistant", "content": "Virtual tours via video call are available, though we prefer in-person tours when possible."},
+      {"role": "user", "content": "I'll come in person. What's free on the 27th?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_availability", "arguments": {"date_str": "2025-02-27"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I'm looking for a place to move into next month"},
+      {"role": "assistant", "content": "Great timing! What size apartment are you looking for?"},
+      {"role": "user", "content": "A 1 bedroom around $1700"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [1], "max_rent": 1700}}}]},
+      {"role": "tool", "content": "[{\"unit\": \"102\", \"bedrooms\": 1, \"rent\": 1650}, {\"unit\": \"205\", \"bedrooms\": 1, \"rent\": 1700}]"},
+      {"role": "assistant", "content": "Perfect! We have Unit 102 at $1,650 and Unit 205 at $1,700."},
+      {"role": "user", "content": "What do I need to apply?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "application requirements documents", "category": "leasing"}}}]},
+      {"role": "tool", "content": "[{\"topic\": \"application\", \"content\": \"Application requires ID, proof of income, and references. $50 application fee.\"}]"},
+      {"role": "assistant", "content": "You'll need ID, proof of income, and references. There's a $50 application fee."},
+      {"role": "user", "content": "How long does approval take?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "application approval time", "category": "leasing"}}}]},
+      {"role": "tool", "content": "[{\"topic\": \"approval\", \"content\": \"Typical approval within 24-48 hours.\"}]"},
+      {"role": "assistant", "content": "Typical approval is within 24-48 hours."},
+      {"role": "user", "content": "Great! Book me for March 3rd at 10am. Emma Brown, emma.b@email.com, 555-456-7890"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_appointment", "arguments": {"appointment_date": "2025-03-03", "appointment_start_time": "10:00", "first_name": "Emma", "last_name": "Brown", "email": "emma.b@email.com", "phone": "555-456-7890"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Can you show me apartments for a couple?"},
+      {"role": "assistant", "content": "Of course! Would you prefer a 1 bedroom or 2 bedroom?"},
+      {"role": "user", "content": "Let's see both"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [1, 2]}}}]},
+      {"role": "tool", "content": "[{\"unit\": \"102\", \"bedrooms\": 1, \"rent\": 1650}, {\"unit\": \"201\", \"bedrooms\": 2, \"rent\": 2100}]"},
+      {"role": "assistant", "content": "We have 1BR Unit 102 ($1,650) and 2BR Unit 201 ($2,100)."},
+      {"role": "user", "content": "My partner works from home. Is there a coworking space?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "coworking space business center work", "category": "amenities"}}}]},
+      {"role": "tool", "content": "[{\"topic\": \"coworking\", \"content\": \"Business center with desks, WiFi, and printer available.\"}]"},
+      {"role": "assistant", "content": "Yes! There's a business center with desks, WiFi, and a printer."},
+      {"role": "user", "content": "What about guest policy for family visits?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "guest policy family visitors stay", "category": "policies"}}}]},
+      {"role": "tool", "content": "[{\"topic\": \"guests\", \"content\": \"Guests can stay up to 14 days. Longer stays require notification.\"}]"},
+      {"role": "assistant", "content": "Guests can stay up to 14 days. Longer visits require notifying management."},
+      {"role": "user", "content": "When can we come see the units?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_availability", "arguments": {"date_str": "2025-02-15"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Do you have any move-in specials?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "move-in special promotion discount", "category": "leasing"}}}]},
+      {"role": "tool", "content": "[{\"topic\": \"specials\", \"content\": \"Currently offering 1 month free on 12+ month leases.\"}]"},
+      {"role": "assistant", "content": "Yes! We're currently offering 1 month free on 12+ month leases."},
+      {"role": "user", "content": "Nice! What apartments are available?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [0, 1, 2, 3]}}}]},
+      {"role": "tool", "content": "[{\"unit\": \"101\", \"bedrooms\": 0, \"rent\": 1200}, {\"unit\": \"102\", \"bedrooms\": 1, \"rent\": 1650}, {\"unit\": \"201\", \"bedrooms\": 2, \"rent\": 2100}]"},
+      {"role": "assistant", "content": "We have: Studio ($1,200), 1BR ($1,650), and 2BR ($2,100)."},
+      {"role": "user", "content": "Can I apply online?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "online application apply", "category": "leasing"}}}]},
+      {"role": "tool", "content": "[{\"topic\": \"online\", \"content\": \"Online applications available at our website. Instant submission.\"}]"},
+      {"role": "assistant", "content": "Yes! Online applications are available on our website with instant submission."},
+      {"role": "user", "content": "I'd like to tour first. What's available March 12th?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_availability", "arguments": {"date_str": "2025-03-12"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "What's the rent for a 2 bedroom?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [2]}}}]},
+      {"role": "tool", "content": "[{\"unit\": \"201\", \"bedrooms\": 2, \"rent\": 2100}, {\"unit\": \"305\", \"bedrooms\": 2, \"rent\": 2250}]"},
+      {"role": "assistant", "content": "2-bedrooms range from $2,100 to $2,250. Unit 201 is $2,100 and Unit 305 is $2,250."},
+      {"role": "user", "content": "What's the difference between them?"},
+      {"role": "assistant", "content": "Unit 305 is on a higher floor and may have upgraded finishes. I can show you both during a tour."},
+      {"role": "user", "content": "Is there a washer dryer?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "washer dryer in unit", "category": "amenities"}}}]},
+      {"role": "tool", "content": "[{\"topic\": \"laundry\", \"content\": \"In-unit washer/dryer in all 2BR and 3BR units.\"}]"},
+      {"role": "assistant", "content": "Great news - all 2BR units have in-unit washer/dryer!"},
+      {"role": "user", "content": "Do you accept guarantors?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "guarantor cosigner", "category": "leasing"}}}]},
+      {"role": "tool", "content": "[{\"topic\": \"guarantor\", \"content\": \"Guarantors accepted. Must earn 5x rent with good credit.\"}]"},
+      {"role": "assistant", "content": "Yes, guarantors are accepted. They must earn 5x the rent with good credit."},
+      {"role": "user", "content": "Can I come see unit 201 on Saturday?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_availability", "arguments": {"date_str": "2025-02-08"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "What's the package policy?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "package delivery policy", "category": "policies"}}}]},
+      {"role": "tool", "content": "[{\"topic\": \"packages\", \"content\": \"Packages held at front desk for 7 days. Amazon lockers available.\"}]"},
+      {"role": "assistant", "content": "Packages are held at the front desk for up to 7 days. We also have Amazon lockers."},
+      {"role": "user", "content": "Good to know. What 1 bedrooms are available?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [1]}}}]},
+      {"role": "tool", "content": "[{\"unit\": \"102\", \"bedrooms\": 1, \"rent\": 1650}, {\"unit\": \"205\", \"bedrooms\": 1, \"rent\": 1700}]"},
+      {"role": "assistant", "content": "We have Unit 102 at $1,650 and Unit 205 at $1,700."},
+      {"role": "user", "content": "Is there a mailroom?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "mailroom mail delivery", "category": "amenities"}}}]},
+      {"role": "tool", "content": "[{\"topic\": \"mail\", \"content\": \"Individual mailboxes in lobby. Package room next to mailroom.\"}]"},
+      {"role": "assistant", "content": "Yes, there are individual mailboxes in the lobby with a package room nearby."},
+      {"role": "user", "content": "Can I tour on March 20th?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_availability", "arguments": {"date_str": "2025-03-20"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Is there a game room?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "game room recreation entertainment", "category": "amenities"}}}]},
+      {"role": "tool", "content": "[{\"topic\": \"recreation\", \"content\": \"Game room with pool table, ping pong, and arcade games.\"}]"},
+      {"role": "assistant", "content": "Yes! We have a game room with pool table, ping pong, and arcade games."},
+      {"role": "user", "content": "My kids would love that. What 3 bedrooms do you have?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [3]}}}]},
+      {"role": "tool", "content": "[{\"unit\": \"401\", \"bedrooms\": 3, \"rent\": 3200}]"},
+      {"role": "assistant", "content": "We have Unit 401, a 3-bedroom at $3,200/month."},
+      {"role": "user", "content": "Is there good schools nearby?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "schools elementary nearby", "category": "neighborhood"}}}]},
+      {"role": "tool", "content": "[{\"topic\": \"schools\", \"content\": \"Highly rated elementary and middle schools within 1 mile.\"}]"},
+      {"role": "assistant", "content": "Yes! There are highly rated elementary and middle schools within 1 mile."},
+      {"role": "user", "content": "Perfect! Save my contact: Rachel Green, rachel.green@email.com, 555-999-8888"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_lead", "arguments": {"first_name": "Rachel", "last_name": "Green", "email": "rachel.green@email.com", "phone": "555-999-8888"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "What's the crime rate like around here?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "crime safety neighborhood", "category": "neighborhood"}}}]},
+      {"role": "tool", "content": "[{\"topic\": \"safety\", \"content\": \"Low crime area. Well-lit parking and secure building access.\"}]"},
+      {"role": "assistant", "content": "This is a low crime area with well-lit parking and secure building access."},
+      {"role": "user", "content": "That's reassuring. Show me apartments under $1800"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [0, 1, 2, 3], "max_rent": 1800}}}]},
+      {"role": "tool", "content": "[{\"unit\": \"101\", \"bedrooms\": 0, \"rent\": 1200}, {\"unit\": \"102\", \"bedrooms\": 1, \"rent\": 1650}, {\"unit\": \"205\", \"bedrooms\": 1, \"rent\": 1700}]"},
+      {"role": "assistant", "content": "Under $1,800 we have: Studio ($1,200), and 1BR units at $1,650 and $1,700."},
+      {"role": "user", "content": "Is there 24 hour security?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "24 hour security patrol", "category": "amenities"}}}]},
+      {"role": "tool", "content": "[{\"topic\": \"security\", \"content\": \"Security cameras throughout property. Patrol during night hours.\"}]"},
+      {"role": "assistant", "content": "We have security cameras throughout the property with patrol during night hours."},
+      {"role": "user", "content": "I'd like to see the studio. What's available on April 5th?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_availability", "arguments": {"date_str": "2025-04-05"}}}]}
+    ]
+  }
+]

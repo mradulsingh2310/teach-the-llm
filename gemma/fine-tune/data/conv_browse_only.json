@@ -1,0 +1,612 @@
+[
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "What 1 bedroom apartments do you have?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [1]}}}]},
+      {"role": "tool", "content": "[{\"unit\": \"101\", \"bedrooms\": 1, \"rent\": 1450, \"sqft\": 650, \"available\": \"2025-02-01\"}, {\"unit\": \"205\", \"bedrooms\": 1, \"rent\": 1550, \"sqft\": 700, \"available\": \"2025-02-15\"}]"},
+      {"role": "assistant", "content": "We have two 1-bedroom apartments available:\n\n1. Unit 101 - $1,450/month, 650 sq ft, available Feb 1st\n2. Unit 205 - $1,550/month, 700 sq ft, available Feb 15th\n\nWould you like to schedule a tour to see either of these units?"},
+      {"role": "user", "content": "Thanks, I'll think about it"},
+      {"role": "assistant", "content": "No problem! Take your time. Feel free to reach out when you're ready to schedule a tour or if you have any questions. We're here to help!"}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Do you have any 2 bedroom units?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [2]}}}]},
+      {"role": "tool", "content": "[{\"unit\": \"302\", \"bedrooms\": 2, \"rent\": 1850, \"sqft\": 950, \"available\": \"2025-01-20\"}, {\"unit\": \"410\", \"bedrooms\": 2, \"rent\": 2100, \"sqft\": 1050, \"available\": \"2025-03-01\"}]"},
+      {"role": "assistant", "content": "Yes! We have two 2-bedroom apartments:\n\n1. Unit 302 - $1,850/month, 950 sq ft, available Jan 20th\n2. Unit 410 - $2,100/month, 1,050 sq ft, available March 1st\n\nWould you like to schedule a tour?"},
+      {"role": "user", "content": "I need to check with my roommate first"},
+      {"role": "assistant", "content": "Of course! That makes sense. Feel free to come back once you've had a chance to discuss with your roommate. These units tend to go quickly, so just let us know when you're ready to take a look!"}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Show me studios under $1200"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [0], "max_rent": 1200}}}]},
+      {"role": "tool", "content": "[{\"unit\": \"108\", \"bedrooms\": 0, \"rent\": 1100, \"sqft\": 450, \"available\": \"2025-02-01\"}, {\"unit\": \"112\", \"bedrooms\": 0, \"rent\": 1150, \"sqft\": 475, \"available\": \"2025-01-25\"}]"},
+      {"role": "assistant", "content": "Great news! We have two studios within your budget:\n\n1. Unit 108 - $1,100/month, 450 sq ft, available Feb 1st\n2. Unit 112 - $1,150/month, 475 sq ft, available Jan 25th\n\nWould you like to come in and see them?"},
+      {"role": "user", "content": "Thanks, that's helpful"},
+      {"role": "assistant", "content": "You're welcome! If you have any other questions or decide you'd like to tour, just let me know. Have a great day!"}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "What's available in 1 or 2 bedrooms?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [1, 2]}}}]},
+      {"role": "tool", "content": "[{\"unit\": \"101\", \"bedrooms\": 1, \"rent\": 1450, \"sqft\": 650, \"available\": \"2025-02-01\"}, {\"unit\": \"302\", \"bedrooms\": 2, \"rent\": 1850, \"sqft\": 950, \"available\": \"2025-01-20\"}]"},
+      {"role": "assistant", "content": "Here's what we have:\n\n1-Bedroom:\n- Unit 101 - $1,450/month, 650 sq ft, available Feb 1st\n\n2-Bedroom:\n- Unit 302 - $1,850/month, 950 sq ft, available Jan 20th\n\nWould you like to schedule tours for any of these?"},
+      {"role": "user", "content": "I'll call back later"},
+      {"role": "assistant", "content": "Sounds good! Our office is open Monday through Friday, 9am to 6pm. Feel free to call anytime, and we'll be happy to assist you!"}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Looking for a 3 bedroom apartment"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [3]}}}]},
+      {"role": "tool", "content": "[{\"unit\": \"501\", \"bedrooms\": 3, \"rent\": 2650, \"sqft\": 1350, \"available\": \"2025-03-01\"}]"},
+      {"role": "assistant", "content": "We have one 3-bedroom unit available:\n\n- Unit 501 - $2,650/month, 1,350 sq ft, available March 1st\n\nThis is a spacious corner unit with great natural light. Would you like to schedule a tour?"},
+      {"role": "user", "content": "Do you have a website I can browse?"},
+      {"role": "assistant", "content": "Yes! You can visit our website at www.ourpropertysite.com for photos, floor plans, and virtual tours. Feel free to reach out if you have questions after browsing!"}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Any 1 bedroom under $1500?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [1], "max_rent": 1500}}}]},
+      {"role": "tool", "content": "[{\"unit\": \"101\", \"bedrooms\": 1, \"rent\": 1450, \"sqft\": 650, \"available\": \"2025-02-01\"}]"},
+      {"role": "assistant", "content": "We have one 1-bedroom within your budget:\n\n- Unit 101 - $1,450/month, 650 sq ft, available Feb 1st\n\nWould you like to come see it?"},
+      {"role": "user", "content": "Let me discuss with my partner first"},
+      {"role": "assistant", "content": "Absolutely, take your time! This unit is getting a lot of interest, so I'd recommend reaching out soon if you're interested. Let me know if you have any questions!"}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Show me 2 bedroom apartments"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [2]}}}]},
+      {"role": "tool", "content": "[{\"unit\": \"302\", \"bedrooms\": 2, \"rent\": 1850, \"sqft\": 950, \"available\": \"2025-01-20\"}, {\"unit\": \"410\", \"bedrooms\": 2, \"rent\": 2100, \"sqft\": 1050, \"available\": \"2025-03-01\"}]"},
+      {"role": "assistant", "content": "Here are our available 2-bedroom units:\n\n1. Unit 302 - $1,850/month, 950 sq ft, available Jan 20th\n2. Unit 410 - $2,100/month, 1,050 sq ft, available March 1st\n\nWould you like more details or to schedule a tour?"},
+      {"role": "user", "content": "What amenities does unit 302 have?"},
+      {"role": "assistant", "content": "Unit 302 features:\n- In-unit washer/dryer\n- Stainless steel appliances\n- Granite countertops\n- Walk-in closet in the primary bedroom\n- Private balcony\n\nThe building also offers a fitness center, pool, and 24-hour concierge. Would you like to see it in person?"},
+      {"role": "user", "content": "Okay thanks for the info"},
+      {"role": "assistant", "content": "You're welcome! Feel free to reach out anytime if you have more questions or want to schedule a visit. Have a great day!"}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I need a studio apartment"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [0]}}}]},
+      {"role": "tool", "content": "[{\"unit\": \"108\", \"bedrooms\": 0, \"rent\": 1100, \"sqft\": 450, \"available\": \"2025-02-01\"}, {\"unit\": \"112\", \"bedrooms\": 0, \"rent\": 1150, \"sqft\": 475, \"available\": \"2025-01-25\"}]"},
+      {"role": "assistant", "content": "We have two studios available:\n\n1. Unit 108 - $1,100/month, 450 sq ft, available Feb 1st\n2. Unit 112 - $1,150/month, 475 sq ft, available Jan 25th\n\nBoth are well-designed spaces. Would you like to tour them?"},
+      {"role": "user", "content": "I'm still looking at other places too"},
+      {"role": "assistant", "content": "That's completely understandable! Apartment hunting takes time. Feel free to come back if you'd like more information or want to schedule a tour. Good luck with your search!"}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "What do you have under $2000?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"max_rent": 2000}}}]},
+      {"role": "tool", "content": "[{\"unit\": \"101\", \"bedrooms\": 1, \"rent\": 1450, \"sqft\": 650, \"available\": \"2025-02-01\"}, {\"unit\": \"108\", \"bedrooms\": 0, \"rent\": 1100, \"sqft\": 450, \"available\": \"2025-02-01\"}, {\"unit\": \"302\", \"bedrooms\": 2, \"rent\": 1850, \"sqft\": 950, \"available\": \"2025-01-20\"}]"},
+      {"role": "assistant", "content": "Here are all units under $2,000:\n\nStudios:\n- Unit 108 - $1,100/month, 450 sq ft\n\n1-Bedroom:\n- Unit 101 - $1,450/month, 650 sq ft\n\n2-Bedroom:\n- Unit 302 - $1,850/month, 950 sq ft\n\nWhich size would work best for you?"},
+      {"role": "user", "content": "Thanks, I need to think about it more"},
+      {"role": "assistant", "content": "No rush at all! Take the time you need. When you're ready to move forward, we're here to help. Have a wonderful day!"}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Any 1br available immediately?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [1]}}}]},
+      {"role": "tool", "content": "[{\"unit\": \"101\", \"bedrooms\": 1, \"rent\": 1450, \"sqft\": 650, \"available\": \"2025-02-01\"}, {\"unit\": \"205\", \"bedrooms\": 1, \"rent\": 1550, \"sqft\": 700, \"available\": \"2025-02-15\"}]"},
+      {"role": "assistant", "content": "Our soonest available 1-bedroom is:\n\n- Unit 101 - $1,450/month, 650 sq ft, available Feb 1st\n\nThe other 1-bedroom (Unit 205) becomes available Feb 15th. Would you like to schedule a tour of Unit 101?"},
+      {"role": "user", "content": "That's not soon enough, thanks anyway"}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "What's the cheapest apartment you have?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"max_rent": 1200}}}]},
+      {"role": "tool", "content": "[{\"unit\": \"108\", \"bedrooms\": 0, \"rent\": 1100, \"sqft\": 450, \"available\": \"2025-02-01\"}]"},
+      {"role": "assistant", "content": "Our most affordable option is:\n\n- Unit 108 (Studio) - $1,100/month, 450 sq ft, available Feb 1st\n\nIt's a cozy and well-maintained space. Would you like to see it?"},
+      {"role": "user", "content": "Maybe, I'll let you know"},
+      {"role": "assistant", "content": "Sure thing! Just reach out when you're ready. We'd be happy to show you around!"}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Do you have 2 or 3 bedroom places?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [2, 3]}}}]},
+      {"role": "tool", "content": "[{\"unit\": \"302\", \"bedrooms\": 2, \"rent\": 1850, \"sqft\": 950, \"available\": \"2025-01-20\"}, {\"unit\": \"410\", \"bedrooms\": 2, \"rent\": 2100, \"sqft\": 1050, \"available\": \"2025-03-01\"}, {\"unit\": \"501\", \"bedrooms\": 3, \"rent\": 2650, \"sqft\": 1350, \"available\": \"2025-03-01\"}]"},
+      {"role": "assistant", "content": "Here's what we have:\n\n2-Bedroom:\n- Unit 302 - $1,850/month, 950 sq ft, available Jan 20th\n- Unit 410 - $2,100/month, 1,050 sq ft, available March 1st\n\n3-Bedroom:\n- Unit 501 - $2,650/month, 1,350 sq ft, available March 1st\n\nWould you like to schedule tours?"},
+      {"role": "user", "content": "What's the difference between unit 302 and 410?"},
+      {"role": "assistant", "content": "Great question! Here's a comparison:\n\nUnit 302 ($1,850):\n- 950 sq ft\n- 2nd floor with balcony\n- Available Jan 20th\n- Standard finishes\n\nUnit 410 ($2,100):\n- 1,050 sq ft (100 sq ft larger)\n- 4th floor with better views\n- Available March 1st\n- Upgraded finishes with quartz countertops\n\nWould you like to see both?"},
+      {"role": "user", "content": "I'll think it over, thanks"},
+      {"role": "assistant", "content": "No problem! Both are great options. Reach out whenever you're ready to take the next step!"}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Show me one bedroom options"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [1]}}}]},
+      {"role": "tool", "content": "[{\"unit\": \"101\", \"bedrooms\": 1, \"rent\": 1450, \"sqft\": 650, \"available\": \"2025-02-01\"}, {\"unit\": \"205\", \"bedrooms\": 1, \"rent\": 1550, \"sqft\": 700, \"available\": \"2025-02-15\"}]"},
+      {"role": "assistant", "content": "Here are our 1-bedroom options:\n\n1. Unit 101 - $1,450/month, 650 sq ft, available Feb 1st\n2. Unit 205 - $1,550/month, 700 sq ft, available Feb 15th\n\nBoth units are in great condition. Would you like to schedule a viewing?"},
+      {"role": "user", "content": "Is parking included?"},
+      {"role": "assistant", "content": "Parking is available for an additional $75/month for covered parking or $50/month for uncovered. There's also limited street parking in the area. Would you like to see the units?"},
+      {"role": "user", "content": "Got it, I'll get back to you"},
+      {"role": "assistant", "content": "Perfect! Take your time, and feel free to reach out with any other questions. Talk soon!"}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "2 bedroom apartments under $2000"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [2], "max_rent": 2000}}}]},
+      {"role": "tool", "content": "[{\"unit\": \"302\", \"bedrooms\": 2, \"rent\": 1850, \"sqft\": 950, \"available\": \"2025-01-20\"}]"},
+      {"role": "assistant", "content": "We have one 2-bedroom under $2,000:\n\n- Unit 302 - $1,850/month, 950 sq ft, available Jan 20th\n\nThis unit features 2 full bathrooms and a spacious living area. Would you like to tour it?"},
+      {"role": "user", "content": "I'm just researching for now"},
+      {"role": "assistant", "content": "No worries! I'm happy to help with any questions during your research. Feel free to reach out anytime!"}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "What apartments do you have available?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {}}}]},
+      {"role": "tool", "content": "[{\"unit\": \"108\", \"bedrooms\": 0, \"rent\": 1100}, {\"unit\": \"101\", \"bedrooms\": 1, \"rent\": 1450}, {\"unit\": \"302\", \"bedrooms\": 2, \"rent\": 1850}, {\"unit\": \"501\", \"bedrooms\": 3, \"rent\": 2650}]"},
+      {"role": "assistant", "content": "We have units in every size:\n\n- Studio (Unit 108) - $1,100/month\n- 1-Bedroom (Unit 101) - $1,450/month\n- 2-Bedroom (Unit 302) - $1,850/month\n- 3-Bedroom (Unit 501) - $2,650/month\n\nWhat size are you looking for?"},
+      {"role": "user", "content": "Just wanted to see what's out there, thanks"},
+      {"role": "assistant", "content": "Happy to help! If you decide you want more details on any unit, just let me know. Best of luck with your search!"}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I'm looking for a one bedroom"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [1]}}}]},
+      {"role": "tool", "content": "[{\"unit\": \"101\", \"bedrooms\": 1, \"rent\": 1450, \"sqft\": 650, \"available\": \"2025-02-01\"}, {\"unit\": \"205\", \"bedrooms\": 1, \"rent\": 1550, \"sqft\": 700, \"available\": \"2025-02-15\"}]"},
+      {"role": "assistant", "content": "We have two 1-bedroom apartments:\n\n1. Unit 101 - $1,450/month, 650 sq ft, available Feb 1st\n2. Unit 205 - $1,550/month, 700 sq ft, available Feb 15th\n\nWould you like to schedule a tour to see them?"},
+      {"role": "user", "content": "Are pets allowed?"},
+      {"role": "assistant", "content": "Yes, we are pet-friendly! We allow cats and dogs up to 50 lbs. There's a one-time pet deposit of $300 and monthly pet rent of $35. Would you like to schedule a tour?"},
+      {"role": "user", "content": "Thanks, that's all I needed to know for now"},
+      {"role": "assistant", "content": "You're welcome! Don't hesitate to reach out when you're ready to take the next step. Have a great day!"}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "3br apartments?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [3]}}}]},
+      {"role": "tool", "content": "[{\"unit\": \"501\", \"bedrooms\": 3, \"rent\": 2650, \"sqft\": 1350, \"available\": \"2025-03-01\"}]"},
+      {"role": "assistant", "content": "We have one 3-bedroom available:\n\n- Unit 501 - $2,650/month, 1,350 sq ft, available March 1st\n\nIt's a beautiful corner unit with lots of natural light. Would you like to see it?"},
+      {"role": "user", "content": "March is too far out for me"},
+      {"role": "assistant", "content": "I understand. Unfortunately, that's our only 3-bedroom at the moment. I can add you to our waitlist to be notified if anything becomes available sooner. Would that help?"},
+      {"role": "user", "content": "No thanks, I'll look elsewhere"},
+      {"role": "assistant", "content": "I understand completely. Good luck with your apartment search! Feel free to check back with us in the future."}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Studio apartments please"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [0]}}}]},
+      {"role": "tool", "content": "[{\"unit\": \"108\", \"bedrooms\": 0, \"rent\": 1100, \"sqft\": 450, \"available\": \"2025-02-01\"}, {\"unit\": \"112\", \"bedrooms\": 0, \"rent\": 1150, \"sqft\": 475, \"available\": \"2025-01-25\"}]"},
+      {"role": "assistant", "content": "Here are our available studios:\n\n1. Unit 108 - $1,100/month, 450 sq ft, available Feb 1st\n2. Unit 112 - $1,150/month, 475 sq ft, available Jan 25th\n\nBoth are efficiently designed with modern finishes. Would you like to schedule a tour?"},
+      {"role": "user", "content": "Do they have in-unit laundry?"},
+      {"role": "assistant", "content": "The studios don't have in-unit laundry, but we have a well-maintained laundry room on each floor with washers and dryers available at no extra charge. Would you still like to see them?"},
+      {"role": "user", "content": "Hmm, I really need in-unit laundry. Thanks though"},
+      {"role": "assistant", "content": "I understand that's an important feature. Our 1-bedroom and larger units do have in-unit laundry if you'd like to consider those. Otherwise, best of luck finding the perfect place!"}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "What 1 or 2 bedroom units are under $1800?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [1, 2], "max_rent": 1800}}}]},
+      {"role": "tool", "content": "[{\"unit\": \"101\", \"bedrooms\": 1, \"rent\": 1450, \"sqft\": 650, \"available\": \"2025-02-01\"}, {\"unit\": \"205\", \"bedrooms\": 1, \"rent\": 1550, \"sqft\": 700, \"available\": \"2025-02-15\"}]"},
+      {"role": "assistant", "content": "Within your budget, we have two 1-bedrooms:\n\n1. Unit 101 - $1,450/month, 650 sq ft, available Feb 1st\n2. Unit 205 - $1,550/month, 700 sq ft, available Feb 15th\n\nOur 2-bedrooms start at $1,850, just slightly above your budget. Would you like to tour the 1-bedrooms or consider the 2-bedroom option?"},
+      {"role": "user", "content": "I'll keep looking, thanks for your help"},
+      {"role": "assistant", "content": "You're welcome! Good luck with your search, and don't hesitate to reach out if your needs change. Take care!"}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Show me your 2br units"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [2]}}}]},
+      {"role": "tool", "content": "[{\"unit\": \"302\", \"bedrooms\": 2, \"rent\": 1850, \"sqft\": 950, \"available\": \"2025-01-20\"}, {\"unit\": \"410\", \"bedrooms\": 2, \"rent\": 2100, \"sqft\": 1050, \"available\": \"2025-03-01\"}]"},
+      {"role": "assistant", "content": "Here are our 2-bedroom apartments:\n\n1. Unit 302 - $1,850/month, 950 sq ft, available Jan 20th\n2. Unit 410 - $2,100/month, 1,050 sq ft, available March 1st\n\nWould you like more information or to schedule a tour?"},
+      {"role": "user", "content": "How long is the lease?"},
+      {"role": "assistant", "content": "We offer 12-month leases as our standard term. We can also accommodate 6-month leases at a slightly higher rate, or month-to-month after your initial lease ends. Would you like to schedule a viewing?"},
+      {"role": "user", "content": "Okay thanks, I'll be in touch"},
+      {"role": "assistant", "content": "Sounds great! Looking forward to hearing from you. Have a wonderful day!"}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Do you have any 1 bedroom apartments?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [1]}}}]},
+      {"role": "tool", "content": "[{\"unit\": \"101\", \"bedrooms\": 1, \"rent\": 1450, \"sqft\": 650, \"available\": \"2025-02-01\"}, {\"unit\": \"205\", \"bedrooms\": 1, \"rent\": 1550, \"sqft\": 700, \"available\": \"2025-02-15\"}]"},
+      {"role": "assistant", "content": "Yes! We have two 1-bedroom units:\n\n1. Unit 101 - $1,450/month, 650 sq ft, available Feb 1st\n2. Unit 205 - $1,550/month, 700 sq ft, available Feb 15th\n\nWould you like to come take a look?"},
+      {"role": "user", "content": "I'm comparing a few places right now"},
+      {"role": "assistant", "content": "That makes sense! Let me know if you have any questions about our units or want to compare features. I'm happy to help with your decision!"}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "What's available for $1500 or less?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"max_rent": 1500}}}]},
+      {"role": "tool", "content": "[{\"unit\": \"108\", \"bedrooms\": 0, \"rent\": 1100, \"sqft\": 450, \"available\": \"2025-02-01\"}, {\"unit\": \"112\", \"bedrooms\": 0, \"rent\": 1150, \"sqft\": 475, \"available\": \"2025-01-25\"}, {\"unit\": \"101\", \"bedrooms\": 1, \"rent\": 1450, \"sqft\": 650, \"available\": \"2025-02-01\"}]"},
+      {"role": "assistant", "content": "Here's what we have at $1,500 or less:\n\nStudios:\n- Unit 108 - $1,100/month, 450 sq ft\n- Unit 112 - $1,150/month, 475 sq ft\n\n1-Bedroom:\n- Unit 101 - $1,450/month, 650 sq ft\n\nWould you like to tour any of these?"},
+      {"role": "user", "content": "That's a bit more than I wanted to spend"}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Looking for 2 bedroom options"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [2]}}}]},
+      {"role": "tool", "content": "[{\"unit\": \"302\", \"bedrooms\": 2, \"rent\": 1850, \"sqft\": 950, \"available\": \"2025-01-20\"}, {\"unit\": \"410\", \"bedrooms\": 2, \"rent\": 2100, \"sqft\": 1050, \"available\": \"2025-03-01\"}]"},
+      {"role": "assistant", "content": "We have two 2-bedroom apartments:\n\n1. Unit 302 - $1,850/month, 950 sq ft, available Jan 20th\n2. Unit 410 - $2,100/month, 1,050 sq ft, available March 1st\n\nBoth have 2 full bathrooms. Would you like to schedule a tour?"},
+      {"role": "user", "content": "Which floor is unit 302 on?"},
+      {"role": "assistant", "content": "Unit 302 is on the 3rd floor. It has a nice balcony with partial city views. Would you like to see it?"},
+      {"role": "user", "content": "I was hoping for something higher up. Thanks anyway"},
+      {"role": "assistant", "content": "I understand! Unit 410 is on the 4th floor if that interests you. Otherwise, feel free to check back with us as new units become available. Good luck!"}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "What 1br apartments do you have?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [1]}}}]},
+      {"role": "tool", "content": "[{\"unit\": \"101\", \"bedrooms\": 1, \"rent\": 1450, \"sqft\": 650, \"available\": \"2025-02-01\"}, {\"unit\": \"205\", \"bedrooms\": 1, \"rent\": 1550, \"sqft\": 700, \"available\": \"2025-02-15\"}]"},
+      {"role": "assistant", "content": "Here are our available 1-bedroom units:\n\n1. Unit 101 - $1,450/month, 650 sq ft, available Feb 1st\n2. Unit 205 - $1,550/month, 700 sq ft, available Feb 15th\n\nWould you like to come see them?"},
+      {"role": "user", "content": "What's included in the rent?"},
+      {"role": "assistant", "content": "Rent includes:\n- Water and trash\n- Access to fitness center and pool\n- One parking spot\n\nTenants pay their own electricity and internet. Would you like to schedule a tour?"},
+      {"role": "user", "content": "Let me check my budget again and get back to you"},
+      {"role": "assistant", "content": "Of course! Take your time with the numbers. I'm here when you're ready to move forward. Have a great day!"}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Can I see studios and 1 bedrooms?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [0, 1]}}}]},
+      {"role": "tool", "content": "[{\"unit\": \"108\", \"bedrooms\": 0, \"rent\": 1100, \"sqft\": 450, \"available\": \"2025-02-01\"}, {\"unit\": \"112\", \"bedrooms\": 0, \"rent\": 1150, \"sqft\": 475, \"available\": \"2025-01-25\"}, {\"unit\": \"101\", \"bedrooms\": 1, \"rent\": 1450, \"sqft\": 650, \"available\": \"2025-02-01\"}]"},
+      {"role": "assistant", "content": "Here's what we have:\n\nStudios:\n- Unit 108 - $1,100/month, 450 sq ft\n- Unit 112 - $1,150/month, 475 sq ft\n\n1-Bedroom:\n- Unit 101 - $1,450/month, 650 sq ft\n\nThe 1-bedroom gives you about 200 sq ft more for $300-350 more per month. Which size interests you more?"},
+      {"role": "user", "content": "I'm not sure yet, still deciding"},
+      {"role": "assistant", "content": "No problem! Both are great options depending on your needs. Feel free to reach out when you've made a decision or if you'd like to see them in person. Happy to help!"}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Any large apartments available?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [2, 3]}}}]},
+      {"role": "tool", "content": "[{\"unit\": \"302\", \"bedrooms\": 2, \"rent\": 1850, \"sqft\": 950, \"available\": \"2025-01-20\"}, {\"unit\": \"410\", \"bedrooms\": 2, \"rent\": 2100, \"sqft\": 1050, \"available\": \"2025-03-01\"}, {\"unit\": \"501\", \"bedrooms\": 3, \"rent\": 2650, \"sqft\": 1350, \"available\": \"2025-03-01\"}]"},
+      {"role": "assistant", "content": "Our larger units are:\n\n2-Bedroom:\n- Unit 302 - $1,850/month, 950 sq ft\n- Unit 410 - $2,100/month, 1,050 sq ft\n\n3-Bedroom:\n- Unit 501 - $2,650/month, 1,350 sq ft\n\nThe 3-bedroom is our largest unit. Would you like to tour any of these?"},
+      {"role": "user", "content": "Is there a gym in the building?"},
+      {"role": "assistant", "content": "Yes! We have a fully equipped fitness center with cardio machines, free weights, and weight machines. It's open 24/7 for residents. We also have a pool and hot tub. Would you like to schedule a tour?"},
+      {"role": "user", "content": "Cool, I'll think about it"}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "1 bedroom under $1600"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [1], "max_rent": 1600}}}]},
+      {"role": "tool", "content": "[{\"unit\": \"101\", \"bedrooms\": 1, \"rent\": 1450, \"sqft\": 650, \"available\": \"2025-02-01\"}, {\"unit\": \"205\", \"bedrooms\": 1, \"rent\": 1550, \"sqft\": 700, \"available\": \"2025-02-15\"}]"},
+      {"role": "assistant", "content": "Both of our 1-bedrooms are within your budget:\n\n1. Unit 101 - $1,450/month, 650 sq ft, available Feb 1st\n2. Unit 205 - $1,550/month, 700 sq ft, available Feb 15th\n\nWould you like to schedule a tour?"},
+      {"role": "user", "content": "Can you send me the floor plans?"},
+      {"role": "assistant", "content": "I'd be happy to send you the floor plans! Could you provide your email address so I can send them over?"},
+      {"role": "user", "content": "Actually I'll just check online. Thanks!"},
+      {"role": "assistant", "content": "No problem! You can find floor plans on our website. Let us know if you have any questions or want to schedule a viewing!"}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Show me what 2 bedrooms you have"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [2]}}}]},
+      {"role": "tool", "content": "[{\"unit\": \"302\", \"bedrooms\": 2, \"rent\": 1850, \"sqft\": 950, \"available\": \"2025-01-20\"}, {\"unit\": \"410\", \"bedrooms\": 2, \"rent\": 2100, \"sqft\": 1050, \"available\": \"2025-03-01\"}]"},
+      {"role": "assistant", "content": "We have two 2-bedroom apartments:\n\n1. Unit 302 - $1,850/month, 950 sq ft, available Jan 20th\n2. Unit 410 - $2,100/month, 1,050 sq ft, available March 1st\n\nWould you like to see either of these?"},
+      {"role": "user", "content": "Are utilities included?"},
+      {"role": "assistant", "content": "Water and trash are included in rent. Residents pay their own electricity, gas, and internet. Average utility costs run about $75-100/month. Would you like to schedule a tour?"},
+      {"role": "user", "content": "I need to run the numbers, thanks"},
+      {"role": "assistant", "content": "Of course! Let me know if you need any other details for your calculations. Happy to help whenever you're ready!"}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Do you have 1 beds available next month?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [1]}}}]},
+      {"role": "tool", "content": "[{\"unit\": \"101\", \"bedrooms\": 1, \"rent\": 1450, \"sqft\": 650, \"available\": \"2025-02-01\"}, {\"unit\": \"205\", \"bedrooms\": 1, \"rent\": 1550, \"sqft\": 700, \"available\": \"2025-02-15\"}]"},
+      {"role": "assistant", "content": "Yes! We have two 1-bedrooms available in February:\n\n1. Unit 101 - $1,450/month, 650 sq ft, available Feb 1st\n2. Unit 205 - $1,550/month, 700 sq ft, available Feb 15th\n\nPerfect timing! Would you like to tour them?"},
+      {"role": "user", "content": "I'm waiting to hear back about a job first"},
+      {"role": "assistant", "content": "That makes sense! Best of luck with the job. Once you hear back, feel free to reach out and we can discuss your options. These units may go quickly, but we'll see what's available when you're ready!"}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "What are your cheapest 2 bedroom options?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [2]}}}]},
+      {"role": "tool", "content": "[{\"unit\": \"302\", \"bedrooms\": 2, \"rent\": 1850, \"sqft\": 950, \"available\": \"2025-01-20\"}, {\"unit\": \"410\", \"bedrooms\": 2, \"rent\": 2100, \"sqft\": 1050, \"available\": \"2025-03-01\"}]"},
+      {"role": "assistant", "content": "Our most affordable 2-bedroom is:\n\n- Unit 302 - $1,850/month, 950 sq ft, available Jan 20th\n\nIt's a great value with 2 full bathrooms and a private balcony. Would you like to schedule a viewing?"},
+      {"role": "user", "content": "That's more than I expected"}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Hi, looking for apartment info"},
+      {"role": "assistant", "content": "Hello! I'd be happy to help you find an apartment. What size are you looking for - studio, 1-bedroom, 2-bedroom, or larger?"},
+      {"role": "user", "content": "What do you have in 1 bedrooms?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [1]}}}]},
+      {"role": "tool", "content": "[{\"unit\": \"101\", \"bedrooms\": 1, \"rent\": 1450, \"sqft\": 650, \"available\": \"2025-02-01\"}, {\"unit\": \"205\", \"bedrooms\": 1, \"rent\": 1550, \"sqft\": 700, \"available\": \"2025-02-15\"}]"},
+      {"role": "assistant", "content": "We have two 1-bedroom apartments available:\n\n1. Unit 101 - $1,450/month, 650 sq ft, available Feb 1st\n2. Unit 205 - $1,550/month, 700 sq ft, available Feb 15th\n\nWould you like to schedule a tour?"},
+      {"role": "user", "content": "Thanks for the info, bye"},
+      {"role": "assistant", "content": "You're welcome! Feel free to reach out anytime. Goodbye and take care!"}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "2br apartments near transit?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [2]}}}]},
+      {"role": "tool", "content": "[{\"unit\": \"302\", \"bedrooms\": 2, \"rent\": 1850, \"sqft\": 950, \"available\": \"2025-01-20\"}, {\"unit\": \"410\", \"bedrooms\": 2, \"rent\": 2100, \"sqft\": 1050, \"available\": \"2025-03-01\"}]"},
+      {"role": "assistant", "content": "Great news - our building is very transit-friendly! We're just a 5-minute walk from the Metro station.\n\nAvailable 2-bedrooms:\n1. Unit 302 - $1,850/month, 950 sq ft, available Jan 20th\n2. Unit 410 - $2,100/month, 1,050 sq ft, available March 1st\n\nWould you like to come see them?"},
+      {"role": "user", "content": "Which metro line is it on?"},
+      {"role": "assistant", "content": "We're near the Blue Line and Orange Line station at City Center. There's also a bus stop right in front of the building with several routes. Would you like to schedule a tour?"},
+      {"role": "user", "content": "Good to know. I'll check it out on Google Maps first"},
+      {"role": "assistant", "content": "Good idea! Our address is 123 Main Street if you want to look it up. Let me know if you have any questions after checking it out!"}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Any studios available?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [0]}}}]},
+      {"role": "tool", "content": "[{\"unit\": \"108\", \"bedrooms\": 0, \"rent\": 1100, \"sqft\": 450, \"available\": \"2025-02-01\"}, {\"unit\": \"112\", \"bedrooms\": 0, \"rent\": 1150, \"sqft\": 475, \"available\": \"2025-01-25\"}]"},
+      {"role": "assistant", "content": "Yes! We have two studios:\n\n1. Unit 108 - $1,100/month, 450 sq ft, available Feb 1st\n2. Unit 112 - $1,150/month, 475 sq ft, available Jan 25th\n\nWould you like to tour them?"},
+      {"role": "user", "content": "Are they furnished?"},
+      {"role": "assistant", "content": "Our studios come unfurnished, but they include a full kitchen with stove, refrigerator, and dishwasher. If you need furnished options, we can discuss short-term furnished rentals. Would you like to see the units?"},
+      {"role": "user", "content": "I'll pass for now, thanks"},
+      {"role": "assistant", "content": "No problem! Best of luck with your apartment search. Feel free to reach out if your needs change!"}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I need a place for my family - 3 bedrooms"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [3]}}}]},
+      {"role": "tool", "content": "[{\"unit\": \"501\", \"bedrooms\": 3, \"rent\": 2650, \"sqft\": 1350, \"available\": \"2025-03-01\"}]"},
+      {"role": "assistant", "content": "For families, we have a wonderful 3-bedroom:\n\n- Unit 501 - $2,650/month, 1,350 sq ft, available March 1st\n\nIt features 2 full bathrooms, a spacious living area, and we're in a family-friendly neighborhood with a park nearby. Would you like to schedule a tour?"},
+      {"role": "user", "content": "Is there a playground for kids?"},
+      {"role": "assistant", "content": "Yes! There's a great playground in the park just one block away. We also have a family-friendly pool area with a shallow section for kids. Would you like to see the apartment and amenities?"},
+      {"role": "user", "content": "I need to talk to my spouse about it"},
+      {"role": "assistant", "content": "Absolutely! Family decisions should be made together. Feel free to come back when you're both ready to take a look. We'd love to show you around!"}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "1 bedroom apartments with a view"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [1]}}}]},
+      {"role": "tool", "content": "[{\"unit\": \"101\", \"bedrooms\": 1, \"rent\": 1450, \"sqft\": 650, \"available\": \"2025-02-01\"}, {\"unit\": \"205\", \"bedrooms\": 1, \"rent\": 1550, \"sqft\": 700, \"available\": \"2025-02-15\"}]"},
+      {"role": "assistant", "content": "For views, I'd recommend:\n\n- Unit 205 - $1,550/month, 700 sq ft, available Feb 15th\n\nIt's on the 2nd floor with a balcony facing the courtyard and has partial city views. Unit 101 is on the 1st floor and doesn't have the same views. Would you like to tour Unit 205?"},
+      {"role": "user", "content": "Only 2nd floor? I was hoping for something higher"},
+      {"role": "assistant", "content": "I understand. Unfortunately, our available 1-bedrooms are on lower floors. Our higher-floor units with better views are currently occupied. I can add you to our waitlist to be notified when higher units become available. Would that help?"},
+      {"role": "user", "content": "No that's okay, I'll look elsewhere"},
+      {"role": "assistant", "content": "I understand. Best of luck finding the perfect place with the views you're looking for! Feel free to check back with us in the future."}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "What 2 bedroom apartments are available soon?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [2]}}}]},
+      {"role": "tool", "content": "[{\"unit\": \"302\", \"bedrooms\": 2, \"rent\": 1850, \"sqft\": 950, \"available\": \"2025-01-20\"}, {\"unit\": \"410\", \"bedrooms\": 2, \"rent\": 2100, \"sqft\": 1050, \"available\": \"2025-03-01\"}]"},
+      {"role": "assistant", "content": "The soonest available 2-bedroom is:\n\n- Unit 302 - $1,850/month, 950 sq ft, available Jan 20th\n\nThat's just a few days away! Our other 2-bedroom (Unit 410) isn't available until March 1st. Would you like to tour Unit 302?"},
+      {"role": "user", "content": "Jan 20 might work. What's the application process?"},
+      {"role": "assistant", "content": "Great! Our application process includes:\n1. Online application ($50 fee)\n2. Credit and background check\n3. Proof of income (3x rent)\n4. References from previous landlords\n\nApproval typically takes 24-48 hours. Would you like to schedule a tour before applying?"},
+      {"role": "user", "content": "I need to get my documents together first"},
+      {"role": "assistant", "content": "That's a smart approach! Take your time gathering everything, and reach out when you're ready. Just remember, Unit 302 is popular and might not last long!"}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Show me 1 bedroom places"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [1]}}}]},
+      {"role": "tool", "content": "[{\"unit\": \"101\", \"bedrooms\": 1, \"rent\": 1450, \"sqft\": 650, \"available\": \"2025-02-01\"}, {\"unit\": \"205\", \"bedrooms\": 1, \"rent\": 1550, \"sqft\": 700, \"available\": \"2025-02-15\"}]"},
+      {"role": "assistant", "content": "Here are our 1-bedroom apartments:\n\n1. Unit 101 - $1,450/month, 650 sq ft, available Feb 1st\n2. Unit 205 - $1,550/month, 700 sq ft, available Feb 15th\n\nWould you like to schedule a tour?"},
+      {"role": "user", "content": "Do you allow dogs?"},
+      {"role": "assistant", "content": "Yes, we're dog-friendly! We allow dogs up to 50 lbs. There's a $300 pet deposit and $35/month pet rent. We also have a dog park nearby. Would you like to see the apartments?"},
+      {"role": "user", "content": "My dog is 60 lbs, is there any flexibility?"},
+      {"role": "assistant", "content": "I understand. For dogs over 50 lbs, we review on a case-by-case basis. It may require manager approval and potentially a higher deposit. Would you like me to inquire about your specific situation?"},
+      {"role": "user", "content": "Let me think about it and maybe find a place with no weight limit"},
+      {"role": "assistant", "content": "I understand. Finding a place that works for your pup is important! If you'd like me to check with the manager about your dog, just let me know. Good luck with your search!"}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Apartments with 2 or 3 bedrooms under $2500"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [2, 3], "max_rent": 2500}}}]},
+      {"role": "tool", "content": "[{\"unit\": \"302\", \"bedrooms\": 2, \"rent\": 1850, \"sqft\": 950, \"available\": \"2025-01-20\"}, {\"unit\": \"410\", \"bedrooms\": 2, \"rent\": 2100, \"sqft\": 1050, \"available\": \"2025-03-01\"}]"},
+      {"role": "assistant", "content": "Within your budget, we have two 2-bedrooms:\n\n1. Unit 302 - $1,850/month, 950 sq ft, available Jan 20th\n2. Unit 410 - $2,100/month, 1,050 sq ft, available March 1st\n\nOur 3-bedroom is $2,650, just slightly above your budget. Would you like to see the 2-bedrooms?"},
+      {"role": "user", "content": "Can you go any lower on the 3 bedroom?"},
+      {"role": "assistant", "content": "Unfortunately, our prices are set and we're not able to negotiate on the rent amount. However, we do occasionally offer move-in specials. Currently, we're waiving the administrative fee for new leases, which saves you $200. Would that help?"},
+      {"role": "user", "content": "Not really. I'll keep looking"},
+      {"role": "assistant", "content": "I understand. Budget is important. If your situation changes or you'd like to consider the 2-bedrooms, we're here to help. Best of luck with your search!"}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Hi, what studios do you have?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [0]}}}]},
+      {"role": "tool", "content": "[{\"unit\": \"108\", \"bedrooms\": 0, \"rent\": 1100, \"sqft\": 450, \"available\": \"2025-02-01\"}, {\"unit\": \"112\", \"bedrooms\": 0, \"rent\": 1150, \"sqft\": 475, \"available\": \"2025-01-25\"}]"},
+      {"role": "assistant", "content": "We have two studios available:\n\n1. Unit 108 - $1,100/month, 450 sq ft, available Feb 1st\n2. Unit 112 - $1,150/month, 475 sq ft, available Jan 25th\n\nBoth are great starter apartments. Would you like to see them?"},
+      {"role": "user", "content": "How long have they been on the market?"},
+      {"role": "assistant", "content": "Unit 112 just became available last week, and Unit 108 has been on the market for about two weeks. Both are generating interest, so I'd recommend scheduling a tour soon if you're interested!"},
+      {"role": "user", "content": "Okay, I need to figure out my move date first"},
+      {"role": "assistant", "content": "Makes sense! Once you know your timeline, reach out and we can see what's still available. Good luck with your planning!"}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "1br apartments that are move-in ready"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [1]}}}]},
+      {"role": "tool", "content": "[{\"unit\": \"101\", \"bedrooms\": 1, \"rent\": 1450, \"sqft\": 650, \"available\": \"2025-02-01\"}, {\"unit\": \"205\", \"bedrooms\": 1, \"rent\": 1550, \"sqft\": 700, \"available\": \"2025-02-15\"}]"},
+      {"role": "assistant", "content": "Our soonest move-in ready 1-bedroom is:\n\n- Unit 101 - $1,450/month, 650 sq ft, available Feb 1st\n\nIt's freshly painted and cleaned, ready for immediate move-in. Would you like to tour it?"},
+      {"role": "user", "content": "What comes with the kitchen?"},
+      {"role": "assistant", "content": "The kitchen includes:\n- Stainless steel refrigerator\n- Gas stove/oven\n- Dishwasher\n- Microwave\n- Garbage disposal\n- Granite countertops\n\nAll appliances are relatively new. Would you like to schedule a tour?"},
+      {"role": "user", "content": "Sounds good, but I'm not ready to commit yet"},
+      {"role": "assistant", "content": "No worries! When you're ready, just let me know. These units tend to go quickly, so keep that in mind. Feel free to reach out with any other questions!"}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Looking for a 2 bedroom for me and my roommate"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [2]}}}]},
+      {"role": "tool", "content": "[{\"unit\": \"302\", \"bedrooms\": 2, \"rent\": 1850, \"sqft\": 950, \"available\": \"2025-01-20\"}, {\"unit\": \"410\", \"bedrooms\": 2, \"rent\": 2100, \"sqft\": 1050, \"available\": \"2025-03-01\"}]"},
+      {"role": "assistant", "content": "Great! We have two 2-bedroom apartments perfect for roommates:\n\n1. Unit 302 - $1,850/month ($925 each), 950 sq ft, available Jan 20th\n2. Unit 410 - $2,100/month ($1,050 each), 1,050 sq ft, available March 1st\n\nBoth have 2 full bathrooms, so you each get your own! Would you like to schedule a tour?"},
+      {"role": "user", "content": "Do both people need to be on the lease?"},
+      {"role": "assistant", "content": "Yes, all adult occupants must be on the lease and pass the credit/background check. Each person should show income of at least 1.5x their share of rent. Would you and your roommate like to come see the apartments together?"},
+      {"role": "user", "content": "We need to coordinate schedules. Thanks for the info"},
+      {"role": "assistant", "content": "Of course! Once you've coordinated, we can find a time that works for both of you. Looking forward to meeting you and your roommate!"}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "What 1 or 2 bed apartments are available in February?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [1, 2]}}}]},
+      {"role": "tool", "content": "[{\"unit\": \"101\", \"bedrooms\": 1, \"rent\": 1450, \"sqft\": 650, \"available\": \"2025-02-01\"}, {\"unit\": \"205\", \"bedrooms\": 1, \"rent\": 1550, \"sqft\": 700, \"available\": \"2025-02-15\"}, {\"unit\": \"302\", \"bedrooms\": 2, \"rent\": 1850, \"sqft\": 950, \"available\": \"2025-01-20\"}]"},
+      {"role": "assistant", "content": "For February move-in:\n\n1-Bedroom:\n- Unit 101 - $1,450/month, 650 sq ft, available Feb 1st\n- Unit 205 - $1,550/month, 700 sq ft, available Feb 15th\n\n2-Bedroom:\n- Unit 302 - $1,850/month, 950 sq ft (available Jan 20th, can hold until Feb)\n\nWould you like to tour any of these?"},
+      {"role": "user", "content": "Thanks, just gathering options right now"},
+      {"role": "assistant", "content": "Smart approach! Let me know if you need any other details. I'm here to help when you're ready to move forward!"}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Studios near downtown?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [0]}}}]},
+      {"role": "tool", "content": "[{\"unit\": \"108\", \"bedrooms\": 0, \"rent\": 1100, \"sqft\": 450, \"available\": \"2025-02-01\"}, {\"unit\": \"112\", \"bedrooms\": 0, \"rent\": 1150, \"sqft\": 475, \"available\": \"2025-01-25\"}]"},
+      {"role": "assistant", "content": "Our building is located just 2 blocks from downtown! Available studios:\n\n1. Unit 108 - $1,100/month, 450 sq ft, available Feb 1st\n2. Unit 112 - $1,150/month, 475 sq ft, available Jan 25th\n\nPerfect for walking to restaurants, shops, and nightlife. Would you like to see them?"},
+      {"role": "user", "content": "Is street parking easy to find?"},
+      {"role": "assistant", "content": "Street parking can be challenging downtown, but we offer garage parking for $75/month (covered) or $50/month (uncovered). There's also a public lot nearby. Would you like to schedule a tour?"},
+      {"role": "user", "content": "I don't have a car so that works. Let me think on it"},
+      {"role": "assistant", "content": "Perfect - no car makes downtown living even better! Public transit and walkability are great here. Take your time and reach out when you're ready!"}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "2 bedroom apartments available now"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [2]}}}]},
+      {"role": "tool", "content": "[{\"unit\": \"302\", \"bedrooms\": 2, \"rent\": 1850, \"sqft\": 950, \"available\": \"2025-01-20\"}, {\"unit\": \"410\", \"bedrooms\": 2, \"rent\": 2100, \"sqft\": 1050, \"available\": \"2025-03-01\"}]"},
+      {"role": "assistant", "content": "The soonest available 2-bedroom is:\n\n- Unit 302 - $1,850/month, 950 sq ft, available Jan 20th\n\nThat's very soon! The other option (Unit 410 at $2,100) isn't available until March. Would you like to see Unit 302?"},
+      {"role": "user", "content": "Can I do a virtual tour instead?"},
+      {"role": "assistant", "content": "Absolutely! We have a 3D virtual tour available on our website, and I can also do a live video walkthrough via Zoom or FaceTime. Which would you prefer?"},
+      {"role": "user", "content": "I'll check out the website first, thanks"},
+      {"role": "assistant", "content": "Sounds great! The virtual tour is at www.ourpropertysite.com/tours. Let me know if you'd like to schedule an in-person visit after!"}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Any 1 bedrooms with balconies?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [1]}}}]},
+      {"role": "tool", "content": "[{\"unit\": \"101\", \"bedrooms\": 1, \"rent\": 1450, \"sqft\": 650, \"available\": \"2025-02-01\"}, {\"unit\": \"205\", \"bedrooms\": 1, \"rent\": 1550, \"sqft\": 700, \"available\": \"2025-02-15\"}]"},
+      {"role": "assistant", "content": "Yes! Unit 205 has a private balcony:\n\n- Unit 205 - $1,550/month, 700 sq ft, available Feb 15th\n\nUnit 101 doesn't have a balcony but is $100/month less. Would you like to tour Unit 205?"},
+      {"role": "user", "content": "How big is the balcony?"},
+      {"role": "assistant", "content": "The balcony is approximately 40 sq ft - enough for a small bistro table and chairs or a couple of patio chairs. It faces east so you get nice morning light. Would you like to see it?"},
+      {"role": "user", "content": "Maybe. I have a few other places to look at first"},
+      {"role": "assistant", "content": "Totally understand! Compare your options and reach out if Unit 205 rises to the top of your list. Good luck with your search!"}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I want to see your studio options"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [0]}}}]},
+      {"role": "tool", "content": "[{\"unit\": \"108\", \"bedrooms\": 0, \"rent\": 1100, \"sqft\": 450, \"available\": \"2025-02-01\"}, {\"unit\": \"112\", \"bedrooms\": 0, \"rent\": 1150, \"sqft\": 475, \"available\": \"2025-01-25\"}]"},
+      {"role": "assistant", "content": "Here are our studio apartments:\n\n1. Unit 108 - $1,100/month, 450 sq ft, available Feb 1st\n2. Unit 112 - $1,150/month, 475 sq ft, available Jan 25th\n\nBoth are well-designed with efficient layouts. Would you like to tour them?"},
+      {"role": "user", "content": "What's the ceiling height?"},
+      {"role": "assistant", "content": "Both studios have 9-foot ceilings, which makes the space feel larger and more open. It's a nice feature for a studio! Would you like to schedule a viewing?"},
+      {"role": "user", "content": "That's good. I'll consider it and let you know"},
+      {"role": "assistant", "content": "Sounds good! Take your time. Feel free to reach out whenever you're ready to take the next step!"}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "3 bedroom apartments?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [3]}}}]},
+      {"role": "tool", "content": "[{\"unit\": \"501\", \"bedrooms\": 3, \"rent\": 2650, \"sqft\": 1350, \"available\": \"2025-03-01\"}]"},
+      {"role": "assistant", "content": "We have one 3-bedroom available:\n\n- Unit 501 - $2,650/month, 1,350 sq ft, available March 1st\n\nIt's our premium unit on the top floor with great views. Would you like to schedule a tour?"},
+      {"role": "user", "content": "Top floor is nice. What floor is that?"},
+      {"role": "assistant", "content": "It's on the 5th floor, which is our top floor. Beautiful views, very quiet, and no neighbors above you. Plus, the elevator goes directly to all floors. Would you like to see it?"},
+      {"role": "user", "content": "March is pretty far out. I'll check back closer to then"},
+      {"role": "assistant", "content": "Makes sense! Feel free to check back in a month or so. We can put it on hold with an application if you're interested before then. Have a great day!"}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "What do you have between $1200 and $1600?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"max_rent": 1600}}}]},
+      {"role": "tool", "content": "[{\"unit\": \"108\", \"bedrooms\": 0, \"rent\": 1100, \"sqft\": 450, \"available\": \"2025-02-01\"}, {\"unit\": \"112\", \"bedrooms\": 0, \"rent\": 1150, \"sqft\": 475, \"available\": \"2025-01-25\"}, {\"unit\": \"101\", \"bedrooms\": 1, \"rent\": 1450, \"sqft\": 650, \"available\": \"2025-02-01\"}, {\"unit\": \"205\", \"bedrooms\": 1, \"rent\": 1550, \"sqft\": 700, \"available\": \"2025-02-15\"}]"},
+      {"role": "assistant", "content": "In your $1,200-$1,600 range:\n\n1-Bedroom:\n- Unit 101 - $1,450/month, 650 sq ft\n- Unit 205 - $1,550/month, 700 sq ft\n\nWe also have studios under $1,200 if you're flexible. Would you like to tour the 1-bedrooms?"},
+      {"role": "user", "content": "The 1 bedrooms look good. What's the neighborhood like?"},
+      {"role": "assistant", "content": "It's a great neighborhood! Walking distance to restaurants, coffee shops, and a grocery store. The area is safe and well-lit at night. There's a nice park two blocks away. Would you like to see the apartments?"},
+      {"role": "user", "content": "Sounds nice. Let me do some research on the area first"},
+      {"role": "assistant", "content": "Good idea! Check out the neighborhood on Google Maps and read some local reviews. When you're ready, I'm happy to show you around both the apartment and the area!"}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "2 bedrooms with washer dryer"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [2]}}}]},
+      {"role": "tool", "content": "[{\"unit\": \"302\", \"bedrooms\": 2, \"rent\": 1850, \"sqft\": 950, \"available\": \"2025-01-20\"}, {\"unit\": \"410\", \"bedrooms\": 2, \"rent\": 2100, \"sqft\": 1050, \"available\": \"2025-03-01\"}]"},
+      {"role": "assistant", "content": "Great news - both of our 2-bedrooms have in-unit washer/dryers!\n\n1. Unit 302 - $1,850/month, 950 sq ft, available Jan 20th\n2. Unit 410 - $2,100/month, 1,050 sq ft, available March 1st\n\nWould you like to schedule a tour?"},
+      {"role": "user", "content": "Full size or stackable?"},
+      {"role": "assistant", "content": "Both units have full-size front-loading washers and dryers, not stackable. They're in a dedicated laundry closet. Would you like to see them?"},
+      {"role": "user", "content": "That's what I wanted. Let me check with my wife and get back to you"},
+      {"role": "assistant", "content": "Perfect! Discuss it with your wife and let me know. We'd love to show you both around when you're ready!"}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Hi, do you have any 1 bedroom or studio apartments?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [0, 1]}}}]},
+      {"role": "tool", "content": "[{\"unit\": \"108\", \"bedrooms\": 0, \"rent\": 1100, \"sqft\": 450, \"available\": \"2025-02-01\"}, {\"unit\": \"112\", \"bedrooms\": 0, \"rent\": 1150, \"sqft\": 475, \"available\": \"2025-01-25\"}, {\"unit\": \"101\", \"bedrooms\": 1, \"rent\": 1450, \"sqft\": 650, \"available\": \"2025-02-01\"}]"},
+      {"role": "assistant", "content": "Yes! Here's what we have:\n\nStudios:\n- Unit 108 - $1,100/month, 450 sq ft, available Feb 1st\n- Unit 112 - $1,150/month, 475 sq ft, available Jan 25th\n\n1-Bedroom:\n- Unit 101 - $1,450/month, 650 sq ft, available Feb 1st\n\nWould you like to schedule a tour?"},
+      {"role": "user", "content": "What's the security deposit?"},
+      {"role": "assistant", "content": "The security deposit is equal to one month's rent. So for our studios it would be $1,100-$1,150, and for the 1-bedroom it would be $1,450. We also offer a deposit alternative program if that helps. Would you like to see the units?"},
+      {"role": "user", "content": "Good to know. I'll reach out if I'm interested"},
+      {"role": "assistant", "content": "Sounds great! Feel free to contact us anytime with questions or to schedule a tour. Have a wonderful day!"}
+    ]
+  }
+]

@@ -1,0 +1,352 @@
+[
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "What slots are available on Saturday the 15th of February?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_availability", "arguments": {"date_str": "2025-02-15"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Can I book a tour this Sunday?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_availability", "arguments": {"date_str": "2025-01-05"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "What times are open on Presidents Day?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_availability", "arguments": {"date_str": "2025-02-17"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Do you have any openings on Memorial Day weekend?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_availability", "arguments": {"date_str": "2025-05-24"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Check availability for Febuary 20th"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_availability", "arguments": {"date_str": "2025-02-20"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "What's open on Wenesday March 12th?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_availability", "arguments": {"date_str": "2025-03-12"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "tmrw openings please"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_availability", "arguments": {"date_str": "2025-01-04"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "free times sat?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_availability", "arguments": {"date_str": "2025-01-04"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "availability mon"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_availability", "arguments": {"date_str": "2025-01-06"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "What slots do you have the day after tomorrow?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_availability", "arguments": {"date_str": "2025-01-05"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Can I see a unit in 3 days?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_availability", "arguments": {"date_str": "2025-01-06"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "What's available on the last day of February?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_availability", "arguments": {"date_str": "2025-02-28"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Openings on New Year's Eve 2025?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_availability", "arguments": {"date_str": "2025-12-31"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "thurs availability"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_availability", "arguments": {"date_str": "2025-01-09"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Can you check Tuseday the 18th?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_availability", "arguments": {"date_str": "2025-02-18"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Any free times on July 4th weekend?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_availability", "arguments": {"date_str": "2025-07-04"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Labor Day availability"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_availability", "arguments": {"date_str": "2025-09-01"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "what times u got fri?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_availability", "arguments": {"date_str": "2025-01-10"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "checking for next saturday"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_availability", "arguments": {"date_str": "2025-01-11"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "openings on Thxgiving?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_availability", "arguments": {"date_str": "2025-11-27"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Slots on Janurary 31st?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_availability", "arguments": {"date_str": "2025-01-31"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "What's avail next weds?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_availability", "arguments": {"date_str": "2025-01-08"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Check Xmas day please"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_availability", "arguments": {"date_str": "2025-12-25"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "in a week from today"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_availability", "arguments": {"date_str": "2025-01-10"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "tours available end of march?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_availability", "arguments": {"date_str": "2025-03-31"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Whats open on MLK day?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_availability", "arguments": {"date_str": "2025-01-20"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "any spots 2morrow afternoon?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_availability", "arguments": {"date_str": "2025-01-04"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "availability on the first of April"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_availability", "arguments": {"date_str": "2025-04-01"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "check 2/14 please - Valentine's Day"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_availability", "arguments": {"date_str": "2025-02-14"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Wensday the 5th of March?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_availability", "arguments": {"date_str": "2025-03-05"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "appointments on Halloween?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_availability", "arguments": {"date_str": "2025-10-31"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "tues or wed next week?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_availability", "arguments": {"date_str": "2025-01-07"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "What times can I come in this upcoming Sunday?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_availability", "arguments": {"date_str": "2025-01-05"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Free slots on Apirl 15th?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_availability", "arguments": {"date_str": "2025-04-15"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Show me openings for Columbus Day"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_availability", "arguments": {"date_str": "2025-10-13"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "available times 5 days from now?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_availability", "arguments": {"date_str": "2025-01-08"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "last saturday of june?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_availability", "arguments": {"date_str": "2025-06-28"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I need to see the place on Saterday"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_availability", "arguments": {"date_str": "2025-01-04"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "any tours on mothers day?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_availability", "arguments": {"date_str": "2025-05-11"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Novemeber 1st slots?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_availability", "arguments": {"date_str": "2025-11-01"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "openings 2 weeks from now?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_availability", "arguments": {"date_str": "2025-01-17"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "first sunday in may"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_availability", "arguments": {"date_str": "2025-05-04"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Veterans Day openings?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_availability", "arguments": {"date_str": "2025-11-11"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "wat times r open on thurday?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_availability", "arguments": {"date_str": "2025-01-09"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "tour on 12/24?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_availability", "arguments": {"date_str": "2025-12-24"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "mid-month August availability?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_availability", "arguments": {"date_str": "2025-08-15"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Feburary 29th tours?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_availability", "arguments": {"date_str": "2025-02-28"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "father's day slots please"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_availability", "arguments": {"date_str": "2025-06-15"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Decmber 1st available?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_availability", "arguments": {"date_str": "2025-12-01"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "first weekday of september"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_availability", "arguments": {"date_str": "2025-09-01"}}}]}
+    ]
+  }
+]

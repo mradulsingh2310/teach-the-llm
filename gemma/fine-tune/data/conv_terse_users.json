@@ -1,0 +1,382 @@
+[
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "2br"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [2]}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "studio"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [0]}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "1br"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [1]}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "3 bed"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [3]}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "studio under 1500"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [0], "max_rent": 1500}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "2br <2000"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [2], "max_rent": 2000}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "1bed max 1800"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [1], "max_rent": 1800}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "apartments"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [0, 1, 2, 3]}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "pet policy"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "pet policy"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "parking?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "parking"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "gym"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "gym", "category": "amenities"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "laundry"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "laundry", "category": "amenities"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "pool?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "pool", "category": "amenities"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "dogs allowed?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "dogs", "category": "policies"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "cats"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "cats", "category": "policies"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "deposit?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "deposit", "category": "leasing"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "lease length"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "lease length", "category": "leasing"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "utilities included?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "utilities included", "category": "utilities"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "1br or 2br"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [1, 2]}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "studio or 1bed under 1500"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [0, 1], "max_rent": 1500}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "$1500"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [0, 1, 2, 3], "max_rent": 1500}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "tour feb 15"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_availability", "arguments": {"date_str": "2025-02-15"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "availability tomorrow"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_availability", "arguments": {"date_str": "2025-02-06"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "times friday?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_availability", "arguments": {"date_str": "2025-02-07"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "saturday slots"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_availability", "arguments": {"date_str": "2025-02-08"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "next monday"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_availability", "arguments": {"date_str": "2025-02-10"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "3/15"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_availability", "arguments": {"date_str": "2025-03-15"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "talk to human"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "escalate_conversation", "arguments": {"reason_for_escalation": "User requesting human assistance"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "agent pls"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "escalate_conversation", "arguments": {"reason_for_escalation": "User requesting to speak with human agent"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "ugh whatever"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "escalate_conversation", "arguments": {"reason_for_escalation": "User expressing frustration"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Hi"},
+      {"role": "assistant", "content": "Hello! I can help you find apartments, schedule tours, or answer questions about our property. What are you looking for?"},
+      {"role": "user", "content": "1br"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [1]}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "looking for apt"},
+      {"role": "assistant", "content": "Sure! How many bedrooms do you need, and do you have a budget in mind?"},
+      {"role": "user", "content": "2"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [2]}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "need place"},
+      {"role": "assistant", "content": "I can help! How many bedrooms are you looking for?"},
+      {"role": "user", "content": "studio"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [0]}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "2br"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [2]}}}]},
+      {"role": "tool", "tool_call_id": "call_1", "content": "[{\"unit\": \"201\", \"bedrooms\": 2, \"rent\": 1800}, {\"unit\": \"305\", \"bedrooms\": 2, \"rent\": 1950}]"},
+      {"role": "assistant", "content": "Here are available 2-bedroom units:\n- Unit 201: $1,800/month\n- Unit 305: $1,950/month\n\nWould you like to schedule a tour?"},
+      {"role": "user", "content": "yeah"},
+      {"role": "assistant", "content": "Great! What date works for you?"},
+      {"role": "user", "content": "friday"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_availability", "arguments": {"date_str": "2025-02-07"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "1br"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [1]}}}]},
+      {"role": "tool", "tool_call_id": "call_1", "content": "[{\"unit\": \"102\", \"bedrooms\": 1, \"rent\": 1400}]"},
+      {"role": "assistant", "content": "We have a 1-bedroom unit available - Unit 102 at $1,400/month. Want to tour it?"},
+      {"role": "user", "content": "sure"},
+      {"role": "assistant", "content": "What day works for you?"},
+      {"role": "user", "content": "sat"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_availability", "arguments": {"date_str": "2025-02-08"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "tour?"},
+      {"role": "assistant", "content": "I'd be happy to help schedule a tour! What date works best for you?"},
+      {"role": "user", "content": "tomorrow"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_availability", "arguments": {"date_str": "2025-02-06"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "visit"},
+      {"role": "assistant", "content": "Sure, I can schedule a property visit! When would you like to come?"},
+      {"role": "user", "content": "2/20"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_availability", "arguments": {"date_str": "2025-02-20"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "tour feb 15"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_availability", "arguments": {"date_str": "2025-02-15"}}}]},
+      {"role": "tool", "tool_call_id": "call_1", "content": "[\"10:00\", \"11:00\", \"14:00\", \"15:00\"]"},
+      {"role": "assistant", "content": "Available times on Feb 15: 10am, 11am, 2pm, 3pm. Which works for you?"},
+      {"role": "user", "content": "10"},
+      {"role": "assistant", "content": "10am works! I'll need your name, email, and phone to book it."},
+      {"role": "user", "content": "mike smith mike@email.com 555-1234"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_appointment", "arguments": {"appointment_date": "2025-02-15", "appointment_start_time": "10:00", "first_name": "Mike", "last_name": "Smith", "email": "mike@email.com", "phone": "555-1234"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "schedule tour 3/1 2pm john doe john@test.com 555-9999"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_appointment", "arguments": {"appointment_date": "2025-03-01", "appointment_start_time": "14:00", "first_name": "John", "last_name": "Doe", "email": "john@test.com", "phone": "555-9999"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "book 2/10 11am sarah lee sarah@mail.com 5551112222"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_appointment", "arguments": {"appointment_date": "2025-02-10", "appointment_start_time": "11:00", "first_name": "Sarah", "last_name": "Lee", "email": "sarah@mail.com", "phone": "5551112222"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "contact me"},
+      {"role": "assistant", "content": "Sure! What's your name, email, and phone number?"},
+      {"role": "user", "content": "tom jones tom@email.com 5553334444"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_lead", "arguments": {"email": "tom@email.com", "phone": "5553334444", "first_name": "Tom", "last_name": "Jones"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "save info: amy chen amy.c@work.net 555-777-8888"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_lead", "arguments": {"email": "amy.c@work.net", "phone": "555-777-8888", "first_name": "Amy", "last_name": "Chen"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "2br under 2k"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [2], "max_rent": 2000}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "1bed <1500"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [1], "max_rent": 1500}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "studio max 1200"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "get_available_listings", "arguments": {"bedrooms": [0], "max_rent": 1200}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "washer dryer?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "washer dryer", "category": "amenities"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "ac?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "air conditioning", "category": "amenities"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "move in costs"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "move in costs", "category": "leasing"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "application fee?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "application fee", "category": "leasing"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "nearby transit"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "transit", "category": "neighborhood"}}}]}
+    ]
+  }
+]

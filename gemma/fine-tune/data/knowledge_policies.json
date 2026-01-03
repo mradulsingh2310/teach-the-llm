@@ -1,0 +1,352 @@
+[
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "What's your pet policy?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "pet policy", "category": "policies"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Are dogs allowed in the apartments?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "dogs allowed pets", "category": "policies"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Is this a cat friendly community?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "cat friendly pets allowed", "category": "policies"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "How much is the pet deposit?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "pet deposit fee", "category": "policies"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Do you have any breed restrictions for dogs?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "breed restrictions dogs", "category": "policies"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Can I have a pit bull at the property?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "breed restrictions pit bull dogs", "category": "policies"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Is there a weight limit for pets?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "pet weight limit restrictions", "category": "policies"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "How many pets can I have?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "pet limit number allowed", "category": "policies"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Is there monthly pet rent?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "pet rent monthly fee", "category": "policies"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Can I bring my emotional support animal?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "emotional support animal ESA pet policy", "category": "policies"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "What's the smoking policy?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "smoking policy", "category": "policies"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Is this a smoke-free property?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "smoke-free smoking not allowed", "category": "policies"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Can I smoke on my balcony?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "smoking balcony outdoor policy", "category": "policies"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Is vaping allowed in the apartments?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "vaping allowed smoking policy", "category": "policies"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Where are the designated smoking areas?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "designated smoking areas", "category": "policies"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Can I smoke marijuana in my unit?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "marijuana cannabis smoking policy", "category": "policies"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "What's your guest policy?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "guest policy visitors", "category": "policies"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Can I have overnight guests?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "overnight guests policy", "category": "policies"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "How long can guests stay?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "guest stay duration limit", "category": "policies"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Is there visitor parking available?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "visitor parking guest", "category": "policies"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Do guests need to register at the front desk?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "guest registration visitor check-in", "category": "policies"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Can my family visit for a month?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "guest stay extended family visit policy", "category": "policies"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "What are the quiet hours?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "quiet hours noise", "category": "policies"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "What's your noise policy?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "noise policy rules", "category": "policies"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Can I play loud music during the day?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "noise policy music loud", "category": "policies"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "When do quiet hours start and end?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "quiet hours start end time", "category": "policies"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Can I have a party at my apartment?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "party noise guest policy", "category": "policies"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "What happens if I violate the noise policy?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "noise policy violation consequences", "category": "policies"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Can I sublease my apartment?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "sublease sublet policy", "category": "policies"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Is Airbnb allowed?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "airbnb short term rental policy", "category": "policies"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Can I do short term rentals?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "short term rental sublease policy", "category": "policies"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "What's the process to sublease my unit?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "sublease process application", "category": "policies"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Can I list my apartment on VRBO?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "VRBO vacation rental sublease policy", "category": "policies"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Is there a fee to sublease?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "sublease fee cost", "category": "policies"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "What's your roommate policy?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "roommate policy", "category": "policies"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Can I add someone to my lease?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "adding someone lease occupant", "category": "policies"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "How do I add a roommate?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "add roommate process lease", "category": "policies"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Does my roommate need to pass a background check?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "roommate background check screening", "category": "policies"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Can I remove someone from my lease?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "remove person lease roommate", "category": "policies"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "What's the occupancy limit for a 2 bedroom?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "occupancy limit maximum people", "category": "policies"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Can I paint my apartment?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "paint apartment modifications", "category": "policies"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Am I allowed to hang pictures?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "hang pictures walls modifications", "category": "policies"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "What modifications are allowed?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "modifications allowed alterations", "category": "policies"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Can I install my own thermostat?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "install thermostat modifications", "category": "policies"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Can I change the light fixtures?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "change light fixtures modifications", "category": "policies"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Do I need permission to mount my TV on the wall?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "mount TV wall modifications permission", "category": "policies"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Can I put up wallpaper?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "wallpaper walls modifications", "category": "policies"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Am I allowed to install shelves?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "install shelves modifications walls", "category": "policies"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Can I have a fish tank?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "fish tank aquarium pet policy", "category": "policies"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Are reptiles allowed as pets?"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "search_property_knowledge", "arguments": {"search_text": "reptiles exotic pets allowed policy", "category": "policies"}}}]}
+    ]
+  }
+]

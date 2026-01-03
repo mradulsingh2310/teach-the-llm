@@ -5,7 +5,7 @@ This module contains tools for escalating conversations to human agents.
 """
 
 from typing import Annotated, Dict
-from langchain.tools import tool
+from langchain_core.tools import tool
 import uuid
 from datetime import datetime
 
@@ -23,7 +23,7 @@ def escalate_conversation(
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
     return {
-        "success": "true",
+        "success": True,
         "ticket_id": ticket_id,
         "status": "escalated",
         "reason": reason_for_escalation,

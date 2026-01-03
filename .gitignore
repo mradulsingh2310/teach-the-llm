@@ -8,3 +8,13 @@ wheels/
 
 # Virtual environments
 .venv
+.env
+
+# Model files (too large for git)
+*.pt
+*.pth
+*.bin
+*.safetensors
+checkpoint-*/
+functiongemma-finetuned/
+gemma/fine-tune/functiongemma-finetuned/

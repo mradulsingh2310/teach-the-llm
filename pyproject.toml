@@ -19,6 +19,11 @@ dependencies = [
     "torch>=2.0.0",
     "accelerate>=0.30.0",
     "huggingface-hub>=0.36.0",
+    "datasets>=4.4.2",
+    "trl>=0.26.2",
+    "boto3>=1.42.21",
+    "dotenv>=0.9.9",
+    "peft>=0.18.0",
 ]
 
 [project.scripts]

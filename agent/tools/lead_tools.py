@@ -140,7 +140,7 @@ def create_lead(
         )
 
         return {
-            "success": "true",
+            "success": True,
             "lead_id": lead_id,
             "status": "already_exists",
             "created_at": existing_lead.get("created_at", ""),
@@ -176,7 +176,7 @@ def create_lead(
     )
 
     return {
-        "success": "true",
+        "success": True,
         "lead_id": lead_id,
         "status": "created",
         "created_at": timestamp,

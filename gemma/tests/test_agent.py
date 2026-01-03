@@ -189,8 +189,8 @@ class TestYAMLScenarios:
         # Parse YAML scenario to TestCase
         test_case = parse_scenario_to_test_case(yaml_scenario)
 
-        # Run the test case through the executor
-        result = real_agent_executor.run_test_case(test_case)
+        # Run the test case through the executor, passing raw scenario for per-turn expected_tools
+        result = real_agent_executor.run_test_case(test_case, raw_scenario=yaml_scenario)
 
         # Log results
         test_logger.info(f"Result: {'PASSED' if result.passed else 'FAILED'}")
@@ -270,12 +270,12 @@ class TestGoldenPathScenarios:
         """Run golden path scenarios from YAML."""
         scenario_id = yaml_scenario.get("id", "unknown")
         scenario_name = yaml_scenario.get("name", "Unnamed")
-        
+
         test_logger.info(f"[GOLDEN PATH] {scenario_id}: {scenario_name}")
-        
+
         test_case = parse_scenario_to_test_case(yaml_scenario)
-        result = real_agent_executor.run_test_case(test_case)
-        
+        result = real_agent_executor.run_test_case(test_case, raw_scenario=yaml_scenario)
+
         self._log_result(result, test_logger)
         assert result.passed, f"Golden path {scenario_id} failed: {result.failures}"
 
@@ -307,12 +307,12 @@ class TestFrustratedPathScenarios:
         """Run frustrated path scenarios from YAML."""
         scenario_id = yaml_scenario.get("id", "unknown")
         scenario_name = yaml_scenario.get("name", "Unnamed")
-        
+
         test_logger.info(f"[FRUSTRATED PATH] {scenario_id}: {scenario_name}")
-        
+
         test_case = parse_scenario_to_test_case(yaml_scenario)
-        result = real_agent_executor.run_test_case(test_case)
-        
+        result = real_agent_executor.run_test_case(test_case, raw_scenario=yaml_scenario)
+
         test_logger.info(f"  Passed: {result.passed}, Duration: {result.duration_ms}ms")
         assert result.passed, f"Frustrated path {scenario_id} failed: {result.failures}"
 
@@ -335,12 +335,12 @@ class TestEdgeCaseScenarios:
         """Run edge case scenarios from YAML."""
         scenario_id = yaml_scenario.get("id", "unknown")
         scenario_name = yaml_scenario.get("name", "Unnamed")
-        
+
         test_logger.info(f"[EDGE CASE] {scenario_id}: {scenario_name}")
-        
+
         test_case = parse_scenario_to_test_case(yaml_scenario)
-        result = real_agent_executor.run_test_case(test_case)
-        
+        result = real_agent_executor.run_test_case(test_case, raw_scenario=yaml_scenario)
+
         test_logger.info(f"  Passed: {result.passed}, Duration: {result.duration_ms}ms")
         assert result.passed, f"Edge case {scenario_id} failed: {result.failures}"
 
@@ -364,17 +364,17 @@ class TestNegativeScenarios:
         """Run negative scenarios from YAML."""
         scenario_id = yaml_scenario.get("id", "unknown")
         scenario_name = yaml_scenario.get("name", "Unnamed")
-        
+
         test_logger.info(f"[NEGATIVE] {scenario_id}: {scenario_name}")
-        
+
         test_case = parse_scenario_to_test_case(yaml_scenario)
-        result = real_agent_executor.run_test_case(test_case)
-        
+        result = real_agent_executor.run_test_case(test_case, raw_scenario=yaml_scenario)
+
         # For negative tests, also check that forbidden tools were NOT called
         if result.actual_tool_calls:
             tools_called = [tc.get("tool_name") for tc in result.actual_tool_calls]
             test_logger.info(f"  Tools called (should be minimal): {tools_called}")
-        
+
         test_logger.info(f"  Passed: {result.passed}, Duration: {result.duration_ms}ms")
         assert result.passed, f"Negative test {scenario_id} failed: {result.failures}"
 

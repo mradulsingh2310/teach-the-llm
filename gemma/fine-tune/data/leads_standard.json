@@ -1,0 +1,345 @@
+[
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "My info is John Doe, john.doe@email.com, 555-123-4567"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_lead", "arguments": {"email": "john.doe@email.com", "phone": "555-123-4567", "first_name": "John", "last_name": "Doe"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Please save my contact: Sarah Miller, sarah@gmail.com, (555) 987-6543"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_lead", "arguments": {"email": "sarah@gmail.com", "phone": "(555) 987-6543", "first_name": "Sarah", "last_name": "Miller"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I'd like more info. I'm Mike Johnson, mike.j@company.com, 555-111-2222"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_lead", "arguments": {"email": "mike.j@company.com", "phone": "555-111-2222", "first_name": "Mike", "last_name": "Johnson"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Contact me at jane@email.org, my number is 555-333-4444. Name is Jane Smith"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_lead", "arguments": {"email": "jane@email.org", "phone": "555-333-4444", "first_name": "Jane", "last_name": "Smith"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Hi, I'm Robert Williams. You can reach me at robert.williams@outlook.com or call 555-444-5555"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_lead", "arguments": {"email": "robert.williams@outlook.com", "phone": "555-444-5555", "first_name": "Robert", "last_name": "Williams"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Save me as a lead: Emily Chen, emily.chen@techcorp.io, (415) 555-7890"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_lead", "arguments": {"email": "emily.chen@techcorp.io", "phone": "(415) 555-7890", "first_name": "Emily", "last_name": "Chen"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I want to sign up for updates. David Brown here, david.b@startup.co, 555-222-3333"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_lead", "arguments": {"email": "david.b@startup.co", "phone": "555-222-3333", "first_name": "David", "last_name": "Brown"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "My name is Lisa Garcia and my email is lisa.garcia@yahoo.com. Phone: 555-666-7777"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_lead", "arguments": {"email": "lisa.garcia@yahoo.com", "phone": "555-666-7777", "first_name": "Lisa", "last_name": "Garcia"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Add me to your list: Kevin Martinez, kevin@enterprise.net, (800) 555-1234"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_lead", "arguments": {"email": "kevin@enterprise.net", "phone": "(800) 555-1234", "first_name": "Kevin", "last_name": "Martinez"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Please record my details - Amanda Lee, amanda.lee@design.io, 555-888-9999"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_lead", "arguments": {"email": "amanda.lee@design.io", "phone": "555-888-9999", "first_name": "Amanda", "last_name": "Lee"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I'm interested in your services. Contact info: Chris Taylor, chris.taylor@agency.com, 555-101-2020"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_lead", "arguments": {"email": "chris.taylor@agency.com", "phone": "555-101-2020", "first_name": "Chris", "last_name": "Taylor"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Name: Jennifer Wilson, Email: jen.wilson@consulting.org, Phone: (555) 303-4040"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_lead", "arguments": {"email": "jen.wilson@consulting.org", "phone": "(555) 303-4040", "first_name": "Jennifer", "last_name": "Wilson"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Store my contact information: Brian Anderson, brian@fintech.co, 555-505-6060"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_lead", "arguments": {"email": "brian@fintech.co", "phone": "555-505-6060", "first_name": "Brian", "last_name": "Anderson"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Hey, reach out to me at melissa@healthcare.net. I'm Melissa Thomas and my number is 555-707-8080"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_lead", "arguments": {"email": "melissa@healthcare.net", "phone": "555-707-8080", "first_name": "Melissa", "last_name": "Thomas"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Create a lead for me: Jason Moore, jason.moore@retail.com, (555) 909-1010"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_lead", "arguments": {"email": "jason.moore@retail.com", "phone": "(555) 909-1010", "first_name": "Jason", "last_name": "Moore"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I'd like to get in touch. Rachel Jackson here, rachel.j@media.io, 555-112-1314"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_lead", "arguments": {"email": "rachel.j@media.io", "phone": "555-112-1314", "first_name": "Rachel", "last_name": "Jackson"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Put me down as Steven White, steven.white@law.org, phone 555-151-1617"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_lead", "arguments": {"email": "steven.white@law.org", "phone": "555-151-1617", "first_name": "Steven", "last_name": "White"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "My details are: Nicole Harris, nicole@marketing.net, (555) 181-1920"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_lead", "arguments": {"email": "nicole@marketing.net", "phone": "(555) 181-1920", "first_name": "Nicole", "last_name": "Harris"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Register me please - Daniel Clark, daniel.clark@edu.org, 555-212-2223"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_lead", "arguments": {"email": "daniel.clark@edu.org", "phone": "555-212-2223", "first_name": "Daniel", "last_name": "Clark"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I'm Michelle Lewis. Email me at michelle.lewis@travel.co or call 555-242-2526"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_lead", "arguments": {"email": "michelle.lewis@travel.co", "phone": "555-242-2526", "first_name": "Michelle", "last_name": "Lewis"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Please add Andrew Robinson to your contacts: andrew@realestate.com, (555) 272-2829"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_lead", "arguments": {"email": "andrew@realestate.com", "phone": "(555) 272-2829", "first_name": "Andrew", "last_name": "Robinson"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Save my info: Stephanie Walker, steph.walker@fashion.io, 555-303-3132"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_lead", "arguments": {"email": "steph.walker@fashion.io", "phone": "555-303-3132", "first_name": "Stephanie", "last_name": "Walker"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Contact details: first name Mark, last name Young, email mark.young@auto.net, phone 555-333-3435"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_lead", "arguments": {"email": "mark.young@auto.net", "phone": "555-333-3435", "first_name": "Mark", "last_name": "Young"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Hi there! I'm Victoria King and I want to learn more. My email is victoria@food.com and call me at (555) 363-3738"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_lead", "arguments": {"email": "victoria@food.com", "phone": "(555) 363-3738", "first_name": "Victoria", "last_name": "King"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Add lead: Timothy Wright, tim.wright@sports.org, 555-393-4041"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_lead", "arguments": {"email": "tim.wright@sports.org", "phone": "555-393-4041", "first_name": "Timothy", "last_name": "Wright"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "My name is Rebecca Scott, email rebecca.scott@music.io, phone number is 555-424-4344"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_lead", "arguments": {"email": "rebecca.scott@music.io", "phone": "555-424-4344", "first_name": "Rebecca", "last_name": "Scott"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Looking for information. I'm Joshua Green, josh.green@logistics.co, (555) 454-4647"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_lead", "arguments": {"email": "josh.green@logistics.co", "phone": "(555) 454-4647", "first_name": "Joshua", "last_name": "Green"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Record my contact: Laura Adams, laura@insurance.net, 555-484-4950"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_lead", "arguments": {"email": "laura@insurance.net", "phone": "555-484-4950", "first_name": "Laura", "last_name": "Adams"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I want to be contacted. Name: Patrick Baker, patrick.baker@construction.com, 555-515-5253"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_lead", "arguments": {"email": "patrick.baker@construction.com", "phone": "555-515-5253", "first_name": "Patrick", "last_name": "Baker"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Samantha Nelson here. Reach me at sam.nelson@beauty.io or (555) 545-5556"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_lead", "arguments": {"email": "sam.nelson@beauty.io", "phone": "(555) 545-5556", "first_name": "Samantha", "last_name": "Nelson"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Sign me up: Gregory Carter, greg@manufacturing.org, 555-575-5859"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_lead", "arguments": {"email": "greg@manufacturing.org", "phone": "555-575-5859", "first_name": "Gregory", "last_name": "Carter"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Email: angela.mitchell@pharma.co, Phone: 555-606-6162, Name: Angela Mitchell"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_lead", "arguments": {"email": "angela.mitchell@pharma.co", "phone": "555-606-6162", "first_name": "Angela", "last_name": "Mitchell"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Please capture my information - Ryan Perez at ryan.perez@energy.net, (555) 636-6465"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_lead", "arguments": {"email": "ryan.perez@energy.net", "phone": "(555) 636-6465", "first_name": "Ryan", "last_name": "Perez"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Katherine Roberts, email is katherine@events.com, call at 555-666-6768"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_lead", "arguments": {"email": "katherine@events.com", "phone": "555-666-6768", "first_name": "Katherine", "last_name": "Roberts"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I need more details about your product. Reach me: Nathan Turner, nathan.turner@tech.io, 555-696-7071"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_lead", "arguments": {"email": "nathan.turner@tech.io", "phone": "555-696-7071", "first_name": "Nathan", "last_name": "Turner"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Add this contact: Christina Phillips, christina@finance.org, (555) 727-7374"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_lead", "arguments": {"email": "christina@finance.org", "phone": "(555) 727-7374", "first_name": "Christina", "last_name": "Phillips"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Save contact info for Jonathan Campbell: jonathan.c@software.co, 555-757-7677"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_lead", "arguments": {"email": "jonathan.c@software.co", "phone": "555-757-7677", "first_name": "Jonathan", "last_name": "Campbell"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "My contact: first name is Heather, last name is Parker, heather.parker@wellness.net, (555) 787-7980"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_lead", "arguments": {"email": "heather.parker@wellness.net", "phone": "(555) 787-7980", "first_name": "Heather", "last_name": "Parker"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I'm Scott Evans, interested in a demo. scott.evans@saas.io, 555-818-8283"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_lead", "arguments": {"email": "scott.evans@saas.io", "phone": "555-818-8283", "first_name": "Scott", "last_name": "Evans"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Register Megan Edwards as a lead: megan@hospitality.com, 555-848-8586"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_lead", "arguments": {"email": "megan@hospitality.com", "phone": "555-848-8586", "first_name": "Megan", "last_name": "Edwards"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Hi, name's Brandon Collins, email brandon.collins@security.org, phone (555) 878-8889"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_lead", "arguments": {"email": "brandon.collins@security.org", "phone": "(555) 878-8889", "first_name": "Brandon", "last_name": "Collins"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Interested in pricing. Ashley Stewart, ashley@architecture.co, 555-909-9192"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_lead", "arguments": {"email": "ashley@architecture.co", "phone": "555-909-9192", "first_name": "Ashley", "last_name": "Stewart"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I'm Justin Morris and would like to schedule a call. justin.morris@legal.net, (555) 939-9495"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_lead", "arguments": {"email": "justin.morris@legal.net", "phone": "(555) 939-9495", "first_name": "Justin", "last_name": "Morris"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Add me as a prospect: Diana Sanchez, diana.sanchez@hr.com, 555-969-9798"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_lead", "arguments": {"email": "diana.sanchez@hr.com", "phone": "555-969-9798", "first_name": "Diana", "last_name": "Sanchez"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Full name: Eric Rogers, contact email: eric@analytics.io, mobile: 555-111-1213"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_lead", "arguments": {"email": "eric@analytics.io", "phone": "555-111-1213", "first_name": "Eric", "last_name": "Rogers"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "I'm Kimberly Reed. Please contact me at kim.reed@telecom.org, (555) 141-1516"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_lead", "arguments": {"email": "kim.reed@telecom.org", "phone": "(555) 141-1516", "first_name": "Kimberly", "last_name": "Reed"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Store my info please: Adam Cook, adam.cook@gaming.co, 555-171-1819"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_lead", "arguments": {"email": "adam.cook@gaming.co", "phone": "555-171-1819", "first_name": "Adam", "last_name": "Cook"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Capture this lead - Tracy Morgan, tracy@nonprofit.org, phone (555) 202-2122"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_lead", "arguments": {"email": "tracy@nonprofit.org", "phone": "(555) 202-2122", "first_name": "Tracy", "last_name": "Morgan"}}}]}
+    ]
+  },
+  {
+    "messages": [
+      {"role": "developer", "content": "You are a model that can do function calling with the following functions"},
+      {"role": "user", "content": "Hello, I'm Derek Bell and I want to know more. derek.bell@research.net, 555-232-2425"},
+      {"role": "assistant", "tool_calls": [{"type": "function", "function": {"name": "create_lead", "arguments": {"email": "derek.bell@research.net", "phone": "555-232-2425", "first_name": "Derek", "last_name": "Bell"}}}]}
+    ]
+  }
+]

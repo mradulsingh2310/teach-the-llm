@@ -258,8 +258,13 @@ class GemmaAgentTestExecutor:
         else:
             self.results_store = None
 
-    def run_test_case(self, test_case: TestCase):
-        """Run a single test case against the GemmaAgent with full metrics."""
+    def run_test_case(self, test_case: TestCase, raw_scenario: dict[str, Any] = None):
+        """Run a single test case against the GemmaAgent with full metrics.
+
+        Args:
+            test_case: The parsed TestCase object
+            raw_scenario: Optional raw YAML scenario dict for extracting per-turn expected_tools
+        """
         import time
         from dataclasses import dataclass, field
 
@@ -303,7 +308,8 @@ class GemmaAgentTestExecutor:
             self.logger.info(f"Session started: {session_id}")
 
             # Get expected tools from test case for comparison
-            expected_tools_by_turn = self._get_expected_tools_by_turn(test_case)
+            # Pass raw_scenario to extract per-turn expected_tools from conversation
+            expected_tools_by_turn = self._get_expected_tools_by_turn(test_case, raw_scenario)
 
             # Process each message in the conversation
             turn_num = 0
@@ -383,12 +389,54 @@ class GemmaAgentTestExecutor:
 
         return result
 
-    def _get_expected_tools_by_turn(self, test_case: TestCase) -> dict:
-        """Extract expected tools organized by turn number."""
+    def _get_expected_tools_by_turn(self, test_case: TestCase, raw_scenario: dict[str, Any] = None) -> dict:
+        """Extract expected tools organized by turn number.
+
+        Args:
+            test_case: The parsed TestCase object
+            raw_scenario: Optional raw YAML scenario dict for extracting per-turn expected_tools
+
+        Returns:
+            dict mapping turn_number to list of ExpectedToolParameters
+        """
         tools_by_turn = {}
 
-        # For simple test case format, expected_tools apply to all turns
-        if test_case.expected_tools:
+        # First, try to extract per-turn expected_tools from raw_scenario's conversation
+        # This is the correct approach for multi-turn scenarios where expected_tools
+        # are defined at each assistant message level in the YAML
+        if raw_scenario and "conversation" in raw_scenario:
+            turn_num = 0
+            for i, msg in enumerate(raw_scenario["conversation"]):
+                if msg.get("role") == "user":
+                    turn_num += 1
+                elif msg.get("role") == "assistant":
+                    # Extract expected_tools from this assistant message
+                    expected_tools_data = msg.get("expected_tools", [])
+                    if expected_tools_data:
+                        tools_by_turn[turn_num] = [
+                            ExpectedToolParameters(
+                                tool_name=tool_data.get("tool_name", tool_data.get("tool", "unknown")),
+                                parameters=tool_data.get("parameters", {}),
+                                required_params=list(tool_data.get("parameters", {}).keys()),
+                            )
+                            for tool_data in expected_tools_data
+                        ]
+
+        # Also check single-turn format (user_input with top-level expected_tools)
+        if raw_scenario and "user_input" in raw_scenario:
+            expected_tools_data = raw_scenario.get("expected_tools", [])
+            if expected_tools_data:
+                tools_by_turn[1] = [
+                    ExpectedToolParameters(
+                        tool_name=tool_data.get("tool_name", tool_data.get("tool", "unknown")),
+                        parameters=tool_data.get("parameters", {}),
+                        required_params=list(tool_data.get("parameters", {}).keys()),
+                    )
+                    for tool_data in expected_tools_data
+                ]
+
+        # Fallback: For simple test case format, expected_tools apply to all turns
+        if not tools_by_turn and test_case.expected_tools:
             for i, msg in enumerate(test_case.conversation):
                 if msg.role == "assistant" or i == 0:
                     continue
